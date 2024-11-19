@@ -1,10 +1,16 @@
-[gd_scene load_steps=6 format=4 uid="uid://dimis0ypgatg1"]
+[gd_scene load_steps=9 format=4 uid="uid://dimis0ypgatg1"]
 
 [ext_resource type="Texture2D" uid="uid://bgx37ta3og1sa" path="res://assets/sprites/tutorial_room1.png" id="1_1w3u1"]
 [ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://assets/resources/john_gutter_tileset.tres" id="2_1laup"]
 [ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="3_81aus"]
 [ext_resource type="PackedScene" uid="uid://c20qitdqj1cc1" path="res://assets/scenes/levels/level decoration/parallax_background1_jg.tscn" id="4_7pnk2"]
+[ext_resource type="Script" path="res://assets/script/resources scripts/level_data.gd" id="4_xr14o"]
 [ext_resource type="PackedScene" uid="uid://drg1wcxxcyjdm" path="res://assets/scenes/levels/level objects/gate_portal.tscn" id="5_pwy1m"]
+[ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/levels/level objects/room_changer.tscn" id="6_uhhee"]
+
+[sub_resource type="Resource" id="Resource_c4yjl"]
+script = ExtResource("4_xr14o")
+cam_limit = [-1007, -751, 3023, 1036]
 
 [node name="tutorial" type="Node"]
 metadata/_edit_horizontal_guides_ = [-1192.0]
@@ -31,9 +37,20 @@ tile_set = ExtResource("2_1laup")
 [node name="player" parent="." instance=ExtResource("3_81aus")]
 z_index = 1
 position = Vector2(-254, -341)
+level_data = SubResource("Resource_c4yjl")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("4_7pnk2")]
 
 [node name="AnimatedSprite2D" parent="." instance=ExtResource("5_pwy1m")]
 position = Vector2(-272, -431)
 location = "res://assets/scenes/levels"
+
+[node name="to room_2" parent="." groups=["room changer"] instance=ExtResource("6_uhhee")]
+position = Vector2(46, -818)
+scale = Vector2(6.97278, 2.49998)
+
+[node name="Area2D" parent="." instance=ExtResource("6_uhhee")]
+position = Vector2(291, -1079)
+scale = Vector2(7.98848, 2.28392)
+
+[connection signal="body_entered" from="to room_2" to="player" method="_on_to_room_2_body_entered"]

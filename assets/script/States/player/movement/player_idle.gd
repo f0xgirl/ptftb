@@ -3,9 +3,12 @@ class_name Player_Idle
 
 @export var sprite: AnimatedSprite2D 
 @export var player: CharacterBody2D
+@export var collision: CollisionShape2D
 
+const PLAYER_STANDING = preload("res://assets/resources/player_standing.tres")
 
 func Enter():
+	collision.shape = PLAYER_STANDING
 	player.velocity.x = 0
 
 func Update(delta: float):
@@ -23,3 +26,5 @@ func Update(delta: float):
 		Transitioned.emit(self,"player_jumping")
 	if Input.is_action_just_pressed("action2"):
 		Transitioned.emit(self,"player_mach1")
+	if Input.is_action_just_pressed("down"):
+		Transitioned.emit(self,"player_idle_crouched")

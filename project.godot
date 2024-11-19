@@ -22,6 +22,7 @@ Audioplayer="*res://assets/script/audioplayer.gd"
 [global_group]
 
 player=""
+"room changer"="teleports player between rooms"
 
 [input]
 

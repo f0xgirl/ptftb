@@ -3,6 +3,7 @@ class_name player_data
 
 var player_direction: int
 @export var speed: int
+@export var crawling_speed: int
 @export var mach1_speed: int
 @export var mach2_speed: int
 @export var mach3_speed: int

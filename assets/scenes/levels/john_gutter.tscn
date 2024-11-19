@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://fioigyq7r4yd"]
+[gd_scene load_steps=11 format=4 uid="uid://fioigyq7r4yd"]
 
 [ext_resource type="Texture2D" uid="uid://c8xtty12f5v57" path="res://assets/sprites/normalT_room1.png" id="1_41xii"]
 [ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://assets/resources/john_gutter_tileset.tres" id="2_swdhg"]
@@ -9,6 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://c20qitdqj1cc1" path="res://assets/scenes/levels/level decoration/parallax_background1_jg.tscn" id="7_ix8c6"]
 [ext_resource type="Script" path="res://assets/script/resources scripts/level_data.gd" id="7_on15s"]
 [ext_resource type="PackedScene" uid="uid://drg1wcxxcyjdm" path="res://assets/scenes/levels/level objects/gate_portal.tscn" id="8_fkr86"]
+
+[sub_resource type="Resource" id="Resource_bj4yc"]
+script = ExtResource("7_on15s")
+cam_limit = [-2192, -622, 2895, 463]
 
 [node name="john gutter" type="Node"]
 
@@ -36,7 +40,7 @@ texture = ExtResource("5_jbq4v")
 [node name="player" parent="." instance=ExtResource("6_gqt2e")]
 z_index = 1
 position = Vector2(-1590, 271)
-level_data = ExtResource("7_on15s")
+level_data = SubResource("Resource_bj4yc")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("7_ix8c6")]
 

@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_umyk6")
 speed = 200
+crawling_speed = 100
 mach1_speed = 10
 mach2_speed = 400
 mach3_speed = 600
