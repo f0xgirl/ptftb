@@ -1,4 +1,4 @@
-[gd_scene load_steps=141 format=3 uid="uid://d3amowmvkdyo"]
+[gd_scene load_steps=142 format=3 uid="uid://d3amowmvkdyo"]
 
 [ext_resource type="Script" path="res://assets/script/player.gd" id="1_aarfl"]
 [ext_resource type="Resource" uid="uid://bvm4oc3oc6sjt" path="res://assets/resources/player_data.tres" id="2_i6cxx"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" path="res://assets/script/States/player/mach/Player_turn.gd" id="12_dj2cs"]
 [ext_resource type="Script" path="res://assets/script/States/player/movement/Player_jumping.gd" id="14_plf4t"]
 [ext_resource type="Script" path="res://assets/script/States/player/movement/Player_bumped.gd" id="15_xd2d2"]
+[ext_resource type="Script" path="res://assets/script/States/player/mach/Player_mach3.gd" id="22_rsiba"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1at8r"]
 atlas = ExtResource("3_mvvll")
@@ -909,32 +910,32 @@ autoplay = "idle"
 position = Vector2(-13, -3.25)
 shape = SubResource("RectangleShape2D_ujlai")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="peppino_head" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="CanvasLayer"]
+[node name="Control" type="Control" parent="peppino_head"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control"]
+[node name="MarginContainer" type="MarginContainer" parent="peppino_head/Control"]
 layout_mode = 1
 offset_right = 47.0
 offset_bottom = 23.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="peppino_head/Control/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="peppino_head/Control/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="peppino_head/Control/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Control/MarginContainer/HBoxContainer/VBoxContainer/Label"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="peppino_head/Control/MarginContainer/HBoxContainer/VBoxContainer/Label"]
 position = Vector2(24.5, 4)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_krmg6")
@@ -943,7 +944,7 @@ autoplay = "idle"
 offset = Vector2(50, 70)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+zoom = Vector2(2.8, 2.8)
 
 [node name="destroyable" type="RayCast2D" parent="."]
 target_position = Vector2(24, 0)
@@ -975,6 +976,12 @@ player = NodePath("../..")
 player_data = ExtResource("2_i6cxx")
 sprite = NodePath("../../sprite")
 
+[node name="Player_mach3" type="Node" parent="State Machine" node_paths=PackedStringArray("player", "sprite")]
+script = ExtResource("22_rsiba")
+player = NodePath("../..")
+player_data = ExtResource("2_i6cxx")
+sprite = NodePath("../../sprite")
+
 [node name="Player_slide" type="Node" parent="State Machine" node_paths=PackedStringArray("player", "sprite")]
 script = ExtResource("11_nrveg")
 player = NodePath("../..")
@@ -993,3 +1000,39 @@ jump_velocity = -350
 script = ExtResource("15_xd2d2")
 sprite = NodePath("../../sprite")
 player = NodePath("../..")
+
+[node name="debug" type="CanvasLayer" parent="."]
+editor_description = "unfinished
+work on this later"
+
+[node name="Control" type="Control" parent="debug"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="debug/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = -14.0
+offset_right = 49.0
+offset_bottom = 8.0
+grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="debug/Control/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="debug/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="TextEdit" type="TextEdit" parent="debug/Control/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+placeholder_text = "aaaaaaaaaaaaaa"
+
+[node name="Label" type="Label" parent="debug/Control/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "debug"

@@ -7,4 +7,4 @@ script = ExtResource("1_dlgoo")
 speed = 200
 mach1_speed = 10
 mach2_speed = 300
-mach3_speed = 0
+mach3_speed = 500

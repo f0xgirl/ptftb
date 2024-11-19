@@ -9,6 +9,7 @@ var direction: int
 
 
 func Enter():
+	player.velocity.x = 0
 	sprite.play("mach1")
 
 func Update(delta: float):
