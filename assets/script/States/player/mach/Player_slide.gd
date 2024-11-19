@@ -14,7 +14,7 @@ func Pyhsics_Update(delta: float):
 		if sprite.get_frame() == 6:
 			sprite.play("slide_loop")
 	print("slide")
-	player.velocity.x = move_toward(player.velocity.x, 0, 20)
+	player.velocity.x = move_toward(player.velocity.x, 0, 17)
 	if player.velocity.x == 0:
 		Transitioned.emit(self,"player_idle")
 
