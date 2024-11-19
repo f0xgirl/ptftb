@@ -4,11 +4,11 @@ extends CharacterBody2D
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var jump_velocity: int
 @onready var camera: Camera2D = $Camera2D
+@export var level_data: level_data
 
 func _ready():
-	#TODO: figure out how to make camera boundaries work
-	#camera.limit_bottom = player_data.get_limit(3)
-	pass
+	setcamboundaries()
+	
 func _process(delta: float) -> void:
 	pass
 
@@ -16,14 +16,8 @@ func _physics_process(delta: float) -> void:
 	velocity.y += gravity * delta
 	move_and_slide()
 
-func setcamboundleft():
-	pass
-
-func setcamboundright():
-	pass
-
-func setcamboundtop():
-	pass
-
-func setcamboundbottom():
-	pass
+func setcamboundaries():
+	camera.limit_left = level_data.get_limit(0)
+	camera.limit_top = level_data.get_limit(1)
+	camera.limit_right = level_data.get_limit(2)
+	camera.limit_bottom = level_data.get_limit(3)

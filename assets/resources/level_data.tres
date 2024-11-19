@@ -4,3 +4,4 @@
 
 [resource]
 script = ExtResource("1_7mkb4")
+cam_limit = [-64, -575, 1552, 336]
