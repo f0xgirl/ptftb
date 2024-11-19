@@ -6,3 +6,16 @@ class_name Player_mach3
 @export var sprite: AnimatedSprite2D
 
 # TODO: super jumping ground pounding and interactions with stuff
+
+func Enter():
+	player.velocity.x = player_data.mach3_speed
+	sprite.play("mach3")
+	
+func Update(_delta: float):
+	if player.is_on_floor():
+		if not Input.is_action_pressed("action2"):
+			Transitioned.emit(self,"Player_slide")
+	if Input.is_action_just_pressed("action1") and player.is_on_floor():
+		player.velocity.y = 1.1 * - 350
+	if player.is_on_wall():
+		Transitioned.emit(self,"player_bumped")

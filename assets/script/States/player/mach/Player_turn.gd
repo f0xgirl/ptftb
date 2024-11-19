@@ -1,6 +1,7 @@
 extends State
 class_name Player_turn
 
+@export var sprite: AnimatedSprite2D 
 @export var player: CharacterBody2D
 
 func Physics_Update(delta: float):

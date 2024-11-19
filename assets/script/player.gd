@@ -5,7 +5,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var jump_velocity: int
 @onready var camera_2d: Camera2D = $Camera2D
 
-func _onready():
+func _ready():
 	pass
 	
 func _process(delta: float) -> void:

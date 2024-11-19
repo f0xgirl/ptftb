@@ -1,4 +1,4 @@
-[gd_scene load_steps=142 format=3 uid="uid://d3amowmvkdyo"]
+[gd_scene load_steps=152 format=3 uid="uid://d3amowmvkdyo"]
 
 [ext_resource type="Script" path="res://assets/script/player.gd" id="1_aarfl"]
 [ext_resource type="Resource" uid="uid://bvm4oc3oc6sjt" path="res://assets/resources/player_data.tres" id="2_i6cxx"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bucm1t3x2aryu" path="res://assets/sprites/player_fall2.png" id="6_nrfqe"]
 [ext_resource type="Texture2D" uid="uid://b6b43ah7ew5vo" path="res://assets/sprites/player_machslide.png" id="7_a5fc0"]
 [ext_resource type="Script" path="res://assets/script/States/player/movement/player_walking.gd" id="7_y2hrn"]
+[ext_resource type="Texture2D" uid="uid://c1nenn0sbl1dv" path="res://assets/sprites/player_mach3.png" id="8_kdtue"]
 [ext_resource type="Script" path="res://assets/script/States/player/mach/Player_mach1.gd" id="10_tsu6n"]
 [ext_resource type="Script" path="res://assets/script/States/player/mach/Player_slide.gd" id="11_nrveg"]
 [ext_resource type="Script" path="res://assets/script/States/player/mach/Player_mach2.gd" id="11_rks30"]
@@ -22,6 +23,12 @@
 [ext_resource type="Script" path="res://assets/script/States/player/movement/Player_jumping.gd" id="14_plf4t"]
 [ext_resource type="Script" path="res://assets/script/States/player/movement/Player_bumped.gd" id="15_xd2d2"]
 [ext_resource type="Script" path="res://assets/script/States/player/mach/Player_mach3.gd" id="22_rsiba"]
+[ext_resource type="Script" path="res://assets/script/States/player/mach/player_machroll.gd" id="24_1q1cm"]
+[ext_resource type="Script" path="res://assets/script/States/player/movement/Player_Idle_Crawling.gd" id="25_4wbsh"]
+[ext_resource type="Script" path="res://assets/script/States/player/movement/Player_Idle_Crouched.gd" id="26_8h8g6"]
+[ext_resource type="Script" path="res://assets/script/States/player/movement/player_superjump.gd" id="27_joj2a"]
+[ext_resource type="Script" path="res://assets/script/States/player/movement/player_roll.gd" id="28_biv4t"]
+[ext_resource type="Script" path="res://assets/script/States/player/movement/player_groundpound.gd" id="29_3eubh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1at8r"]
 atlas = ExtResource("3_mvvll")
@@ -226,6 +233,18 @@ region = Rect2(444, 0, 74, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_lmefs"]
 atlas = ExtResource("5_1sd04")
 region = Rect2(518, 0, 74, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71wc0"]
+atlas = ExtResource("8_kdtue")
+region = Rect2(0, 0, 75, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_car31"]
+atlas = ExtResource("8_kdtue")
+region = Rect2(75, 0, 75, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iykk8"]
+atlas = ExtResource("8_kdtue")
+region = Rect2(150, 0, 75, 60)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jf0y7"]
 atlas = ExtResource("6_2p2g1")
@@ -517,6 +536,20 @@ animations = [{
 }],
 "loop": true,
 "name": &"mach2",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71wc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_car31")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iykk8")
+}],
+"loop": true,
+"name": &"mach3",
 "speed": 24.0
 }, {
 "frames": [{
@@ -903,8 +936,9 @@ jump_velocity = -350
 position = Vector2(-12, -8)
 scale = Vector2(0.76, 0.76)
 sprite_frames = SubResource("SpriteFrames_cdmb6")
-animation = &"fall"
+animation = &"mach3"
 autoplay = "idle"
+frame_progress = 0.353625
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-13, -3.25)
@@ -954,50 +988,95 @@ script = ExtResource("4_t3dhw")
 Inital_state = NodePath("Player_Idle")
 
 [node name="Player_Idle" type="Node" parent="State Machine" node_paths=PackedStringArray("sprite", "player")]
+editor_description = "DO NOT USE FOR ENEMIES"
 script = ExtResource("5_jt3m1")
 sprite = NodePath("../../sprite")
 player = NodePath("../..")
 
 [node name="Player_walking" type="Node" parent="State Machine" node_paths=PackedStringArray("player", "sprite")]
+editor_description = "DO NOT USE FOR ENEMIES"
 script = ExtResource("7_y2hrn")
 player = NodePath("../..")
 player_data = ExtResource("2_i6cxx")
 sprite = NodePath("../../sprite")
 
 [node name="Player_mach1" type="Node" parent="State Machine" node_paths=PackedStringArray("player", "sprite")]
+editor_description = "DO NOT USE FOR ENEMIES"
 script = ExtResource("10_tsu6n")
 player = NodePath("../..")
 player_data = ExtResource("2_i6cxx")
 sprite = NodePath("../../sprite")
 
 [node name="Player_mach2" type="Node" parent="State Machine" node_paths=PackedStringArray("player", "sprite")]
+editor_description = "DO NOT USE FOR ENEMIES"
 script = ExtResource("11_rks30")
 player = NodePath("../..")
 player_data = ExtResource("2_i6cxx")
 sprite = NodePath("../../sprite")
 
 [node name="Player_mach3" type="Node" parent="State Machine" node_paths=PackedStringArray("player", "sprite")]
+editor_description = "DO NOT USE FOR ENEMIES"
 script = ExtResource("22_rsiba")
 player = NodePath("../..")
 player_data = ExtResource("2_i6cxx")
 sprite = NodePath("../../sprite")
 
 [node name="Player_slide" type="Node" parent="State Machine" node_paths=PackedStringArray("player", "sprite")]
+editor_description = "DO NOT USE FOR ENEMIES"
 script = ExtResource("11_nrveg")
 player = NodePath("../..")
 sprite = NodePath("../../sprite")
 
 [node name="Player_turn" type="Node" parent="State Machine" node_paths=PackedStringArray("player")]
+editor_description = "DO NOT USE FOR ENEMIES"
 script = ExtResource("12_dj2cs")
 player = NodePath("../..")
 
 [node name="Player_jumping" type="Node" parent="State Machine" node_paths=PackedStringArray("player")]
+editor_description = "DO NOT USE FOR ENEMIES"
 script = ExtResource("14_plf4t")
 player = NodePath("../..")
 jump_velocity = -350
 
 [node name="player_bumped" type="Node" parent="State Machine" node_paths=PackedStringArray("sprite", "player")]
+editor_description = "DO NOT USE FOR ENEMIES"
 script = ExtResource("15_xd2d2")
+sprite = NodePath("../../sprite")
+player = NodePath("../..")
+
+[node name="Player_machroll" type="Node" parent="State Machine" node_paths=PackedStringArray("sprite", "player")]
+editor_description = "DO NOT USE FOR ENEMIES"
+script = ExtResource("24_1q1cm")
+sprite = NodePath("../../sprite")
+player = NodePath("../..")
+
+[node name="Player_Crawling" type="Node" parent="State Machine" node_paths=PackedStringArray("sprite", "player")]
+editor_description = "DO NOT USE FOR ENEMIES"
+script = ExtResource("25_4wbsh")
+sprite = NodePath("../../sprite")
+player = NodePath("../..")
+
+[node name="Player_Idle_Crouched" type="Node" parent="State Machine" node_paths=PackedStringArray("sprite", "player")]
+editor_description = "DO NOT USE FOR ENEMIES"
+script = ExtResource("26_8h8g6")
+sprite = NodePath("../../sprite")
+player = NodePath("../..")
+
+[node name="Player_Superjump" type="Node" parent="State Machine" node_paths=PackedStringArray("sprite", "player")]
+editor_description = "DO NOT USE FOR ENEMIES"
+script = ExtResource("27_joj2a")
+sprite = NodePath("../../sprite")
+player = NodePath("../..")
+
+[node name="Player_roll" type="Node" parent="State Machine" node_paths=PackedStringArray("sprite", "player")]
+editor_description = "DO NOT USE FOR ENEMIES"
+script = ExtResource("28_biv4t")
+sprite = NodePath("../../sprite")
+player = NodePath("../..")
+
+[node name="Player_groundpound" type="Node" parent="State Machine" node_paths=PackedStringArray("sprite", "player")]
+editor_description = "DO NOT USE FOR ENEMIES"
+script = ExtResource("29_3eubh")
 sprite = NodePath("../../sprite")
 player = NodePath("../..")
 
