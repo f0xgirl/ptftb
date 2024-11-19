@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c20qitdqj1cc1"]
+[gd_scene load_steps=4 format=3 uid="uid://c20qitdqj1cc1"]
 
 [ext_resource type="Texture2D" uid="uid://clepigjnkayx3" path="res://assets/sprites/normalT_parrallax1.png" id="1_k5ux4"]
 [ext_resource type="Texture2D" uid="uid://5s6cqd1b5fis" path="res://assets/sprites/floor.png" id="2_3wxa2"]
 [ext_resource type="Texture2D" uid="uid://brdrctkk64hqk" path="res://assets/sprites/normalT_parrallax2.png" id="3_pvoqt"]
-[ext_resource type="Texture2D" uid="uid://dl10i355nbsph" path="res://assets/sprites/normalT_statue.png" id="4_o2h4i"]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 scroll_ignore_camera_zoom = true
@@ -85,13 +84,3 @@ motion_mirroring = Vector2(0, 1000)
 [node name="NormalTParrallax2" type="Sprite2D" parent="pillar5"]
 position = Vector2(4693, 458)
 texture = ExtResource("3_pvoqt")
-
-[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
-scale = Vector2(1.2, 1.2)
-motion_scale = Vector2(2, 2)
-motion_mirroring = Vector2(2000, 0)
-
-[node name="NormalTStatue" type="Sprite2D" parent="ParallaxLayer4"]
-position = Vector2(-256.667, -737.333)
-texture = ExtResource("4_o2h4i")
-centered = false

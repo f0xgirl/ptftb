@@ -8,3 +8,4 @@ speed = 200
 mach1_speed = 10
 mach2_speed = 400
 mach3_speed = 600
+jumpheight = -350

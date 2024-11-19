@@ -8,7 +8,7 @@ class_name Player_mach3
 # TODO: super jumping ground pounding and interactions with stuff
 
 func Enter():
-	player.velocity.x = player_data.mach3_speed
+	player.velocity.x = player_data.player_direction * player_data.mach3_speed
 	sprite.play("mach3")
 	
 func Update(_delta: float):

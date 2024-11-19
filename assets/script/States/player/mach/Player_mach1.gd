@@ -9,13 +9,14 @@ var direction: int
 
 
 func Enter():
+	print(player_data.player_direction)
 	player.velocity.x = 0
 	sprite.play("mach1")
 
 func Update(delta: float):
 	#till_mach2 -=  1
 	if Input.is_action_pressed("action2"):
-		player.velocity.x += 1 * player_data.mach1_speed
+		player.velocity.x += player_data.player_direction * player_data.mach1_speed
 	if till_mach2 == 0:
 		Transitioned.emit(self,"player_mach2")
 	if Input.is_action_just_released("action2"):

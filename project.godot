@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 Audioplayer="*res://assets/script/audioplayer.gd"
 
+[global_group]
+
+player=""
+
 [input]
 
 action1={

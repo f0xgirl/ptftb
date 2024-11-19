@@ -10,7 +10,6 @@ func move(direction: int):
 	direction = Input.get_axis("left","right")
 	
 func Enter():
-	sprite.play("walking")
 	move(direction)
 	
 func Update(delta: float):
@@ -20,9 +19,10 @@ func Update(delta: float):
 		sprite.play("walking")
 	direction = Input.get_axis("left","right")
 	move(direction)
-	print(direction)
 	if direction == 0:
 		Transitioned.emit(self,"player_idle")
+	if direction != 0:
+		player_data.player_direction = direction
 	if Input.is_action_just_pressed("action1") and player.is_on_floor():
 		Transitioned.emit(self,"player_jumping")
 	if Input.is_action_just_pressed("action2"):

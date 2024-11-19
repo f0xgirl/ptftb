@@ -7,7 +7,7 @@ class_name Player_mach2
 var tillmach3: float = 300
 
 func Enter():
-	player.velocity.x = player_data.mach2_speed
+	player.velocity.x = player_data.player_direction * player_data.mach2_speed
 	sprite.play("mach2")
 	tillmach3 = 300
 	
