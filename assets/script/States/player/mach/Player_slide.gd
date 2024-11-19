@@ -1,0 +1,22 @@
+extends State
+class_name Player_slide
+
+var slide_progress = 1
+@export var player: CharacterBody2D
+@export var sprite: AnimatedSprite2D
+
+func Enter():
+	sprite.play("slide_start")
+	
+
+func Pyhsics_Update(delta: float):
+	if sprite.animation == "slide_start":
+		if sprite.get_frame() == 6:
+			sprite.play("slide_loop")
+	print("slide")
+	player.velocity.x = move_toward(player.velocity.x, 0, 20)
+	if player.velocity.x == 0:
+		Transitioned.emit(self,"player_idle")
+
+func Exit():
+	sprite.play("slide_end")

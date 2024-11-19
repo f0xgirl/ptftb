@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="player_data" load_steps=2 format=3 uid="uid://bvm4oc3oc6sjt"]
+
+[ext_resource type="Script" path="res://assets/script/player_data.gd" id="1_dlgoo"]
+
+[resource]
+script = ExtResource("1_dlgoo")
+speed = 200
+mach1_speed = 10
+mach2_speed = 300
+mach3_speed = 0
