@@ -17,6 +17,8 @@ func Pyhsics_Update(delta: float):
 	player.velocity.x = move_toward(player.velocity.x, 0, 17)
 	if player.velocity.x == 0:
 		Transitioned.emit(self,"player_idle")
-
+func Update(_delta: float):
+	if player.is_on_wall():
+		Transitioned.emit(self,"player_bumped")
 func Exit():
 	sprite.play("slide_end")

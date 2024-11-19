@@ -1,7 +1,7 @@
 extends Resource
 class_name player_data
 
-var cam_limit: int
+var cam_limit: Array = [1,2,3,4]
 var player_direction: int
 @export var speed: int
 @export var mach1_speed: int
@@ -17,6 +17,8 @@ func change_pos(x: int, y: int):
 	return player_pos
 	
 	# changes limit for camera2d node
-func change_limit(limit: int):
-	cam_limit = limit
-	return cam_limit
+func get_limit(index: int):
+	return cam_limit[index]
+
+func change_limit(change: int, index: int):
+	cam_limit[index] = change 

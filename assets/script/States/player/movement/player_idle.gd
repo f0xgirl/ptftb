@@ -14,10 +14,8 @@ func Update(delta: float):
 	else:
 		sprite.play("idle")
 	if Input.is_action_pressed("left"):
-		sprite.flip_h = true
 		Transitioned.emit(self,"player_walking")
-	elif Input.is_action_pressed("right"):
-		sprite.flip_h = false
+	if Input.is_action_pressed("right"):
 		Transitioned.emit(self,"player_walking")
 	if Input.is_action_just_pressed("action1") and player.is_on_floor() and Input.is_action_pressed("up"):
 		Transitioned.emit(self,"player_highjump")

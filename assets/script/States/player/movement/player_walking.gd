@@ -6,11 +6,7 @@ class_name Player_walking
 @export var sprite: AnimatedSprite2D
 var direction = Input.get_axis("left","right")
 
-func move(direction: int):
-	direction = Input.get_axis("left","right")
-	
-func Enter():
-	move(direction)
+
 	
 func Update(delta: float):
 	if player.is_on_floor() == false:
@@ -18,7 +14,7 @@ func Update(delta: float):
 	else:
 		sprite.play("walking")
 	direction = Input.get_axis("left","right")
-	move(direction)
+	sprite_flip()
 	if direction == 0:
 		Transitioned.emit(self,"player_idle")
 	if direction != 0:
@@ -32,5 +28,11 @@ func Pyhsics_Update(delta: float):
 	if player:
 		player.velocity.x = direction * player_data.speed
 		
-	
-	
+
+func sprite_flip():
+	if player_data.player_direction == 1:
+		sprite.offset.x = 0
+		sprite.flip_h = false
+	else:
+		sprite.offset.x = -8
+		sprite.flip_h = true
