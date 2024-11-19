@@ -1,4 +1,4 @@
-[gd_scene load_steps=152 format=3 uid="uid://d3amowmvkdyo"]
+[gd_scene load_steps=156 format=3 uid="uid://d3amowmvkdyo"]
 
 [ext_resource type="Script" path="res://assets/script/player.gd" id="1_aarfl"]
 [ext_resource type="Resource" uid="uid://bvm4oc3oc6sjt" path="res://assets/resources/player_data.tres" id="2_i6cxx"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" path="res://assets/script/States/player/mach/Player_slide.gd" id="11_nrveg"]
 [ext_resource type="Script" path="res://assets/script/States/player/mach/Player_mach2.gd" id="11_rks30"]
 [ext_resource type="Script" path="res://assets/script/States/player/mach/Player_turn.gd" id="12_dj2cs"]
+[ext_resource type="Texture2D" uid="uid://dm8yffm1t4w8w" path="res://assets/sprites/player_superjump.png" id="12_g1rh6"]
 [ext_resource type="Script" path="res://assets/script/States/player/movement/Player_jumping.gd" id="14_plf4t"]
 [ext_resource type="Script" path="res://assets/script/States/player/movement/Player_bumped.gd" id="15_xd2d2"]
 [ext_resource type="Script" path="res://assets/script/States/player/mach/Player_mach3.gd" id="22_rsiba"]
@@ -309,6 +310,18 @@ region = Rect2(470, 0, 94, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_f1wlg"]
 atlas = ExtResource("6_6f1mn")
 region = Rect2(564, 0, 94, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bt7sh"]
+atlas = ExtResource("12_g1rh6")
+region = Rect2(0, 0, 37, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkgei"]
+atlas = ExtResource("12_g1rh6")
+region = Rect2(37, 0, 37, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5btb1"]
+atlas = ExtResource("12_g1rh6")
+region = Rect2(74, 0, 37, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kw561"]
 atlas = ExtResource("4_oko2l")
@@ -613,6 +626,20 @@ animations = [{
 }],
 "loop": true,
 "name": &"slide_start",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bt7sh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkgei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5btb1")
+}],
+"loop": true,
+"name": &"superjump",
 "speed": 24.0
 }, {
 "frames": [{
@@ -936,9 +963,8 @@ jump_velocity = -350
 position = Vector2(-12, -8)
 scale = Vector2(0.76, 0.76)
 sprite_frames = SubResource("SpriteFrames_cdmb6")
-animation = &"mach3"
+animation = &"superjump"
 autoplay = "idle"
-frame_progress = 0.353625
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-13, -3.25)

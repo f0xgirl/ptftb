@@ -19,3 +19,7 @@ func Update(_delta: float):
 		player.velocity.y = 1.1 * - 350
 	if player.is_on_wall():
 		Transitioned.emit(self,"player_bumped")
+	if Input.is_action_just_pressed("down"):
+		Transitioned.emit(self,"Player_groundpound")
+	if Input.is_action_just_pressed("up"):
+		Transitioned.emit(self,"Player_superjump")
