@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=4 uid="uid://dimis0ypgatg1"]
+[gd_scene load_steps=5 format=4 uid="uid://dimis0ypgatg1"]
 
 [ext_resource type="Texture2D" uid="uid://bgx37ta3og1sa" path="res://assets/sprites/tutorial_room1.png" id="1_1w3u1"]
 [ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://assets/resources/john_gutter_tileset.tres" id="2_1laup"]
 [ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="3_81aus"]
+[ext_resource type="PackedScene" uid="uid://c20qitdqj1cc1" path="res://assets/scenes/parallax_background1_jg.tscn" id="4_7pnk2"]
 
 [node name="tutorial" type="Node"]
 metadata/_edit_horizontal_guides_ = [-1192.0]
@@ -28,3 +29,5 @@ tile_set = ExtResource("2_1laup")
 
 [node name="player" parent="." instance=ExtResource("3_81aus")]
 position = Vector2(-254, -341)
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("4_7pnk2")]

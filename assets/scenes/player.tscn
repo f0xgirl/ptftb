@@ -961,13 +961,12 @@ jump_velocity = -350
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(-12, -8)
-scale = Vector2(0.76, 0.76)
 sprite_frames = SubResource("SpriteFrames_cdmb6")
-animation = &"superjump"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-13, -3.25)
+position = Vector2(-15, 8)
 shape = SubResource("RectangleShape2D_ujlai")
 
 [node name="peppino_head" type="CanvasLayer" parent="."]
@@ -1004,7 +1003,7 @@ autoplay = "idle"
 offset = Vector2(50, 70)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.8, 2.8)
+zoom = Vector2(1.8, 1.8)
 
 [node name="destroyable" type="RayCast2D" parent="."]
 target_position = Vector2(24, 0)

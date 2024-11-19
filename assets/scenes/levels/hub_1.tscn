@@ -38,7 +38,7 @@ tile_map_data = PackedByteArray("AAADABEAAQABAAAAAAADABIAAQABAAEAAAAEABEAAQAAAAA
 tile_set = SubResource("TileSet_wakd8")
 
 [node name="AnimatedSprite2D" parent="." instance=ExtResource("3_b2a5e")]
-position = Vector2(331, 145)
+position = Vector2(345, 145)
 enterexit = true
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("4_5wnoh")]
