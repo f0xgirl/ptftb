@@ -5,7 +5,7 @@ class_name Player_Idle
 @export var player: CharacterBody2D
 @export var collision: CollisionShape2D
 
-const PLAYER_STANDING = preload("res://assets/resources/player_standing.tres")
+const PLAYER_STANDING = preload("res://assets/resources/player/player_standing.tres")
 
 func Enter():
 	collision.shape = PLAYER_STANDING

@@ -5,7 +5,7 @@ class_name Player_Idle_Crouched
 @export var player_data: player_data
 @export var player: CharacterBody2D
 @export var collision: CollisionShape2D
-const PLAYER_CROUCHING = preload("res://assets/resources/player_crouching.tres")
+const PLAYER_CROUCHING = preload("res://assets/resources/player/player_crouching.tres")
 
 func Enter():
 	collision.shape = PLAYER_CROUCHING
