@@ -53,6 +53,8 @@ location = "res://assets/scenes/levels"
 position = Vector2(46, -802)
 scale = Vector2(6.97278, 2.49998)
 location = "res://assets/scenes/levels/tutorial/tutorial_2.tscn"
+X = 191
+Y = 315
 
 [node name="Sprite2D" parent="." instance=ExtResource("8_uoyvy")]
 position = Vector2(48, -725)

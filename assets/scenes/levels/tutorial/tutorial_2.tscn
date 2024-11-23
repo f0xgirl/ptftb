@@ -31,11 +31,15 @@ text = "john gutter here
 position = Vector2(-705, 364)
 scale = Vector2(15.2901, 1.93105)
 location = "res://assets/scenes/levels/tutorial/tutorial_1.tscn"
+X = -727
+Y = -784
 
 [node name="Area2D" parent="." instance=ExtResource("2_675mq")]
-position = Vector2(201, 377)
+position = Vector2(205, 459)
 scale = Vector2(22.9152, 1.65314)
 location = "res://assets/scenes/levels/tutorial/tutorial_1.tscn"
+X = 44
+Y = -733
 
 [node name="player" parent="." instance=ExtResource("3_fkxyb")]
 position = Vector2(-86, 96)

@@ -8,7 +8,9 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
 	setcamboundaries()
-	
+	if DataPassthrough.player_pos_x:
+		position.x = DataPassthrough.player_pos_x
+		position.y = DataPassthrough.player_pos_y
 
 func _physics_process(delta: float) -> void:
 	velocity.y += gravity * delta
