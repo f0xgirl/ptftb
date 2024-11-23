@@ -7,6 +7,7 @@ var slide_progress = 1
 
 func Enter():
 	sprite.play("slide_start")
+	DataPassthrough.player_state = "player_slide"
 	
 
 func Pyhsics_Update(delta: float):

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=4 uid="uid://fioigyq7r4yd"]
 
 [ext_resource type="Texture2D" uid="uid://c8xtty12f5v57" path="res://assets/sprites/normalT_room1.png" id="1_3debp"]
-[ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://assets/resources/level/john_gutter_tileset.tres" id="2_n7nps"]
+[ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://resources/level/john_gutter_tileset.tres" id="2_n7nps"]
 [ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="3_x2415"]
 [ext_resource type="Script" path="res://assets/script/resources scripts/level_data.gd" id="4_cub56"]
 [ext_resource type="PackedScene" uid="uid://c20qitdqj1cc1" path="res://assets/scenes/levels/level decoration/parallax_background1_jg.tscn" id="5_4w433"]
@@ -10,7 +10,10 @@
 
 [sub_resource type="Resource" id="Resource_bj4yc"]
 script = ExtResource("4_cub56")
-cam_limit = [-2201, -533, 2886, 555]
+left = -2201
+top = -533
+right = 2886
+bottom = 553
 
 [node name="john gutter" type="Node"]
 

@@ -5,7 +5,7 @@ class_name Player_groundpound
 @export var player: CharacterBody2D
 
 func Enter():
-	pass
+	DataPassthrough.player_state = "player_groundpound"
 
 func Update(_delta: float):
 	if player.is_on_floor():

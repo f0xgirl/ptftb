@@ -1,6 +1,6 @@
 extends AudioStreamPlayer
 
-const music_placeholder = preload("res://assets/AUDIO/placeholder.mp3")
+const music_placeholder = preload("res://AUDIO/placeholder.mp3")
 
 func _play_music(music: AudioStream, volume = 0.0):
 	if stream == music:

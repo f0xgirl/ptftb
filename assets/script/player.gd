@@ -7,11 +7,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var level_data: level_data
 
 func _ready():
-	
 	setcamboundaries()
 	
-func _process(delta: float) -> void:
-	pass
 
 func _physics_process(delta: float) -> void:
 	velocity.y += gravity * delta
@@ -22,8 +19,3 @@ func setcamboundaries():
 	camera.limit_top = level_data.get_limit(1)
 	camera.limit_right = level_data.get_limit(2)
 	camera.limit_bottom = level_data.get_limit(3)
-
-
-func _on_to_room_2_body_entered(body: Node2D) -> void:
-	if body.is_in_group("room changer"):
-		pass

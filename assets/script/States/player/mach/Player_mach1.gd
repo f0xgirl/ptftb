@@ -11,6 +11,7 @@ var direction: int
 func Enter():
 	player.velocity.x = 0
 	sprite.play("mach1")
+	DataPassthrough.player_state = "player_mach1"
 
 func Update(delta: float):
 	if Input.is_action_pressed("action2"):

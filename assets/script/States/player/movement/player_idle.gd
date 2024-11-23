@@ -5,13 +5,16 @@ class_name Player_Idle
 @export var player: CharacterBody2D
 @export var collision: CollisionShape2D
 
-const PLAYER_STANDING = preload("res://assets/resources/player/player_standing.tres")
+const PLAYER_STANDING = preload("res://resources/player/player_standing.tres")
 
 func Enter():
 	collision.shape = PLAYER_STANDING
 	player.velocity.x = 0
 
 func Update(delta: float):
+	if DataPassthrough.keep_state == true:
+		Transitioned.emit(self,DataPassthrough.player_state)
+		DataPassthrough.keep_state = false
 	if not player.is_on_floor():
 		sprite.play("fall")
 	else:

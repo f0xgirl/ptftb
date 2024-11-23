@@ -10,6 +10,7 @@ class_name Player_mach3
 func Enter():
 	player.velocity.x = player_data.player_direction * player_data.mach3_speed
 	sprite.play("mach3")
+	DataPassthrough.player_state = "player_mach3"
 	
 func Update(_delta: float):
 	if player.is_on_floor():

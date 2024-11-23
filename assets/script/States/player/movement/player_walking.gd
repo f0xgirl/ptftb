@@ -6,7 +6,8 @@ class_name Player_walking
 @export var sprite: AnimatedSprite2D
 var direction = Input.get_axis("left","right")
 
-
+func Enter():
+	DataPassthrough.player_state = "player_walking"
 	
 func Update(delta: float):
 	if player.is_on_floor() == false:

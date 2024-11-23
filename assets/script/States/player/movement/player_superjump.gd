@@ -8,6 +8,7 @@ func Enter():
 	sprite.play("superjump")
 	player.velocity.x = 0
 	player.velocity.y = -100
+	DataPassthrough.player_state = "Player_Superjump"
 
 func Update(_delta: float):
 	player.velocity.y += -100

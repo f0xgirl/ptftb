@@ -11,6 +11,7 @@ func Enter():
 	sprite.play("bumped")
 	player.velocity.y = -150
 	player.velocity.x = player_data.player_direction * 100 * -1
+	DataPassthrough.player_state = "player_bumped"
 	
 
 func Update(delta: float):

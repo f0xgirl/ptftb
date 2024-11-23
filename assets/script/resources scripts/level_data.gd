@@ -1,10 +1,13 @@
 extends Resource
 class_name level_data
 
-@export var cam_limit: Array = [1,2,3,4]
+@export_group("camera boundaries")
+@export var left: int
+@export var top: int
+@export var right: int
+@export var bottom: int
+
 
 func get_limit(index: int):
-	return cam_limit[index]
-
-func change_limit(change: int, index: int):
-	cam_limit[index] = change 
+	var array = [left, top, right, bottom]
+	return array[index]

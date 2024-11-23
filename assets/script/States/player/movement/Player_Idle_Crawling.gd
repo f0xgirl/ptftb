@@ -6,8 +6,10 @@ class_name Player_Crawling
 @export var sprite: AnimatedSprite2D
 var direction = Input.get_axis("left","right")
 
+func Enter():
+	DataPassthrough.player_state = "Player_Crawling"
+
 func Update(delta: float):
-	
 	if Input.is_action_just_pressed("action1") and player.is_on_floor():
 		sprite.play("crawling air")
 		player.velocity.y = player_data.jumpheight

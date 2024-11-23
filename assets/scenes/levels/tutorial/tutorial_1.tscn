@@ -1,16 +1,20 @@
-[gd_scene load_steps=9 format=4 uid="uid://dimis0ypgatg1"]
+[gd_scene load_steps=10 format=4 uid="uid://dimis0ypgatg1"]
 
 [ext_resource type="Texture2D" uid="uid://bgx37ta3og1sa" path="res://assets/sprites/tutorial_room1.png" id="1_87gqg"]
-[ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://assets/resources/level/john_gutter_tileset.tres" id="2_6x6tg"]
+[ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://resources/level/john_gutter_tileset.tres" id="2_6x6tg"]
 [ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="3_3yaef"]
 [ext_resource type="Script" path="res://assets/script/resources scripts/level_data.gd" id="4_4arvo"]
 [ext_resource type="PackedScene" uid="uid://c20qitdqj1cc1" path="res://assets/scenes/levels/level decoration/parallax_background1_jg.tscn" id="5_bnraf"]
 [ext_resource type="PackedScene" uid="uid://drg1wcxxcyjdm" path="res://assets/scenes/levels/level objects/gate_portal.tscn" id="6_527j7"]
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/levels/level objects/room_changer.tscn" id="7_su4aj"]
+[ext_resource type="PackedScene" uid="uid://bmemi8dsacgwy" path="res://assets/scenes/levels/level objects/room_destination.tscn" id="8_uoyvy"]
 
 [sub_resource type="Resource" id="Resource_c4yjl"]
 script = ExtResource("4_4arvo")
-cam_limit = [-1007, -751, 3023, 1036]
+left = -1007
+top = -751
+right = 3025
+bottom = 1038
 
 [node name="tutorial" type="Node"]
 metadata/_edit_horizontal_guides_ = [-1192.0]
@@ -45,12 +49,14 @@ level_data = SubResource("Resource_c4yjl")
 position = Vector2(-272, -431)
 location = "res://assets/scenes/levels"
 
-[node name="to room_2" parent="." groups=["room changer"] instance=ExtResource("7_su4aj")]
-position = Vector2(46, -818)
+[node name="to room_2" parent="." instance=ExtResource("7_su4aj")]
+position = Vector2(46, -802)
 scale = Vector2(6.97278, 2.49998)
+location = "res://assets/scenes/levels/tutorial/tutorial_2.tscn"
 
-[node name="Area2D" parent="." instance=ExtResource("7_su4aj")]
-position = Vector2(291, -1079)
-scale = Vector2(7.98848, 2.28392)
+[node name="Sprite2D" parent="." instance=ExtResource("8_uoyvy")]
+position = Vector2(48, -725)
 
-[connection signal="body_entered" from="to room_2" to="player" method="_on_to_room_2_body_entered"]
+[node name="Sprite2D2" parent="." instance=ExtResource("8_uoyvy")]
+position = Vector2(-722, -729)
+points = 1
