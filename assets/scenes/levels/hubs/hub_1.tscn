@@ -36,3 +36,4 @@ enterexit = true
 [node name="AnimatedSprite2D4" parent="." instance=ExtResource("4_2qa0c")]
 position = Vector2(992, -336)
 enterexit = true
+location = "res://assets/scenes/levels/infinite room/infinite_room.tscn"

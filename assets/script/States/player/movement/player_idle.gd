@@ -15,6 +15,7 @@ func Update(delta: float):
 	if DataPassthrough.keep_state == true:
 		Transitioned.emit(self,DataPassthrough.player_state)
 		DataPassthrough.keep_state = false
+		sprite.play(DataPassthrough.player_animation)
 	if not player.is_on_floor():
 		sprite.play("fall")
 	else:

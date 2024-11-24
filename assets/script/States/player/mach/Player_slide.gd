@@ -6,7 +6,7 @@ var slide_progress = 1
 @export var sprite: AnimatedSprite2D
 
 func Enter():
-	sprite.play("slide_start")
+	
 	DataPassthrough.player_state = "player_slide"
 	
 
@@ -14,11 +14,13 @@ func Pyhsics_Update(delta: float):
 	if sprite.animation == "slide_start":
 		if sprite.get_frame() == 6:
 			sprite.play("slide_loop")
-	print("slide")
 	player.velocity.x = move_toward(player.velocity.x, 0, 17)
 	if player.velocity.x == 0:
 		Transitioned.emit(self,"player_idle")
+	
+	
 func Update(_delta: float):
+	sprite.play("slide_start")
 	if player.is_on_wall():
 		Transitioned.emit(self,"player_bumped")
 func Exit():

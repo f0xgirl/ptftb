@@ -7,12 +7,14 @@ class_name Player_mach2
 var tillmach3: float = 300
 
 func Enter():
+	print(DataPassthrough.keep_state)
 	player.velocity.x = player_data.player_direction * player_data.mach2_speed
-	sprite.play("mach2")
-	tillmach3 = 300
+	tillmach3 = DataPassthrough.player_tillmach3
 	DataPassthrough.player_state = "player_mach2"
-	
+
 func Update(_delta: float):
+	sprite.play("mach2")
+	DataPassthrough.player_tillmach3 = tillmach3
 	if player.is_on_floor():
 		if not Input.is_action_pressed("action2"):
 			Transitioned.emit(self,"Player_slide")
@@ -27,3 +29,6 @@ func Pyhsics_Update(_delta: float):
 	print(tillmach3)
 	if tillmach3 < 0:
 		Transitioned.emit(self,"player_mach3")
+
+func Exit():
+	DataPassthrough.player_tillmach3 = 300
