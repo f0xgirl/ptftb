@@ -41,6 +41,6 @@ Y = 162
 [node name="to room 4" parent="." instance=ExtResource("6_3qd37")]
 position = Vector2(-1547, 30)
 scale = Vector2(2.5794, 7.13846)
-location = "res://assets/scenes/levels/john gutter/john_gutter_5.tscn"
+location = "res://assets/scenes/levels/john gutter/john_gutter_4.tscn"
 X = 3176
 Y = 383

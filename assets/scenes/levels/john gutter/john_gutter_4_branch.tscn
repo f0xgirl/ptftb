@@ -1,17 +1,18 @@
-[gd_scene load_steps=7 format=4 uid="uid://bidyolavjny6l"]
+[gd_scene load_steps=8 format=4 uid="uid://bidyolavjny6l"]
 
 [ext_resource type="Texture2D" uid="uid://dhomeinom4syr" path="res://assets/sprites/normalT_room4branch.png" id="1_lwuy3"]
 [ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://resources/level/john_gutter_tileset.tres" id="2_wm84f"]
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/levels/level objects/room_changer.tscn" id="3_lud3g"]
 [ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="4_vujd5"]
 [ext_resource type="Script" path="res://assets/script/resources scripts/level_data.gd" id="5_i8gxn"]
+[ext_resource type="PackedScene" uid="uid://c20qitdqj1cc1" path="res://assets/scenes/levels/level decoration/parallax_background1_jg.tscn" id="6_8lrlf"]
 
 [sub_resource type="Resource" id="Resource_bsdwq"]
 script = ExtResource("5_i8gxn")
-left = 0
-top = 0
-right = 0
-bottom = 0
+left = -415
+top = -528
+right = 1376
+bottom = 480
 
 [node name="Node" type="Node"]
 
@@ -33,7 +34,11 @@ location = "res://assets/scenes/levels/john gutter/john_gutter_4.tscn"
 position = Vector2(59, -561)
 scale = Vector2(6.49314, 3.08032)
 location = "res://assets/scenes/levels/john gutter/john_gutter_4.tscn"
+X = 192
+Y = 612
 
 [node name="player" parent="." instance=ExtResource("4_vujd5")]
 position = Vector2(-194, -488)
 level_data = SubResource("Resource_bsdwq")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("6_8lrlf")]
