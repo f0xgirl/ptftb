@@ -1449,7 +1449,6 @@ animations = [{
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 floor_stop_on_slope = false
-floor_constant_speed = true
 script = ExtResource("1_aarfl")
 player_data = ExtResource("2_i6cxx")
 jump_velocity = -350

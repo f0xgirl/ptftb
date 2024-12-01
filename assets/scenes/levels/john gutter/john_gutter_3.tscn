@@ -10,6 +10,7 @@
 
 [sub_resource type="Resource" id="Resource_ep7qa"]
 script = ExtResource("4_s081k")
+score = 0
 left = -1791
 top = -624
 right = 3200
