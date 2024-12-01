@@ -6,20 +6,41 @@
 [ext_resource type="Resource" uid="uid://c2ewrbp837w7v" path="res://resources/level/infinite_roomt.tres" id="4_lpnt2"]
 [ext_resource type="Resource" uid="uid://b78vfd27myenb" path="res://resources/level/strongcold.tres" id="5_uw3of"]
 [ext_resource type="Resource" uid="uid://cf2bh8c1eqlb5" path="res://resources/level/tutorial.tres" id="6_ntqed"]
-[ext_resource type="Script" path="res://assets/script/level_select_ui.gd" id="7_0a2mr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fhmxf"]
+font_size = 64
 
 [node name="Node" type="Node"]
 script = ExtResource("1_r74vo")
 levels = Array[ExtResource("2_t673h")]([ExtResource("3_scxtq"), ExtResource("4_lpnt2"), ExtResource("5_uw3of"), ExtResource("6_ntqed")])
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("7_0a2mr")
+[node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Label" type="Label" parent="Control"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control"]
 layout_mode = 0
 offset_right = 40.0
-offset_bottom = 23.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_fhmxf")

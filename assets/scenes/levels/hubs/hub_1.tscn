@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://57g3rranl1yh"]
+[gd_scene load_steps=8 format=4 uid="uid://57g3rranl1yh"]
 
 [ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="1_ei8xb"]
 [ext_resource type="Resource" uid="uid://dxwmw5i53ls4u" path="res://resources/level/level_data.tres" id="2_uvvgr"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://drg1wcxxcyjdm" path="res://assets/scenes/levels/level objects/gate_portal.tscn" id="4_2qa0c"]
 [ext_resource type="PackedScene" uid="uid://c20qitdqj1cc1" path="res://assets/scenes/levels/level decoration/parallax_background1_jg.tscn" id="5_t36nq"]
 [ext_resource type="PackedScene" uid="uid://cuoo8ojghsvmb" path="res://assets/scenes/levels/level objects/ladder.tscn" id="6_4wgbm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kqsn1"]
+font_color = Color(0, 0, 0, 1)
 
 [node name="hub" type="Node"]
 
@@ -43,6 +46,19 @@ location = "res://assets/scenes/levels/infinite room/infinite_room.tscn"
 position = Vector2(1205, 37)
 scale = Vector2(-1.44508, 22.5656)
 player = NodePath("../player")
+
+[node name="AnimatedSprite2D" parent="." instance=ExtResource("4_2qa0c")]
+position = Vector2(1343, 144)
+enterexit = true
+location = "res://assets/scenes/level_select.tscn"
+
+[node name="Label" type="Label" parent="AnimatedSprite2D"]
+offset_left = -43.0
+offset_top = -74.0
+offset_right = 43.0
+offset_bottom = -51.0
+text = "level select"
+label_settings = SubResource("LabelSettings_kqsn1")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
