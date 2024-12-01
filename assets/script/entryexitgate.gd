@@ -5,13 +5,17 @@ extends AnimatedSprite2D
 var enter = false
 
 func _ready() -> void:
-	if enterexit == true:
+	if enterexit == true or DataPassthrough.panic == true:
 		play("open")
 	else:
 		play("closed")
+	if DataPassthrough.panic == true:
+		enterexit = true
 
 func _process(delta: float) -> void:
+	
 	if Input.is_action_just_pressed("up") and enter == true:
+		print("hi")
 		get_tree().change_scene_to_file(location)
 		
 

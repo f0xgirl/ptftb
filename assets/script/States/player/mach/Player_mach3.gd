@@ -5,6 +5,7 @@ class_name Player_mach3
 @export var player_data: player_data
 @export var sprite: AnimatedSprite2D
 @export var collision: CollisionShape2D
+@export var charge_effect: AnimatedSprite2D
 
 const PLAYER_STANDING = preload("res://resources/player/player_standing.tres")
 
@@ -15,6 +16,7 @@ func Enter():
 	DataPassthrough.player_state = "player_mach3"
 	
 func Update(_delta: float):
+	charge_effect.visible = true
 	sprite.play("mach3")
 	if player.is_on_floor():
 		if not Input.is_action_pressed("action2"):

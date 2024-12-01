@@ -4,10 +4,12 @@ class_name Player_Idle
 @export var sprite: AnimatedSprite2D 
 @export var player: CharacterBody2D
 @export var collision: CollisionShape2D
+@export var charge_effect: AnimatedSprite2D
 
 const PLAYER_STANDING = preload("res://resources/player/player_standing.tres")
 
 func Enter():
+	charge_effect.visible = false
 	collision.shape = PLAYER_STANDING
 	player.velocity.x = 0
 

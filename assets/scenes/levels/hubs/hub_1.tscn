@@ -33,11 +33,12 @@ position = Vector2(726, 145)
 enterexit = true
 location = "res://assets/scenes/levels/john gutter/john_gutter_1.tscn"
 
-[node name="AnimatedSprite2D3" parent="." instance=ExtResource("4_2qa0c")]
+[node name="strongcold placeholder" parent="." instance=ExtResource("4_2qa0c")]
 position = Vector2(603, -336)
 enterexit = true
+location = "res://assets/scenes/levels/strongcold/strongcold_1.tscn"
 
-[node name="AnimatedSprite2D4" parent="." instance=ExtResource("4_2qa0c")]
+[node name="infinite room" parent="." instance=ExtResource("4_2qa0c")]
 position = Vector2(992, -336)
 enterexit = true
 location = "res://assets/scenes/levels/infinite room/infinite_room.tscn"
