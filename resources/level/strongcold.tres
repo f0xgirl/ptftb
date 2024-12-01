@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="level_info" load_steps=2 format=3 uid="uid://b78vfd27myenb"]
+
+[ext_resource type="Script" path="res://assets/script/resources scripts/level_info.gd" id="1_vn0yo"]
+
+[resource]
+script = ExtResource("1_vn0yo")
+level_name = "strongcold"
+file_path = "res://assets/scenes/levels/strongcold/strongcold_1.tscn"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=227 format=3 uid="uid://d3amowmvkdyo"]
+[gd_scene load_steps=230 format=3 uid="uid://d3amowmvkdyo"]
 
 [ext_resource type="Script" path="res://assets/script/player.gd" id="1_aarfl"]
 [ext_resource type="Resource" uid="uid://bvm4oc3oc6sjt" path="res://resources/player/player_data.tres" id="2_i6cxx"]
@@ -38,6 +38,7 @@
 [ext_resource type="Script" path="res://assets/script/States/player/movement/player_roll.gd" id="28_biv4t"]
 [ext_resource type="Script" path="res://assets/script/States/player/movement/player_groundpound.gd" id="29_3eubh"]
 [ext_resource type="Script" path="res://assets/script/States/player/movement/player_highjump.gd" id="31_1b60l"]
+[ext_resource type="Script" path="res://assets/script/States/player/movement/player_ladder.gd" id="39_jurdo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kmpnv"]
 atlas = ExtResource("3_01jss")
@@ -1447,6 +1448,23 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="FontFile" id="FontFile_pwvte"]
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_e2cg2"]
+font = SubResource("FontFile_pwvte")
+font_size = 24
+font_color = Color(0.753487, 0, 0.00438567, 1)
+
 [node name="player" type="CharacterBody2D" groups=["player"]]
 floor_stop_on_slope = false
 script = ExtResource("1_aarfl")
@@ -1613,26 +1631,42 @@ player = NodePath("../..")
 player_data = ExtResource("2_i6cxx")
 sprite = NodePath("../../sprite")
 
+[node name="player_on_ladder" type="Node" parent="State Machine" node_paths=PackedStringArray("sprite", "player")]
+script = ExtResource("39_jurdo")
+sprite = NodePath("../../sprite")
+player = NodePath("../..")
+
 [node name="debug" type="CanvasLayer" parent="."]
 editor_description = "unfinished
 work on this later"
 
 [node name="Control" type="Control" parent="debug"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -52.0
+offset_top = -58.0
+offset_right = -12.0
+offset_bottom = -18.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+metadata/_edit_use_anchors_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="debug/Control"]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_top = -14.0
-offset_right = 49.0
-offset_bottom = 8.0
-grow_horizontal = 2
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -127.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="debug/Control/MarginContainer"]
 layout_mode = 2
@@ -1641,10 +1675,9 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="TextEdit" type="TextEdit" parent="debug/Control/MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-placeholder_text = "aaaaaaaaaaaaaa"
-
 [node name="Label" type="Label" parent="debug/Control/MarginContainer/VBoxContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0.545098)
 layout_mode = 2
-text = "debug"
+text = "PLAYTEST BUILD
+"
+label_settings = SubResource("LabelSettings_e2cg2")

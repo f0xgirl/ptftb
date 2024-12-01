@@ -32,3 +32,5 @@ func Update(delta: float):
 		Transitioned.emit(self,"player_mach1")
 	if Input.is_action_just_pressed("down"):
 		Transitioned.emit(self,"player_idle_crouched")
+	if Input.is_action_just_pressed("up") and player.in_ladder == true:
+		Transitioned.emit(self,"player_on_ladder")

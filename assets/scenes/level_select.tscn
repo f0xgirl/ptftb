@@ -1,0 +1,25 @@
+[gd_scene load_steps=8 format=3 uid="uid://b3tnoclfm5sgl"]
+
+[ext_resource type="Script" path="res://assets/script/level_select.gd" id="1_r74vo"]
+[ext_resource type="Script" path="res://assets/script/resources scripts/level_info.gd" id="2_t673h"]
+[ext_resource type="Resource" uid="uid://codayoumxcvh0" path="res://resources/level/john_gutter.tres" id="3_scxtq"]
+[ext_resource type="Resource" uid="uid://c2ewrbp837w7v" path="res://resources/level/infinite_roomt.tres" id="4_lpnt2"]
+[ext_resource type="Resource" uid="uid://b78vfd27myenb" path="res://resources/level/strongcold.tres" id="5_uw3of"]
+[ext_resource type="Resource" uid="uid://cf2bh8c1eqlb5" path="res://resources/level/tutorial.tres" id="6_ntqed"]
+[ext_resource type="Script" path="res://assets/script/level_select_ui.gd" id="7_0a2mr"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_r74vo")
+levels = Array[ExtResource("2_t673h")]([ExtResource("3_scxtq"), ExtResource("4_lpnt2"), ExtResource("5_uw3of"), ExtResource("6_ntqed")])
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_0a2mr")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="level_info" load_steps=2 format=3 uid="uid://cf2bh8c1eqlb5"]
+
+[ext_resource type="Script" path="res://assets/script/resources scripts/level_info.gd" id="1_n5scv"]
+
+[resource]
+script = ExtResource("1_n5scv")
+level_name = "tutorial"
+file_path = "res://assets/scenes/levels/tutorial/tutorial_1.tscn"

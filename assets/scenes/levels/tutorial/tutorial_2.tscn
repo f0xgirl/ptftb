@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=4 uid="uid://chbjabm2xyls0"]
 
-[ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://resources/level/john_gutter_tileset.tres" id="1_i00w0"]
+[ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://resources/level/tilesets/john_gutter_tileset.tres" id="1_i00w0"]
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/levels/level objects/room_changer.tscn" id="2_675mq"]
 [ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="3_fkxyb"]
 [ext_resource type="Script" path="res://assets/script/resources scripts/level_data.gd" id="4_0vnsp"]

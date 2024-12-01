@@ -1,7 +1,7 @@
 extends State
 class_name Player_walking
 
-@export var player: CharacterBody2D
+@export var player: peppino
 @export var player_data: player_data
 @export var sprite: AnimatedSprite2D
 var direction = Input.get_axis("left","right")

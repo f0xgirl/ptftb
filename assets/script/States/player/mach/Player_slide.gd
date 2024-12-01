@@ -1,12 +1,11 @@
 extends State
 class_name Player_slide
 
-var slide_progress = 1
+var slide_progress: bool = false
 @export var player: CharacterBody2D
 @export var sprite: AnimatedSprite2D
 
 func Enter():
-	
 	DataPassthrough.player_state = "player_slide"
 	
 
