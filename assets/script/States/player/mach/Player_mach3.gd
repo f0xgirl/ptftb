@@ -11,6 +11,7 @@ const PLAYER_STANDING = preload("res://resources/player/player_standing.tres")
 
 
 func Enter():
+	Audioplayer._play_sfx_mach3()
 	collision.shape = PLAYER_STANDING
 	player.velocity.x = player_data.player_direction * player_data.mach3_speed
 	DataPassthrough.player_state = "player_mach3"

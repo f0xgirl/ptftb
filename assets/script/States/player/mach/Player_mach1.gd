@@ -9,6 +9,7 @@ var direction: int
 
 
 func Enter():
+	Audioplayer._play_sfx_mach1()
 	player.velocity.x = 0
 
 	DataPassthrough.player_state = "player_mach1"

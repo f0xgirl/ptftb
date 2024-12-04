@@ -1746,6 +1746,7 @@ text = "DEVELOPER BUILD
 label_settings = SubResource("LabelSettings_e2cg2")
 
 [node name="mach smoke" type="AnimatedSprite2D" parent="."]
+z_index = 1
 position = Vector2(31, -1)
 sprite_frames = SubResource("SpriteFrames_76qu4")
 autoplay = "default"

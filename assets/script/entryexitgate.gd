@@ -22,6 +22,7 @@ func _process(delta: float) -> void:
 		get_tree().change_scene_to_file(location)
 		DataPassthrough.player_pos_x = X
 		DataPassthrough.player_pos_y = Y
+		DataPassthrough.panic = false
 		
 
 

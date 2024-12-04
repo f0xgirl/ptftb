@@ -7,6 +7,7 @@ class_name Player_mach2
 var tillmach3: float = 300
 
 func Enter():
+	Audioplayer._play_sfx_mach2()
 	print(DataPassthrough.keep_state)
 	player.velocity.x = player_data.player_direction * player_data.mach2_speed
 	tillmach3 = DataPassthrough.player_tillmach3

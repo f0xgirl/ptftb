@@ -10,6 +10,8 @@
 
 [sub_resource type="Resource" id="Resource_xyu0u"]
 script = ExtResource("7_nqmw4")
+level_name = ""
+score = 0
 left = -1552
 top = -500
 right = 3440
