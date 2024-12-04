@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://cn37hkufe6ajv"]
+[gd_scene load_steps=9 format=4 uid="uid://cn37hkufe6ajv"]
 
 [ext_resource type="Texture2D" uid="uid://bq5evmtt1ubwx" path="res://assets/sprites/normalT_room6.png" id="1_swvpu"]
 [ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://resources/level/tilesets/john_gutter_tileset.tres" id="2_dl1dw"]
@@ -6,9 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/levels/level objects/room_changer.tscn" id="4_qu12t"]
 [ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="5_5kxyk"]
 [ext_resource type="Script" path="res://assets/script/resources scripts/level_data.gd" id="6_725dt"]
+[ext_resource type="PackedScene" uid="uid://d2q30hyq4cxd2" path="res://assets/scenes/levels/level objects/door.tscn" id="7_4oqgm"]
 
 [sub_resource type="Resource" id="Resource_lijlh"]
 script = ExtResource("6_725dt")
+level_name = ""
+score = 0
 left = -2112
 top = -224
 right = 2911
@@ -42,5 +45,11 @@ X = -1340
 Y = 36
 
 [node name="player" parent="." instance=ExtResource("5_5kxyk")]
-position = Vector2(-2152, 162)
+position = Vector2(-1330, 135)
 level_data = SubResource("Resource_lijlh")
+
+[node name="AnimatedSprite2D" parent="." instance=ExtResource("7_4oqgm")]
+position = Vector2(-1328, 118)
+location = "res://assets/scenes/levels/john gutter/john_gutter_7.tscn"
+X = 126
+Y = 126

@@ -1,19 +1,11 @@
 extends AnimatedSprite2D
 
-@export var enterexit: bool
 @export_dir var location
 @export_category("Player Postion")
 @export var X: int
 @export var Y: int
 var enter = false
 
-func _ready() -> void:
-	if enterexit == true or DataPassthrough.panic == true:
-		play("open")
-	else:
-		play("closed")
-	if DataPassthrough.panic == true:
-		enterexit = true
 
 func _process(delta: float) -> void:
 	
