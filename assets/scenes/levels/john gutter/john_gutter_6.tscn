@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://cn37hkufe6ajv"]
+[gd_scene load_steps=12 format=4 uid="uid://cn37hkufe6ajv"]
 
 [ext_resource type="Texture2D" uid="uid://bq5evmtt1ubwx" path="res://assets/sprites/normalT_room6.png" id="1_swvpu"]
 [ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://resources/level/tilesets/john_gutter_tileset.tres" id="2_dl1dw"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="5_5kxyk"]
 [ext_resource type="Script" path="res://assets/script/resources scripts/level_data.gd" id="6_725dt"]
 [ext_resource type="PackedScene" uid="uid://d2q30hyq4cxd2" path="res://assets/scenes/levels/level objects/door.tscn" id="7_4oqgm"]
+[ext_resource type="PackedScene" uid="uid://c7ogx214cfhin" path="res://assets/scenes/levels/level objects/block_test.tscn" id="8_4b3as"]
 
 [sub_resource type="Resource" id="Resource_lijlh"]
 script = ExtResource("6_725dt")
@@ -16,6 +17,13 @@ left = -2112
 top = -224
 right = 2911
 bottom = 319
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_8jxdq"]
+scenes/1/scene = ExtResource("8_4b3as")
+
+[sub_resource type="TileSet" id="TileSet_x2t3k"]
+resource_local_to_scene = true
+sources/0 = SubResource("TileSetScenesCollectionSource_8jxdq")
 
 [node name="Node" type="Node"]
 
@@ -53,3 +61,8 @@ position = Vector2(-1328, 118)
 location = "res://assets/scenes/levels/john gutter/john_gutter_7.tscn"
 X = 126
 Y = 126
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+position = Vector2(9, -3)
+tile_map_data = PackedByteArray("AAAwAAgAAAAAAAAAAQAwAAoAAAAAAAAAAQBYAAgAAAAAAAAAAQBYAAoAAAAAAAAAAQBuAAgAAAAAAAAAAQBuAAoAAAAAAAAAAQCEAAgAAAAAAAAAAQCEAAoAAAAAAAAAAQA=")
+tile_set = SubResource("TileSet_x2t3k")

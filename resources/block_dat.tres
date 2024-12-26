@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="block_data" load_steps=2 format=3 uid="uid://gtxxam274ft0"]
+
+[ext_resource type="Script" path="res://assets/script/resources scripts/block_data.gd" id="1_ti2vq"]
+
+[resource]
+script = ExtResource("1_ti2vq")
+destroyed = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://c46vd1cyavu3n"]
+[gd_scene load_steps=10 format=4 uid="uid://c46vd1cyavu3n"]
 
 [ext_resource type="Texture2D" uid="uid://nnsqd2ge8w6k" path="res://assets/sprites/normalT_room4.png" id="1_hd3eu"]
 [ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://resources/level/tilesets/john_gutter_tileset.tres" id="2_dthah"]
@@ -7,9 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://xes1t1iyh8hl" path="res://assets/scenes/levels/level objects/cheeseslime.tscn" id="5_oh8nq"]
 [ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="6_cwan2"]
 [ext_resource type="Script" path="res://assets/script/resources scripts/level_data.gd" id="7_bgc6e"]
+[ext_resource type="TileSet" uid="uid://d4fo3wle3axih" path="res://resources/level/blocks.tres" id="8_g33dj"]
 
 [sub_resource type="Resource" id="Resource_g60p4"]
 script = ExtResource("7_bgc6e")
+level_name = ""
 score = 0
 left = -1855
 top = -415
@@ -19,7 +21,6 @@ bottom = 608
 [node name="Node" type="Node"]
 
 [node name="NormalTRoom4" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(640, 84)
 texture = ExtResource("1_hd3eu")
 
@@ -56,3 +57,8 @@ Y = -488
 [node name="player" parent="." instance=ExtResource("6_cwan2")]
 position = Vector2(192, 612)
 level_data = SubResource("Resource_g60p4")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+position = Vector2(-6, -2)
+tile_map_data = PackedByteArray("AAC5/xYAAAAAAAAAAQC7/xYAAAAAAAAAAQC9/xYAAAAAAAAAAQC//xYAAAAAAAAAAQDB/xYAAAAAAAAAAQDD/xYAAAAAAAAAAQDF/xYAAAAAAAAAAQDL/xYAAAAAAAAAAQDN/xYAAAAAAAAAAQDP/xYAAAAAAAAAAQDR/xYAAAAAAAAAAQDT/xYAAAAAAAAAAQDV/xYAAAAAAAAAAQDX/xYAAAAAAAAAAQDZ/xYAAAAAAAAAAQDb/xYAAAAAAAAAAQDd/xYAAAAAAAAAAQDf/xYAAAAAAAAAAQDh/xYAAAAAAAAAAQDh/xQAAAAAAAAAAQDf/xQAAAAAAAAAAQDd/xQAAAAAAAAAAQDb/xQAAAAAAAAAAQDZ/xQAAAAAAAAAAQDX/xQAAAAAAAAAAQDV/xQAAAAAAAAAAQDT/xQAAAAAAAAAAQDR/xQAAAAAAAAAAQDP/xQAAAAAAAAAAQDN/xQAAAAAAAAAAQDL/xQAAAAAAAAAAQATABQAAAAAAAAAAQAVABQAAAAAAAAAAQATABYAAAAAAAAAAQAVABYAAAAAAAAAAQAbABQAAAAAAAAAAQAdABQAAAAAAAAAAQAbABYAAAAAAAAAAQAdABYAAAAAAAAAAQAjABQAAAAAAAAAAQAlABQAAAAAAAAAAQAjABYAAAAAAAAAAQAlABYAAAAAAAAAAQArABIAAAAAAAAAAQAtABIAAAAAAAAAAQArABQAAAAAAAAAAQAtABQAAAAAAAAAAQAxABAAAAAAAAAAAQAzABAAAAAAAAAAAQAxABIAAAAAAAAAAQAzABIAAAAAAAAAAQA3AA4AAAAAAAAAAQA5AA4AAAAAAAAAAQA3ABAAAAAAAAAAAQA5ABAAAAAAAAAAAQA=")
+tile_set = ExtResource("8_g33dj")

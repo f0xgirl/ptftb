@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://ceygj3iu68myf"]
+[gd_scene load_steps=9 format=4 uid="uid://ceygj3iu68myf"]
 
 [ext_resource type="Texture2D" uid="uid://bgt7yrvedossj" path="res://assets/sprites/normalT_room6branch.png" id="1_blkeb"]
 [ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://resources/level/tilesets/john_gutter_tileset.tres" id="2_0ilip"]
@@ -6,9 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="4_n7adt"]
 [ext_resource type="Script" path="res://assets/script/resources scripts/level_data.gd" id="5_16pfq"]
 [ext_resource type="PackedScene" uid="uid://c20qitdqj1cc1" path="res://assets/scenes/levels/level decoration/parallax_background1_jg.tscn" id="6_tdslv"]
+[ext_resource type="TileSet" uid="uid://d4fo3wle3axih" path="res://resources/level/blocks.tres" id="7_0j8uy"]
 
 [sub_resource type="Resource" id="Resource_nkc0s"]
 script = ExtResource("5_16pfq")
+level_name = ""
+score = 0
 left = -1951
 top = 0
 right = 3040
@@ -42,3 +45,8 @@ position = Vector2(-1340, 36)
 level_data = SubResource("Resource_nkc0s")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("6_tdslv")]
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+position = Vector2(9, -3)
+tile_map_data = PackedByteArray("AACS/wwAAAAAAAAAAQCU/wwAAAAAAAAAAQCW/wwAAAAAAAAAAQCY/wwAAAAAAAAAAQCS/w4AAAAAAAAAAQCU/w4AAAAAAAAAAQCW/w4AAAAAAAAAAQCY/w4AAAAAAAAAAQCS/xAAAAAAAAAAAQCU/xAAAAAAAAAAAQCW/xAAAAAAAAAAAQCY/xAAAAAAAAAAAQCS/xIAAAAAAAAAAQCU/xIAAAAAAAAAAQCW/xIAAAAAAAAAAQCY/xIAAAAAAAAAAQDC/xQAAAAAAAAAAQDE/xQAAAAAAAAAAQDG/xQAAAAAAAAAAQDI/xQAAAAAAAAAAQDK/xQAAAAAAAAAAQDM/xQAAAAAAAAAAQDC/xYAAAAAAAAAAQDE/xYAAAAAAAAAAQDG/xYAAAAAAAAAAQDI/xYAAAAAAAAAAQDK/xYAAAAAAAAAAQDM/xYAAAAAAAAAAQDi/xYAAAAAAAAAAQDk/xYAAAAAAAAAAQDm/xYAAAAAAAAAAQDo/xYAAAAAAAAAAQDq/xYAAAAAAAAAAQDs/xYAAAAAAAAAAQDu/xYAAAAAAAAAAQDw/xYAAAAAAAAAAQDy/xYAAAAAAAAAAQDi/xgAAAAAAAAAAQDk/xgAAAAAAAAAAQDm/xgAAAAAAAAAAQDo/xgAAAAAAAAAAQDq/xgAAAAAAAAAAQDs/xgAAAAAAAAAAQDu/xgAAAAAAAAAAQDw/xgAAAAAAAAAAQDy/xgAAAAAAAAAAQA=")
+tile_set = ExtResource("7_0j8uy")

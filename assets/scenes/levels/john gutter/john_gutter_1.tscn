@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://fioigyq7r4yd"]
+[gd_scene load_steps=20 format=4 uid="uid://fioigyq7r4yd"]
 
 [ext_resource type="Texture2D" uid="uid://c8xtty12f5v57" path="res://assets/sprites/normalT_room1.png" id="1_3debp"]
 [ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://resources/level/tilesets/john_gutter_tileset.tres" id="2_n7nps"]
@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://c20qitdqj1cc1" path="res://assets/scenes/levels/level decoration/parallax_background1_jg.tscn" id="5_4w433"]
 [ext_resource type="PackedScene" uid="uid://drg1wcxxcyjdm" path="res://assets/scenes/levels/level objects/gate_portal.tscn" id="6_is8gr"]
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/levels/level objects/room_changer.tscn" id="7_hepxs"]
-[ext_resource type="PackedScene" uid="uid://c7ogx214cfhin" path="res://assets/scenes/levels/level objects/block_test.tscn" id="9_rmpkl"]
+[ext_resource type="TileSet" uid="uid://d4fo3wle3axih" path="res://resources/level/blocks.tres" id="8_xo85q"]
+[ext_resource type="PackedScene" uid="uid://c7ogx214cfhin" path="res://assets/scenes/levels/level objects/block_test.tscn" id="9_bknhk"]
+[ext_resource type="Script" path="res://assets/script/resources scripts/block_data.gd" id="10_wy7it"]
 
 [sub_resource type="Resource" id="Resource_bj4yc"]
 script = ExtResource("4_cub56")
@@ -18,11 +20,29 @@ top = -533
 right = 2886
 bottom = 553
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_m1kf5"]
-scenes/1/scene = ExtResource("9_rmpkl")
+[sub_resource type="Resource" id="Resource_3talw"]
+script = ExtResource("10_wy7it")
 
-[sub_resource type="TileSet" id="TileSet_twwy0"]
-sources/0 = SubResource("TileSetScenesCollectionSource_m1kf5")
+[sub_resource type="Resource" id="Resource_7ekqf"]
+script = ExtResource("10_wy7it")
+
+[sub_resource type="Resource" id="Resource_x27hm"]
+script = ExtResource("10_wy7it")
+
+[sub_resource type="Resource" id="Resource_my5og"]
+script = ExtResource("10_wy7it")
+
+[sub_resource type="Resource" id="Resource_spsui"]
+script = ExtResource("10_wy7it")
+
+[sub_resource type="Resource" id="Resource_656dq"]
+script = ExtResource("10_wy7it")
+
+[sub_resource type="Resource" id="Resource_mu5r3"]
+script = ExtResource("10_wy7it")
+
+[sub_resource type="Resource" id="Resource_oy60u"]
+script = ExtResource("10_wy7it")
 
 [node name="john gutter" type="Node"]
 
@@ -48,7 +68,7 @@ position = Vector2(-1599, 268)
 animation = &"closed"
 location = "res://assets/scenes/levels/hubs/hub_1.tscn"
 
-[node name="Area2D" parent="." instance=ExtResource("7_hepxs")]
+[node name="asd" parent="." instance=ExtResource("7_hepxs")]
 position = Vector2(2909, 268)
 scale = Vector2(1.44243, 7.50917)
 location = "res://assets/scenes/levels/john gutter/john_gutter_2.tscn"
@@ -56,6 +76,41 @@ X = -1540
 Y = 308
 
 [node name="blocks" type="TileMapLayer" parent="."]
-position = Vector2(6, 0)
-tile_map_data = PackedByteArray("AADl/xMAAAAAAAAAAQDk/xMAAAAAAAAAAQDj/xMAAAAAAAAAAQDi/xMAAAAAAAAAAQDi/xIAAAAAAAAAAQDj/xIAAAAAAAAAAQDk/xIAAAAAAAAAAQDl/xIAAAAAAAAAAQA=")
-tile_set = SubResource("TileSet_twwy0")
+position = Vector2(0, -8)
+tile_map_data = PackedByteArray("AADn/xMAAAAAAAAAAQDp/xMAAAAAAAAAAQDr/xMAAAAAAAAAAQDt/xMAAAAAAAAAAQDv/xMAAAAAAAAAAQDx/xMAAAAAAAAAAQDx/xEAAAAAAAAAAQDv/xEAAAAAAAAAAQDt/xEAAAAAAAAAAQDr/xEAAAAAAAAAAQDp/xEAAAAAAAAAAQDn/xEAAAAAAAAAAQDv/xUAAAAAAAAAAQDx/xUAAAAAAAAAAQDz/xUAAAAAAAAAAQD1/xUAAAAAAAAAAQD1/xcAAAAAAAAAAQDz/xcAAAAAAAAAAQDx/xcAAAAAAAAAAQDv/xcAAAAAAAAAAQDt/xUAAAAAAAAAAQDr/xUAAAAAAAAAAQDr/xcAAAAAAAAAAQDt/xcAAAAAAAAAAQA=")
+enabled = false
+tile_set = ExtResource("8_xo85q")
+
+[node name="block" type="Node" parent="."]
+
+[node name="test block" parent="block" instance=ExtResource("9_bknhk")]
+position = Vector2(-394, 304)
+res = SubResource("Resource_3talw")
+
+[node name="test block2" parent="block" instance=ExtResource("9_bknhk")]
+position = Vector2(-394, 272)
+res = SubResource("Resource_7ekqf")
+
+[node name="test block3" parent="block" instance=ExtResource("9_bknhk")]
+position = Vector2(-362, 272)
+res = SubResource("Resource_x27hm")
+
+[node name="test block4" parent="block" instance=ExtResource("9_bknhk")]
+position = Vector2(-362, 304)
+res = SubResource("Resource_my5og")
+
+[node name="test block5" parent="block" instance=ExtResource("9_bknhk")]
+position = Vector2(-330, 272)
+res = SubResource("Resource_spsui")
+
+[node name="test block6" parent="block" instance=ExtResource("9_bknhk")]
+position = Vector2(-330, 304)
+res = SubResource("Resource_656dq")
+
+[node name="test block7" parent="block" instance=ExtResource("9_bknhk")]
+position = Vector2(-298, 272)
+res = SubResource("Resource_mu5r3")
+
+[node name="test block8" parent="block" instance=ExtResource("9_bknhk")]
+position = Vector2(-298, 304)
+res = SubResource("Resource_oy60u")

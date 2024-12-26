@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://bidyolavjny6l"]
+[gd_scene load_steps=10 format=4 uid="uid://bidyolavjny6l"]
 
 [ext_resource type="Texture2D" uid="uid://dhomeinom4syr" path="res://assets/sprites/normalT_room4branch.png" id="1_lwuy3"]
 [ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://resources/level/tilesets/john_gutter_tileset.tres" id="2_wm84f"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://assets/script/resources scripts/level_data.gd" id="5_i8gxn"]
 [ext_resource type="PackedScene" uid="uid://c20qitdqj1cc1" path="res://assets/scenes/levels/level decoration/parallax_background1_jg.tscn" id="6_8lrlf"]
 [ext_resource type="PackedScene" uid="uid://cuoo8ojghsvmb" path="res://assets/scenes/levels/level objects/ladder.tscn" id="7_w3bqf"]
+[ext_resource type="TileSet" uid="uid://d4fo3wle3axih" path="res://resources/level/blocks.tres" id="8_2qkxo"]
 
 [sub_resource type="Resource" id="Resource_bsdwq"]
 script = ExtResource("5_i8gxn")
@@ -50,6 +51,11 @@ level_data = SubResource("Resource_bsdwq")
 position = Vector2(908, 7)
 scale = Vector2(1, 12.693)
 player = NodePath("../player")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+position = Vector2(9, -3)
+tile_map_data = PackedByteArray("AAAcAA8AAAAAAAAAAQAcABEAAAAAAAAAAQAkAA8AAAAAAAAAAQAkABEAAAAAAAAAAQAsAA8AAAAAAAAAAQAsABEAAAAAAAAAAQAAAOf/AAAAAAAAAQA=")
+tile_set = ExtResource("8_2qkxo")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="level_info" load_steps=2 format=3 uid="uid://dg3ogium8rpoc"]
+
+[ext_resource type="Script" path="res://assets/script/resources scripts/level_info.gd" id="1_le6ee"]
+
+[resource]
+script = ExtResource("1_le6ee")
+level_name = "space pinball"
+file_path = "res://assets/scenes/levels/space pinball/space_pinball.tscn"

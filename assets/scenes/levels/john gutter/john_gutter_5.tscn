@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://drxbs283brap0"]
+[gd_scene load_steps=9 format=4 uid="uid://drxbs283brap0"]
 
 [ext_resource type="Texture2D" uid="uid://bcg06cjl8c5v2" path="res://assets/sprites/normalT_room5.png" id="1_xjwo7"]
 [ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="2_fki46"]
@@ -6,9 +6,11 @@
 [ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://resources/level/tilesets/john_gutter_tileset.tres" id="4_rs3g3"]
 [ext_resource type="PackedScene" uid="uid://c20qitdqj1cc1" path="res://assets/scenes/levels/level decoration/parallax_background1_jg.tscn" id="5_4j3oo"]
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/levels/level objects/room_changer.tscn" id="6_3qd37"]
+[ext_resource type="TileSet" uid="uid://d4fo3wle3axih" path="res://resources/level/blocks.tres" id="7_a8otv"]
 
 [sub_resource type="Resource" id="Resource_3p0gd"]
 script = ExtResource("3_bgg3y")
+level_name = ""
 score = 0
 left = -1328
 top = -287
@@ -45,3 +47,8 @@ scale = Vector2(2.5794, 7.13846)
 location = "res://assets/scenes/levels/john gutter/john_gutter_4.tscn"
 X = 3176
 Y = 383
+
+[node name="blocks" type="TileMapLayer" parent="."]
+position = Vector2(9, -3)
+tile_map_data = PackedByteArray("AAD9//v/AAAAAAAAAQD9//3/AAAAAAAAAQD///v/AAAAAAAAAQD///3/AAAAAAAAAQAFAPv/AAAAAAAAAQAFAP3/AAAAAAAAAQAHAP3/AAAAAAAAAQAJAP3/AAAAAAAAAQALAP3/AAAAAAAAAQANAP3/AAAAAAAAAQAPAP3/AAAAAAAAAQAPAPv/AAAAAAAAAQANAPv/AAAAAAAAAQAJAP//AAAAAAAAAQALAP//AAAAAAAAAQAJAAEAAAAAAAAAAQALAAEAAAAAAAAAAQABAP//AAAAAAAAAQADAP//AAAAAAAAAQABAAEAAAAAAAAAAQADAAEAAAAAAAAAAQD9/wMAAAAAAAAAAQD//wMAAAAAAAAAAQD9/wUAAAAAAAAAAQD//wUAAAAAAAAAAQD7////AAAAAAAAAQD5////AAAAAAAAAQD5/wEAAAAAAAAAAQD7/wEAAAAAAAAAAQAFAAMAAAAAAAAAAQAGAAMAAAAAAAAAAQAFAAUAAAAAAAAAAQAHAAUAAAAAAAAAAQANAAMAAAAAAAAAAQAPAAMAAAAAAAAAAQANAAUAAAAAAAAAAQAPAAUAAAAAAAAAAQARAP//AAAAAAAAAQATAP//AAAAAAAAAQARAAEAAAAAAAAAAQATAAEAAAAAAAAAAQAVAPv/AAAAAAAAAQAXAPv/AAAAAAAAAQAVAP3/AAAAAAAAAQAXAP3/AAAAAAAAAQAZAP//AAAAAAAAAQAbAP//AAAAAAAAAQAZAAEAAAAAAAAAAQAbAAEAAAAAAAAAAQAVAAMAAAAAAAAAAQAXAAMAAAAAAAAAAQAVAAUAAAAAAAAAAQAXAAUAAAAAAAAAAQAHAAMAAAAAAAAAAQA=")
+tile_set = ExtResource("7_a8otv")
