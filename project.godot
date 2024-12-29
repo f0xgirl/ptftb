@@ -25,6 +25,7 @@ DataPassthrough="*res://assets/script/autoloads/data_passthrough.gd"
 player=""
 "room changer"="teleports player between rooms"
 ladder="player go up and down idk"
+hotsauce=""
 
 [input]
 

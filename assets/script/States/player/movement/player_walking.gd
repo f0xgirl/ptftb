@@ -22,8 +22,10 @@ func Update(delta: float):
 		player_data.player_direction = direction
 	if Input.is_action_just_pressed("action1") and player.is_on_floor():
 		Transitioned.emit(self,"player_jumping")
-	if Input.is_action_just_pressed("action2"):
+	if Input.is_action_just_pressed("action2") and player.is_on_floor():
 		Transitioned.emit(self,"player_mach1")
+	if player.is_in_group("hotsauce"):
+		print("owww")
 
 func Pyhsics_Update(delta: float):
 	if player:

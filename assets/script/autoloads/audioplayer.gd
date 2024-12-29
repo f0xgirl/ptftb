@@ -4,7 +4,11 @@ const music_placeholder = preload("res://AUDIO/placeholder2.mp3")
 const pillar_impact = preload("res://AUDIO/JOHN_PILLAR_IMPACT.wav")
 const hub = preload("res://AUDIO/mu_hub.wav")
 const pizzatime = preload("res://AUDIO/mu_pizzatime.wav")
-
+const SFX_MACH_1 = preload("res://AUDIO/sfx_mach1.wav")
+const SFX_MACH_2 = preload("res://AUDIO/sfx_mach2.wav")
+const SFX_MACH_3 = preload("res://AUDIO/sfx_mach3.wav")
+const SFX_MACH_4 = preload("res://AUDIO/sfx_mach4.wav")
+const SFX_DOOR = preload("res://AUDIO/sfx_door.wav")
 
 func _play_music(music: AudioStream, volume = 0.0):
 	if stream == music:
@@ -39,10 +43,13 @@ func _play_sfx_pillar_impact():
 	_play_sfx(pillar_impact)
 
 func _play_sfx_mach1():
-	pass
+	_play_sfx(SFX_MACH_1)
 
 func _play_sfx_mach2():
-	pass
+	_play_sfx(SFX_MACH_2)
 
 func _play_sfx_mach3():
-	pass
+	_play_sfx(SFX_MACH_3)
+
+func _play_sfx_switchingrooms():
+	_play_sfx(SFX_DOOR)

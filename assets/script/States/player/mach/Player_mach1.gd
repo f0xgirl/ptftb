@@ -6,10 +6,14 @@ var direction: int
 @export var player: CharacterBody2D
 @export var player_data: player_data
 @export var sprite: AnimatedSprite2D
+@onready var mach_1: AudioStreamPlayer2D = $"../../mach1"
+
+
 
 
 func Enter():
-	Audioplayer._play_sfx_mach1()
+	mach_1.play()
+	#Audioplayer._play_sfx_mach1()
 	player.velocity.x = 0
 
 	DataPassthrough.player_state = "player_mach1"
@@ -26,6 +30,10 @@ func Update(delta: float):
 		Transitioned.emit(self,"player_jumping")
 	if sprite.get_frame() == 15:
 		Transitioned.emit(self,"player_mach2")
+	
 
 func Physic_Update(delta: float):
 	pass
+
+func Exit():
+	mach_1.stop()

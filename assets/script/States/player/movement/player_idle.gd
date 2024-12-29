@@ -30,9 +30,12 @@ func Update(delta: float):
 		Transitioned.emit(self,"player_highjump")
 	elif Input.is_action_just_pressed("action1") and player.is_on_floor():
 		Transitioned.emit(self,"player_jumping")
-	if Input.is_action_just_pressed("action2"):
+	if Input.is_action_just_pressed("action2") and player.is_on_floor():
 		Transitioned.emit(self,"player_mach1")
 	if Input.is_action_just_pressed("down"):
 		Transitioned.emit(self,"player_idle_crouched")
 	if Input.is_action_just_pressed("up") and player.in_ladder == true:
 		Transitioned.emit(self,"player_on_ladder")
+	if player.state_override == true:
+		player.state_override = false
+		Transitioned.emit(self,player.state_override_change)

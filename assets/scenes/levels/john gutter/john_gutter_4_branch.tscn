@@ -55,6 +55,7 @@ player = NodePath("../player")
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 position = Vector2(9, -3)
 tile_map_data = PackedByteArray("AAAcAA8AAAAAAAAAAQAcABEAAAAAAAAAAQAkAA8AAAAAAAAAAQAkABEAAAAAAAAAAQAsAA8AAAAAAAAAAQAsABEAAAAAAAAAAQAAAOf/AAAAAAAAAQA=")
+enabled = false
 tile_set = ExtResource("8_2qkxo")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

@@ -65,4 +65,5 @@ Y = 126
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 position = Vector2(9, -3)
 tile_map_data = PackedByteArray("AAAwAAgAAAAAAAAAAQAwAAoAAAAAAAAAAQBYAAgAAAAAAAAAAQBYAAoAAAAAAAAAAQBuAAgAAAAAAAAAAQBuAAoAAAAAAAAAAQCEAAgAAAAAAAAAAQCEAAoAAAAAAAAAAQA=")
+enabled = false
 tile_set = SubResource("TileSet_x2t3k")
