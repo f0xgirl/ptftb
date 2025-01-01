@@ -21,6 +21,10 @@ func _physics_process(delta: float) -> void:
 		velocity.y += gravity * delta
 	move_and_slide()
 
+func _process(delta: float) -> void:
+	pass
+
+
 func setcamboundaries():
 	pass
 	#camera.limit_left = level_data.get_limit(0)
@@ -41,5 +45,10 @@ func _on_hot_sauce_body_entered(body: Node2D) -> void:
 	state_override_change = "player_fireass"
 
 func change_pos():
+	print("working")
 	position.x = DataPassthrough.player_pos_x
 	position.y = DataPassthrough.player_pos_y
+
+
+func _on_tree_entered() -> void:
+	Globalsignal.player_changepos.connect(change_pos)

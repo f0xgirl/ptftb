@@ -11,11 +11,12 @@ func _ready() -> void:
 	var instance2 = hub.instantiate()
 	add_child(instance2)
 	add_child(instance)
-	get_child(1).call("change_pos")
+	Globalsignal.player_changepos.emit()
+	
 
 func _process(delta: float) -> void:
 	pass
 
 func changeplayerpos():
 	print(get_child(1))
-	get_child(1).call("change_pos")
+	

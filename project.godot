@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Audioplayer="*res://assets/script/autoloads/audioplayer.gd"
 DataPassthrough="*res://assets/script/autoloads/data_passthrough.gd"
 RoomIds="*res://assets/script/autoloads/room_ids.gd"
+Globalsignal="*res://assets/script/autoloads/globalsignal.gd"
 
 [global_group]
 

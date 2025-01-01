@@ -1773,4 +1773,5 @@ stream = ExtResource("43_0x4uv")
 [node name="mach3" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("44_2brbj")
 
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 [connection signal="finished" from="mach2" to="State Machine/Player_mach2" method="_on_mach_2_finished"]
