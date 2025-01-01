@@ -1,15 +1,13 @@
 extends Resource
-#deprecated, use room data instead
-class_name level_data
-
-@export_group("level stuff")
-@export var level_name: String
-@export var score: int = 0
+class_name room_data
 @export_group("camera boundaries")
 @export var left: int
 @export var top: int
 @export var right: int
 @export var bottom: int
+@export_group("player pos")
+@export var x: int
+@export var y: int
 
 
 

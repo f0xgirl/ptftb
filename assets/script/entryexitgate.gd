@@ -7,6 +7,7 @@ extends AnimatedSprite2D
 @export var Y: int
 var enter = false
 
+
 func _ready() -> void:
 	if enterexit == true or DataPassthrough.panic == true:
 		play("open")
