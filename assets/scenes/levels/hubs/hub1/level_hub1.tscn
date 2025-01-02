@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://nxmsxi4bh137"]
+
+[ext_resource type="Script" path="res://assets/script/levels/room.gd" id="1_828dm"]
+[ext_resource type="Script" path="res://assets/script/resources scripts/levels/room_data.gd" id="2_k5w0a"]
+[ext_resource type="PackedScene" uid="uid://57g3rranl1yh" path="res://assets/scenes/levels/hubs/hub1/hub_1.tscn" id="2_o3krj"]
+
+[sub_resource type="Resource" id="Resource_fbe5t"]
+script = ExtResource("2_k5w0a")
+left = 0
+top = 0
+right = 0
+bottom = 0
+x = 100
+y = 224
+
+[node name="level_hub1" type="Node"]
+script = ExtResource("1_828dm")
+level_info = SubResource("Resource_fbe5t")
+rooms = Array[PackedScene]([ExtResource("2_o3krj")])

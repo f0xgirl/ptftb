@@ -1,15 +1,15 @@
 [gd_scene load_steps=8 format=4 uid="uid://dimis0ypgatg1"]
 
-[ext_resource type="Script" path="res://assets/script/levels/room.gd" id="1_1iyr6"]
 [ext_resource type="Texture2D" uid="uid://bgx37ta3og1sa" path="res://assets/sprites/tutorial_room1.png" id="1_87gqg"]
+[ext_resource type="Script" path="res://assets/script/levels/rooms.gd" id="1_fky27"]
 [ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://resources/level/tilesets/john_gutter_tileset.tres" id="2_6x6tg"]
 [ext_resource type="PackedScene" uid="uid://c20qitdqj1cc1" path="res://assets/scenes/levels/level decoration/parallax_background1_jg.tscn" id="5_bnraf"]
 [ext_resource type="PackedScene" uid="uid://drg1wcxxcyjdm" path="res://assets/scenes/levels/level objects/gate_portal.tscn" id="6_527j7"]
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/levels/level objects/room_changer.tscn" id="7_su4aj"]
 [ext_resource type="PackedScene" uid="uid://bmemi8dsacgwy" path="res://assets/scenes/levels/level objects/room_destination.tscn" id="8_uoyvy"]
 
-[node name="level" type="Node"]
-script = ExtResource("1_1iyr6")
+[node name="room" type="Node"]
+script = ExtResource("1_fky27")
 
 [node name="TutorialRoom1" type="Sprite2D" parent="."]
 visible = false

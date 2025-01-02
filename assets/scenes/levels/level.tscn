@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfe1cgk20q5c8"]
+
+[ext_resource type="Script" path="res://assets/script/levels/room.gd" id="1_gtmuk"]
+
+[node name="level" type="Node"]
+script = ExtResource("1_gtmuk")

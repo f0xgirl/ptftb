@@ -21,8 +21,6 @@ func _physics_process(delta: float) -> void:
 		velocity.y += gravity * delta
 	move_and_slide()
 
-func _process(delta: float) -> void:
-	pass
 
 
 func setcamboundaries():
@@ -48,6 +46,8 @@ func change_pos():
 	print("working")
 	position.x = DataPassthrough.player_pos_x
 	position.y = DataPassthrough.player_pos_y
+	print(DataPassthrough.player_pos_x)
+	print(DataPassthrough.player_pos_y)
 
 
 func _on_tree_entered() -> void:

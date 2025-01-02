@@ -1,16 +1,19 @@
 extends Node
 class_name level
-@export var level_data: room_data
+@export var level_info: room_data
+@export var level_name: String
 @export var rooms: Array[PackedScene]
 
 func _ready() -> void:
-	pass
-	
+	var room1 = rooms[0].instantiate()
+	add_child(room1)
 
 
 func _on_tree_entered() -> void:
-	DataPassthrough.player_pos_x = level_data.x
-	DataPassthrough.player_pos_y = level_data.y
+	DataPassthrough.player_pos_x = level_info.x
+	DataPassthrough.player_pos_y = level_info.y
+	print(DataPassthrough.player_pos_x)
+	print(DataPassthrough.player_pos_y)
 	print("hi")
 
 
