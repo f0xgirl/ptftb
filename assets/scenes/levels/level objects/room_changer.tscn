@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5dyq2pyrrxfp"]
+
+[ext_resource type="Script" path="res://assets/script/room_changer.gd" id="1_lbtus"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qmeay"]
+
+[node name="Area2D" type="Area2D" groups=["room changer"]]
+script = ExtResource("1_lbtus")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qmeay")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,50 @@
+[gd_scene load_steps=11 format=3 uid="uid://c8o3ing854pjn"]
+
+[ext_resource type="Script" path="res://assets/script/test.gd" id="1_g5y2o"]
+[ext_resource type="Resource" uid="uid://bvm4oc3oc6sjt" path="res://resources/player/player_data.tres" id="2_akug5"]
+[ext_resource type="Texture2D" uid="uid://c8xtty12f5v57" path="res://assets/sprites/normalT_room1.png" id="2_vgbd5"]
+[ext_resource type="Texture2D" uid="uid://ba7hbr6e1m84h" path="res://assets/sprites/normalT_room2.png" id="3_wpo41"]
+[ext_resource type="Texture2D" uid="uid://2wt153ksg4v4" path="res://assets/sprites/normalT_room3.png" id="4_d0w5l"]
+[ext_resource type="Texture2D" uid="uid://nnsqd2ge8w6k" path="res://assets/sprites/normalT_room4.png" id="5_n1bnp"]
+[ext_resource type="Texture2D" uid="uid://dhomeinom4syr" path="res://assets/sprites/normalT_room4branch.png" id="6_ejtgb"]
+[ext_resource type="Texture2D" uid="uid://bcg06cjl8c5v2" path="res://assets/sprites/normalT_room5.png" id="7_75igw"]
+[ext_resource type="Texture2D" uid="uid://bq5evmtt1ubwx" path="res://assets/sprites/normalT_room6.png" id="8_jieyx"]
+[ext_resource type="Texture2D" uid="uid://bgt7yrvedossj" path="res://assets/sprites/normalT_room6branch.png" id="9_gqiji"]
+
+[node name="test" type="Node2D"]
+script = ExtResource("1_g5y2o")
+data_player = ExtResource("2_akug5")
+
+[node name="NormalTRoom1" type="Sprite2D" parent="."]
+position = Vector2(-4268, 345)
+texture = ExtResource("2_vgbd5")
+
+[node name="NormalTRoom2" type="Sprite2D" parent="."]
+position = Vector2(724, 313)
+texture = ExtResource("3_wpo41")
+
+[node name="NormalTRoom3" type="Sprite2D" parent="."]
+position = Vector2(5716, 281)
+texture = ExtResource("4_d0w5l")
+
+[node name="NormalTRoom4" type="Sprite2D" parent="."]
+position = Vector2(10709, 249)
+texture = ExtResource("5_n1bnp")
+
+[node name="NormalTRoom4Branch" type="Sprite2D" parent="."]
+position = Vector2(10677, 1249)
+texture = ExtResource("6_ejtgb")
+
+[node name="NormalTRoom5" type="Sprite2D" parent="."]
+position = Vector2(14710, 499)
+texture = ExtResource("7_75igw")
+
+[node name="NormalTRoom6" type="Sprite2D" parent="."]
+position = Vector2(18711, 499)
+texture = ExtResource("8_jieyx")
+
+[node name="NormalTRoom6Branch" type="Sprite2D" parent="."]
+position = Vector2(19063, 1039)
+texture = ExtResource("9_gqiji")
+
+[node name="Camera2D" type="Camera2D" parent="."]

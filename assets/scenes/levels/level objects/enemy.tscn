@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bn3bk23xaqbtk"]
+
+[ext_resource type="Script" path="res://assets/script/enemy.gd" id="1_i76gn"]
+[ext_resource type="Resource" uid="uid://46t4d40yij5f" path="res://resources/enemy_data.tres" id="2_j22ue"]
+[ext_resource type="Texture2D" uid="uid://bj20gx2lhl3y7" path="res://assets/sprites/smallveggie.png" id="3_rfthv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0m68"]
+size = Vector2(55, 46)
+
+[node name="enemy" type="Node2D"]
+script = ExtResource("1_i76gn")
+alive = ExtResource("2_j22ue")
+
+[node name="Smallveggie" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+texture = ExtResource("3_rfthv")
+
+[node name="Area2D" type="Area2D" parent="Smallveggie"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Smallveggie/Area2D"]
+position = Vector2(-3, 10)
+shape = SubResource("RectangleShape2D_l0m68")
+
+[connection signal="mouse_entered" from="Smallveggie/Area2D" to="." method="_on_area_2d_mouse_entered"]

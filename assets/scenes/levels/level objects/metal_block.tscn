@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://7q52prdlvm3g"]
+
+[ext_resource type="Texture2D" uid="uid://dg2f35c8j5vw7" path="res://assets/sprites/levels/level visuals/spr_metalb_0.png" id="1_ep4kx"]
+[ext_resource type="Script" path="res://assets/script/metal_block.gd" id="2_lwo7m"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_imdpw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_egrk3"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jm3j1"]
+size = Vector2(20, 15.2381)
+
+[node name="metal block" type="Sprite2D"]
+texture = ExtResource("1_ep4kx")
+script = ExtResource("2_lwo7m")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_imdpw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_egrk3")
+debug_color = Color(0.881364, 0.000348082, 0.819274, 0.42)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 9.53674e-07)
+scale = Vector2(8.16, 4.2)
+shape = SubResource("RectangleShape2D_jm3j1")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

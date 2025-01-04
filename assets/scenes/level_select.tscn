@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://b3tnoclfm5sgl"]
+
+[ext_resource type="Script" path="res://assets/script/level_select.gd" id="1_r74vo"]
+[ext_resource type="Script" path="res://assets/script/resources scripts/level_info.gd" id="2_t673h"]
+[ext_resource type="Resource" uid="uid://codayoumxcvh0" path="res://resources/level/john_gutter.tres" id="3_scxtq"]
+[ext_resource type="Resource" uid="uid://c2ewrbp837w7v" path="res://resources/level/infinite_roomt.tres" id="4_lpnt2"]
+[ext_resource type="Resource" uid="uid://b78vfd27myenb" path="res://resources/level/strongcold.tres" id="5_uw3of"]
+[ext_resource type="Resource" uid="uid://cf2bh8c1eqlb5" path="res://resources/level/tutorial.tres" id="6_ntqed"]
+[ext_resource type="Resource" uid="uid://dg3ogium8rpoc" path="res://resources/level/space_pinball.tres" id="7_iawqm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fhmxf"]
+font_size = 64
+
+[node name="Node" type="Node"]
+script = ExtResource("1_r74vo")
+levels = Array[ExtResource("2_t673h")]([ExtResource("3_scxtq"), ExtResource("4_lpnt2"), ExtResource("5_uw3of"), ExtResource("6_ntqed"), ExtResource("7_iawqm")])
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_fhmxf")

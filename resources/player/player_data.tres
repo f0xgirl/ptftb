@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="player_data" load_steps=2 format=3 uid="uid://bvm4oc3oc6sjt"]
+
+[ext_resource type="Script" path="res://assets/script/resources scripts/player_data.gd" id="1_umyk6"]
+
+[resource]
+script = ExtResource("1_umyk6")
+speed = 200
+crawling_speed = 100
+mach1_speed = 10
+mach2_speed = 400
+mach3_speed = 500
+jumpheight = -350
