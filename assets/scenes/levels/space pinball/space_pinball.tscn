@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=4 uid="uid://2xmy5sbsv6sn"]
+[gd_scene load_steps=6 format=4 uid="uid://2xmy5sbsv6sn"]
 
 [ext_resource type="TileSet" uid="uid://t56k02vh81ye" path="res://resources/level/tilesets/placeholder_tileset.tres" id="1_p0t5w"]
 [ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="2_g7sng"]
 [ext_resource type="Script" path="res://assets/script/resources scripts/level_data.gd" id="3_yyubv"]
+[ext_resource type="PackedScene" uid="uid://drg1wcxxcyjdm" path="res://assets/scenes/levels/level objects/gate_portal.tscn" id="4_2vkaq"]
 
 [sub_resource type="Resource" id="Resource_wxqvf"]
 script = ExtResource("3_yyubv")
@@ -22,3 +23,7 @@ tile_set = ExtResource("1_p0t5w")
 [node name="player" parent="." instance=ExtResource("2_g7sng")]
 position = Vector2(382, 123)
 level_data = SubResource("Resource_wxqvf")
+
+[node name="AnimatedSprite2D" parent="." instance=ExtResource("4_2vkaq")]
+position = Vector2(402, 16)
+location = "res://assets/scenes/level_select.tscn"

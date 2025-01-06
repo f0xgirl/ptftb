@@ -8,6 +8,7 @@ var current: int = 0
 var level_title: String
 
 func _ready() -> void:
+	Audioplayer._play_music_hub()
 	draw_label()
 
 func _process(delta: float) -> void:

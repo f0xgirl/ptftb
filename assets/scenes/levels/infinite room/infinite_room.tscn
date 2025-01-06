@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://dhux35f80lpih"]
+[gd_scene load_steps=8 format=4 uid="uid://dhux35f80lpih"]
 
 [ext_resource type="Script" path="res://assets/script/level_stuff.gd" id="1_ex4gm"]
 [ext_resource type="TileSet" uid="uid://t56k02vh81ye" path="res://resources/level/tilesets/placeholder_tileset.tres" id="1_uwc0p"]
 [ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="2_dyjyj"]
 [ext_resource type="Script" path="res://assets/script/resources scripts/level_data.gd" id="3_ly8b1"]
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/levels/level objects/room_changer.tscn" id="4_h10mu"]
+[ext_resource type="PackedScene" uid="uid://drg1wcxxcyjdm" path="res://assets/scenes/levels/level objects/gate_portal.tscn" id="6_17qy1"]
 
 [sub_resource type="Resource" id="Resource_nv5cd"]
 script = ExtResource("3_ly8b1")
@@ -39,3 +40,7 @@ scale = Vector2(1, 24.64)
 location = "res://assets/scenes/levels/infinite room/infinite_room.tscn"
 X = 1432
 Y = 321
+
+[node name="AnimatedSprite2D" parent="." instance=ExtResource("6_17qy1")]
+position = Vector2(310, 240)
+location = "res://assets/scenes/level_select.tscn"

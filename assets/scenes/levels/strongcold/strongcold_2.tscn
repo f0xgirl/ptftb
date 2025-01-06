@@ -30,7 +30,7 @@ offset_bottom = -162.0
 text = "i need a platform for plaeholder tileset huh"
 
 [node name="player" parent="." instance=ExtResource("2_t1l8d")]
-position = Vector2(-504, -578)
+position = Vector2(-98, -193)
 level_data = SubResource("Resource_q8n3e")
 
 [node name="Label2" type="Label" parent="."]

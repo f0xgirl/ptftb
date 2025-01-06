@@ -6,6 +6,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var jump_velocity: int
 @onready var camera: Camera2D = $Camera2D
 @export var level_data: level_data
+@onready var score: Label = $score/Control/MarginContainer/HBoxContainer/VBoxContainer/Label
 var state: State
 var state_override: bool = false
 var state_override_change: String
@@ -13,6 +14,7 @@ var in_ladder: bool = false
 var still_in_ladder: bool = false
 
 func _ready():
+	score.set_text(var_to_str(level_data.score))
 	
 	setcamboundaries()
 	if DataPassthrough.player_pos_x:

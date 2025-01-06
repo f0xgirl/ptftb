@@ -1582,6 +1582,79 @@ animation = &"idle"
 autoplay = "idle"
 offset = Vector2(50, 70)
 
+[node name="debug" type="CanvasLayer" parent="."]
+editor_description = "unfinished
+work on this later"
+
+[node name="Control" type="Control" parent="debug"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -52.0
+offset_top = -58.0
+offset_right = -12.0
+offset_bottom = -18.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="debug/Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -127.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="debug/Control/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="debug/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="debug/Control/MarginContainer/VBoxContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0.545098)
+layout_mode = 2
+text = "DEVELOPER BUILD
+"
+label_settings = SubResource("LabelSettings_e2cg2")
+
+[node name="score" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="score"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 200.0
+offset_top = 100.0
+offset_right = 240.0
+offset_bottom = 140.0
+scale = Vector2(2, 2)
+
+[node name="MarginContainer" type="MarginContainer" parent="score/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="score/Control/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="score/Control/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="score/Control/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "
+0"
+
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.8, 1.8)
 
@@ -1710,52 +1783,6 @@ player = NodePath("../..")
 script = ExtResource("40_blbl4")
 sprite = NodePath("../../sprite")
 player = NodePath("../..")
-
-[node name="debug" type="CanvasLayer" parent="."]
-editor_description = "unfinished
-work on this later"
-
-[node name="Control" type="Control" parent="debug"]
-layout_mode = 3
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -52.0
-offset_top = -58.0
-offset_right = -12.0
-offset_bottom = -18.0
-grow_horizontal = 0
-grow_vertical = 0
-size_flags_horizontal = 8
-metadata/_edit_use_anchors_ = true
-
-[node name="MarginContainer" type="MarginContainer" parent="debug/Control"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -127.0
-offset_top = -23.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="debug/Control/MarginContainer"]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="debug/Control/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-
-[node name="Label" type="Label" parent="debug/Control/MarginContainer/VBoxContainer/HBoxContainer"]
-modulate = Color(1, 1, 1, 0.545098)
-layout_mode = 2
-text = "DEVELOPER BUILD
-"
-label_settings = SubResource("LabelSettings_e2cg2")
 
 [node name="mach smoke" type="AnimatedSprite2D" parent="."]
 z_index = 1

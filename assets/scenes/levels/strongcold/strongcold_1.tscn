@@ -69,7 +69,7 @@ level_data = SubResource("Resource_68wrv")
 
 [node name="to hub" parent="." instance=ExtResource("5_t45di")]
 position = Vector2(514, 239)
-location = "res://assets/scenes/levels/hubs/hub_1.tscn"
+location = "res://assets/scenes/level_select.tscn"
 
 [node name="hot sauce" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_qaey5")]
 position = Vector2(-1423, 445)

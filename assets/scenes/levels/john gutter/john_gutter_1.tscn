@@ -66,7 +66,7 @@ level_data = SubResource("Resource_bj4yc")
 [node name="gate portal" parent="." instance=ExtResource("6_is8gr")]
 position = Vector2(-1599, 268)
 animation = &"closed"
-location = "res://assets/scenes/levels/hubs/hub_1.tscn"
+location = "res://assets/scenes/level_select.tscn"
 
 [node name="asd" parent="." instance=ExtResource("7_hepxs")]
 position = Vector2(2909, 268)

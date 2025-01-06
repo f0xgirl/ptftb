@@ -49,7 +49,7 @@ level_data = SubResource("Resource_c4yjl")
 
 [node name="AnimatedSprite2D" parent="." instance=ExtResource("6_527j7")]
 position = Vector2(-272, -431)
-location = "res://assets/scenes/levels/hubs/hub_1.tscn"
+location = "res://assets/scenes/level_select.tscn"
 
 [node name="to room_2" parent="." instance=ExtResource("7_su4aj")]
 position = Vector2(46, -802)
