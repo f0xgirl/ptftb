@@ -1,4 +1,4 @@
-[gd_scene load_steps=241 format=3 uid="uid://d3amowmvkdyo"]
+[gd_scene load_steps=243 format=3 uid="uid://d3amowmvkdyo"]
 
 [ext_resource type="Script" path="res://assets/script/player.gd" id="1_aarfl"]
 [ext_resource type="Resource" uid="uid://bvm4oc3oc6sjt" path="res://resources/player/player_data.tres" id="2_i6cxx"]
@@ -37,6 +37,7 @@
 [ext_resource type="Script" path="res://assets/script/States/player/movement/player_superjump.gd" id="27_joj2a"]
 [ext_resource type="Script" path="res://assets/script/States/player/movement/player_roll.gd" id="28_biv4t"]
 [ext_resource type="Script" path="res://assets/script/States/player/movement/player_groundpound.gd" id="29_3eubh"]
+[ext_resource type="Script" path="res://assets/script/resources scripts/player_data.gd" id="30_qlskb"]
 [ext_resource type="Script" path="res://assets/script/States/player/movement/player_highjump.gd" id="31_1b60l"]
 [ext_resource type="Script" path="res://assets/script/States/player/movement/player_ladder.gd" id="39_jurdo"]
 [ext_resource type="Texture2D" uid="uid://bp661vfvgodqc" path="res://assets/sprites/player/player_chargeeffect.png" id="40_6pse8"]
@@ -1478,6 +1479,15 @@ font = SubResource("FontFile_pwvte")
 font_size = 24
 font_color = Color(0.753487, 0, 0.00438567, 1)
 
+[sub_resource type="Resource" id="Resource_g86yy"]
+script = ExtResource("30_qlskb")
+speed = 0
+crawling_speed = 0
+mach1_speed = 0
+mach2_speed = 0
+mach3_speed = 0
+jumpheight = 0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_5fwls"]
 atlas = ExtResource("40_6pse8")
 region = Rect2(0, 0, 126, 76)
@@ -1656,7 +1666,8 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="score/Control/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "0"
+text = "
+0"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.8, 1.8)
@@ -1716,7 +1727,7 @@ sprite = NodePath("../../sprite")
 editor_description = "DO NOT USE FOR ENEMIES"
 script = ExtResource("12_dj2cs")
 sprite = NodePath("../../sprite")
-player_data = ExtResource("2_i6cxx")
+player_data = SubResource("Resource_g86yy")
 player = NodePath("../..")
 
 [node name="Player_jumping" type="Node" parent="State Machine" node_paths=PackedStringArray("player")]

@@ -7,7 +7,7 @@ class_name Player_mach3
 @export var collision: CollisionShape2D
 @export var charge_effect: AnimatedSprite2D
 @onready var mach_3: AudioStreamPlayer2D = $"../../mach3"
-
+var direction = Input.get_axis("left","right")
 const PLAYER_STANDING = preload("res://resources/player/player_standing.tres")
 
 
@@ -17,7 +17,10 @@ func Enter():
 	player.velocity.x = player_data.player_direction * player_data.mach3_speed
 	DataPassthrough.player_state = "player_mach3"
 	
+	
 func Update(_delta: float):
+	direction = Input.get_axis("left","right")
+	print(direction)
 	charge_effect.visible = true
 	sprite.play("mach3")
 	if player.is_on_floor():
@@ -33,6 +36,8 @@ func Update(_delta: float):
 		Transitioned.emit(self,"player_machroll")
 	if Input.is_action_just_pressed("up"):
 		Transitioned.emit(self,"Player_superjump")
+	if direction != player_data.player_direction and not direction == 0:
+		Transitioned.emit(self,"Player_turn")
 
 func Exit():
 	mach_3.stop()

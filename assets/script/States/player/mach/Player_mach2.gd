@@ -6,16 +6,20 @@ class_name Player_mach2
 @export var sprite: AnimatedSprite2D
 var tillmach3: float = 300
 @onready var mach_2: AudioStreamPlayer2D = $"../../mach2"
-@onready var mach_1: AudioStreamPlayer2D = $"../../mach1"
+var direction = Input.get_axis("left","right")
 
 func Enter():
+	print(direction)
+	print(player_data.player_direction)
 	mach_2.play()
 	print(DataPassthrough.keep_state)
 	player.velocity.x = player_data.player_direction * player_data.mach2_speed
 	tillmach3 = DataPassthrough.player_tillmach3
 	DataPassthrough.player_state = "player_mach2"
+	
 
 func Update(_delta: float):
+	direction = Input.get_axis("left","right")
 	sprite.play("mach2")
 	DataPassthrough.player_tillmach3 = tillmach3
 	if player.is_on_floor():
@@ -25,12 +29,13 @@ func Update(_delta: float):
 		player.velocity.y = 1.1 * - 350
 	if player.is_on_wall():
 		Transitioned.emit(self,"player_bumped")
+	if direction != player_data.player_direction and not direction == 0:
+		Transitioned.emit(self,"Player_turn")
 
 	
 func Pyhsics_Update(_delta: float):
 	if player.is_on_floor():
 		tillmach3 -= 200 * _delta
-	print(tillmach3)
 	if tillmach3 < 0:
 		Transitioned.emit(self,"player_mach3")
 
