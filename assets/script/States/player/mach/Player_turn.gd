@@ -19,4 +19,5 @@ func Update(delta: float):
 		Transitioned.emit(self,"player_mach2")
 	if Input.is_action_just_released("action2"):
 		Transitioned.emit(self,"Player_slide")
-		
+	if player.is_on_wall():
+		Transitioned.emit(self,"player_bumped")
