@@ -15,7 +15,7 @@ score = 0
 left = -1791
 top = -624
 right = 3200
-bottom = 386
+bottom = 368
 
 [node name="Node" type="Node"]
 
