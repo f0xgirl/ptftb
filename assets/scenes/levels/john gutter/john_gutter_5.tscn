@@ -13,7 +13,7 @@ script = ExtResource("3_bgg3y")
 level_name = ""
 score = 0
 left = -1328
-top = -287
+top = -400
 right = 1679
 bottom = 272
 
