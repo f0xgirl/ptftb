@@ -20,6 +20,7 @@ bottom = 386
 [node name="Node" type="Node"]
 
 [node name="NormalTRoom3" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(704, -124)
 texture = ExtResource("1_elpu0")
 

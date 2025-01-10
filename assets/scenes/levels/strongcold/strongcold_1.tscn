@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=4 uid="uid://ddfs4ffikkjoq"]
 
-[ext_resource type="Script" path="res://assets/script/strongcold_1.gd" id="1_1it0h"]
+[ext_resource type="Script" path="res://assets/script/level specific/strongcold_1.gd" id="1_1it0h"]
 [ext_resource type="Texture2D" uid="uid://difag0780ni4x" path="res://assets/sprites/levels/level visuals/strongcoldconcept1.png" id="1_lnf4h"]
 [ext_resource type="TileSet" uid="uid://t56k02vh81ye" path="res://resources/level/tilesets/placeholder_tileset.tres" id="2_dd6af"]
 [ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="3_icpf2"]

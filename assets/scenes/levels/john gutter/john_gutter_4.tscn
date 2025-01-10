@@ -21,6 +21,7 @@ bottom = 608
 [node name="Node" type="Node"]
 
 [node name="NormalTRoom4" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(640, 84)
 texture = ExtResource("1_hd3eu")
 

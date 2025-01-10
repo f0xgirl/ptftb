@@ -4,6 +4,8 @@ const music_placeholder = preload("res://AUDIO/placeholder2.mp3")
 const pillar_impact = preload("res://AUDIO/JOHN_PILLAR_IMPACT.wav")
 const hub = preload("res://AUDIO/mu_hub.wav")
 const pizzatime = preload("res://AUDIO/mu_pizzatime.wav")
+const pinball = preload("res://AUDIO/pinball.mp3")
+const john = preload("res://AUDIO/unearthly.mp3")
 const SFX_MACH_1 = preload("res://AUDIO/sfx_mach1.wav")
 const SFX_MACH_2 = preload("res://AUDIO/sfx_mach2.wav")
 const SFX_MACH_3 = preload("res://AUDIO/sfx_mach3.wav")
@@ -25,7 +27,12 @@ func _play_music_hub():
 
 func _play_music_pizzatime():
 	_play_music(pizzatime)
+
+func _play_music_pinball():
+	_play_music(pinball)
 	
+func _play_music_jg():
+	_play_music(john)
 
 func _play_sfx(stream: AudioStream, volume = 0.0):
 	var fx_player = AudioStreamPlayer.new()

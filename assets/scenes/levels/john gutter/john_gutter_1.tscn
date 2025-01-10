@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=4 uid="uid://fioigyq7r4yd"]
+[gd_scene load_steps=21 format=4 uid="uid://fioigyq7r4yd"]
 
 [ext_resource type="Texture2D" uid="uid://c8xtty12f5v57" path="res://assets/sprites/normalT_room1.png" id="1_3debp"]
+[ext_resource type="Script" path="res://assets/script/level specific/john_gutter_1.gd" id="1_uyxqf"]
 [ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://resources/level/tilesets/john_gutter_tileset.tres" id="2_n7nps"]
 [ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="3_x2415"]
 [ext_resource type="Script" path="res://assets/script/resources scripts/level_data.gd" id="4_cub56"]
@@ -45,6 +46,7 @@ script = ExtResource("10_wy7it")
 script = ExtResource("10_wy7it")
 
 [node name="john gutter" type="Node"]
+script = ExtResource("1_uyxqf")
 
 [node name="NormalTRoom1" type="Sprite2D" parent="."]
 visible = false
