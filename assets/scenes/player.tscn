@@ -1,4 +1,4 @@
-[gd_scene load_steps=241 format=3 uid="uid://d3amowmvkdyo"]
+[gd_scene load_steps=243 format=3 uid="uid://d3amowmvkdyo"]
 
 [ext_resource type="Script" path="res://assets/script/player.gd" id="1_aarfl"]
 [ext_resource type="Resource" uid="uid://bvm4oc3oc6sjt" path="res://resources/player/player_data.tres" id="2_i6cxx"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://q2cq6wnjmfgv" path="res://assets/sprites/player/player_idle.png" id="3_7ly5c"]
 [ext_resource type="Texture2D" uid="uid://dhieee07ccjyd" path="res://assets/sprites/player/player_hud_idle.png" id="3_88jo2"]
 [ext_resource type="Texture2D" uid="uid://cywkk8x3brqn4" path="res://assets/sprites/player/player_fall1.png" id="3_mvvll"]
+[ext_resource type="Shader" path="res://assets/script/palette/player_palette1.gdshader" id="3_qd5xu"]
 [ext_resource type="Texture2D" uid="uid://bx15mccmj3jh1" path="res://assets/sprites/player/player_mach1.png" id="4_dyvbw"]
 [ext_resource type="Texture2D" uid="uid://bci3uc7eme5uu" path="res://assets/sprites/player/player_crawl.png" id="4_gqnx8"]
 [ext_resource type="Texture2D" uid="uid://bw4y155ctivxx" path="res://assets/sprites/player/player_move.png" id="4_oko2l"]
@@ -44,6 +45,12 @@
 [ext_resource type="AudioStream" uid="uid://wfo6xfv1vic3" path="res://AUDIO/sfx_mach1.wav" id="42_akwvy"]
 [ext_resource type="AudioStream" uid="uid://dhwhbmrtdefj5" path="res://AUDIO/sfx_mach2.wav" id="43_0x4uv"]
 [ext_resource type="AudioStream" uid="uid://dncrp4quy5s68" path="res://AUDIO/sfx_mach3.wav" id="44_2brbj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mwmqc"]
+shader = ExtResource("3_qd5xu")
+shader_parameter/index_array = 0
+shader_parameter/find_color = Color(1, 1, 0.25098, 1)
+shader_parameter/target_color = Color(1, 1, 1, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kmpnv"]
 atlas = ExtResource("3_01jss")
@@ -1543,10 +1550,10 @@ player_data = ExtResource("2_i6cxx")
 jump_velocity = -350
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
-z_index = 1
+material = SubResource("ShaderMaterial_mwmqc")
 position = Vector2(2, -21)
 sprite_frames = SubResource("SpriteFrames_cdmb6")
-animation = &"slide_loop"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -1790,6 +1797,7 @@ sprite = NodePath("../../sprite")
 player = NodePath("../..")
 
 [node name="mach smoke" type="AnimatedSprite2D" parent="."]
+visible = false
 z_index = 1
 position = Vector2(31, -1)
 sprite_frames = SubResource("SpriteFrames_76qu4")

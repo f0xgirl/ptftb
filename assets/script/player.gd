@@ -13,9 +13,9 @@ var state_override_change: String
 var in_ladder: bool = false
 var still_in_ladder: bool = false
 
+
 func _ready():
 	score.set_text(var_to_str(level_data.score))
-	
 	setcamboundaries()
 	if DataPassthrough.player_pos_x:
 		position.x = DataPassthrough.player_pos_x
