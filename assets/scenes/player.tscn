@@ -1684,7 +1684,7 @@ size_flags_vertical = 0
 [node name="Label" type="Label" parent="devbuild/Control/MarginContainer/VBoxContainer/HBoxContainer"]
 modulate = Color(1, 1, 1, 0.545098)
 layout_mode = 2
-text = "PLAYTEST BUILD
+text = "DEVELOPER BUILD
 "
 label_settings = SubResource("LabelSettings_e2cg2")
 
