@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cep1osvvwkpvc"
-path="res://.godot/imported/palette2.png-33196f7e41667626fc98a0408117e940.ctex"
+uid="uid://be11ftidx8yag"
+path="res://.godot/imported/teamwerefox.png-69f337011655fbd5383f1d332a4bd647.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/palette2.png"
-dest_files=["res://.godot/imported/palette2.png-33196f7e41667626fc98a0408117e940.ctex"]
+source_file="res://assets/sprites/teamwerefox.png"
+dest_files=["res://.godot/imported/teamwerefox.png-69f337011655fbd5383f1d332a4bd647.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=243 format=3 uid="uid://d3amowmvkdyo"]
+[gd_scene load_steps=249 format=3 uid="uid://d3amowmvkdyo"]
 
 [ext_resource type="Script" path="res://assets/script/player.gd" id="1_aarfl"]
 [ext_resource type="Resource" uid="uid://bvm4oc3oc6sjt" path="res://resources/player/player_data.tres" id="2_i6cxx"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://q2cq6wnjmfgv" path="res://assets/sprites/player/player_idle.png" id="3_7ly5c"]
 [ext_resource type="Texture2D" uid="uid://dhieee07ccjyd" path="res://assets/sprites/player/player_hud_idle.png" id="3_88jo2"]
 [ext_resource type="Texture2D" uid="uid://cywkk8x3brqn4" path="res://assets/sprites/player/player_fall1.png" id="3_mvvll"]
-[ext_resource type="Shader" path="res://assets/script/palette/player_palette1.gdshader" id="3_qd5xu"]
+[ext_resource type="Material" uid="uid://gyvbxj5uv20u" path="res://assets/shader/player_palette1.tres" id="3_urkgk"]
 [ext_resource type="Texture2D" uid="uid://bx15mccmj3jh1" path="res://assets/sprites/player/player_mach1.png" id="4_dyvbw"]
 [ext_resource type="Texture2D" uid="uid://bci3uc7eme5uu" path="res://assets/sprites/player/player_crawl.png" id="4_gqnx8"]
 [ext_resource type="Texture2D" uid="uid://bw4y155ctivxx" path="res://assets/sprites/player/player_move.png" id="4_oko2l"]
@@ -31,6 +31,7 @@
 [ext_resource type="Script" path="res://assets/script/States/player/movement/Player_jumping.gd" id="14_plf4t"]
 [ext_resource type="Script" path="res://assets/script/States/player/movement/Player_bumped.gd" id="15_xd2d2"]
 [ext_resource type="Shape2D" uid="uid://5sqff0ua8l6f" path="res://resources/player/player_standing.tres" id="18_0xntb"]
+[ext_resource type="Texture2D" uid="uid://4faoltujamaq" path="res://assets/sprites/player/player_upjump.png" id="20_8g4i6"]
 [ext_resource type="Script" path="res://assets/script/States/player/mach/Player_mach3.gd" id="22_rsiba"]
 [ext_resource type="Script" path="res://assets/script/States/player/mach/player_machroll.gd" id="24_1q1cm"]
 [ext_resource type="Script" path="res://assets/script/States/player/movement/Player_Idle_Crawling.gd" id="25_4wbsh"]
@@ -45,12 +46,6 @@
 [ext_resource type="AudioStream" uid="uid://wfo6xfv1vic3" path="res://AUDIO/sfx_mach1.wav" id="42_akwvy"]
 [ext_resource type="AudioStream" uid="uid://dhwhbmrtdefj5" path="res://AUDIO/sfx_mach2.wav" id="43_0x4uv"]
 [ext_resource type="AudioStream" uid="uid://dncrp4quy5s68" path="res://AUDIO/sfx_mach3.wav" id="44_2brbj"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mwmqc"]
-shader = ExtResource("3_qd5xu")
-shader_parameter/index_array = 0
-shader_parameter/find_color = Color(1, 1, 0.25098, 1)
-shader_parameter/target_color = Color(1, 1, 1, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kmpnv"]
 atlas = ExtResource("3_01jss")
@@ -599,6 +594,30 @@ region = Rect2(37, 0, 37, 100)
 [sub_resource type="AtlasTexture" id="AtlasTexture_5btb1"]
 atlas = ExtResource("12_g1rh6")
 region = Rect2(74, 0, 37, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ok0n"]
+atlas = ExtResource("20_8g4i6")
+region = Rect2(0, 0, 88, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n38ld"]
+atlas = ExtResource("20_8g4i6")
+region = Rect2(88, 0, 88, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8fgd"]
+atlas = ExtResource("20_8g4i6")
+region = Rect2(176, 0, 88, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j781a"]
+atlas = ExtResource("20_8g4i6")
+region = Rect2(264, 0, 88, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_us4so"]
+atlas = ExtResource("20_8g4i6")
+region = Rect2(352, 0, 88, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhhcx"]
+atlas = ExtResource("20_8g4i6")
+region = Rect2(440, 0, 88, 79)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kw561"]
 atlas = ExtResource("4_oko2l")
@@ -1158,6 +1177,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_8ok0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n38ld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8fgd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j781a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_us4so")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhhcx")
+}],
+"loop": true,
+"name": &"up_jump",
+"speed": 24.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"up_jump_prep",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_kw561")
 }, {
 "duration": 1.0,
@@ -1550,11 +1597,14 @@ player_data = ExtResource("2_i6cxx")
 jump_velocity = -350
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
-material = SubResource("ShaderMaterial_mwmqc")
+z_index = 1
+material = ExtResource("3_urkgk")
 position = Vector2(2, -21)
 sprite_frames = SubResource("SpriteFrames_cdmb6")
-animation = &"idle"
+animation = &"up_jump"
 autoplay = "idle"
+frame = 5
+frame_progress = 0.393337
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3.5)
@@ -1586,6 +1636,7 @@ size_flags_horizontal = 0
 layout_mode = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="peppino_head/Control/MarginContainer/HBoxContainer/VBoxContainer/Label"]
+material = ExtResource("3_urkgk")
 position = Vector2(24.5, 4)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_krmg6")
@@ -1593,11 +1644,9 @@ animation = &"idle"
 autoplay = "idle"
 offset = Vector2(50, 70)
 
-[node name="debug" type="CanvasLayer" parent="."]
-editor_description = "unfinished
-work on this later"
+[node name="devbuild" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="debug"]
+[node name="Control" type="Control" parent="devbuild"]
 layout_mode = 3
 anchors_preset = 3
 anchor_left = 1.0
@@ -1613,7 +1662,7 @@ grow_vertical = 0
 size_flags_horizontal = 8
 metadata/_edit_use_anchors_ = true
 
-[node name="MarginContainer" type="MarginContainer" parent="debug/Control"]
+[node name="MarginContainer" type="MarginContainer" parent="devbuild/Control"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -1625,14 +1674,14 @@ offset_top = -23.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="debug/Control/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="devbuild/Control/MarginContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="debug/Control/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="devbuild/Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="Label" type="Label" parent="debug/Control/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="devbuild/Control/MarginContainer/VBoxContainer/HBoxContainer"]
 modulate = Color(1, 1, 1, 0.545098)
 layout_mode = 2
 text = "DEVELOPER BUILD

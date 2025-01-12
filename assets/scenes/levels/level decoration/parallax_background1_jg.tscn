@@ -61,9 +61,43 @@ texture = ExtResource("3_pvoqt")
 position = Vector2(4693, 458)
 texture = ExtResource("3_pvoqt")
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+[node name="closer pillars" type="ParallaxLayer" parent="."]
 editor_description = "put fog thing here when i eventually do
 "
+motion_scale = Vector2(1.4, 1.4)
+motion_offset = Vector2(0, 100)
+
+[node name="NormalTParrallax2" type="Sprite2D" parent="closer pillars"]
+position = Vector2(-2608, -236)
+scale = Vector2(2, 2)
+texture = ExtResource("3_pvoqt")
+
+[node name="NormalTParrallax3" type="Sprite2D" parent="closer pillars"]
+position = Vector2(-828, -236)
+scale = Vector2(2, 2)
+texture = ExtResource("3_pvoqt")
+
+[node name="NormalTParrallax4" type="Sprite2D" parent="closer pillars"]
+position = Vector2(841.5, -236)
+scale = Vector2(2, 2)
+texture = ExtResource("3_pvoqt")
+
+[node name="NormalTParrallax5" type="Sprite2D" parent="closer pillars"]
+position = Vector2(2352, -236)
+scale = Vector2(2, 2)
+texture = ExtResource("3_pvoqt")
+
+[node name="NormalTParrallax6" type="Sprite2D" parent="closer pillars"]
+position = Vector2(3949, -236)
+scale = Vector2(2, 2)
+texture = ExtResource("3_pvoqt")
+
+[node name="NormalTParrallax7" type="Sprite2D" parent="closer pillars"]
+position = Vector2(5560, -236)
+scale = Vector2(2, 2)
+texture = ExtResource("3_pvoqt")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 script = ExtResource("3_65iyg")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
