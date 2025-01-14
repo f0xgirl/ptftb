@@ -36,7 +36,7 @@ func Update(_delta: float):
 		Transitioned.emit(self,"player_machroll")
 	if Input.is_action_just_pressed("up"):
 		Transitioned.emit(self,"Player_superjump")
-	if direction != player_data.player_direction and not direction == 0:
+	if direction != player_data.player_direction and not direction == 0 and player.is_on_floor():
 		Transitioned.emit(self,"Player_turn")
 
 func Exit():

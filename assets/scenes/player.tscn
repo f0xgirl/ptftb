@@ -1,4 +1,4 @@
-[gd_scene load_steps=249 format=3 uid="uid://d3amowmvkdyo"]
+[gd_scene load_steps=256 format=3 uid="uid://d3amowmvkdyo"]
 
 [ext_resource type="Script" path="res://assets/script/player.gd" id="1_aarfl"]
 [ext_resource type="Resource" uid="uid://bvm4oc3oc6sjt" path="res://resources/player/player_data.tres" id="2_i6cxx"]
@@ -32,6 +32,7 @@
 [ext_resource type="Script" path="res://assets/script/States/player/movement/Player_bumped.gd" id="15_xd2d2"]
 [ext_resource type="Shape2D" uid="uid://5sqff0ua8l6f" path="res://resources/player/player_standing.tres" id="18_0xntb"]
 [ext_resource type="Texture2D" uid="uid://4faoltujamaq" path="res://assets/sprites/player/player_upjump.png" id="20_8g4i6"]
+[ext_resource type="Texture2D" uid="uid://ciquxx07xy1wc" path="res://assets/sprites/player/player_upjump_prep.png" id="21_tlttc"]
 [ext_resource type="Script" path="res://assets/script/States/player/mach/Player_mach3.gd" id="22_rsiba"]
 [ext_resource type="Script" path="res://assets/script/States/player/mach/player_machroll.gd" id="24_1q1cm"]
 [ext_resource type="Script" path="res://assets/script/States/player/movement/Player_Idle_Crawling.gd" id="25_4wbsh"]
@@ -619,6 +620,30 @@ region = Rect2(352, 0, 88, 79)
 atlas = ExtResource("20_8g4i6")
 region = Rect2(440, 0, 88, 79)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2n0b"]
+atlas = ExtResource("21_tlttc")
+region = Rect2(0, 0, 65, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lim4o"]
+atlas = ExtResource("21_tlttc")
+region = Rect2(65, 0, 65, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_em4nw"]
+atlas = ExtResource("21_tlttc")
+region = Rect2(130, 0, 65, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_657qg"]
+atlas = ExtResource("21_tlttc")
+region = Rect2(195, 0, 65, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m77j7"]
+atlas = ExtResource("21_tlttc")
+region = Rect2(260, 0, 65, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sun77"]
+atlas = ExtResource("21_tlttc")
+region = Rect2(325, 0, 65, 61)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_kw561"]
 atlas = ExtResource("4_oko2l")
 region = Rect2(0, 0, 62, 61)
@@ -1198,10 +1223,28 @@ animations = [{
 "name": &"up_jump",
 "speed": 24.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2n0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lim4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_em4nw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_657qg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m77j7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sun77")
+}],
 "loop": true,
 "name": &"up_jump_prep",
-"speed": 5.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1601,10 +1644,8 @@ z_index = 1
 material = ExtResource("3_urkgk")
 position = Vector2(2, -21)
 sprite_frames = SubResource("SpriteFrames_cdmb6")
-animation = &"up_jump"
+animation = &"up_jump_prep"
 autoplay = "idle"
-frame = 5
-frame_progress = 0.393337
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3.5)
@@ -1684,7 +1725,7 @@ size_flags_vertical = 0
 [node name="Label" type="Label" parent="devbuild/Control/MarginContainer/VBoxContainer/HBoxContainer"]
 modulate = Color(1, 1, 1, 0.545098)
 layout_mode = 2
-text = "DEVELOPER BUILD
+text = "PLAYTEST BUILD
 "
 label_settings = SubResource("LabelSettings_e2cg2")
 
@@ -1713,6 +1754,35 @@ layout_mode = 2
 [node name="Label" type="Label" parent="score/Control/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "0"
+
+[node name="mobile layer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Control" type="Control" parent="mobile layer"]
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="mobile layer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="mobile layer/Control/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="mobile layer/Control/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="mobile layer/Control/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "left
+"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.8, 1.8)

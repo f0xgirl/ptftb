@@ -26,6 +26,8 @@ func Update(delta: float):
 		Transitioned.emit(self,"player_walking")
 	if Input.is_action_pressed("right"):
 		Transitioned.emit(self,"player_walking")
+	if Input.is_action_pressed("up"):
+		sprite.play("up_jump_prep")
 	if Input.is_action_just_pressed("action1") and player.is_on_floor() and Input.is_action_pressed("up"):
 		Transitioned.emit(self,"player_highjump")
 	elif Input.is_action_just_pressed("action1") and player.is_on_floor():

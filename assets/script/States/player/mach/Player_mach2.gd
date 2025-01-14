@@ -29,7 +29,7 @@ func Update(_delta: float):
 		player.velocity.y = 1.1 * - 350
 	if player.is_on_wall():
 		Transitioned.emit(self,"player_bumped")
-	if direction != player_data.player_direction and not direction == 0:
+	if direction != player_data.player_direction and not direction == 0 and player.is_on_floor():
 		Transitioned.emit(self,"Player_turn")
 
 	

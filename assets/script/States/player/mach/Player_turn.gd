@@ -17,7 +17,5 @@ func Update(delta: float):
 	if player.velocity.x == 0:
 		player_data.player_direction = direction
 		Transitioned.emit(self,"player_mach2")
-	if Input.is_action_just_released("action2"):
-		Transitioned.emit(self,"Player_slide")
 	if player.is_on_wall():
 		Transitioned.emit(self,"player_bumped")
