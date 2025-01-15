@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dimis0ypgatg1"]
+[gd_scene load_steps=11 format=4 uid="uid://dimis0ypgatg1"]
 
 [ext_resource type="Texture2D" uid="uid://bgx37ta3og1sa" path="res://assets/sprites/tutorial_room1.png" id="1_87gqg"]
 [ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://resources/level/tilesets/john_gutter_tileset.tres" id="2_6x6tg"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://drg1wcxxcyjdm" path="res://assets/scenes/levels/level objects/gate_portal.tscn" id="6_527j7"]
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/levels/level objects/room_changer.tscn" id="7_su4aj"]
 [ext_resource type="PackedScene" uid="uid://bmemi8dsacgwy" path="res://assets/scenes/levels/level objects/room_destination.tscn" id="8_uoyvy"]
+[ext_resource type="PackedScene" uid="uid://gu657xt52lr7" path="res://assets/scenes/levels/level objects/panic_block.tscn" id="9_ua5nr"]
 
 [sub_resource type="Resource" id="Resource_c4yjl"]
 script = ExtResource("4_4arvo")
@@ -64,3 +65,7 @@ position = Vector2(48, -725)
 [node name="Sprite2D2" parent="." instance=ExtResource("8_uoyvy")]
 position = Vector2(-722, -729)
 points = 1
+
+[node name="panicblock" parent="." instance=ExtResource("9_ua5nr")]
+position = Vector2(-49, -397)
+scale = Vector2(1, 5.56)

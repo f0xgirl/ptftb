@@ -7,6 +7,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var camera: Camera2D = $Camera2D
 @export var level_data: level_data
 @onready var score: Label = $score/Control/MarginContainer/HBoxContainer/VBoxContainer/Label
+@onready var sprite: AnimatedSprite2D = $sprite
 var state: State
 var state_override: bool = false
 var state_override_change: String
@@ -25,6 +26,8 @@ func _physics_process(delta: float) -> void:
 	if in_ladder == false:
 		velocity.y += gravity * delta
 	move_and_slide()
+	if Input.is_action_just_pressed("pause"):
+		get_tree().change_scene_to_file("res://assets/scenes/level_select.tscn")
 
 func setcamboundaries():
 	camera.limit_left = level_data.get_limit(0)
