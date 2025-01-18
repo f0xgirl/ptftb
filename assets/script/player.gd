@@ -16,11 +16,8 @@ var still_in_ladder: bool = false
 
 
 func _ready():
-	score.set_text(var_to_str(level_data.score))
-	setcamboundaries()
-	if DataPassthrough.player_pos_x:
-		position.x = DataPassthrough.player_pos_x
-		position.y = DataPassthrough.player_pos_y
+	Globalsignal.playergoto.connect(playergoto)
+	Globalsignal.changecam.connect(setcamboundaries)
 
 func _physics_process(delta: float) -> void:
 	if in_ladder == false:
@@ -29,11 +26,18 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		get_tree().change_scene_to_file("res://assets/scenes/level_select.tscn")
 
-func setcamboundaries():
-	camera.limit_left = level_data.get_limit(0)
-	camera.limit_top = level_data.get_limit(1)
-	camera.limit_right = level_data.get_limit(2)
-	camera.limit_bottom = level_data.get_limit(3)
+func playergoto(xy):
+	print("hi")
+	print(xy)
+	set_global_position(xy)
+	
+
+func setcamboundaries(boundaires: level_data):
+	print("hi")
+	camera.limit_left = boundaires.get_limit(0)
+	camera.limit_top = boundaires.get_limit(1)
+	camera.limit_right = boundaires.get_limit(2)
+	camera.limit_bottom = boundaires.get_limit(3)
 func in_ladder_or_not(ladder: bool):
 	in_ladder = ladder
 func ladder_stop():

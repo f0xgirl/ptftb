@@ -36,3 +36,11 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		enter = false
 		print("false")
+
+
+func _disable() -> void:
+	hide()
+
+
+func _enable() -> void:
+	show()

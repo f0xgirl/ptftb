@@ -54,3 +54,5 @@ layout_mode = 2
 label_settings = SubResource("LabelSettings_fhmxf")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("8_q1xnf")]
+
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
