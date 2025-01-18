@@ -24,6 +24,7 @@ tile_set = ExtResource("1_ji54n")
 
 [node name="pillar john" parent="." instance=ExtResource("2_8borr")]
 position = Vector2(1990, -424)
+panic_time = 180.0
 
 [node name="player" parent="." instance=ExtResource("3_607a7")]
 position = Vector2(126, 126)

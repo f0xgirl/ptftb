@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8aqg4asjyefk"]
+[gd_scene load_steps=6 format=3 uid="uid://c8aqg4asjyefk"]
 
 [ext_resource type="Script" path="res://assets/script/pillar_john.gd" id="1_3yuwh"]
+[ext_resource type="Script" path="res://assets/script/pillarjohn.gd" id="1_kt7pj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qs7kj"]
 
@@ -12,6 +13,7 @@ size = Vector2(45, 100)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_qs7kj")
+script = ExtResource("1_kt7pj")
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("1_3yuwh")

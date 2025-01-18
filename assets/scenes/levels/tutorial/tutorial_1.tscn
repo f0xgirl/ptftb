@@ -48,7 +48,7 @@ level_data = SubResource("Resource_c4yjl")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("5_bnraf")]
 
-[node name="AnimatedSprite2D" parent="." instance=ExtResource("6_527j7")]
+[node name="gate" parent="." instance=ExtResource("6_527j7")]
 position = Vector2(-272, -431)
 location = "res://assets/scenes/level_select.tscn"
 

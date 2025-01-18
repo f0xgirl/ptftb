@@ -7,5 +7,6 @@ func _on_body_entered(body: Node2D) -> void:
 		DataPassthrough.panic = true
 		Audioplayer._play_music_pizzatime()
 		Audioplayer._play_sfx_pillar_impact()
+		Globaltimer.start(john.panic_time)
 		john.queue_free()
 		
