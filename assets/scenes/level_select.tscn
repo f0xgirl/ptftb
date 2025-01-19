@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b3tnoclfm5sgl"]
+[gd_scene load_steps=11 format=3 uid="uid://b3tnoclfm5sgl"]
 
 [ext_resource type="Script" path="res://assets/script/level_select.gd" id="1_r74vo"]
 [ext_resource type="Script" path="res://assets/script/resources scripts/level_info.gd" id="2_t673h"]
@@ -9,12 +9,17 @@
 [ext_resource type="Resource" uid="uid://c2ewrbp837w7v" path="res://resources/level/infinite_roomt.tres" id="7_au33t"]
 [ext_resource type="PackedScene" uid="uid://c20qitdqj1cc1" path="res://assets/scenes/levels/level decoration/parallax_background1_jg.tscn" id="8_q1xnf"]
 
+[sub_resource type="Resource" id="Resource_c4c0j"]
+script = ExtResource("2_t673h")
+level_name = "sugary spire"
+file_path = "res://assets/scenes/levels/sugaryspire/sucrose_1.tscn"
+
 [sub_resource type="LabelSettings" id="LabelSettings_fhmxf"]
 font_size = 64
 
 [node name="Node" type="Node"]
 script = ExtResource("1_r74vo")
-levels = Array[ExtResource("2_t673h")]([ExtResource("3_mn21b"), ExtResource("3_scxtq"), ExtResource("5_jagk7"), ExtResource("6_bqg0p"), ExtResource("7_au33t")])
+levels = Array[ExtResource("2_t673h")]([ExtResource("3_mn21b"), ExtResource("3_scxtq"), ExtResource("5_jagk7"), ExtResource("6_bqg0p"), ExtResource("7_au33t"), SubResource("Resource_c4c0j")])
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

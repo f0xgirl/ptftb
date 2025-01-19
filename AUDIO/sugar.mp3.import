@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/sugar.mp3-70e539d90b80e455d2b232b5e49bb20a.mp
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

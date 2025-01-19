@@ -6,6 +6,7 @@ const hub = preload("res://AUDIO/mu_hub.wav")
 const pizzatime = preload("res://AUDIO/mu_pizzatime.wav")
 const pinball = preload("res://AUDIO/pinball.mp3")
 const john = preload("res://AUDIO/unearthly.mp3")
+const SUGAR = preload("res://AUDIO/sugar.mp3")
 const SFX_MACH_1 = preload("res://AUDIO/sfx_mach1.wav")
 const SFX_MACH_2 = preload("res://AUDIO/sfx_mach2.wav")
 const SFX_MACH_3 = preload("res://AUDIO/sfx_mach3.wav")
@@ -33,6 +34,9 @@ func _play_music_pinball():
 	
 func _play_music_jg():
 	_play_music(john)
+
+func _play_music_sugar():
+	_play_music(SUGAR)
 
 func _play_sfx(stream: AudioStream, volume = 0.0):
 	var fx_player = AudioStreamPlayer.new()
