@@ -1,15 +1,14 @@
 extends Node
 
-const LVLSEL = preload("res://assets/scenes/levels/level_select.tscn")
+const TEST = preload("res://assets/scenes/levels/testing/testing.tscn")
 const PLR = preload("res://assets/scenes/player.tscn")
 var levels: Array [PackedScene]
-
 func _ready() -> void:
+	
 	Globalsignal.changelevel.connect(change_loaded_levels)
 	Globalsignal.changeroom.connect(roomchange)
-	var levelselect = LVLSEL.instantiate()
 	var player = PLR.instantiate()
-	add_child(levelselect)
+	
 	add_child(player)
 	
 func roomchange(index: int):
