@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://fioigyq7r4yd"]
+[gd_scene load_steps=23 format=4 uid="uid://fioigyq7r4yd"]
 
 [ext_resource type="Texture2D" uid="uid://c8xtty12f5v57" path="res://assets/sprites/normalT_room1.png" id="1_3debp"]
 [ext_resource type="Script" path="res://assets/script/level specific/john_gutter_1.gd" id="1_uyxqf"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c7ogx214cfhin" path="res://assets/scenes/levels/level objects/block_test.tscn" id="9_bknhk"]
 [ext_resource type="Script" path="res://assets/script/resources scripts/block_data.gd" id="10_wy7it"]
 [ext_resource type="PackedScene" uid="uid://cgi7ixvf47hyd" path="res://assets/scenes/levels/level decoration/parallax_background_sugar.tscn" id="12_f3a2a"]
+[ext_resource type="PackedScene" uid="uid://d0egigld2wxj" path="res://assets/scenes/levels/level objects/toppin_test.tscn" id="13_aud2h"]
 
 [sub_resource type="Resource" id="Resource_bj4yc"]
 script = ExtResource("4_cub56")
@@ -65,7 +66,6 @@ position = Vector2(-1595, 347)
 level_data = SubResource("Resource_bj4yc")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("5_4w433")]
-visible = false
 
 [node name="gate portal" parent="." instance=ExtResource("6_is8gr")]
 position = Vector2(-1599, 268)
@@ -120,3 +120,8 @@ position = Vector2(-298, 304)
 res = SubResource("Resource_oy60u")
 
 [node name="ParallaxBackground2" parent="." instance=ExtResource("12_f3a2a")]
+visible = false
+
+[node name="Sprite2D" parent="." node_paths=PackedStringArray("plr") instance=ExtResource("13_aud2h")]
+position = Vector2(-982, 241)
+plr = NodePath("../player")

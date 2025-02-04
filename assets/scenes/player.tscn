@@ -1,4 +1,4 @@
-[gd_scene load_steps=259 format=3 uid="uid://d3amowmvkdyo"]
+[gd_scene load_steps=268 format=3 uid="uid://d3amowmvkdyo"]
 
 [ext_resource type="Script" path="res://assets/script/player.gd" id="1_aarfl"]
 [ext_resource type="Resource" uid="uid://bvm4oc3oc6sjt" path="res://resources/player/player_data.tres" id="2_i6cxx"]
@@ -34,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://4faoltujamaq" path="res://assets/sprites/player/player_upjump.png" id="20_8g4i6"]
 [ext_resource type="Texture2D" uid="uid://ciquxx07xy1wc" path="res://assets/sprites/player/player_upjump_prep.png" id="21_tlttc"]
 [ext_resource type="Script" path="res://assets/script/States/player/mach/Player_mach3.gd" id="22_rsiba"]
+[ext_resource type="Script" path="res://assets/script/player_animation.gd" id="23_uq8vi"]
 [ext_resource type="Script" path="res://assets/script/States/player/mach/player_machroll.gd" id="24_1q1cm"]
 [ext_resource type="Script" path="res://assets/script/States/player/movement/Player_Idle_Crawling.gd" id="25_4wbsh"]
 [ext_resource type="Texture2D" uid="uid://3gd7heuantgg" path="res://assets/sprites/player/choise.png" id="25_yae7m"]
@@ -744,7 +745,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"bumped",
-"speed": 24.0
+"speed": 21.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -797,7 +798,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"crawling",
-"speed": 24.0
+"speed": 21.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -811,7 +812,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"crawling air",
-"speed": 24.0
+"speed": 21.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -876,7 +877,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"crawling_idle",
-"speed": 24.0
+"speed": 21.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -890,12 +891,12 @@ animations = [{
 }],
 "loop": true,
 "name": &"fall",
-"speed": 24.0
+"speed": 21.0
 }, {
 "frames": [],
 "loop": true,
 "name": &"groundpound",
-"speed": 5.0
+"speed": 21.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -963,7 +964,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 24.0
+"speed": 21.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -974,7 +975,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"ladder down",
-"speed": 24.0
+"speed": 21.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1003,7 +1004,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"ladder up",
-"speed": 12.0
+"speed": 21.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1056,7 +1057,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"mach1",
-"speed": 24.0
+"speed": 21.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1070,7 +1071,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"mach1_fall",
-"speed": 24.0
+"speed": 21.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1099,7 +1100,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"mach2",
-"speed": 24.0
+"speed": 21.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1113,12 +1114,12 @@ animations = [{
 }],
 "loop": true,
 "name": &"mach3",
-"speed": 24.0
+"speed": 21.0
 }, {
 "frames": [],
 "loop": true,
 "name": &"mach_roll",
-"speed": 5.0
+"speed": 21.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1141,7 +1142,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"slide_end",
-"speed": 24.0
+"speed": 21.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1155,7 +1156,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"slide_loop",
-"speed": 24.0
+"speed": 21.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1181,7 +1182,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"slide_start",
-"speed": 24.0
+"speed": 21.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1195,12 +1196,12 @@ animations = [{
 }],
 "loop": true,
 "name": &"superjump",
-"speed": 24.0
+"speed": 21.0
 }, {
 "frames": [],
 "loop": true,
 "name": &"turn",
-"speed": 5.0
+"speed": 21.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1223,7 +1224,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"up_jump",
-"speed": 24.0
+"speed": 21.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1246,7 +1247,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"up_jump_prep",
-"speed": 24.0
+"speed": 21.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1287,7 +1288,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walking",
-"speed": 24.0
+"speed": 21.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qy61n"]
@@ -1638,6 +1639,37 @@ animations = [{
 "speed": 24.0
 }]
 
+[sub_resource type="Animation" id="Animation_110ey"]
+resource_name = "a"
+
+[sub_resource type="Animation" id="Animation_h5h30"]
+resource_name = "new_animation"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c3x8j"]
+_data = {
+"a": SubResource("Animation_110ey"),
+"new_animation": SubResource("Animation_h5h30")
+}
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_n60j3"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_88rqw"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_f5e4q"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ax2ju"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_tgp25"]
+states/StateMachine/node = SubResource("AnimationNodeStateMachine_n60j3")
+states/StateMachine/position = Vector2(434, 67)
+transitions = ["Start", "End", SubResource("AnimationNodeStateMachineTransition_88rqw"), "Start", "StateMachine", SubResource("AnimationNodeStateMachineTransition_f5e4q"), "StateMachine", "End", SubResource("AnimationNodeStateMachineTransition_ax2ju")]
+
 [node name="player" type="CharacterBody2D" groups=["player"]]
 floor_constant_speed = true
 script = ExtResource("1_aarfl")
@@ -1649,8 +1681,9 @@ z_index = 1
 material = ExtResource("3_urkgk")
 position = Vector2(2, -21)
 sprite_frames = SubResource("SpriteFrames_cdmb6")
-animation = &"up_jump_prep"
+animation = &"turn"
 autoplay = "idle"
+script = ExtResource("23_uq8vi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3.5)
@@ -1827,12 +1860,6 @@ layout_mode = 2
 label_settings = SubResource("LabelSettings_nxtsv")
 script = ExtResource("49_p65hc")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.8, 1.8)
-
-[node name="destroyable" type="RayCast2D" parent="."]
-target_position = Vector2(24, 0)
-
 [node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("Inital_state")]
 script = ExtResource("4_t3dhw")
 Inital_state = NodePath("Player_Idle")
@@ -1958,6 +1985,12 @@ script = ExtResource("40_blbl4")
 sprite = NodePath("../../sprite")
 player = NodePath("../..")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.8, 1.8)
+
+[node name="destroyable" type="RayCast2D" parent="."]
+target_position = Vector2(24, 0)
+
 [node name="mach smoke" type="AnimatedSprite2D" parent="."]
 visible = false
 z_index = 1
@@ -1976,5 +2009,14 @@ stream = ExtResource("43_0x4uv")
 stream = ExtResource("44_2brbj")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_c3x8j")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_tgp25")
+anim_player = NodePath("../AnimationPlayer")
 
 [connection signal="finished" from="mach2" to="State Machine/Player_mach2" method="_on_mach_2_finished"]
