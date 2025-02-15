@@ -6,13 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="3_x2415"]
 [ext_resource type="Script" path="res://assets/script/resources scripts/level_data.gd" id="4_cub56"]
 [ext_resource type="PackedScene" uid="uid://c20qitdqj1cc1" path="res://assets/scenes/levels/level decoration/parallax_background1_jg.tscn" id="5_4w433"]
-[ext_resource type="PackedScene" uid="uid://drg1wcxxcyjdm" path="res://assets/scenes/levels/level objects/gate_portal.tscn" id="6_is8gr"]
-[ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/levels/level objects/room_changer.tscn" id="7_hepxs"]
+[ext_resource type="PackedScene" uid="uid://drg1wcxxcyjdm" path="res://assets/scenes/level objects/gate_portal.tscn" id="6_is8gr"]
+[ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/level objects/room_changer.tscn" id="7_hepxs"]
 [ext_resource type="TileSet" uid="uid://d4fo3wle3axih" path="res://resources/level/blocks.tres" id="8_xo85q"]
-[ext_resource type="PackedScene" uid="uid://c7ogx214cfhin" path="res://assets/scenes/levels/level objects/block_test.tscn" id="9_bknhk"]
+[ext_resource type="PackedScene" uid="uid://c7ogx214cfhin" path="res://assets/scenes/level objects/block_test.tscn" id="9_bknhk"]
 [ext_resource type="Script" path="res://assets/script/resources scripts/block_data.gd" id="10_wy7it"]
 [ext_resource type="PackedScene" uid="uid://cgi7ixvf47hyd" path="res://assets/scenes/levels/level decoration/parallax_background_sugar.tscn" id="12_f3a2a"]
-[ext_resource type="PackedScene" uid="uid://d0egigld2wxj" path="res://assets/scenes/levels/level objects/toppin_test.tscn" id="13_aud2h"]
+[ext_resource type="PackedScene" uid="uid://d0egigld2wxj" path="res://assets/scenes/level objects/toppin_test.tscn" id="13_aud2h"]
 
 [sub_resource type="Resource" id="Resource_bj4yc"]
 script = ExtResource("4_cub56")

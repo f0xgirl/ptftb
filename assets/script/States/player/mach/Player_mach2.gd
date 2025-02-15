@@ -31,6 +31,9 @@ func Update(_delta: float):
 		Transitioned.emit(self,"player_bumped")
 	if direction != player_data.player_direction and not direction == 0 and player.is_on_floor():
 		Transitioned.emit(self,"Player_turn")
+	if player.state_override == true:
+		player.state_override = false
+		Transitioned.emit(self,player.state_override_change)
 
 	
 func Pyhsics_Update(_delta: float):

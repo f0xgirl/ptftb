@@ -4,10 +4,10 @@
 [ext_resource type="Script" path="res://assets/script/level specific/hub_1.gd" id="1_ilkdo"]
 [ext_resource type="Resource" uid="uid://dxwmw5i53ls4u" path="res://resources/level/level_data.tres" id="2_uvvgr"]
 [ext_resource type="TileSet" uid="uid://t56k02vh81ye" path="res://resources/level/tilesets/placeholder_tileset.tres" id="3_conok"]
-[ext_resource type="PackedScene" uid="uid://drg1wcxxcyjdm" path="res://assets/scenes/levels/level objects/gate_portal.tscn" id="4_2qa0c"]
+[ext_resource type="PackedScene" uid="uid://drg1wcxxcyjdm" path="res://assets/scenes/level objects/gate_portal.tscn" id="4_2qa0c"]
 [ext_resource type="PackedScene" uid="uid://c20qitdqj1cc1" path="res://assets/scenes/levels/level decoration/parallax_background1_jg.tscn" id="5_t36nq"]
-[ext_resource type="PackedScene" uid="uid://cuoo8ojghsvmb" path="res://assets/scenes/levels/level objects/ladder.tscn" id="6_4wgbm"]
-[ext_resource type="PackedScene" uid="uid://c7ogx214cfhin" path="res://assets/scenes/levels/level objects/block_test.tscn" id="7_jjokd"]
+[ext_resource type="PackedScene" uid="uid://cuoo8ojghsvmb" path="res://assets/scenes/level objects/ladder.tscn" id="6_4wgbm"]
+[ext_resource type="PackedScene" uid="uid://c7ogx214cfhin" path="res://assets/scenes/level objects/block_test.tscn" id="7_jjokd"]
 [ext_resource type="Resource" uid="uid://cafqii3ip80hw" path="res://resources/level/blocks/block1.tres" id="9_c7pt7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kqsn1"]

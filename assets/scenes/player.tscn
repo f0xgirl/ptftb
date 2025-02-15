@@ -1,4 +1,4 @@
-[gd_scene load_steps=268 format=3 uid="uid://d3amowmvkdyo"]
+[gd_scene load_steps=269 format=3 uid="uid://d3amowmvkdyo"]
 
 [ext_resource type="Script" path="res://assets/script/player.gd" id="1_aarfl"]
 [ext_resource type="Resource" uid="uid://bvm4oc3oc6sjt" path="res://resources/player/player_data.tres" id="2_i6cxx"]
@@ -49,6 +49,7 @@
 [ext_resource type="AudioStream" uid="uid://wfo6xfv1vic3" path="res://AUDIO/sfx_mach1.wav" id="42_akwvy"]
 [ext_resource type="AudioStream" uid="uid://dhwhbmrtdefj5" path="res://AUDIO/sfx_mach2.wav" id="43_0x4uv"]
 [ext_resource type="AudioStream" uid="uid://dncrp4quy5s68" path="res://AUDIO/sfx_mach3.wav" id="44_2brbj"]
+[ext_resource type="Script" path="res://assets/script/States/player/movement/player_olive.gd" id="47_4mn5a"]
 [ext_resource type="Script" path="res://assets/script/panic_visual.gd" id="49_p65hc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kmpnv"]
@@ -1983,6 +1984,12 @@ player = NodePath("../..")
 [node name="player_fireass" type="Node" parent="State Machine" node_paths=PackedStringArray("sprite", "player")]
 script = ExtResource("40_blbl4")
 sprite = NodePath("../../sprite")
+player = NodePath("../..")
+
+[node name="player_olive" type="Node" parent="State Machine" node_paths=PackedStringArray("sprite", "player")]
+script = ExtResource("47_4mn5a")
+sprite = NodePath("../../sprite")
+player_data = ExtResource("2_i6cxx")
 player = NodePath("../..")
 
 [node name="Camera2D" type="Camera2D" parent="."]

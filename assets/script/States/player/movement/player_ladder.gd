@@ -16,9 +16,9 @@ func Update(_delta: float):
 		player.velocity.y = -100
 	elif Input.is_action_pressed("down"):
 		player.velocity.y = 350
-	if player.in_ladder == false:
+	if player.grav_disable == false:
 		Transitioned.emit(self,"player_idle")
 	if Input.is_action_just_pressed("action1"):
-		player.in_ladder = false
+		player.grav_disable = false
 		print("jumping")
 		Transitioned.emit(self,"player_jumping")

@@ -26,6 +26,9 @@ func Update(delta: float):
 		Transitioned.emit(self,"player_mach1")
 	if player.is_in_group("hotsauce"):
 		print("owww")
+	if player.state_override == true:
+		player.state_override = false
+		Transitioned.emit(self,player.state_override_change)
 
 func Pyhsics_Update(delta: float):
 	if player:

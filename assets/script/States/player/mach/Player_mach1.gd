@@ -30,6 +30,9 @@ func Update(delta: float):
 		Transitioned.emit(self,"player_jumping")
 	if sprite.get_frame() == 15:
 		Transitioned.emit(self,"player_mach2")
+	if player.state_override == true:
+		player.state_override = false
+		Transitioned.emit(self,player.state_override_change)
 	
 
 func Physic_Update(delta: float):

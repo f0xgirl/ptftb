@@ -3,9 +3,9 @@
 [ext_resource type="TileSet" uid="uid://t56k02vh81ye" path="res://resources/level/tilesets/placeholder_tileset.tres" id="1_rg4ur"]
 [ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="2_t1l8d"]
 [ext_resource type="Script" path="res://assets/script/resources scripts/level_data.gd" id="3_lx158"]
-[ext_resource type="PackedScene" uid="uid://mor1xtohk0ul" path="res://assets/scenes/levels/level objects/hot_sauce.tscn" id="4_fif1p"]
-[ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/levels/level objects/room_changer.tscn" id="5_x7ade"]
-[ext_resource type="PackedScene" uid="uid://cuoo8ojghsvmb" path="res://assets/scenes/levels/level objects/ladder.tscn" id="6_321j7"]
+[ext_resource type="PackedScene" uid="uid://mor1xtohk0ul" path="res://assets/scenes/level objects/hot_sauce.tscn" id="4_fif1p"]
+[ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/level objects/room_changer.tscn" id="5_x7ade"]
+[ext_resource type="PackedScene" uid="uid://cuoo8ojghsvmb" path="res://assets/scenes/level objects/ladder.tscn" id="6_321j7"]
 
 [sub_resource type="Resource" id="Resource_q8n3e"]
 script = ExtResource("3_lx158")
