@@ -1,14 +1,26 @@
 extends AnimatedSprite2D
 #TODO: connect signals, probably have them in global signals or something idk maybe i can have them in here
 
-signal anim_transition()
+#whether or not animations can override another one freely i.e falling when walking
+var override: bool = true
+var loop: bool = true
 
+#changes override variable
+func _anim_override(change: bool) -> void:
+	override = change
 
-func _ready() -> void:
-	anim_transition.connect(_transitioned_anim)
+##overridable = false cannot be changed and will be said animation until specific input
+##
+##overridable = true can be overrided at any time
+func _anim_change(anim: String, overridable: bool) -> void:
+	if override != overridable:
+		play(anim)
 
-func _anim(anim: String):
-	play(anim)
+#offsets animation, id rather not use this at all but i have to unfortunately
+func _anim_offset(x: int, y: int) -> void:
+	position.x = x
+	position.y = y
 
-func _transitioned_anim(anim: String):
-	play(anim)
+#
+func _anim_loop(loopable: bool) -> void:
+	loop = loopable

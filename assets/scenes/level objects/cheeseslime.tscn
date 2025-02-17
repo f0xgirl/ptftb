@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://xes1t1iyh8hl"]
 
-[ext_resource type="Script" path="res://assets/script/States/State.gd" id="1_ipntx"]
+[ext_resource type="Script" path="res://assets/script/States/State_player.gd" id="1_ipntx"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D"]
 

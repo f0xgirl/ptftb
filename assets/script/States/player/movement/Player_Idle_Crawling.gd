@@ -1,4 +1,4 @@
-extends State
+extends State_player
 class_name Player_Crawling
 
 @export var player: CharacterBody2D
@@ -17,12 +17,16 @@ func Update(delta: float):
 		sprite.play("crawling air")
 	else:
 		sprite.play("crawling")
+		emit_signal("anim_offset",2,-5)
 	direction = Input.get_axis("left","right")
 	sprite_flip()
 	if direction == 0:
 		Transitioned.emit(self,"player_idle_crouched")
 	if direction != 0:
 		player_data.player_direction = direction
+	if player.state_override == true:
+		player.state_override = false
+		Transitioned.emit(self,player.state_override_change)
 
 
 func Pyhsics_Update(delta: float):

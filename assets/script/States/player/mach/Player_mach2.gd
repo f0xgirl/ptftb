@@ -1,18 +1,17 @@
-extends State
+extends State_player
 class_name Player_mach2
 
 @export var player: CharacterBody2D
 @export var player_data: player_data
 @export var sprite: AnimatedSprite2D
+## amount of "time" until it switches to Player_mach3.
 var tillmach3: float = 300
 @onready var mach_2: AudioStreamPlayer2D = $"../../mach2"
 var direction = Input.get_axis("left","right")
 
 func Enter():
-	print(direction)
 	print(player_data.player_direction)
 	mach_2.play()
-	print(DataPassthrough.keep_state)
 	player.velocity.x = player_data.player_direction * player_data.mach2_speed
 	tillmach3 = DataPassthrough.player_tillmach3
 	DataPassthrough.player_state = "player_mach2"
@@ -20,7 +19,8 @@ func Enter():
 
 func Update(_delta: float):
 	direction = Input.get_axis("left","right")
-	sprite.play("mach2")
+	emit_signal("anim_change","mach2", false)
+	emit_signal("anim_offset",2,-5)
 	DataPassthrough.player_tillmach3 = tillmach3
 	if player.is_on_floor():
 		if not Input.is_action_pressed("action2"):

@@ -1,4 +1,4 @@
-extends State
+extends State_player
 class_name Player_walking
 
 @export var player: peppino
@@ -11,9 +11,11 @@ func Enter():
 	
 func Update(delta: float):
 	if player.is_on_floor() == false:
-		sprite.play("fall")
+		emit_signal("anim_change","fall",false)
 	else:
-		sprite.play("walking")
+		emit_signal("anim_change","walking",false)
+		emit_signal("anim_override",true)
+		emit_signal("anim_offset",2,-5)
 	direction = Input.get_axis("left","right")
 	sprite_flip()
 	if direction == 0:

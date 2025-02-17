@@ -1,4 +1,4 @@
-extends State
+extends State_player
 #whenever player hits a wall while in a mach state i.e sliding and running
 class_name player_bumped
 
@@ -23,3 +23,6 @@ func Update(delta: float):
 	sprite.play("bumped")
 	if player.is_on_floor():
 		Transitioned.emit(self,"player_idle")
+	if player.state_override == true:
+		player.state_override = false
+		Transitioned.emit(self,player.state_override_change)

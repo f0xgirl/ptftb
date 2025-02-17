@@ -1,4 +1,5 @@
-extends State
+extends State_player
+##handles everything regarding the idle state for the player
 class_name Player_Idle
 
 @export var sprite: AnimatedSprite2D 
@@ -19,15 +20,19 @@ func Update(delta: float):
 		DataPassthrough.keep_state = false
 		sprite.play(DataPassthrough.player_animation)
 	if not player.is_on_floor():
-		sprite.play("fall")
+		emit_signal("anim_change","fall",false)
+		emit_signal("anim_offset",2,-16)
 	else:
-		sprite.play("idle")
+		emit_signal("anim_offset",2,-21)
+		emit_signal("anim_change","idle",false)
+		emit_signal("anim_override",true)
 	if Input.is_action_pressed("left"):
 		Transitioned.emit(self,"player_walking")
 	if Input.is_action_pressed("right"):
 		Transitioned.emit(self,"player_walking")
 	if Input.is_action_pressed("up"):
-		sprite.play("up_jump_prep")
+		emit_signal("anim_change","up_jump_prep", false)
+		emit_signal("anim_override", false)
 	if Input.is_action_just_pressed("action1") and player.is_on_floor() and Input.is_action_pressed("up"):
 		Transitioned.emit(self,"player_highjump")
 	elif Input.is_action_just_pressed("action1") and player.is_on_floor():

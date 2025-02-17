@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bmemi8dsacgwy"]
 
 [ext_resource type="Texture2D" uid="uid://dp75ls50ufl80" path="res://assets/sprites/levels/level visuals/pointmonster.png" id="1_5fru5"]
-[ext_resource type="Script" path="res://assets/script/room_destination.gd" id="2_mnvwv"]
+[ext_resource type="Script" path="res://assets/script/level objects/room_destination.gd" id="2_mnvwv"]
 
 [node name="Sprite2D" type="Sprite2D"]
 texture = ExtResource("1_5fru5")

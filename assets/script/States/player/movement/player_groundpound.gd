@@ -1,4 +1,4 @@
-extends State
+extends State_player
 class_name Player_groundpound
 
 @export var sprite: AnimatedSprite2D 

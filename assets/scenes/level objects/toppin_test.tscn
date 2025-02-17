@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d0egigld2wxj"]
 
 [ext_resource type="Texture2D" uid="uid://dp75ls50ufl80" path="res://assets/sprites/levels/level visuals/pointmonster.png" id="1_rk1rx"]
-[ext_resource type="Script" path="res://assets/script/toppin_test.gd" id="2_2aaum"]
+[ext_resource type="Script" path="res://assets/script/level objects/toppin_test.gd" id="2_2aaum"]
 
 [node name="Sprite2D" type="Sprite2D"]
 texture = ExtResource("1_rk1rx")

@@ -1,4 +1,4 @@
-extends State
+extends State_player
 class_name Player_Idle_Crouched
 
 @export var sprite: AnimatedSprite2D
@@ -21,6 +21,7 @@ func Update(_delta: float):
 		player.velocity.y = player_data.jumpheight
 	if not player.is_on_floor():
 		sprite.play("crawling air")
+		emit_signal("anim_offset",2,-5)
 	if not Input.is_action_pressed("down"):
 		Transitioned.emit(self,"player_idle")
 	if Input.is_action_pressed("left"):

@@ -1,4 +1,4 @@
-extends State
+extends State_player
 class_name Player_mach1
 
 var till_mach2 = 100 #cool ass name
@@ -20,6 +20,7 @@ func Enter():
 
 func Update(delta: float):
 	sprite.play("mach1")
+	emit_signal("anim_offset",2,-5)
 	if Input.is_action_pressed("action2"):
 		player.velocity.x += player_data.player_direction * player_data.mach1_speed
 	if till_mach2 == 0:

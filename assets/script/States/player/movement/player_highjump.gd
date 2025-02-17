@@ -1,4 +1,4 @@
-extends State
+extends State_player
 class_name Player_highjump
 
 @export var player: CharacterBody2D

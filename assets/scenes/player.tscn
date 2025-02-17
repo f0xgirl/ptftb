@@ -1246,7 +1246,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sun77")
 }],
-"loop": true,
+"loop": false,
 "name": &"up_jump_prep",
 "speed": 21.0
 }, {
@@ -1682,7 +1682,7 @@ z_index = 1
 material = ExtResource("3_urkgk")
 position = Vector2(2, -21)
 sprite_frames = SubResource("SpriteFrames_cdmb6")
-animation = &"turn"
+animation = &"idle"
 autoplay = "idle"
 script = ExtResource("23_uq8vi")
 
@@ -2026,4 +2026,25 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_tgp25")
 anim_player = NodePath("../AnimationPlayer")
 
+[connection signal="anim_change" from="State Machine/Player_Idle" to="sprite" method="_anim_change"]
+[connection signal="anim_loop" from="State Machine/Player_Idle" to="sprite" method="_anim_loop"]
+[connection signal="anim_offset" from="State Machine/Player_Idle" to="sprite" method="_anim_offset"]
+[connection signal="anim_override" from="State Machine/Player_Idle" to="sprite" method="_anim_override"]
+[connection signal="anim_change" from="State Machine/Player_walking" to="sprite" method="_anim_change"]
+[connection signal="anim_offset" from="State Machine/Player_walking" to="sprite" method="_anim_offset"]
+[connection signal="anim_override" from="State Machine/Player_walking" to="sprite" method="_anim_override"]
+[connection signal="anim_change" from="State Machine/Player_mach1" to="sprite" method="_anim_change"]
+[connection signal="anim_override" from="State Machine/Player_mach1" to="sprite" method="_anim_override"]
+[connection signal="anim_change" from="State Machine/Player_mach2" to="sprite" method="_anim_change"]
+[connection signal="anim_offset" from="State Machine/Player_mach2" to="sprite" method="_anim_offset"]
+[connection signal="anim_override" from="State Machine/Player_mach2" to="sprite" method="_anim_override"]
+[connection signal="anim_change" from="State Machine/Player_mach3" to="sprite" method="_anim_change"]
+[connection signal="anim_offset" from="State Machine/Player_mach3" to="sprite" method="_anim_offset"]
+[connection signal="anim_override" from="State Machine/Player_mach3" to="sprite" method="_anim_override"]
+[connection signal="anim_change" from="State Machine/Player_Crawling" to="sprite" method="_anim_change"]
+[connection signal="anim_offset" from="State Machine/Player_Crawling" to="sprite" method="_anim_offset"]
+[connection signal="anim_override" from="State Machine/Player_Crawling" to="sprite" method="_anim_override"]
+[connection signal="anim_change" from="State Machine/Player_Idle_Crouched" to="sprite" method="_anim_change"]
+[connection signal="anim_offset" from="State Machine/Player_Idle_Crouched" to="sprite" method="_anim_offset"]
+[connection signal="anim_override" from="State Machine/Player_Idle_Crouched" to="sprite" method="_anim_override"]
 [connection signal="finished" from="mach2" to="State Machine/Player_mach2" method="_on_mach_2_finished"]

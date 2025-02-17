@@ -1,4 +1,4 @@
-extends State
+extends State_player
 class_name Player_slide
 
 var slide_progress: bool = false
@@ -22,5 +22,8 @@ func Update(_delta: float):
 	sprite.play("slide_start")
 	if player.is_on_wall():
 		Transitioned.emit(self,"player_bumped")
+	if player.state_override == true:
+		player.state_override = false
+		Transitioned.emit(self,player.state_override_change)
 func Exit():
 	sprite.play("slide_end")

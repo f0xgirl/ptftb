@@ -1,4 +1,4 @@
-extends State
+extends State_player
 class_name player_olive
 
 @export var sprite: AnimatedSprite2D 
@@ -13,9 +13,9 @@ func Enter():
 
 func Update(_delta: float):
 	sprite.play("superjump")
-	player.velocity.y += -100
+	player.velocity.y += -50
 	if player.is_on_ceiling():
-		player.velocity.y = 1009
+		player.velocity.y = 500
 	if Input.is_action_just_pressed("action1"):
 		Transitioned.emit(self,"player_idle")
 	direction = Input.get_axis("left","right")

@@ -28,6 +28,10 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	if Input.is_action_just_pressed("pause"):
 		get_tree().change_scene_to_file("res://assets/scenes/level_select.tscn")
+		DataPassthrough.panic = false
+		Globaltimer.stop()
+		DataPassthrough.player_pos_x = 0
+		DataPassthrough.player_pos_y = 0
 
 func setcamboundaries():
 	camera.limit_left = level_data.get_limit(0)
@@ -39,10 +43,15 @@ func disable_gravity(grav: bool):
 func ladder_stop():
 	velocity.y += gravity
 
-func change_state(trans: String):
+func change_state():
 	pass
 
 
 func _on_hot_sauce_body_entered(body: Node2D) -> void:
 	state_override = true
 	state_override_change = "player_fireass"
+
+
+func _change_dir(dir: int) -> void:
+	print("working")
+	player_data.player_direction = dir

@@ -1,4 +1,4 @@
-extends State
+extends State_player
 class_name Player_mach3
 
 @export var player: CharacterBody2D
@@ -22,7 +22,8 @@ func Update(_delta: float):
 	direction = Input.get_axis("left","right")
 	print(direction)
 	charge_effect.visible = true
-	sprite.play("mach3")
+	emit_signal("anim_change","mach3",false)
+	emit_signal("anim_offset",2,-5)
 	if player.is_on_floor():
 		if not Input.is_action_pressed("action2"):
 			Transitioned.emit(self,"Player_slide")
@@ -38,6 +39,9 @@ func Update(_delta: float):
 		Transitioned.emit(self,"Player_superjump")
 	if direction != player_data.player_direction and not direction == 0 and player.is_on_floor():
 		Transitioned.emit(self,"Player_turn")
+	if player.state_override == true:
+		player.state_override = false
+		Transitioned.emit(self,player.state_override_change)
 
 func Exit():
 	mach_3.stop()

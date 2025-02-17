@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b5dyq2pyrrxfp"]
 
-[ext_resource type="Script" path="res://assets/script/room_changer.gd" id="1_lbtus"]
+[ext_resource type="Script" path="res://assets/script/level objects/room_changer.gd" id="1_lbtus"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qmeay"]
 

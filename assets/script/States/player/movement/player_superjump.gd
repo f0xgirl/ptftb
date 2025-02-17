@@ -1,4 +1,4 @@
-extends State
+extends State_player
 class_name Player_Superjump
 
 @export var sprite: AnimatedSprite2D 
