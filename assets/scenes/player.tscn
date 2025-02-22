@@ -1,4 +1,4 @@
-[gd_scene load_steps=269 format=3 uid="uid://d3amowmvkdyo"]
+[gd_scene load_steps=271 format=3 uid="uid://d3amowmvkdyo"]
 
 [ext_resource type="Script" path="res://assets/script/player.gd" id="1_aarfl"]
 [ext_resource type="Resource" uid="uid://bvm4oc3oc6sjt" path="res://resources/player/player_data.tres" id="2_i6cxx"]
@@ -50,7 +50,9 @@
 [ext_resource type="AudioStream" uid="uid://dhwhbmrtdefj5" path="res://AUDIO/sfx_mach2.wav" id="43_0x4uv"]
 [ext_resource type="AudioStream" uid="uid://dncrp4quy5s68" path="res://AUDIO/sfx_mach3.wav" id="44_2brbj"]
 [ext_resource type="Script" path="res://assets/script/States/player/movement/player_olive.gd" id="47_4mn5a"]
+[ext_resource type="Script" path="res://assets/script/States/player/trans/rocketpep.gd" id="48_878e8"]
 [ext_resource type="Script" path="res://assets/script/panic_visual.gd" id="49_p65hc"]
+[ext_resource type="AudioStream" uid="uid://bdeo0di331rt7" path="res://AUDIO/sfx_mach4.wav" id="53_jjtpe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kmpnv"]
 atlas = ExtResource("3_01jss")
@@ -1992,6 +1994,11 @@ sprite = NodePath("../../sprite")
 player_data = ExtResource("2_i6cxx")
 player = NodePath("../..")
 
+[node name="rocket_pep" type="Node" parent="State Machine" node_paths=PackedStringArray("player")]
+script = ExtResource("48_878e8")
+player = NodePath("../..")
+player_data = ExtResource("2_i6cxx")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.8, 1.8)
 
@@ -2007,13 +2014,21 @@ autoplay = "default"
 frame_progress = 0.106542
 
 [node name="mach1" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
 stream = ExtResource("42_akwvy")
 
 [node name="mach2" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
 stream = ExtResource("43_0x4uv")
 
 [node name="mach3" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
 stream = ExtResource("44_2brbj")
+
+[node name="mach4" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("53_jjtpe")
+volume_db = 5.0
 
 [node name="Timer" type="Timer" parent="."]
 

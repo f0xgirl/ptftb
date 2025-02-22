@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dhux35f80lpih"]
+[gd_scene load_steps=11 format=4 uid="uid://dhux35f80lpih"]
 
 [ext_resource type="Script" path="res://assets/script/level_stuff.gd" id="1_ex4gm"]
 [ext_resource type="TileSet" uid="uid://t56k02vh81ye" path="res://resources/level/tilesets/placeholder_tileset.tres" id="1_uwc0p"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://drg1wcxxcyjdm" path="res://assets/scenes/level objects/gate_portal.tscn" id="6_17qy1"]
 [ext_resource type="PackedScene" uid="uid://cwev5u7k86x3u" path="res://assets/scenes/level objects/state_changer.tscn" id="7_fy185"]
 [ext_resource type="PackedScene" uid="uid://0vqb05x2gqyd" path="res://assets/scenes/level objects/speed_pad.tscn" id="8_75g3n"]
+[ext_resource type="PackedScene" uid="uid://bwttvu5y2syim" path="res://assets/scenes/level objects/rocket.tscn" id="9_qlm2v"]
 
 [sub_resource type="Resource" id="Resource_nv5cd"]
 script = ExtResource("3_ly8b1")
@@ -53,8 +54,13 @@ player = NodePath("../player")
 state = "player_olive"
 
 [node name="state_changer" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_75g3n")]
-position = Vector2(448, 344)
+position = Vector2(458, 177)
 direction = -1
+player = NodePath("../player")
+
+[node name="rocket" parent="." node_paths=PackedStringArray("player") instance=ExtResource("9_qlm2v")]
+position = Vector2(553, 341)
+forced_direction = 1
 player = NodePath("../player")
 
 [connection signal="changedir" from="state_changer" to="player" method="_change_dir"]

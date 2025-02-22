@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b3tnoclfm5sgl"]
+[gd_scene load_steps=13 format=3 uid="uid://b3tnoclfm5sgl"]
 
 [ext_resource type="Script" path="res://assets/script/level_select.gd" id="1_r74vo"]
 [ext_resource type="Script" path="res://assets/script/resources scripts/level_info.gd" id="2_t673h"]
@@ -19,12 +19,17 @@ script = ExtResource("2_t673h")
 level_name = "mid escape"
 file_path = "res://assets/scenes/levels/midescape/midescape_1.tscn"
 
+[sub_resource type="Resource" id="Resource_s3tcw"]
+script = ExtResource("2_t673h")
+level_name = "test"
+file_path = "res://assets/scenes/levels/testing/testing level.tscn"
+
 [sub_resource type="LabelSettings" id="LabelSettings_fhmxf"]
 font_size = 64
 
 [node name="Node" type="Node"]
 script = ExtResource("1_r74vo")
-levels = Array[ExtResource("2_t673h")]([ExtResource("3_mn21b"), ExtResource("3_scxtq"), ExtResource("5_jagk7"), ExtResource("6_bqg0p"), ExtResource("7_au33t"), SubResource("Resource_c4c0j"), SubResource("Resource_41clm")])
+levels = Array[ExtResource("2_t673h")]([ExtResource("3_mn21b"), ExtResource("3_scxtq"), ExtResource("5_jagk7"), ExtResource("6_bqg0p"), ExtResource("7_au33t"), SubResource("Resource_c4c0j"), SubResource("Resource_41clm"), SubResource("Resource_s3tcw")])
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

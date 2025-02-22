@@ -8,6 +8,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var level_data: level_data
 @onready var score: Label = $score/Control/MarginContainer/HBoxContainer/VBoxContainer/Label
 @onready var sprite: AnimatedSprite2D = $sprite
+var force_direction: int
 var state: State
 var state_override: bool = false
 var state_override_change: String
