@@ -8,6 +8,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var level_data: level_data
 @onready var score: Label = $score/Control/MarginContainer/HBoxContainer/VBoxContainer/Label
 @onready var sprite: AnimatedSprite2D = $sprite
+const TOPPIN_TEST = preload("res://assets/scenes/level objects/toppin_test.tscn")
 var force_direction: int
 var state: State
 var state_override: bool = false
@@ -17,6 +18,8 @@ var still_in_ladder: bool = false
 
 
 func _ready():
+	var toppin = TOPPIN_TEST.instantiate()
+	add_child(toppin)
 	score.set_text(var_to_str(level_data.score))
 	setcamboundaries()
 	if DataPassthrough.player_pos_x:
@@ -56,3 +59,11 @@ func _on_hot_sauce_body_entered(body: Node2D) -> void:
 func _change_dir(dir: int) -> void:
 	print("working")
 	player_data.player_direction = dir
+
+func fuck():
+	print("fuck")
+func _get_pos_x():
+	return position.x
+	
+func _get_pos_y():
+	return position.y

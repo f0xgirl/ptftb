@@ -122,6 +122,5 @@ res = SubResource("Resource_oy60u")
 [node name="ParallaxBackground2" parent="." instance=ExtResource("12_f3a2a")]
 visible = false
 
-[node name="Sprite2D" parent="." node_paths=PackedStringArray("plr") instance=ExtResource("13_aud2h")]
+[node name="Sprite2D" parent="." instance=ExtResource("13_aud2h")]
 position = Vector2(-982, 241)
-plr = NodePath("../player")

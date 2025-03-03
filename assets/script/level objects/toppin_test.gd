@@ -1,6 +1,11 @@
 extends Sprite2D
 
-@export var plr: peppino
+#var x = get_parent().call("_get_pos_x")
+#var y = get_parent().call("_get_pos_y")
+#var a
 
 func _process(delta: float) -> void:
-	global_position = Vector2(plr.position.x - 50 * plr.player_data.player_direction, plr.position.y)
+	pass
+	#print()
+	#global_position = Vector2(player.position.x - 50 * player.player_data.player_direction, player.position.y)
+	#global_position = Vector2(x - 50, y)
