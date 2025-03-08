@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=4 uid="uid://57g3rranl1yh"]
 
 [ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="1_ei8xb"]
-[ext_resource type="Script" path="res://assets/script/level specific/hub_1.gd" id="1_ilkdo"]
+[ext_resource type="Script" uid="uid://cevmxegd0htdb" path="res://assets/script/level specific/hub_1.gd" id="1_ilkdo"]
 [ext_resource type="Resource" uid="uid://dxwmw5i53ls4u" path="res://resources/level/level_data.tres" id="2_uvvgr"]
 [ext_resource type="TileSet" uid="uid://t56k02vh81ye" path="res://resources/level/tilesets/placeholder_tileset.tres" id="3_conok"]
 [ext_resource type="PackedScene" uid="uid://drg1wcxxcyjdm" path="res://assets/scenes/level objects/gate_portal.tscn" id="4_2qa0c"]

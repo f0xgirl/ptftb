@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://resources/level/tilesets/john_gutter_tileset.tres" id="1_i00w0"]
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/level objects/room_changer.tscn" id="2_675mq"]
 [ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="3_fkxyb"]
-[ext_resource type="Script" path="res://assets/script/resources scripts/level_data.gd" id="4_0vnsp"]
+[ext_resource type="Script" uid="uid://qwvbeauuaulm" path="res://assets/script/resources scripts/level_data.gd" id="4_0vnsp"]
 [ext_resource type="PackedScene" uid="uid://c8aqg4asjyefk" path="res://assets/scenes/level objects/pillarjohn.tscn" id="6_spaaf"]
 [ext_resource type="PackedScene" uid="uid://gu657xt52lr7" path="res://assets/scenes/level objects/panic_block.tscn" id="7_7kky0"]
 

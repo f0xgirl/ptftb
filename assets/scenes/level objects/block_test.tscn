@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c7ogx214cfhin"]
 
 [ext_resource type="Texture2D" uid="uid://bj20gx2lhl3y7" path="res://assets/sprites/smallveggie.png" id="1_8cplq"]
-[ext_resource type="Script" path="res://assets/script/level objects/block_collision.gd" id="2_7ut20"]
+[ext_resource type="Script" uid="uid://1hda33q1iede" path="res://assets/script/level objects/block_collision.gd" id="2_7ut20"]
 [ext_resource type="Texture2D" uid="uid://5s6cqd1b5fis" path="res://assets/sprites/floor.png" id="3_oprkb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u5rb0"]

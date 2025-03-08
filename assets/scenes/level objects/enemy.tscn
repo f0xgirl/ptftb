@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bn3bk23xaqbtk"]
 
-[ext_resource type="Script" path="res://assets/script/level objects/enemy.gd" id="1_i76gn"]
+[ext_resource type="Script" uid="uid://c17qpg4fnhkjy" path="res://assets/script/level objects/enemy.gd" id="1_i76gn"]
 [ext_resource type="Resource" uid="uid://46t4d40yij5f" path="res://resources/enemy_data.tres" id="2_j22ue"]
 [ext_resource type="Texture2D" uid="uid://bj20gx2lhl3y7" path="res://assets/sprites/smallveggie.png" id="3_rfthv"]
 

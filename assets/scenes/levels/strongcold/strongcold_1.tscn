@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=4 uid="uid://ddfs4ffikkjoq"]
 
-[ext_resource type="Script" path="res://assets/script/level specific/strongcold_1.gd" id="1_1it0h"]
+[ext_resource type="Script" uid="uid://du0rvnk6e38em" path="res://assets/script/level specific/strongcold_1.gd" id="1_1it0h"]
 [ext_resource type="Texture2D" uid="uid://difag0780ni4x" path="res://assets/sprites/levels/level visuals/strongcoldconcept1.png" id="1_lnf4h"]
 [ext_resource type="TileSet" uid="uid://t56k02vh81ye" path="res://resources/level/tilesets/placeholder_tileset.tres" id="2_dd6af"]
 [ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="3_icpf2"]
-[ext_resource type="Script" path="res://assets/script/resources scripts/level_data.gd" id="4_vlq21"]
+[ext_resource type="Script" uid="uid://qwvbeauuaulm" path="res://assets/script/resources scripts/level_data.gd" id="4_vlq21"]
 [ext_resource type="PackedScene" uid="uid://drg1wcxxcyjdm" path="res://assets/scenes/level objects/gate_portal.tscn" id="5_t45di"]
 [ext_resource type="PackedScene" uid="uid://mor1xtohk0ul" path="res://assets/scenes/level objects/hot_sauce.tscn" id="6_qaey5"]
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/level objects/room_changer.tscn" id="8_8dor1"]

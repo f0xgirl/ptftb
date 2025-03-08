@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bplsasd8hafjp"]
 
-[ext_resource type="Script" path="res://assets/script/level objects/grav_olive.gd" id="1_g1w7v"]
+[ext_resource type="Script" uid="uid://byo2pmctrsrod" path="res://assets/script/level objects/grav_olive.gd" id="1_g1w7v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clcud"]
 

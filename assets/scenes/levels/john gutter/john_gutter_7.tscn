@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c8aqg4asjyefk" path="res://assets/scenes/level objects/pillarjohn.tscn" id="2_8borr"]
 [ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="3_607a7"]
 [ext_resource type="PackedScene" uid="uid://cuoo8ojghsvmb" path="res://assets/scenes/level objects/ladder.tscn" id="4_6wxuq"]
-[ext_resource type="Script" path="res://assets/script/resources scripts/level_data.gd" id="4_8j132"]
+[ext_resource type="Script" uid="uid://qwvbeauuaulm" path="res://assets/script/resources scripts/level_data.gd" id="4_8j132"]
 [ext_resource type="PackedScene" uid="uid://d2q30hyq4cxd2" path="res://assets/scenes/level objects/door.tscn" id="5_j6e6m"]
 
 [sub_resource type="Resource" id="Resource_68vw5"]

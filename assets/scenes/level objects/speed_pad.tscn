@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://0vqb05x2gqyd"]
 
-[ext_resource type="Script" path="res://assets/script/level objects/speedpad.gd" id="1_wodlg"]
+[ext_resource type="Script" uid="uid://pa5jxopiisal" path="res://assets/script/level objects/speedpad.gd" id="1_wodlg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7m47j"]
 

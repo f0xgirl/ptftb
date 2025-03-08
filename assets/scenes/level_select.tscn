@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://b3tnoclfm5sgl"]
 
-[ext_resource type="Script" path="res://assets/script/level_select.gd" id="1_r74vo"]
-[ext_resource type="Script" path="res://assets/script/resources scripts/level_info.gd" id="2_t673h"]
+[ext_resource type="Script" uid="uid://7020qff4vowm" path="res://assets/script/level_select.gd" id="1_r74vo"]
+[ext_resource type="Script" uid="uid://oafrabh2r0vh" path="res://assets/script/resources scripts/level_info.gd" id="2_t673h"]
 [ext_resource type="Resource" uid="uid://cf2bh8c1eqlb5" path="res://resources/level/tutorial.tres" id="3_mn21b"]
 [ext_resource type="Resource" uid="uid://codayoumxcvh0" path="res://resources/level/john_gutter.tres" id="3_scxtq"]
 [ext_resource type="Resource" uid="uid://dg3ogium8rpoc" path="res://resources/level/space_pinball.tres" id="5_jagk7"]

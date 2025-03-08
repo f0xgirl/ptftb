@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Enemy_Resource" load_steps=2 format=3 uid="uid://46t4d40yij5f"]
 
-[ext_resource type="Script" path="res://assets/script/resources scripts/enemy_data.gd" id="1_e1f7m"]
+[ext_resource type="Script" uid="uid://0x84kn8f6sur" path="res://assets/script/resources scripts/enemy_data.gd" id="1_e1f7m"]
 
 [resource]
 resource_local_to_scene = true

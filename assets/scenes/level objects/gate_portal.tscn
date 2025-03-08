@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cvit2bpm6ye7n" path="res://assets/sprites/spr_exitgate_0.png" id="1_heehu"]
 [ext_resource type="Texture2D" uid="uid://bfnmbanrjp13h" path="res://assets/sprites/spr_exitgate_1.png" id="2_1ps06"]
-[ext_resource type="Script" path="res://assets/script/level objects/entryexitgate.gd" id="3_5fyey"]
+[ext_resource type="Script" uid="uid://dtxkfn3oat0fs" path="res://assets/script/level objects/entryexitgate.gd" id="3_5fyey"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a7vkq"]
 atlas = ExtResource("1_heehu")

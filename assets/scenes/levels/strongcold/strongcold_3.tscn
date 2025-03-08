@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=4 uid="uid://drmuwlookavsm"]
 
 [ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="1_m8jfw"]
-[ext_resource type="Script" path="res://assets/script/resources scripts/level_data.gd" id="2_jyn6t"]
+[ext_resource type="Script" uid="uid://qwvbeauuaulm" path="res://assets/script/resources scripts/level_data.gd" id="2_jyn6t"]
 [ext_resource type="TileSet" uid="uid://t56k02vh81ye" path="res://resources/level/tilesets/placeholder_tileset.tres" id="3_fu3lv"]
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/level objects/room_changer.tscn" id="4_60pb7"]
 

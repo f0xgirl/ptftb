@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c8aqg4asjyefk"]
 
-[ext_resource type="Script" path="res://assets/script/level objects/pillar_john.gd" id="1_3yuwh"]
-[ext_resource type="Script" path="res://assets/script/level objects/pillarjohn.gd" id="1_kt7pj"]
+[ext_resource type="Script" uid="uid://c7vhs2vncy11h" path="res://assets/script/level objects/pillar_john.gd" id="1_3yuwh"]
+[ext_resource type="Script" uid="uid://duc51ap8nom81" path="res://assets/script/level objects/pillarjohn.gd" id="1_kt7pj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qs7kj"]
 

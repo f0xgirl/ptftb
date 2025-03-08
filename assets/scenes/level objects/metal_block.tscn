@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://7q52prdlvm3g"]
 
 [ext_resource type="Texture2D" uid="uid://dg2f35c8j5vw7" path="res://assets/sprites/levels/level visuals/spr_metalb_0.png" id="1_ep4kx"]
-[ext_resource type="Script" path="res://assets/script/level objects/metal_block.gd" id="2_lwo7m"]
+[ext_resource type="Script" uid="uid://disd3x8yugam5" path="res://assets/script/level objects/metal_block.gd" id="2_lwo7m"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_imdpw"]
 

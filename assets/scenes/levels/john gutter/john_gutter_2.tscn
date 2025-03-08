@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bmemi8dsacgwy" path="res://assets/scenes/level objects/room_destination.tscn" id="4_t08t8"]
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/level objects/room_changer.tscn" id="5_40016"]
 [ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="6_mrebc"]
-[ext_resource type="Script" path="res://assets/script/resources scripts/level_data.gd" id="7_nqmw4"]
+[ext_resource type="Script" uid="uid://qwvbeauuaulm" path="res://assets/script/resources scripts/level_data.gd" id="7_nqmw4"]
 [ext_resource type="PackedScene" uid="uid://7q52prdlvm3g" path="res://assets/scenes/level objects/metal_block.tscn" id="9_eg0ts"]
 [ext_resource type="PackedScene" uid="uid://cuoo8ojghsvmb" path="res://assets/scenes/level objects/ladder.tscn" id="9_jw4bg"]
 

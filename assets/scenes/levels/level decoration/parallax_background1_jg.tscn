@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c20qitdqj1cc1"]
 
 [ext_resource type="Texture2D" uid="uid://clepigjnkayx3" path="res://assets/sprites/normalT_parrallax1.png" id="1_k5ux4"]
-[ext_resource type="Script" path="res://assets/script/backgroundscary.gd" id="3_65iyg"]
+[ext_resource type="Script" uid="uid://bk5i5y3bnt2qx" path="res://assets/script/backgroundscary.gd" id="3_65iyg"]
 [ext_resource type="Texture2D" uid="uid://brdrctkk64hqk" path="res://assets/sprites/normalT_parrallax2.png" id="3_pvoqt"]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://fdbj1p7xsrv"]
 
-[ext_resource type="Script" path="res://assets/script/level_boundary.gd" id="1_aegd5"]
+[ext_resource type="Script" uid="uid://ddlyomldfpcv4" path="res://assets/script/level_boundary.gd" id="1_aegd5"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bfqy1"]
 

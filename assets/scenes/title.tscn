@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d1dys6f3kjh5i"]
 
-[ext_resource type="Script" path="res://assets/script/test2.gd" id="1_vs737"]
-[ext_resource type="VideoStream" path="res://assets/video/youtube_25ZMpDm-lsw_1280x720_h264.ogv" id="6_xlhx1"]
+[ext_resource type="Script" uid="uid://cb55oilc2l3pk" path="res://assets/script/test2.gd" id="1_vs737"]
+[ext_resource type="VideoStream" uid="uid://d2lbwa017q8il" path="res://assets/video/youtube_25ZMpDm-lsw_1280x720_h264.ogv" id="6_xlhx1"]
 
 [node name="Control" type="Control"]
 layout_mode = 3

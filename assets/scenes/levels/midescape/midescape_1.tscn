@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=4 uid="uid://ginethe02gsu"]
 
 [ext_resource type="TileSet" uid="uid://t56k02vh81ye" path="res://resources/level/tilesets/placeholder_tileset.tres" id="1_f0krl"]
-[ext_resource type="Script" path="res://assets/script/level specific/midescape_1.gd" id="1_vohhw"]
+[ext_resource type="Script" uid="uid://bci8hvvge8vxx" path="res://assets/script/level specific/midescape_1.gd" id="1_vohhw"]
 [ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="2_2x4s7"]
-[ext_resource type="Script" path="res://assets/script/resources scripts/level_data.gd" id="3_vprmi"]
+[ext_resource type="Script" uid="uid://qwvbeauuaulm" path="res://assets/script/resources scripts/level_data.gd" id="3_vprmi"]
 [ext_resource type="PackedScene" uid="uid://0vqb05x2gqyd" path="res://assets/scenes/level objects/speed_pad.tscn" id="6_ko5f7"]
 [ext_resource type="PackedScene" uid="uid://bplsasd8hafjp" path="res://assets/scenes/level objects/olive_grav.tscn" id="6_t258u"]
 [ext_resource type="PackedScene" uid="uid://d2q30hyq4cxd2" path="res://assets/scenes/level objects/door.tscn" id="7_tttvx"]

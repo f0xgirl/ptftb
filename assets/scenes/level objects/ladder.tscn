@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cuoo8ojghsvmb"]
 
-[ext_resource type="Script" path="res://assets/script/level objects/ladder.gd" id="1_v1c3f"]
+[ext_resource type="Script" uid="uid://ii7hxl3kuvov" path="res://assets/script/level objects/ladder.gd" id="1_v1c3f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_loawn"]
 

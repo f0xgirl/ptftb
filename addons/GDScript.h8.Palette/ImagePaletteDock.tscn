@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://crojp1bgnutlh"]
 
-[ext_resource type="Script" path="res://addons/GDScript.h8.Palette/ImagePaletteDock.gd" id="1_52a1h"]
+[ext_resource type="Script" uid="uid://da0fffxby3g23" path="res://addons/GDScript.h8.Palette/ImagePaletteDock.gd" id="1_52a1h"]
 
 [node name="ImagePalatteDock" type="Control" node_paths=PackedStringArray("SourceTextureRect", "IndexMapRect", "PaletteRect", "ClearPalette", "ExtractPalette", "ExtractIndexMap", "SaveMap", "SavePalette")]
 layout_mode = 3

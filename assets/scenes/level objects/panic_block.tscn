@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://gu657xt52lr7"]
 
 [ext_resource type="Texture2D" uid="uid://cmnqe80xe54d0" path="res://assets/sprites/spr_enemyblockdead_0.png" id="1_2hg6x"]
-[ext_resource type="Script" path="res://assets/script/level objects/panic_block.gd" id="2_dskpq"]
+[ext_resource type="Script" uid="uid://co8fmgbc5xav6" path="res://assets/script/level objects/panic_block.gd" id="2_dskpq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_12xo5"]
 

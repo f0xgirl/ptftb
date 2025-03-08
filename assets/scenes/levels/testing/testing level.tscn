@@ -2,11 +2,11 @@
 
 [ext_resource type="TileSet" uid="uid://t56k02vh81ye" path="res://resources/level/tilesets/placeholder_tileset.tres" id="1_ssqox"]
 [ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="2_82qci"]
-[ext_resource type="Script" path="res://assets/script/resources scripts/level_data.gd" id="3_uxphu"]
+[ext_resource type="Script" uid="uid://qwvbeauuaulm" path="res://assets/script/resources scripts/level_data.gd" id="3_uxphu"]
 [ext_resource type="PackedScene" uid="uid://xes1t1iyh8hl" path="res://assets/scenes/level objects/cheeseslime.tscn" id="4_7muta"]
 [ext_resource type="PackedScene" uid="uid://d2q30hyq4cxd2" path="res://assets/scenes/level objects/door.tscn" id="5_6df1x"]
 [ext_resource type="PackedScene" uid="uid://bn3bk23xaqbtk" path="res://assets/scenes/level objects/enemy.tscn" id="6_0rvyr"]
-[ext_resource type="Script" path="res://assets/script/resources scripts/enemy_data.gd" id="7_eya47"]
+[ext_resource type="Script" uid="uid://0x84kn8f6sur" path="res://assets/script/resources scripts/enemy_data.gd" id="7_eya47"]
 [ext_resource type="PackedScene" uid="uid://drg1wcxxcyjdm" path="res://assets/scenes/level objects/gate_portal.tscn" id="8_r17dt"]
 [ext_resource type="PackedScene" uid="uid://mor1xtohk0ul" path="res://assets/scenes/level objects/hot_sauce.tscn" id="9_xj60e"]
 [ext_resource type="PackedScene" uid="uid://cuoo8ojghsvmb" path="res://assets/scenes/level objects/ladder.tscn" id="10_ruojt"]

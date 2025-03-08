@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=4 uid="uid://2xmy5sbsv6sn"]
 
 [ext_resource type="TileSet" uid="uid://t56k02vh81ye" path="res://resources/level/tilesets/placeholder_tileset.tres" id="1_p0t5w"]
-[ext_resource type="Script" path="res://assets/script/level specific/space_pinball.gd" id="1_ta77k"]
+[ext_resource type="Script" uid="uid://qc1fi2scumh1" path="res://assets/script/level specific/space_pinball.gd" id="1_ta77k"]
 [ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="2_g7sng"]
-[ext_resource type="Script" path="res://assets/script/resources scripts/level_data.gd" id="3_yyubv"]
+[ext_resource type="Script" uid="uid://qwvbeauuaulm" path="res://assets/script/resources scripts/level_data.gd" id="3_yyubv"]
 [ext_resource type="PackedScene" uid="uid://drg1wcxxcyjdm" path="res://assets/scenes/level objects/gate_portal.tscn" id="4_2vkaq"]
 [ext_resource type="PackedScene" uid="uid://cwev5u7k86x3u" path="res://assets/scenes/level objects/state_changer.tscn" id="6_aytcr"]
 

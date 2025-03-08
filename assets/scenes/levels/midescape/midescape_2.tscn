@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://t56k02vh81ye" path="res://resources/level/tilesets/placeholder_tileset.tres" id="1_gknqr"]
 [ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="2_m1gfk"]
-[ext_resource type="Script" path="res://assets/script/resources scripts/level_data.gd" id="3_ioekg"]
+[ext_resource type="Script" uid="uid://qwvbeauuaulm" path="res://assets/script/resources scripts/level_data.gd" id="3_ioekg"]
 [ext_resource type="PackedScene" uid="uid://fdbj1p7xsrv" path="res://assets/scenes/level objects/level boundary.tscn" id="4_87ylj"]
 [ext_resource type="PackedScene" uid="uid://bwttvu5y2syim" path="res://assets/scenes/level objects/rocket.tscn" id="5_d2x8x"]
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/level objects/room_changer.tscn" id="6_104a0"]

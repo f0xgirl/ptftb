@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c20qitdqj1cc1" path="res://assets/scenes/levels/level decoration/parallax_background1_jg.tscn" id="3_frvkv"]
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/level objects/room_changer.tscn" id="4_qu12t"]
 [ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="5_5kxyk"]
-[ext_resource type="Script" path="res://assets/script/resources scripts/level_data.gd" id="6_725dt"]
+[ext_resource type="Script" uid="uid://qwvbeauuaulm" path="res://assets/script/resources scripts/level_data.gd" id="6_725dt"]
 [ext_resource type="PackedScene" uid="uid://d2q30hyq4cxd2" path="res://assets/scenes/level objects/door.tscn" id="7_4oqgm"]
 [ext_resource type="PackedScene" uid="uid://c7ogx214cfhin" path="res://assets/scenes/level objects/block_test.tscn" id="8_4b3as"]
 
