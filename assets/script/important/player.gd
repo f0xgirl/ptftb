@@ -42,13 +42,12 @@ func setcamboundaries():
 	camera.limit_top = level_data.get_limit(1)
 	camera.limit_right = level_data.get_limit(2)
 	camera.limit_bottom = level_data.get_limit(3)
+	
 func disable_gravity(grav: bool):
 	grav_disable = grav
+	
 func ladder_stop():
 	velocity.y += gravity
-
-func change_state():
-	pass
 
 
 func _on_hot_sauce_body_entered(body: Node2D) -> void:
