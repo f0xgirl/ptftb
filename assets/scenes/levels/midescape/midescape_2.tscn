@@ -46,3 +46,5 @@ player = NodePath("../player")
 position = Vector2(832, 58)
 scale = Vector2(1, 7.04)
 location = "res://assets/scenes/levels/midescape/midescape_3.tscn"
+X = -726
+Y = -90
