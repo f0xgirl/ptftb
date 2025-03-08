@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ca8k22ad5vs46"]
+
+[ext_resource type="Script" uid="uid://3qhdcgr4b5td" path="res://assets/script/important/load things/parent.gd" id="1_s3uml"]
+
+[node name="Parent" type="Node"]
+script = ExtResource("1_s3uml")
+metadata/_custom_type_script = "uid://3qhdcgr4b5td"

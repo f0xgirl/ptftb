@@ -1,5 +1,5 @@
 extends Node
-
+# DEPRICATED DO NOT ATTACH
 @export var levels: Array [level_info]
 @onready var label: Label = $CanvasLayer/Control/MarginContainer/HBoxContainer/VBoxContainer/Label
 var current: int = 0

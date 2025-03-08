@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgxat64gb71od"]
+
+[ext_resource type="Script" uid="uid://bvp7b8nd25ruo" path="res://assets/script/important/load things/room.gd" id="1_iyiyv"]
+
+[node name="TestingLevel2" type="Node"]
+script = ExtResource("1_iyiyv")
+room_name = &"testinglevel2"
+room_id = 1
+metadata/_custom_type_script = "uid://bvp7b8nd25ruo"

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="PTftb"
-run/main_scene="res://assets/scenes/title.tscn"
+run/main_scene="uid://ca8k22ad5vs46"
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://assets/sprites/teamwerefox.png"
@@ -22,6 +22,7 @@ config/icon="res://icon.svg"
 Audioplayer="*res://assets/script/autoloads/audioplayer.gd"
 DataPassthrough="*res://assets/script/autoloads/data_passthrough.gd"
 Globaltimer="*res://assets/script/autoloads/globaltimer.gd"
+GlobalSignals="*res://assets/script/autoloads/GlobalSignals.gd"
 
 [editor_plugins]
 

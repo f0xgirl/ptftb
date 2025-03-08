@@ -18,9 +18,12 @@ var still_in_ladder: bool = false
 
 
 func _ready():
+	GlobalSignals.connect("move", set_pos)
+	get_parent().connect("disable_player", player_disabled)
+	get_parent().connect("enable_player", player_enabled)
 	var toppin = TOPPIN_TEST.instantiate()
 	add_child(toppin)
-	score.set_text(var_to_str(level_data.score))
+	#score.set_text(var_to_str(level_data.score))
 	setcamboundaries()
 	if DataPassthrough.player_pos_x:
 		position.x = DataPassthrough.player_pos_x
@@ -37,11 +40,13 @@ func _physics_process(delta: float) -> void:
 		DataPassthrough.player_pos_x = 0
 		DataPassthrough.player_pos_y = 0
 
+## sets camera boundaries TODO: fix them
 func setcamboundaries():
-	camera.limit_left = level_data.get_limit(0)
-	camera.limit_top = level_data.get_limit(1)
-	camera.limit_right = level_data.get_limit(2)
-	camera.limit_bottom = level_data.get_limit(3)
+	#camera.limit_left = level_data.get_limit(0)
+	#camera.limit_top = level_data.get_limit(1)
+	#camera.limit_right = level_data.get_limit(2)
+	#camera.limit_bottom = level_data.get_limit(3)
+	pass
 	
 func disable_gravity(grav: bool):
 	grav_disable = grav
@@ -49,6 +54,9 @@ func disable_gravity(grav: bool):
 func ladder_stop():
 	velocity.y += gravity
 
+func set_pos(x: int, y: int):
+	global_position.x = x
+	global_position.y = y
 
 func _on_hot_sauce_body_entered(body: Node2D) -> void:
 	state_override = true
@@ -58,6 +66,14 @@ func _on_hot_sauce_body_entered(body: Node2D) -> void:
 func _change_dir(dir: int) -> void:
 	print("working")
 	player_data.player_direction = dir
+
+func player_enabled():
+	print("shown")
+	show()
+
+func player_disabled():
+	print("hide")
+	hide()
 
 func fuck():
 	print("fuck")

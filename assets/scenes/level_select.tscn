@@ -1,41 +1,21 @@
-[gd_scene load_steps=13 format=3 uid="uid://b3tnoclfm5sgl"]
+[gd_scene load_steps=3 format=3 uid="uid://b3tnoclfm5sgl"]
 
-[ext_resource type="Script" uid="uid://7020qff4vowm" path="res://assets/script/level_select.gd" id="1_r74vo"]
-[ext_resource type="Script" uid="uid://oafrabh2r0vh" path="res://assets/script/resources scripts/level_info.gd" id="2_t673h"]
-[ext_resource type="Resource" uid="uid://cf2bh8c1eqlb5" path="res://resources/level/tutorial.tres" id="3_mn21b"]
-[ext_resource type="Resource" uid="uid://codayoumxcvh0" path="res://resources/level/john_gutter.tres" id="3_scxtq"]
-[ext_resource type="Resource" uid="uid://dg3ogium8rpoc" path="res://resources/level/space_pinball.tres" id="5_jagk7"]
-[ext_resource type="Resource" uid="uid://b78vfd27myenb" path="res://resources/level/strongcold.tres" id="6_bqg0p"]
-[ext_resource type="Resource" uid="uid://c2ewrbp837w7v" path="res://resources/level/infinite_roomt.tres" id="7_au33t"]
-[ext_resource type="PackedScene" uid="uid://c20qitdqj1cc1" path="res://assets/scenes/levels/level decoration/parallax_background1_jg.tscn" id="8_q1xnf"]
-
-[sub_resource type="Resource" id="Resource_c4c0j"]
-script = ExtResource("2_t673h")
-level_name = "sugary spire"
-file_path = "res://assets/scenes/levels/sugaryspire/sucrose_1.tscn"
-
-[sub_resource type="Resource" id="Resource_41clm"]
-script = ExtResource("2_t673h")
-level_name = "mid escape"
-file_path = "res://assets/scenes/levels/midescape/midescape_1.tscn"
-
-[sub_resource type="Resource" id="Resource_s3tcw"]
-script = ExtResource("2_t673h")
-level_name = "test"
-file_path = "res://assets/scenes/levels/testing/testing level.tscn"
+[ext_resource type="Script" uid="uid://orj2yy1e2s4g" path="res://assets/script/level specific/level_select.gd" id="9_l0hxu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fhmxf"]
 font_size = 64
 
-[node name="Node" type="Node"]
-script = ExtResource("1_r74vo")
-levels = Array[ExtResource("2_t673h")]([ExtResource("3_mn21b"), ExtResource("3_scxtq"), ExtResource("5_jagk7"), ExtResource("6_bqg0p"), ExtResource("7_au33t"), SubResource("Resource_c4c0j"), SubResource("Resource_41clm"), SubResource("Resource_s3tcw")])
+[node name="room" type="Node"]
+script = ExtResource("9_l0hxu")
+room_name = &"level_select"
+metadata/_custom_type_script = "uid://bvp7b8nd25ruo"
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Node" type="Node" parent="."]
+editor_description = "im too lazy to remove this :P"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="Node"]
 
-[node name="Control" type="Control" parent="CanvasLayer"]
+[node name="Control" type="Control" parent="Node/CanvasLayer"]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -51,21 +31,19 @@ grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control"]
+[node name="MarginContainer" type="MarginContainer" parent="Node/CanvasLayer/Control"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Node/CanvasLayer/Control/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Node/CanvasLayer/Control/MarginContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Node/CanvasLayer/Control/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 label_settings = SubResource("LabelSettings_fhmxf")
-
-[node name="ParallaxBackground" parent="." instance=ExtResource("8_q1xnf")]
