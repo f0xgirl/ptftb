@@ -17,7 +17,6 @@ const PLAYER = preload("res://assets/scenes/player.tscn")
 const LEVEL_SELECT = preload("res://assets/scenes/level_select.tscn")
 #test level:
 const TEST_1 = preload("res://assets/scenes/levels/testing/testing_level.tscn")
-
 #john gutter:
 const JG_1 = preload("res://assets/scenes/levels/john gutter/john_gutter_1.tscn")
 
@@ -30,11 +29,11 @@ func _ready() -> void:
 	
 
 func room_called(selected_room: int):
-	var index: int = 0
 	match selected_room:
 		1:
 			load_test()
 		2:
+			print("john gutter laoded")
 			load_jg()
 		
 
@@ -47,6 +46,7 @@ func room_changed(node: Node) -> void:
 ## do not use, unfinished
 func load_jg():
 	var lvl = JG_1.instantiate()
+	add_child(lvl)
 	
 func load_test():
 	print("load test")
@@ -56,4 +56,8 @@ func load_test():
 
 func load_room_test(id: int):
 	var lvl = level_test[id].instantiate()
+	add_child(lvl)
+	
+func load_room_jg(id: int):
+	var lvl = level_jg[id].instantiate()
 	add_child(lvl)

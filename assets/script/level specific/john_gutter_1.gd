@@ -1,5 +1,7 @@
-extends Node
+extends room
 
-func _ready() -> void:
-	if DataPassthrough.panic == false:
-		Audioplayer._play_music_jg()
+
+
+func _tree_entered() -> void:
+	Audioplayer._play_music_jg()
+	GlobalSignals.emit_signal("move", -1605, 269)

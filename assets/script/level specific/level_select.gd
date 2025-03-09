@@ -14,6 +14,7 @@ func _process(delta: float) -> void:
 	elif Input.is_action_just_pressed("down"):
 		selected_room +=1
 	if Input.is_action_just_pressed("action1"):
+		print(selected_room)
 		print("working!")
 		get_parent().call("room_called", selected_room)
 		queue_free()
