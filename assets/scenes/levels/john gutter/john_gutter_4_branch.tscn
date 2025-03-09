@@ -35,10 +35,9 @@ Y = 612
 [node name="ParallaxBackground" parent="." instance=ExtResource("6_8lrlf")]
 visible = false
 
-[node name="Area2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("7_w3bqf")]
+[node name="Area2D" parent="." instance=ExtResource("7_w3bqf")]
 position = Vector2(882, 11)
 scale = Vector2(1, 12.693)
-player = NodePath("")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 position = Vector2(9, -3)

@@ -15,15 +15,13 @@ tile_set = ExtResource("1_ji54n")
 position = Vector2(1990, -424)
 panic_time = 240.0
 
-[node name="Area2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_6wxuq")]
+[node name="Area2D" parent="." instance=ExtResource("4_6wxuq")]
 position = Vector2(2047, 50)
 scale = Vector2(1, 8.84)
-player = NodePath("")
 
-[node name="Area2D2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_6wxuq")]
+[node name="Area2D2" parent="." instance=ExtResource("4_6wxuq")]
 position = Vector2(1183, -211)
 scale = Vector2(1, 14.6)
-player = NodePath("")
 
 [node name="door to room 6" parent="." instance=ExtResource("5_j6e6m")]
 position = Vector2(132, 104)

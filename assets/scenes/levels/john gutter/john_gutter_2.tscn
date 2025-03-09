@@ -37,10 +37,9 @@ scale = Vector2(1, 10.44)
 X = -1808
 Y = 182
 
-[node name="ladder" parent="." node_paths=PackedStringArray("player") instance=ExtResource("9_jw4bg")]
+[node name="ladder" parent="." instance=ExtResource("9_jw4bg")]
 position = Vector2(-511, 296)
 scale = Vector2(-0.882497, 9.65872)
-player = NodePath("")
 
 [node name="metal block" parent="." instance=ExtResource("9_eg0ts")]
 position = Vector2(816, 332)
