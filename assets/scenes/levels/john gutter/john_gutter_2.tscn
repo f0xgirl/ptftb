@@ -1,23 +1,12 @@
-[gd_scene load_steps=11 format=4 uid="uid://cw64fvrkw5ky1"]
+[gd_scene load_steps=8 format=4 uid="uid://cw64fvrkw5ky1"]
 
 [ext_resource type="Texture2D" uid="uid://ba7hbr6e1m84h" path="res://assets/sprites/normalT_room2.png" id="1_xd5uq"]
 [ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://resources/level/tilesets/john_gutter_tileset.tres" id="2_oirdt"]
 [ext_resource type="PackedScene" uid="uid://c20qitdqj1cc1" path="res://assets/scenes/levels/level decoration/parallax_background1_jg.tscn" id="3_gnwqx"]
 [ext_resource type="PackedScene" uid="uid://bmemi8dsacgwy" path="res://assets/scenes/level objects/room_destination.tscn" id="4_t08t8"]
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/level objects/room_changer.tscn" id="5_40016"]
-[ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="6_mrebc"]
-[ext_resource type="Script" uid="uid://qwvbeauuaulm" path="res://assets/script/resources scripts/level_data.gd" id="7_nqmw4"]
 [ext_resource type="PackedScene" uid="uid://7q52prdlvm3g" path="res://assets/scenes/level objects/metal_block.tscn" id="9_eg0ts"]
 [ext_resource type="PackedScene" uid="uid://cuoo8ojghsvmb" path="res://assets/scenes/level objects/ladder.tscn" id="9_jw4bg"]
-
-[sub_resource type="Resource" id="Resource_xyu0u"]
-script = ExtResource("7_nqmw4")
-level_name = ""
-score = 0
-left = -1552
-top = -500
-right = 3440
-bottom = 492
 
 [node name="Node" type="Node"]
 
@@ -39,25 +28,19 @@ position = Vector2(-1534, 346)
 [node name="Area2D" parent="." instance=ExtResource("5_40016")]
 position = Vector2(-1609, 320)
 scale = Vector2(1, 11)
-location = "res://assets/scenes/levels/john gutter/john_gutter_1.tscn"
 X = 2860
 Y = 282
-
-[node name="player" parent="." instance=ExtResource("6_mrebc")]
-position = Vector2(3451, 271)
-level_data = SubResource("Resource_xyu0u")
 
 [node name="Area2D2" parent="." instance=ExtResource("5_40016")]
 position = Vector2(3594, 266)
 scale = Vector2(1, 10.44)
-location = "res://assets/scenes/levels/john gutter/john_gutter_3.tscn"
 X = -1808
 Y = 182
 
 [node name="ladder" parent="." node_paths=PackedStringArray("player") instance=ExtResource("9_jw4bg")]
 position = Vector2(-511, 296)
 scale = Vector2(-0.882497, 9.65872)
-player = NodePath("../player")
+player = NodePath("")
 
 [node name="metal block" parent="." instance=ExtResource("9_eg0ts")]
 position = Vector2(816, 332)

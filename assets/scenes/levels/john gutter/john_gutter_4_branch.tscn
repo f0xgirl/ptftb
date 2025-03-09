@@ -1,22 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://bidyolavjny6l"]
+[gd_scene load_steps=7 format=4 uid="uid://bidyolavjny6l"]
 
 [ext_resource type="Texture2D" uid="uid://dhomeinom4syr" path="res://assets/sprites/normalT_room4branch.png" id="1_lwuy3"]
 [ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://resources/level/tilesets/john_gutter_tileset.tres" id="2_wm84f"]
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/level objects/room_changer.tscn" id="3_lud3g"]
-[ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="4_vujd5"]
-[ext_resource type="Script" uid="uid://qwvbeauuaulm" path="res://assets/script/resources scripts/level_data.gd" id="5_i8gxn"]
 [ext_resource type="PackedScene" uid="uid://c20qitdqj1cc1" path="res://assets/scenes/levels/level decoration/parallax_background1_jg.tscn" id="6_8lrlf"]
 [ext_resource type="PackedScene" uid="uid://cuoo8ojghsvmb" path="res://assets/scenes/level objects/ladder.tscn" id="7_w3bqf"]
 [ext_resource type="TileSet" uid="uid://d4fo3wle3axih" path="res://resources/level/blocks.tres" id="8_2qkxo"]
-
-[sub_resource type="Resource" id="Resource_bsdwq"]
-script = ExtResource("5_i8gxn")
-level_name = ""
-score = 0
-left = -415
-top = -528
-right = 1376
-bottom = 480
 
 [node name="Node" type="Node"]
 
@@ -36,18 +25,12 @@ tile_set = ExtResource("2_wm84f")
 [node name="to room 4 left" parent="." instance=ExtResource("3_lud3g")]
 position = Vector2(-201, -565)
 scale = Vector2(6.08791, -2.71795)
-location = "res://assets/scenes/levels/john gutter/john_gutter_4.tscn"
 
 [node name="to room 4 right" parent="." instance=ExtResource("3_lud3g")]
 position = Vector2(59, -561)
 scale = Vector2(6.49314, 3.08032)
-location = "res://assets/scenes/levels/john gutter/john_gutter_4.tscn"
 X = 192
 Y = 612
-
-[node name="player" parent="." instance=ExtResource("4_vujd5")]
-position = Vector2(-194, -488)
-level_data = SubResource("Resource_bsdwq")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("6_8lrlf")]
 visible = false
@@ -55,7 +38,7 @@ visible = false
 [node name="Area2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("7_w3bqf")]
 position = Vector2(882, 11)
 scale = Vector2(1, 12.693)
-player = NodePath("../player")
+player = NodePath("")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 position = Vector2(9, -3)

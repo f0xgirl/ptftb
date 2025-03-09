@@ -1,23 +1,12 @@
-[gd_scene load_steps=11 format=4 uid="uid://c46vd1cyavu3n"]
+[gd_scene load_steps=8 format=4 uid="uid://c46vd1cyavu3n"]
 
 [ext_resource type="Texture2D" uid="uid://nnsqd2ge8w6k" path="res://assets/sprites/normalT_room4.png" id="1_hd3eu"]
 [ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://resources/level/tilesets/john_gutter_tileset.tres" id="2_dthah"]
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/level objects/room_changer.tscn" id="3_j3jvx"]
 [ext_resource type="PackedScene" uid="uid://c20qitdqj1cc1" path="res://assets/scenes/levels/level decoration/parallax_background1_jg.tscn" id="4_kv6om"]
 [ext_resource type="PackedScene" uid="uid://xes1t1iyh8hl" path="res://assets/scenes/level objects/cheeseslime.tscn" id="5_oh8nq"]
-[ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="6_cwan2"]
-[ext_resource type="Script" uid="uid://qwvbeauuaulm" path="res://assets/script/resources scripts/level_data.gd" id="7_bgc6e"]
 [ext_resource type="TileSet" uid="uid://d4fo3wle3axih" path="res://resources/level/blocks.tres" id="8_g33dj"]
 [ext_resource type="PackedScene" uid="uid://gu657xt52lr7" path="res://assets/scenes/level objects/panic_block.tscn" id="9_pn3vn"]
-
-[sub_resource type="Resource" id="Resource_g60p4"]
-script = ExtResource("7_bgc6e")
-level_name = ""
-score = 0
-left = -1855
-top = -415
-right = 3136
-bottom = 608
 
 [node name="Node" type="Node"]
 
@@ -33,14 +22,12 @@ tile_set = ExtResource("2_dthah")
 [node name="to room 5" parent="." instance=ExtResource("3_j3jvx")]
 position = Vector2(3288, 357)
 scale = Vector2(1, 11.52)
-location = "res://assets/scenes/levels/john gutter/john_gutter_5.tscn"
 X = -1107
 Y = 99
 
 [node name="to room 3" parent="." instance=ExtResource("3_j3jvx")]
 position = Vector2(-2078, 388)
 scale = Vector2(1, 17.16)
-location = "res://assets/scenes/levels/john gutter/john_gutter_3.tscn"
 X = 3258
 Y = 159
 
@@ -52,13 +39,8 @@ position = Vector2(-1494, 417)
 [node name="room 4 branch" parent="." instance=ExtResource("3_j3jvx")]
 position = Vector2(-91, 624)
 scale = Vector2(8.84, 1)
-location = "res://assets/scenes/levels/john gutter/john_gutter_4_branch.tscn"
 X = -194
 Y = -488
-
-[node name="player" parent="." instance=ExtResource("6_cwan2")]
-position = Vector2(192, 612)
-level_data = SubResource("Resource_g60p4")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 position = Vector2(-6, -2)

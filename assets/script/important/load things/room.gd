@@ -1,6 +1,9 @@
 extends Node
 class_name room
 
+signal visible
+signal hidden
+
 @export var room_name: StringName
 @export var room_id: int
 
@@ -17,7 +20,7 @@ func remove(selected_id: StringName):
 func hide_room(selected_id: int):
 	print("hidden!")
 	if selected_id == room_id:
-		pass
+		emit_signal("hidden")
 
 func show_room(selected_id: int):
 	print("shown!")

@@ -1,21 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://ceygj3iu68myf"]
+[gd_scene load_steps=6 format=4 uid="uid://ceygj3iu68myf"]
 
 [ext_resource type="Texture2D" uid="uid://bgt7yrvedossj" path="res://assets/sprites/normalT_room6branch.png" id="1_blkeb"]
 [ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://resources/level/tilesets/john_gutter_tileset.tres" id="2_0ilip"]
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/level objects/room_changer.tscn" id="3_iqb72"]
-[ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="4_n7adt"]
-[ext_resource type="Script" uid="uid://qwvbeauuaulm" path="res://assets/script/resources scripts/level_data.gd" id="5_16pfq"]
 [ext_resource type="PackedScene" uid="uid://c20qitdqj1cc1" path="res://assets/scenes/levels/level decoration/parallax_background1_jg.tscn" id="6_tdslv"]
 [ext_resource type="TileSet" uid="uid://d4fo3wle3axih" path="res://resources/level/blocks.tres" id="7_0j8uy"]
-
-[sub_resource type="Resource" id="Resource_nkc0s"]
-script = ExtResource("5_16pfq")
-level_name = ""
-score = 0
-left = -1951
-top = 0
-right = 3040
-bottom = 543
 
 [node name="JohnGutter6Branch" type="Node"]
 
@@ -31,18 +20,12 @@ tile_set = ExtResource("2_0ilip")
 [node name="to room 6 right" parent="." instance=ExtResource("3_iqb72")]
 position = Vector2(2816, -23)
 scale = Vector2(19.6238, 1.25102)
-location = "res://assets/scenes/levels/john gutter/john_gutter_6.tscn"
 X = 2657
 Y = 357
 
 [node name="to room 6 left" parent="." instance=ExtResource("3_iqb72")]
 position = Vector2(-1350, -26)
 scale = Vector2(39.4181, 1)
-location = "res://assets/scenes/levels/john gutter/john_gutter_6.tscn"
-
-[node name="player" parent="." instance=ExtResource("4_n7adt")]
-position = Vector2(-1340, 36)
-level_data = SubResource("Resource_nkc0s")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("6_tdslv")]
 

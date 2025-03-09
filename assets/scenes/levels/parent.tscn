@@ -1,7 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://ca8k22ad5vs46"]
+[gd_scene load_steps=13 format=3 uid="uid://ca8k22ad5vs46"]
 
 [ext_resource type="Script" uid="uid://3qhdcgr4b5td" path="res://assets/script/important/load things/parent.gd" id="1_s3uml"]
+[ext_resource type="PackedScene" uid="uid://bgxat64gb71od" path="res://assets/scenes/levels/testing/testing_level_2.tscn" id="2_6m0av"]
+[ext_resource type="PackedScene" uid="uid://bsr70jx6bauni" path="res://assets/scenes/levels/testing/testing_level.tscn" id="2_uv562"]
+[ext_resource type="PackedScene" uid="uid://fioigyq7r4yd" path="res://assets/scenes/levels/john gutter/john_gutter_1.tscn" id="4_qv12w"]
+[ext_resource type="PackedScene" uid="uid://cw64fvrkw5ky1" path="res://assets/scenes/levels/john gutter/john_gutter_2.tscn" id="5_msxpu"]
+[ext_resource type="PackedScene" uid="uid://ct4c8bdwci21f" path="res://assets/scenes/levels/john gutter/john_gutter_3.tscn" id="6_3ykcb"]
+[ext_resource type="PackedScene" uid="uid://c46vd1cyavu3n" path="res://assets/scenes/levels/john gutter/john_gutter_4.tscn" id="7_hyvlu"]
+[ext_resource type="PackedScene" uid="uid://bidyolavjny6l" path="res://assets/scenes/levels/john gutter/john_gutter_4_branch.tscn" id="8_y3bwt"]
+[ext_resource type="PackedScene" uid="uid://drxbs283brap0" path="res://assets/scenes/levels/john gutter/john_gutter_5.tscn" id="9_o564e"]
+[ext_resource type="PackedScene" uid="uid://cn37hkufe6ajv" path="res://assets/scenes/levels/john gutter/john_gutter_6.tscn" id="10_uupvh"]
+[ext_resource type="PackedScene" uid="uid://ceygj3iu68myf" path="res://assets/scenes/levels/john gutter/john_gutter_6_branch.tscn" id="11_4o0e6"]
+[ext_resource type="PackedScene" uid="uid://c7nqu3wmjhdek" path="res://assets/scenes/levels/john gutter/john_gutter_7.tscn" id="12_0oh0y"]
 
 [node name="Parent" type="Node"]
 script = ExtResource("1_s3uml")
+level_test = Array[PackedScene]([ExtResource("2_uv562"), ExtResource("2_6m0av")])
+level_jg = Array[PackedScene]([ExtResource("4_qv12w"), ExtResource("5_msxpu"), ExtResource("6_3ykcb"), ExtResource("7_hyvlu"), ExtResource("8_y3bwt"), ExtResource("9_o564e"), ExtResource("10_uupvh"), ExtResource("11_4o0e6"), ExtResource("12_0oh0y")])
 metadata/_custom_type_script = "uid://3qhdcgr4b5td"
+
+[connection signal="child_entered_tree" from="." to="." method="room_changed"]

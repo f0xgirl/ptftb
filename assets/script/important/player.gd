@@ -6,9 +6,10 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var jump_velocity: int
 @onready var camera: Camera2D = $Camera2D
 @export var level_data: level_data
-@onready var score: Label = $score/Control/MarginContainer/HBoxContainer/VBoxContainer/Label
+@onready var score_text: Label = $score/Control/MarginContainer/HBoxContainer/VBoxContainer/Label
 @onready var sprite: AnimatedSprite2D = $sprite
 const TOPPIN_TEST = preload("res://assets/scenes/level objects/toppin_test.tscn")
+var score: int = 0
 var force_direction: int
 var state: State
 var state_override: bool = false
@@ -22,8 +23,8 @@ func _ready():
 	get_parent().connect("disable_player", player_disabled)
 	get_parent().connect("enable_player", player_enabled)
 	var toppin = TOPPIN_TEST.instantiate()
-	add_child(toppin)
-	#score.set_text(var_to_str(level_data.score))
+	#add_child(toppin)
+	score_text.set_text(var_to_str(score))
 	setcamboundaries()
 	if DataPassthrough.player_pos_x:
 		position.x = DataPassthrough.player_pos_x
@@ -68,11 +69,11 @@ func _change_dir(dir: int) -> void:
 	player_data.player_direction = dir
 
 func player_enabled():
-	print("shown")
+	print("shown: player")
 	show()
 
 func player_disabled():
-	print("hide")
+	print("hide: player")
 	hide()
 
 func fuck():
