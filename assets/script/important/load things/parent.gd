@@ -5,23 +5,28 @@ class_name parent
 signal disable_player
 signal enable_player
 signal remove
-#levels,
-#also why the fuck are they static i dont want to do it this way
+#levels
 @export var level_test: Array [PackedScene] = []
 @export var level_jg: Array [PackedScene] = []
-
-
-
+@export var level_medevial: Array [PackedScene] = [] #idk how to spell it right :sob:
+@export var level_ruin: Array [PackedScene] = []
+@export var level_dungeon: Array [PackedScene] = []
+@export var level_strong: Array [PackedScene] = []
+#constants:
 const PLAYER = preload("res://assets/scenes/player.tscn")
-# can be switched out for the hubs when i get to that
+#can be switched out for the hubs when i get to that
 const LEVEL_SELECT = preload("res://assets/scenes/level_select.tscn")
 #test level:
 const TEST_1 = preload("res://assets/scenes/levels/testing/testing_level.tscn")
 #john gutter:
 const JG_1 = preload("res://assets/scenes/levels/john gutter/john_gutter_1.tscn")
 
+#variables:
+var alreadyloaded: Array [bool] = []
 
 func _ready() -> void:
+	alreadyloaded.resize(100) #WHY THE FUCK DO I HAVE TO DO THIS IN MULTIPLE LINES WHY ARE YOU LIKE THIS GODOT
+	alreadyloaded.fill(false)
 	var plr = PLAYER.instantiate()
 	var lvl_select = LEVEL_SELECT.instantiate()
 	add_child(plr)
@@ -45,6 +50,8 @@ func room_changed(node: Node) -> void:
 	
 ## do not use, unfinished
 func load_jg():
+	alreadyloaded[0] = true
+	GlobalSignals.emit_signal("move", -1605, 269)
 	var lvl = JG_1.instantiate()
 	add_child(lvl)
 	
@@ -56,8 +63,32 @@ func load_test():
 
 func load_room_test(id: int):
 	var lvl = level_test[id].instantiate()
-	add_child(lvl)
+	if alreadyloaded[id] == true:
+		pass
+	else:
+		alreadyloaded[id] = true
+		add_child(lvl)
+	print("alreadyloaded")
+	print(alreadyloaded)
 	
-func load_room_jg(id: int):
-	var lvl = level_jg[id].instantiate()
-	add_child(lvl)
+func load_room_jg(id: int, prev_id: int):
+	print("id: " + var_to_str(id) + " prev_id: " + var_to_str(prev_id) + " loaded: " + var_to_str(alreadyloaded))
+	if check_if_loaded(prev_id) == false: #for some god forsaken reason ive decided to make this opposite i do not know why this is happening
+		GlobalSignals.emit_signal("hide", id)
+	elif check_if_loaded(prev_id) == true:
+		var lvl = level_jg[id].instantiate()
+		add_child(lvl)
+		
+	
+
+func check_if_loaded(id: int) -> bool:
+	if alreadyloaded[id] == true:
+		return true
+	else:
+		alreadyloaded[id] = true
+		return false
+
+func clear():
+	var x
+	for alreadyloaded in x:
+		alreadyloaded[x] = null

@@ -1,22 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://ddfs4ffikkjoq"]
+[gd_scene load_steps=7 format=4 uid="uid://ddfs4ffikkjoq"]
 
 [ext_resource type="Script" uid="uid://du0rvnk6e38em" path="res://assets/script/level specific/strongcold_1.gd" id="1_1it0h"]
 [ext_resource type="Texture2D" uid="uid://difag0780ni4x" path="res://assets/sprites/levels/level visuals/strongcoldconcept1.png" id="1_lnf4h"]
 [ext_resource type="TileSet" uid="uid://t56k02vh81ye" path="res://resources/level/tilesets/placeholder_tileset.tres" id="2_dd6af"]
-[ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="3_icpf2"]
-[ext_resource type="Script" uid="uid://qwvbeauuaulm" path="res://assets/script/resources scripts/level_data.gd" id="4_vlq21"]
 [ext_resource type="PackedScene" uid="uid://drg1wcxxcyjdm" path="res://assets/scenes/level objects/gate_portal.tscn" id="5_t45di"]
 [ext_resource type="PackedScene" uid="uid://mor1xtohk0ul" path="res://assets/scenes/level objects/hot_sauce.tscn" id="6_qaey5"]
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/level objects/room_changer.tscn" id="8_8dor1"]
-
-[sub_resource type="Resource" id="Resource_68wrv"]
-script = ExtResource("4_vlq21")
-level_name = "Strong cold"
-score = 0
-left = -1647
-top = -399
-right = 911
-bottom = 527
 
 [node name="strongcold_1" type="Node"]
 script = ExtResource("1_1it0h")
@@ -63,10 +52,6 @@ offset_right = 787.0
 offset_bottom = -109.0
 text = "hot sauce here too maybe?"
 
-[node name="player" parent="." instance=ExtResource("3_icpf2")]
-position = Vector2(506, 337)
-level_data = SubResource("Resource_68wrv")
-
 [node name="to hub" parent="." instance=ExtResource("5_t45di")]
 position = Vector2(514, 239)
 location = "res://assets/scenes/level_select.tscn"
@@ -74,19 +59,15 @@ location = "res://assets/scenes/level_select.tscn"
 [node name="hot sauce" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_qaey5")]
 position = Vector2(-1423, 445)
 scale = Vector2(15.3951, 1.70265)
-player = NodePath("../player")
+player = NodePath("")
 
 [node name="hot sauce2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_qaey5")]
 position = Vector2(712, -65)
 scale = Vector2(12.8829, 1.37234)
-player = NodePath("../player")
+player = NodePath("")
 
 [node name="Area2D" parent="." instance=ExtResource("8_8dor1")]
 position = Vector2(706, -423)
 scale = Vector2(20.44, 1)
-location = "res://assets/scenes/levels/strongcold/strongcold_2.tscn"
 X = 181
 Y = 425
-
-[connection signal="body_entered" from="hot sauce" to="player" method="_on_hot_sauce_body_entered"]
-[connection signal="body_entered" from="hot sauce2" to="player" method="_on_hot_sauce_body_entered"]

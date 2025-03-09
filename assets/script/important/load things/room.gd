@@ -6,6 +6,7 @@ signal hidden
 
 @export var room_name: StringName
 @export var room_id: int
+var already_loaded: bool = false
 
 func _ready() -> void:
 	GlobalSignals.connect("hide",hide_room)
@@ -25,4 +26,4 @@ func hide_room(selected_id: int):
 func show_room(selected_id: int):
 	print("shown!")
 	if selected_id == room_id:
-		pass
+		emit_signal("visible")

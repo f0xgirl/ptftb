@@ -10,7 +10,6 @@ var tillmach3: float = 300
 var direction = Input.get_axis("left","right")
 
 func Enter():
-	print(player_data.player_direction)
 	mach_2.play()
 	player.velocity.x = player_data.player_direction * player_data.mach2_speed
 	tillmach3 = DataPassthrough.player_tillmach3

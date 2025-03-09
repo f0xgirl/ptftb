@@ -20,7 +20,6 @@ func Enter():
 	
 func Update(_delta: float):
 	direction = Input.get_axis("left","right")
-	print(direction)
 	charge_effect.visible = true
 	emit_signal("anim_change","mach3",false)
 	emit_signal("anim_offset",2,-5)

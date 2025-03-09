@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ca8k22ad5vs46"]
+[gd_scene load_steps=17 format=3 uid="uid://ca8k22ad5vs46"]
 
 [ext_resource type="Script" uid="uid://3qhdcgr4b5td" path="res://assets/script/important/load things/parent.gd" id="1_s3uml"]
 [ext_resource type="PackedScene" uid="uid://bgxat64gb71od" path="res://assets/scenes/levels/testing/testing_level_2.tscn" id="2_6m0av"]
@@ -12,11 +12,19 @@
 [ext_resource type="PackedScene" uid="uid://cn37hkufe6ajv" path="res://assets/scenes/levels/john gutter/john_gutter_6.tscn" id="10_uupvh"]
 [ext_resource type="PackedScene" uid="uid://ceygj3iu68myf" path="res://assets/scenes/levels/john gutter/john_gutter_6_branch.tscn" id="11_4o0e6"]
 [ext_resource type="PackedScene" uid="uid://c7nqu3wmjhdek" path="res://assets/scenes/levels/john gutter/john_gutter_7.tscn" id="12_0oh0y"]
+[ext_resource type="PackedScene" uid="uid://07metx7sh1p4" path="res://assets/scenes/levels/pizzascape/pizzascape_1.tscn" id="13_y3bwt"]
+[ext_resource type="PackedScene" uid="uid://d0vfr36smd4f0" path="res://assets/scenes/levels/ancientcheese/ancient_1.tscn" id="14_o564e"]
+[ext_resource type="PackedScene" uid="uid://d5bcovooj67t" path="res://assets/scenes/levels/dungeon/bloodsauce_1.tscn" id="15_uupvh"]
+[ext_resource type="PackedScene" uid="uid://ddfs4ffikkjoq" path="res://assets/scenes/levels/strongcold/strongcold_1.tscn" id="16_4o0e6"]
 
 [node name="Parent" type="Node"]
 script = ExtResource("1_s3uml")
 level_test = Array[PackedScene]([ExtResource("2_uv562"), ExtResource("2_6m0av")])
 level_jg = Array[PackedScene]([ExtResource("4_qv12w"), ExtResource("5_msxpu"), ExtResource("6_3ykcb"), ExtResource("7_hyvlu"), ExtResource("8_y3bwt"), ExtResource("9_o564e"), ExtResource("10_uupvh"), ExtResource("11_4o0e6"), ExtResource("12_0oh0y")])
+level_medevial = Array[PackedScene]([ExtResource("13_y3bwt")])
+level_ruin = Array[PackedScene]([ExtResource("14_o564e")])
+level_dungeon = Array[PackedScene]([ExtResource("15_uupvh")])
+level_strong = Array[PackedScene]([ExtResource("16_4o0e6")])
 metadata/_custom_type_script = "uid://3qhdcgr4b5td"
 
 [connection signal="child_entered_tree" from="." to="." method="room_changed"]

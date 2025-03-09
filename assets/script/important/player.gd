@@ -65,15 +65,12 @@ func _on_hot_sauce_body_entered(body: Node2D) -> void:
 
 
 func _change_dir(dir: int) -> void:
-	print("working")
 	player_data.player_direction = dir
 
 func player_enabled():
-	print("shown: player")
 	show()
 
 func player_disabled():
-	print("hide: player")
 	hide()
 
 func fuck():
