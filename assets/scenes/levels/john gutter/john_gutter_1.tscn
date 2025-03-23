@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://fioigyq7r4yd"]
+[gd_scene load_steps=21 format=4 uid="uid://fioigyq7r4yd"]
 
 [ext_resource type="Texture2D" uid="uid://c8xtty12f5v57" path="res://assets/sprites/normalT_room1.png" id="1_3debp"]
 [ext_resource type="Script" uid="uid://bc5aeje6a35hq" path="res://assets/script/level specific/john_gutter_1.gd" id="1_uyxqf"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c7ogx214cfhin" path="res://assets/scenes/level objects/block_test.tscn" id="9_bknhk"]
 [ext_resource type="Script" uid="uid://bmnph3whhvl2h" path="res://assets/script/resources scripts/block_data.gd" id="10_wy7it"]
 [ext_resource type="PackedScene" uid="uid://cgi7ixvf47hyd" path="res://assets/scenes/levels/level decoration/parallax_background_sugar.tscn" id="12_f3a2a"]
+[ext_resource type="PackedScene" uid="uid://7q52prdlvm3g" path="res://assets/scenes/level objects/metal_block.tscn" id="12_htb0r"]
 
 [sub_resource type="Resource" id="Resource_3talw"]
 script = ExtResource("10_wy7it")
@@ -110,8 +111,7 @@ res = SubResource("Resource_oy60u")
 [node name="ParallaxBackground2" parent="." instance=ExtResource("12_f3a2a")]
 visible = false
 
-[connection signal="hidden" from="." to="TileMapLayer" method="_hidden"]
-[connection signal="hidden" from="." to="asd" method="_hidden"]
+[node name="Area2D" parent="." instance=ExtResource("12_htb0r")]
+position = Vector2(-1456, 238)
+
 [connection signal="tree_entered" from="." to="." method="_tree_entered"]
-[connection signal="visible" from="." to="TileMapLayer" method="_visible"]
-[connection signal="visible" from="." to="asd" method="_visible"]

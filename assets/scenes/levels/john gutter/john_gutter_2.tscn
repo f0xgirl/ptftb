@@ -60,11 +60,5 @@ position = Vector2(816, 332)
 [node name="metal block2" parent="." instance=ExtResource("9_eg0ts")]
 position = Vector2(1136, 332)
 
-[connection signal="hidden" from="." to="TileMapLayer" method="_hidden"]
-[connection signal="hidden" from="." to="to room 1" method="_hidden"]
-[connection signal="hidden" from="." to="to room 3" method="_hidden"]
-[connection signal="visible" from="." to="TileMapLayer" method="_visible"]
-[connection signal="visible" from="." to="to room 1" method="_visible"]
-[connection signal="visible" from="." to="to room 3" method="_visible"]
 [connection signal="body_entered" from="ladder" to="ladder" method="_on_body_entered"]
 [connection signal="body_exited" from="ladder" to="ladder" method="_on_body_exited"]

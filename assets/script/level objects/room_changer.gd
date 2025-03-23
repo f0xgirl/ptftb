@@ -10,6 +10,10 @@ extends Area2D
 @export var X: int
 @export var Y: int
 
+func _ready() -> void:
+	get_parent().connect("hidden", _hidden)
+	get_parent().connect("visible", _visible)
+
 
 func _on_body_entered(body: Node2D) -> void:
 	Audioplayer._play_sfx_switchingrooms()
@@ -22,9 +26,9 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _hidden() -> void:
 	hide()
-	monitoring = false
+	set_deferred("monitoring", false)
 
 
 func _visible() -> void:
-	monitoring = true
+	set_deferred("monitoring", true)
 	show()

@@ -1,13 +1,14 @@
-[gd_scene load_steps=5 format=4 uid="uid://bsr70jx6bauni"]
+[gd_scene load_steps=6 format=4 uid="uid://bsr70jx6bauni"]
 
 [ext_resource type="TileSet" uid="uid://t56k02vh81ye" path="res://resources/level/tilesets/placeholder_tileset.tres" id="1_2pi2y"]
 [ext_resource type="Script" uid="uid://c0nyutces85ii" path="res://assets/script/level specific/testing_level_1.gd" id="1_3dkav"]
 [ext_resource type="Script" uid="uid://q3ywevjscjee" path="res://assets/script/tilemap.gd" id="3_e5ct2"]
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/level objects/room_changer.tscn" id="3_w3l46"]
+[ext_resource type="PackedScene" uid="uid://7q52prdlvm3g" path="res://assets/scenes/level objects/metal_block.tscn" id="5_cng5a"]
 
 [node name="room" type="Node"]
 script = ExtResource("1_3dkav")
-room_name = &"testinglevel1"
+room_name = &"test_1"
 metadata/_custom_type_script = "uid://bvp7b8nd25ruo"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -17,9 +18,13 @@ script = ExtResource("3_e5ct2")
 
 [node name="Area2D" parent="." instance=ExtResource("3_w3l46")]
 position = Vector2(854, 707)
+load_room = "load_room_test"
+next_room_id = 1
 
-[connection signal="hidden" from="." to="TileMapLayer" method="_hidden"]
-[connection signal="hidden" from="." to="Area2D" method="_hidden"]
+[node name="metal block" parent="." instance=ExtResource("5_cng5a")]
+position = Vector2(658, 711)
+
+[node name="metal block2" parent="." instance=ExtResource("5_cng5a")]
+position = Vector2(1018, 699)
+
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
-[connection signal="visible" from="." to="TileMapLayer" method="_visible"]
-[connection signal="visible" from="." to="Area2D" method="_visible"]

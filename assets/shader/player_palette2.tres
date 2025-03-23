@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://ct40s3hl7ooad"]
 
-[ext_resource type="Shader" path="res://assets/script/palette/player_palette2.gdshader" id="1_nedxr"]
+[ext_resource type="Shader" uid="uid://do06vwx27ac5w" path="res://assets/script/palette/player_palette2.gdshader" id="1_nedxr"]
 
 [resource]
 shader = ExtResource("1_nedxr")

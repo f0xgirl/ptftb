@@ -13,7 +13,6 @@ signal remove
 @export var level_dungeon: Array [PackedScene] = []
 @export var level_strong: Array [PackedScene] = []
 #constants:
-const PLAYER = preload("res://assets/scenes/player.tscn")
 #can be switched out for the hubs when i get to that
 const LEVEL_SELECT = preload("res://assets/scenes/level_select.tscn")
 #test level:
@@ -27,9 +26,7 @@ var alreadyloaded: Array [bool] = []
 func _ready() -> void:
 	alreadyloaded.resize(100) #WHY THE FUCK DO I HAVE TO DO THIS IN MULTIPLE LINES WHY ARE YOU LIKE THIS GODOT
 	alreadyloaded.fill(false)
-	var plr = PLAYER.instantiate()
 	var lvl_select = LEVEL_SELECT.instantiate()
-	add_child(plr)
 	add_child(lvl_select)
 	
 
@@ -48,9 +45,7 @@ func room_changed(node: Node) -> void:
 	else:
 		emit_signal("enable_player")
 	
-## do not use, unfinished
 func load_jg():
-	alreadyloaded[0] = true
 	GlobalSignals.emit_signal("move", -1605, 269)
 	var lvl = JG_1.instantiate()
 	add_child(lvl)
@@ -61,32 +56,37 @@ func load_test():
 	add_child(lvl)
 	emit_signal("player_enabled")
 
-func load_room_test(id: int):
-	var lvl = level_test[id].instantiate()
-	if alreadyloaded[id] == true:
-		pass
+func load_room_test(id: int, prev_id: int):
+	GlobalSignals.emit_signal("hide", prev_id)
+	if check_if_loaded(id) == true:
+		GlobalSignals.emit_signal("show", id)
 	else:
-		alreadyloaded[id] = true
+		var lvl = level_test[id].instantiate()
 		add_child(lvl)
-	print("alreadyloaded")
-	print(alreadyloaded)
 	
+# it'd be nice if id actually fucking documented what this does what does anything literally do
+## loads rooms from john gutter specifically, maybe it would make more sense if i made this a generic load room function but i dont really care
 func load_room_jg(id: int, prev_id: int):
-	print("id: " + var_to_str(id) + " prev_id: " + var_to_str(prev_id) + " loaded: " + var_to_str(alreadyloaded))
-	if check_if_loaded(prev_id) == false: #for some god forsaken reason ive decided to make this opposite i do not know why this is happening
-		GlobalSignals.emit_signal("hide", id)
-	elif check_if_loaded(prev_id) == true:
+	GlobalSignals.emit_signal("hide", prev_id)
+	if check_if_loaded(id) == true:
+		GlobalSignals.emit_signal("show", id)
+	else:
 		var lvl = level_jg[id].instantiate()
 		add_child(lvl)
+	
 		
 	
 
 func check_if_loaded(id: int) -> bool:
-	if alreadyloaded[id] == true:
-		return true
-	else:
-		alreadyloaded[id] = true
-		return false
+	var thingy: bool = false
+	for child in get_children():
+		if child is room: #the player is a child of the parent so this is necessary unfortunately :middle_finger:
+			if child.room_id == id:
+				thingy = true
+	return thingy
+
+func add_level(id: int):
+	pass
 
 func clear():
 	var x
