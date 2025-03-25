@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://t67bm8s8a2eq"]
+[gd_scene load_steps=8 format=4 uid="uid://t67bm8s8a2eq"]
 
+[ext_resource type="Script" uid="uid://bvp7b8nd25ruo" path="res://assets/script/important/load things/room.gd" id="1_v50ih"]
 [ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="1_w5shy"]
 [ext_resource type="Script" uid="uid://qwvbeauuaulm" path="res://assets/script/resources scripts/level_data.gd" id="2_tb8m1"]
 [ext_resource type="TileSet" uid="uid://t56k02vh81ye" path="res://resources/level/tilesets/placeholder_tileset.tres" id="3_vko48"]
 [ext_resource type="PackedScene" uid="uid://bplsasd8hafjp" path="res://assets/scenes/level objects/olive_grav.tscn" id="4_1bog7"]
+[ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/level objects/room_changer.tscn" id="6_wqrj4"]
 
 [sub_resource type="Resource" id="Resource_8yo8b"]
 script = ExtResource("2_tb8m1")
@@ -14,7 +16,11 @@ top = -640
 right = 3098
 bottom = -47
 
-[node name="Midescape3" type="Node"]
+[node name="room" type="Node"]
+script = ExtResource("1_v50ih")
+room_name = &"mid_3"
+room_id = 2
+metadata/_custom_type_script = "uid://bvp7b8nd25ruo"
 
 [node name="player" parent="." instance=ExtResource("1_w5shy")]
 position = Vector2(-726, -90)
@@ -31,3 +37,9 @@ player = NodePath("../player")
 [node name="olive_grav2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_1bog7")]
 position = Vector2(-387, -245)
 player = NodePath("../player")
+
+[node name="to room 2" parent="." instance=ExtResource("6_wqrj4")]
+position = Vector2(-775, -105)
+room_id = 2
+load_room = "load_room_mid"
+next_room_id = 1

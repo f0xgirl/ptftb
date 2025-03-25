@@ -3,6 +3,7 @@ class_name room
 
 signal visible
 signal hidden
+signal panic
 
 @export var room_name: StringName
 @export var room_id: int

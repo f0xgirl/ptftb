@@ -1,7 +1,8 @@
 extends AnimatedSprite2D
 
+const LEVEL_SELECT = preload("res://assets/scenes/level_select.tscn")
+
 @export var enterexit: bool
-@export_dir var location
 @export_category("Player Postion")
 @export var X: int
 @export var Y: int
@@ -16,23 +17,21 @@ func _ready() -> void:
 		enterexit = true
 
 func _process(delta: float) -> void:
-	
-	if Input.is_action_just_pressed("up") and enter == true:
-		print("hi")
-		get_tree().change_scene_to_file(location)
-		DataPassthrough.player_pos_x = X
-		DataPassthrough.player_pos_y = Y
+	if Input.is_action_just_pressed("up") and enter == true and DataPassthrough.panic == true:
+		var lvl_select = LEVEL_SELECT.instantiate()
+		get_parent().get_parent().call("clear_rooms")
+		get_parent().get_parent().add_child(lvl_select) #adds level select to parent
+		get_parent().get_parent().call("disable_player", true) #disables player from moving
+		Globaltimer.stop()
+		GlobalSignals.emit_signal("move", -1605, 269)
 		DataPassthrough.panic = false
 		
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		enter = true
-		print("true")
-	
+		enter = true	
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		enter = false
-		print("false")

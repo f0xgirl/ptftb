@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://ct4c8bdwci21f"]
+[gd_scene load_steps=9 format=4 uid="uid://ct4c8bdwci21f"]
 
 [ext_resource type="Texture2D" uid="uid://2wt153ksg4v4" path="res://assets/sprites/normalT_room3.png" id="1_elpu0"]
 [ext_resource type="Script" uid="uid://bvp7b8nd25ruo" path="res://assets/script/important/load things/room.gd" id="1_xng1r"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c20qitdqj1cc1" path="res://assets/scenes/levels/level decoration/parallax_background1_jg.tscn" id="5_t56tm"]
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/level objects/room_changer.tscn" id="6_2pe7i"]
 [ext_resource type="PackedScene" uid="uid://xes1t1iyh8hl" path="res://assets/scenes/level objects/cheeseslime.tscn" id="7_2yrn6"]
+[ext_resource type="PackedScene" uid="uid://7q52prdlvm3g" path="res://assets/scenes/level objects/metal_block.tscn" id="8_byieq"]
 
 [node name="room" type="Node"]
 script = ExtResource("1_xng1r")
@@ -46,3 +47,9 @@ load_room = "load_room_jg"
 next_room_id = 3
 X = -1876
 Y = 393
+
+[node name="block1" parent="." instance=ExtResource("8_byieq")]
+position = Vector2(2528, 16)
+
+[node name="Area2D" parent="." instance=ExtResource("8_byieq")]
+position = Vector2(2528, -48)

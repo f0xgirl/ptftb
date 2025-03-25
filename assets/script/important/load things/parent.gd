@@ -2,8 +2,6 @@ extends Node
 class_name parent
 
 #signals
-signal disable_player
-signal enable_player
 signal remove
 #levels
 @export var level_test: Array [PackedScene] = []
@@ -12,6 +10,8 @@ signal remove
 @export var level_ruin: Array [PackedScene] = []
 @export var level_dungeon: Array [PackedScene] = []
 @export var level_strong: Array [PackedScene] = []
+@export var level_mid: Array [PackedScene] = []
+@export var level_tutorial: Array [PackedScene] = []
 #constants:
 #can be switched out for the hubs when i get to that
 const LEVEL_SELECT = preload("res://assets/scenes/level_select.tscn")
@@ -19,24 +19,50 @@ const LEVEL_SELECT = preload("res://assets/scenes/level_select.tscn")
 const TEST_1 = preload("res://assets/scenes/levels/testing/testing_level.tscn")
 #john gutter:
 const JG_1 = preload("res://assets/scenes/levels/john gutter/john_gutter_1.tscn")
+#pizzascape:
+const PIZZASCAPE_1 = preload("res://assets/scenes/levels/pizzascape/pizzascape_1.tscn")
+#ancient:
+const ANCIENT_1 = preload("res://assets/scenes/levels/ancientcheese/ancient_1.tscn")
+#dungeon:
+const BLOODSAUCE_1 = preload("res://assets/scenes/levels/dungeon/bloodsauce_1.tscn")
+#strongcold:
+const STRONGCOLD_1 = preload("res://assets/scenes/levels/strongcold/strongcold_1.tscn")
+#midescape:
+const MIDESCAPE_1 = preload("res://assets/scenes/levels/midescape/midescape_1.tscn")
+#pinball:
+const SPACE_PINBALL = preload("res://assets/scenes/levels/space pinball/space_pinball.tscn")
+#tutorial:
+const TUTORIAL_1 = preload("res://assets/scenes/levels/tutorial/tutorial_1.tscn")
 
 #variables:
-var alreadyloaded: Array [bool] = []
 
 func _ready() -> void:
-	alreadyloaded.resize(100) #WHY THE FUCK DO I HAVE TO DO THIS IN MULTIPLE LINES WHY ARE YOU LIKE THIS GODOT
-	alreadyloaded.fill(false)
 	var lvl_select = LEVEL_SELECT.instantiate()
 	add_child(lvl_select)
+	GlobalSignals.emit_signal("move", 653, 450)
+	get_child(0).set_meta("disabled", true)
 	
 
 func room_called(selected_room: int):
 	match selected_room:
-		1:
+		0:
 			load_test()
-		2:
-			print("john gutter laoded")
+		1:
 			load_jg()
+		2:
+			load_medevial()
+		3:
+			pass
+			
+		4:
+			pass
+			
+		5:
+			load_strong()
+		6:
+			load_mid()
+		7:
+			load_tut()
 		
 
 func room_changed(node: Node) -> void:
@@ -56,6 +82,32 @@ func load_test():
 	add_child(lvl)
 	emit_signal("player_enabled")
 
+func load_medevial():
+	var lvl = PIZZASCAPE_1.instantiate()
+	add_child(lvl)
+
+func load_ruin():
+	var lvl = ANCIENT_1.instantiate()
+	add_child(lvl)
+
+func load_dungeon():
+	var lvl = BLOODSAUCE_1.instantiate()
+	add_child(lvl)
+
+func load_strong():
+	GlobalSignals.emit_signal("move", 506, 320)
+	var lvl = STRONGCOLD_1.instantiate()
+	add_child(lvl)
+
+func load_mid():
+	var lvl = MIDESCAPE_1.instantiate()
+	add_child(lvl)
+	
+func load_tut():
+	GlobalSignals.emit_signal("move", -275, -329)
+	var lvl = TUTORIAL_1.instantiate()
+	add_child(lvl)
+
 func load_room_test(id: int, prev_id: int):
 	GlobalSignals.emit_signal("hide", prev_id)
 	if check_if_loaded(id) == true:
@@ -73,9 +125,58 @@ func load_room_jg(id: int, prev_id: int):
 	else:
 		var lvl = level_jg[id].instantiate()
 		add_child(lvl)
+
+func load_room_midevial(id: int, prev_id: int) -> void:
+	GlobalSignals.emit_signal("hide", prev_id)
+	if check_if_loaded(id) == true:
+		GlobalSignals.emit_signal("show", id)
+	else:
+		var lvl = level_medevial[id].instantiate()
+		add_child(lvl)
 	
-		
+func load_room_ruin(id: int, prev_id: int) -> void:
+	GlobalSignals.emit_signal("hide", prev_id)
+	if check_if_loaded(id) == true:
+		GlobalSignals.emit_signal("show", id)
+	else:
+		var lvl = level_ruin[id].instantiate()
+		add_child(lvl)
+
+func load_room_dungeon(id: int, prev_id: int) -> void:
+	GlobalSignals.emit_signal("hide", prev_id)
+	if check_if_loaded(id) == true:
+		GlobalSignals.emit_signal("show", id)
+	else:
+		var lvl = level_dungeon[id].instantiate()
+		add_child(lvl)
 	
+func load_room_strong(id: int, prev_id: int) -> void:
+	GlobalSignals.emit_signal("hide", prev_id)
+	if check_if_loaded(id) == true:
+		GlobalSignals.emit_signal("show", id)
+	else:
+		var lvl = level_strong[id].instantiate()
+		add_child(lvl)
+
+func load_room_mid(id: int, prev_id: int) -> void:
+	GlobalSignals.emit_signal("hide", prev_id)
+	if check_if_loaded(id) == true:
+		GlobalSignals.emit_signal("show", id)
+	else:
+		var lvl = level_mid[id].instantiate()
+		add_child(lvl)
+	
+func load_room_tutorial(id: int, prev_id: int) -> void:
+	GlobalSignals.emit_signal("hide", prev_id)
+	if check_if_loaded(id) == true:
+		GlobalSignals.emit_signal("show", id)
+	else:
+		var lvl = level_tutorial[id].instantiate()
+		add_child(lvl)
+	
+func disable_player(x: bool) -> void:
+	print("working")
+	get_child(0).set_meta("disabled", x)
 
 func check_if_loaded(id: int) -> bool:
 	var thingy: bool = false
@@ -85,10 +186,7 @@ func check_if_loaded(id: int) -> bool:
 				thingy = true
 	return thingy
 
-func add_level(id: int):
-	pass
-
-func clear():
-	var x
-	for alreadyloaded in x:
-		alreadyloaded[x] = null
+func clear_rooms() -> void:
+	for child in get_children():
+		if child is room:
+			child.queue_free()

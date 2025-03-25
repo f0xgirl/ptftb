@@ -1,14 +1,16 @@
 [gd_scene load_steps=7 format=4 uid="uid://ddfs4ffikkjoq"]
 
-[ext_resource type="Script" uid="uid://du0rvnk6e38em" path="res://assets/script/level specific/strongcold_1.gd" id="1_1it0h"]
+[ext_resource type="Script" uid="uid://bvp7b8nd25ruo" path="res://assets/script/important/load things/room.gd" id="1_cq8xs"]
 [ext_resource type="Texture2D" uid="uid://difag0780ni4x" path="res://assets/sprites/levels/level visuals/strongcoldconcept1.png" id="1_lnf4h"]
 [ext_resource type="TileSet" uid="uid://t56k02vh81ye" path="res://resources/level/tilesets/placeholder_tileset.tres" id="2_dd6af"]
 [ext_resource type="PackedScene" uid="uid://drg1wcxxcyjdm" path="res://assets/scenes/level objects/gate_portal.tscn" id="5_t45di"]
 [ext_resource type="PackedScene" uid="uid://mor1xtohk0ul" path="res://assets/scenes/level objects/hot_sauce.tscn" id="6_qaey5"]
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/level objects/room_changer.tscn" id="8_8dor1"]
 
-[node name="strongcold_1" type="Node"]
-script = ExtResource("1_1it0h")
+[node name="room" type="Node"]
+script = ExtResource("1_cq8xs")
+room_name = &"strongcold_1"
+metadata/_custom_type_script = "uid://bvp7b8nd25ruo"
 
 [node name="ref" type="Sprite2D" parent="."]
 editor_description = "hide it before release thankssssss :3
@@ -23,8 +25,8 @@ tile_set = ExtResource("2_dd6af")
 [node name="stairs" type="Label" parent="."]
 offset_left = 92.0
 offset_top = 152.0
-offset_right = 175.0
-offset_bottom = 175.0
+offset_right = 319.0
+offset_bottom = 201.0
 text = "put stairs here;
 add stairs some sort of slope "
 
@@ -41,7 +43,7 @@ anchor_bottom = 0.035
 offset_left = -1401.0
 offset_top = 395.0
 offset_right = -1326.0
-offset_bottom = 395.32
+offset_bottom = 421.32
 text = "hot sauce
 "
 
@@ -54,20 +56,19 @@ text = "hot sauce here too maybe?"
 
 [node name="to hub" parent="." instance=ExtResource("5_t45di")]
 position = Vector2(514, 239)
-location = "res://assets/scenes/level_select.tscn"
 
-[node name="hot sauce" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_qaey5")]
+[node name="hot sauce" parent="." instance=ExtResource("6_qaey5")]
 position = Vector2(-1423, 445)
 scale = Vector2(15.3951, 1.70265)
-player = NodePath("")
 
-[node name="hot sauce2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_qaey5")]
+[node name="hot sauce2" parent="." instance=ExtResource("6_qaey5")]
 position = Vector2(712, -65)
 scale = Vector2(12.8829, 1.37234)
-player = NodePath("")
 
 [node name="Area2D" parent="." instance=ExtResource("8_8dor1")]
 position = Vector2(706, -423)
 scale = Vector2(20.44, 1)
+load_room = "load_room_strong"
+next_room_id = 1
 X = 181
 Y = 425

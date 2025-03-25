@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://c46vd1cyavu3n"]
+[gd_scene load_steps=11 format=4 uid="uid://c46vd1cyavu3n"]
 
 [ext_resource type="Script" uid="uid://bvp7b8nd25ruo" path="res://assets/script/important/load things/room.gd" id="1_3tapv"]
 [ext_resource type="Texture2D" uid="uid://nnsqd2ge8w6k" path="res://assets/sprites/normalT_room4.png" id="1_hd3eu"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://xes1t1iyh8hl" path="res://assets/scenes/level objects/cheeseslime.tscn" id="5_oh8nq"]
 [ext_resource type="TileSet" uid="uid://d4fo3wle3axih" path="res://resources/level/blocks.tres" id="8_g33dj"]
 [ext_resource type="PackedScene" uid="uid://gu657xt52lr7" path="res://assets/scenes/level objects/panic_block.tscn" id="9_pn3vn"]
+[ext_resource type="PackedScene" uid="uid://7q52prdlvm3g" path="res://assets/scenes/level objects/metal_block.tscn" id="10_uftcf"]
 
 [node name="room" type="Node"]
 script = ExtResource("1_3tapv")
@@ -71,3 +72,6 @@ scale = Vector2(5.21739, 1)
 [node name="panicblock2" parent="." instance=ExtResource("9_pn3vn")]
 position = Vector2(-94, 404)
 scale = Vector2(5.21739, 1)
+
+[node name="Area2D" parent="." instance=ExtResource("10_uftcf")]
+position = Vector2(128, 192)

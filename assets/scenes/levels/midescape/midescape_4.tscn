@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://b8ag3vnk6kv0c"]
+[gd_scene load_steps=2 format=3 uid="uid://b8ag3vnk6kv0c"]
 
-[node name="Midescape4" type="Node"]
+[ext_resource type="Script" uid="uid://bvp7b8nd25ruo" path="res://assets/script/important/load things/room.gd" id="1_xwxuf"]
+
+[node name="room" type="Node"]
+script = ExtResource("1_xwxuf")
+room_name = &"mid_4"
+room_id = 3
+metadata/_custom_type_script = "uid://bvp7b8nd25ruo"

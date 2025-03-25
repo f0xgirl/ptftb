@@ -1,21 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3tnoclfm5sgl"]
+[gd_scene load_steps=4 format=3 uid="uid://b3tnoclfm5sgl"]
 
 [ext_resource type="Script" uid="uid://orj2yy1e2s4g" path="res://assets/script/level specific/level_select.gd" id="9_l0hxu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7y22d"]
+size = Vector2(795, 54)
 
 [sub_resource type="LabelSettings" id="LabelSettings_fhmxf"]
 font_size = 64
 
 [node name="level_select" type="Node"]
 script = ExtResource("9_l0hxu")
+level_list = Array[String](["test", "john gutter", "pizzascape", "ruin", "dungeon", "strongcold", "mid escape", "tutorial"])
 room_name = &"level_select"
 metadata/_custom_type_script = "uid://bvp7b8nd25ruo"
 
-[node name="Node" type="Node" parent="."]
-editor_description = "im too lazy to remove this :P"
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Node"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(696, 703)
+shape = SubResource("RectangleShape2D_7y22d")
 
-[node name="Control" type="Control" parent="Node/CanvasLayer"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -31,19 +38,21 @@ grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="Node/CanvasLayer/Control"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Node/CanvasLayer/Control/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Node/CanvasLayer/Control/MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/MarginContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Node/CanvasLayer/Control/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/Control/MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
+text = "ASDFAS"
 label_settings = SubResource("LabelSettings_fhmxf")
