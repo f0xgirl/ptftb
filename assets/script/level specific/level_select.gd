@@ -8,6 +8,7 @@ var selected_room: int = 0
 
 func _ready() -> void:
 	Audioplayer._play_music_hub()
+	_refresh_label(1) #temporary, put selected_room after
 	
 
 func _process(delta: float) -> void:
@@ -18,7 +19,7 @@ func _process(delta: float) -> void:
 		selected_room +=1
 		_refresh_label(selected_room)
 	if Input.is_action_just_pressed("action1"):
-		get_parent().call("room_called", selected_room)
+		get_parent().call("room_called", 1) #put selected room in second argument after
 		get_parent().call("disable_player", false)
 		queue_free()
 

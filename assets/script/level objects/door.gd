@@ -12,6 +12,9 @@ extends Area2D
 @export var Y: int
 var enter: bool = false
 
+func _ready() -> void:
+	get_parent().connect("hidden", _hidden)
+	get_parent().connect("visible", _visible)
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("up") and enter == true:

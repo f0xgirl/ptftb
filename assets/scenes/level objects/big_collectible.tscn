@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6370n1pcjqjb"]
+
+[ext_resource type="Script" uid="uid://bcmfbkdidyxja" path="res://assets/script/big_collectible.gd" id="1_du80p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_du80p"]
+
+[node name="big_collectible" type="Area2D"]
+script = ExtResource("1_du80p")
+worth = 100
+metadata/_custom_type_script = "uid://bcmfbkdidyxja"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_du80p")

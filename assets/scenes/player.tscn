@@ -436,6 +436,9 @@ script = ExtResource("23_uq8vi")
 position = Vector2(0, -3.5)
 shape = ExtResource("18_0xntb")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.8, 1.8)
+
 [node name="peppino_head" type="CanvasLayer" parent="."]
 
 [node name="Control" type="Control" parent="peppino_head"]
@@ -514,6 +517,7 @@ layout_mode = 2
 size_flags_vertical = 0
 
 [node name="Label" type="Label" parent="devbuild/Control/MarginContainer/VBoxContainer/HBoxContainer"]
+visible = false
 modulate = Color(1, 1, 1, 0.545098)
 layout_mode = 2
 text = "PLAYTEST BUILD
@@ -542,7 +546,8 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="score/Control/MarginContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="score/Control/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="score label" type="Label" parent="score/Control/MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "0"
 
@@ -742,9 +747,6 @@ player = NodePath("../..")
 script = ExtResource("48_878e8")
 player = NodePath("../..")
 player_data = ExtResource("2_i6cxx")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.8, 1.8)
 
 [node name="destroyable" type="RayCast2D" parent="."]
 target_position = Vector2(24, 0)

@@ -3,6 +3,11 @@ class_name parent
 
 #signals
 signal remove
+#player camera limits
+signal player_limit_left(val: int)
+signal player_limit_top(val: int)
+signal player_limit_right(val: int)
+signal player_limit_bottom(val: int)
 #levels
 @export var level_test: Array [PackedScene] = []
 @export var level_jg: Array [PackedScene] = []
@@ -43,7 +48,7 @@ func _ready() -> void:
 	get_child(0).set_meta("disabled", true)
 	
 
-func room_called(selected_room: int):
+func room_called(selected_room: int) -> void:
 	match selected_room:
 		0:
 			load_test()
@@ -64,61 +69,54 @@ func room_called(selected_room: int):
 		7:
 			load_tut()
 		
-
-func room_changed(node: Node) -> void:
-	if node == LEVEL_SELECT:
-		emit_signal("disable_player")
-	else:
-		emit_signal("enable_player")
 	
-func load_jg():
+func load_jg() -> void:
 	GlobalSignals.emit_signal("move", -1605, 269)
 	var lvl = JG_1.instantiate()
 	add_child(lvl)
 	
-func load_test():
+func load_test() -> void:
 	print("load test")
 	var lvl = TEST_1.instantiate()
 	add_child(lvl)
 	emit_signal("player_enabled")
 
-func load_medevial():
+func load_medevial() -> void:
 	var lvl = PIZZASCAPE_1.instantiate()
 	add_child(lvl)
 
-func load_ruin():
+func load_ruin() -> void:
 	var lvl = ANCIENT_1.instantiate()
 	add_child(lvl)
 
-func load_dungeon():
+func load_dungeon() -> void:
 	var lvl = BLOODSAUCE_1.instantiate()
 	add_child(lvl)
 
-func load_strong():
+func load_strong() -> void:
 	GlobalSignals.emit_signal("move", 506, 320)
 	var lvl = STRONGCOLD_1.instantiate()
 	add_child(lvl)
 
-func load_mid():
+func load_mid() -> void:
 	var lvl = MIDESCAPE_1.instantiate()
 	add_child(lvl)
 	
-func load_tut():
+func load_tut() -> void:
 	GlobalSignals.emit_signal("move", -275, -329)
 	var lvl = TUTORIAL_1.instantiate()
 	add_child(lvl)
 
-func load_room_test(id: int, prev_id: int):
+func load_room_test(id: int, prev_id: int) -> void:
 	GlobalSignals.emit_signal("hide", prev_id)
 	if check_if_loaded(id) == true:
 		GlobalSignals.emit_signal("show", id)
 	else:
 		var lvl = level_test[id].instantiate()
 		add_child(lvl)
-	
-# it'd be nice if id actually fucking documented what this does what does anything literally do
+
 ## loads rooms from john gutter specifically, maybe it would make more sense if i made this a generic load room function but i dont really care
-func load_room_jg(id: int, prev_id: int):
+func load_room_jg(id: int, prev_id: int) -> void:
 	GlobalSignals.emit_signal("hide", prev_id)
 	if check_if_loaded(id) == true:
 		GlobalSignals.emit_signal("show", id)
@@ -133,7 +131,7 @@ func load_room_midevial(id: int, prev_id: int) -> void:
 	else:
 		var lvl = level_medevial[id].instantiate()
 		add_child(lvl)
-	
+
 func load_room_ruin(id: int, prev_id: int) -> void:
 	GlobalSignals.emit_signal("hide", prev_id)
 	if check_if_loaded(id) == true:
@@ -149,7 +147,7 @@ func load_room_dungeon(id: int, prev_id: int) -> void:
 	else:
 		var lvl = level_dungeon[id].instantiate()
 		add_child(lvl)
-	
+
 func load_room_strong(id: int, prev_id: int) -> void:
 	GlobalSignals.emit_signal("hide", prev_id)
 	if check_if_loaded(id) == true:
@@ -165,7 +163,7 @@ func load_room_mid(id: int, prev_id: int) -> void:
 	else:
 		var lvl = level_mid[id].instantiate()
 		add_child(lvl)
-	
+
 func load_room_tutorial(id: int, prev_id: int) -> void:
 	GlobalSignals.emit_signal("hide", prev_id)
 	if check_if_loaded(id) == true:
@@ -173,9 +171,8 @@ func load_room_tutorial(id: int, prev_id: int) -> void:
 	else:
 		var lvl = level_tutorial[id].instantiate()
 		add_child(lvl)
-	
+
 func disable_player(x: bool) -> void:
-	print("working")
 	get_child(0).set_meta("disabled", x)
 
 func check_if_loaded(id: int) -> bool:
@@ -190,3 +187,10 @@ func clear_rooms() -> void:
 	for child in get_children():
 		if child is room:
 			child.queue_free()
+
+func _player_camera_limit(left: int, top: int, right: int, bottom: int) -> void:
+	#print(left,top,right,bottom)
+	player_limit_left.emit(left)
+	player_limit_top.emit(top)
+	player_limit_right.emit(right)
+	player_limit_bottom.emit(bottom)

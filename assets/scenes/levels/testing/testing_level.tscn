@@ -18,7 +18,7 @@ script = ExtResource("3_e5ct2")
 
 [node name="Area2D" parent="." instance=ExtResource("3_w3l46")]
 position = Vector2(854, 707)
-load_room = "load_room_test"
+function_call = "load_room_test"
 next_room_id = 1
 
 [node name="metal block" parent="." instance=ExtResource("5_cng5a")]

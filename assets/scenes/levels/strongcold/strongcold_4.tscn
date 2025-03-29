@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://b50jyotggu2x"]
+[gd_scene load_steps=3 format=3 uid="uid://b50jyotggu2x"]
+
+[ext_resource type="TileSet" uid="uid://t56k02vh81ye" path="res://resources/level/tilesets/placeholder_tileset.tres" id="1_mkwkt"]
+[ext_resource type="Script" uid="uid://q3ywevjscjee" path="res://assets/script/tilemap.gd" id="2_vv4dx"]
 
 [node name="Node" type="Node"]
+
+[node name="tilemap" type="TileMapLayer" parent="."]
+tile_set = ExtResource("1_mkwkt")
+script = ExtResource("2_vv4dx")
+metadata/_custom_type_script = "uid://q3ywevjscjee"

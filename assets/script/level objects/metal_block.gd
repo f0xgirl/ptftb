@@ -1,6 +1,8 @@
 extends Area2D
 class_name metal_block
 
+@onready var staticbod: StaticBody2D = $StaticBody2D
+
 func _ready() -> void:
 	get_parent().connect("hidden", _hidden)
 	get_parent().connect("visible", _visible)
@@ -12,10 +14,12 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _hidden() -> void:
 	hide()
+	staticbod.set_collision_layer_value(1, false)
 	set_deferred("monitoring", false)
 
 func _visible() -> void:
 	show()
+	staticbod.set_collision_layer_value(1, true)
 	set_deferred("monitoring", true)
 
 

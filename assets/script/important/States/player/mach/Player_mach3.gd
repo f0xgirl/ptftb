@@ -20,7 +20,7 @@ func Enter():
 	
 func Update(_delta: float):
 	direction = Input.get_axis("left","right")
-	charge_effect.visible = true
+	#charge_effect.visible = true
 	emit_signal("anim_change","mach3",false)
 	emit_signal("anim_offset",2,-5)
 	if player.is_on_floor():

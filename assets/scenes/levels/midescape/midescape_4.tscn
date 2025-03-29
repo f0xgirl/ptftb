@@ -1,9 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://b8ag3vnk6kv0c"]
+[gd_scene load_steps=4 format=3 uid="uid://b8ag3vnk6kv0c"]
 
 [ext_resource type="Script" uid="uid://bvp7b8nd25ruo" path="res://assets/script/important/load things/room.gd" id="1_xwxuf"]
+[ext_resource type="TileSet" uid="uid://t56k02vh81ye" path="res://resources/level/tilesets/placeholder_tileset.tres" id="2_umbdk"]
+[ext_resource type="Script" uid="uid://q3ywevjscjee" path="res://assets/script/tilemap.gd" id="3_1yi7y"]
 
 [node name="room" type="Node"]
 script = ExtResource("1_xwxuf")
 room_name = &"mid_4"
 room_id = 3
 metadata/_custom_type_script = "uid://bvp7b8nd25ruo"
+
+[node name="tilemap" type="TileMapLayer" parent="."]
+tile_set = ExtResource("2_umbdk")
+script = ExtResource("3_1yi7y")
+metadata/_custom_type_script = "uid://q3ywevjscjee"

@@ -9,6 +9,8 @@ const LEVEL_SELECT = preload("res://assets/scenes/level_select.tscn")
 var enter = false
 
 func _ready() -> void:
+	get_parent().connect("hidden", _hidden)
+	get_parent().connect("visible", _visible)
 	if enterexit == true or DataPassthrough.panic == true:
 		play("open")
 	else:
@@ -35,3 +37,12 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		enter = false
+
+func _hidden() -> void:
+	hide()
+	set_deferred("monitoring", false)
+
+
+func _visible() -> void:
+	set_deferred("monitoring", true)
+	show()

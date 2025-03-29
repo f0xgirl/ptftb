@@ -7,6 +7,5 @@ class_name rocket
 @export_range(-1, 1) var forced_direction: int
 
 func _on_body_entered(body: Node2D) -> void:
-	player.force_direction = forced_direction
-	_state_change(player)
+	pass
 	

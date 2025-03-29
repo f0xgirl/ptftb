@@ -12,6 +12,10 @@
 script = ExtResource("1_w6ijp")
 room_name = &"john_gutter_5"
 room_id = 5
+left = -1328
+top = -400
+right = 1680
+bottom = 272
 metadata/_custom_type_script = "uid://bvp7b8nd25ruo"
 
 [node name="NormalTRoom5" type="Sprite2D" parent="."]
@@ -30,7 +34,7 @@ script = ExtResource("4_cb8id")
 position = Vector2(1810, 101)
 scale = Vector2(1, 9.08)
 room_id = 5
-load_room = "load_room_jg"
+function_call = "load_room_jg"
 next_room_id = 6
 X = -2152
 Y = 162
@@ -39,7 +43,7 @@ Y = 162
 position = Vector2(-1508, 15)
 scale = Vector2(2.5794, 7.13846)
 room_id = 5
-load_room = "load_room_jg"
+function_call = "load_room_jg"
 next_room_id = 3
 X = 3176
 Y = 383

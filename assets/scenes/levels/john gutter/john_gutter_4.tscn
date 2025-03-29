@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://c46vd1cyavu3n"]
+[gd_scene load_steps=12 format=4 uid="uid://c46vd1cyavu3n"]
 
 [ext_resource type="Script" uid="uid://bvp7b8nd25ruo" path="res://assets/script/important/load things/room.gd" id="1_3tapv"]
 [ext_resource type="Texture2D" uid="uid://nnsqd2ge8w6k" path="res://assets/sprites/normalT_room4.png" id="1_hd3eu"]
@@ -10,11 +10,16 @@
 [ext_resource type="TileSet" uid="uid://d4fo3wle3axih" path="res://resources/level/blocks.tres" id="8_g33dj"]
 [ext_resource type="PackedScene" uid="uid://gu657xt52lr7" path="res://assets/scenes/level objects/panic_block.tscn" id="9_pn3vn"]
 [ext_resource type="PackedScene" uid="uid://7q52prdlvm3g" path="res://assets/scenes/level objects/metal_block.tscn" id="10_uftcf"]
+[ext_resource type="PackedScene" uid="uid://cwgntvkyl06cp" path="res://assets/scenes/level objects/collectible.tscn" id="11_gxt15"]
 
 [node name="room" type="Node"]
 script = ExtResource("1_3tapv")
 room_name = &"john_gutter_4"
 room_id = 3
+left = -1856
+top = -416
+right = 3136
+bottom = 608
 metadata/_custom_type_script = "uid://bvp7b8nd25ruo"
 
 [node name="NormalTRoom4" type="Sprite2D" parent="."]
@@ -31,7 +36,7 @@ script = ExtResource("4_clpv2")
 position = Vector2(3288, 357)
 scale = Vector2(1, 11.52)
 room_id = 3
-load_room = "load_room_jg"
+function_call = "load_room_jg"
 next_room_id = 5
 X = -1107
 Y = 99
@@ -40,7 +45,7 @@ Y = 99
 position = Vector2(-2078, 388)
 scale = Vector2(1, 17.16)
 room_id = 3
-load_room = "load_room_jg"
+function_call = "load_room_jg"
 next_room_id = 2
 X = 3258
 Y = 159
@@ -54,7 +59,7 @@ position = Vector2(-1494, 417)
 position = Vector2(-91, 624)
 scale = Vector2(8.84, 1)
 room_id = 3
-load_room = "load_room_jg"
+function_call = "load_room_jg"
 next_room_id = 4
 X = -194
 Y = -488
@@ -75,3 +80,9 @@ scale = Vector2(5.21739, 1)
 
 [node name="Area2D" parent="." instance=ExtResource("10_uftcf")]
 position = Vector2(128, 192)
+
+[node name="collectible" parent="." instance=ExtResource("11_gxt15")]
+position = Vector2(-832, 65)
+
+[node name="collectible2" parent="." instance=ExtResource("11_gxt15")]
+position = Vector2(-799, 65)

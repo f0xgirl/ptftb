@@ -4,5 +4,8 @@ extends Node
 signal hide(room_id: int)
 signal show(room_id: int)
 signal remove(room_id: int)
-##for player only
+signal room_id_send
+
+#for player only
 signal move(x: int, y: int)
+signal add_score (points: int)

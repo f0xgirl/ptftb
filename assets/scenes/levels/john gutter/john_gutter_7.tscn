@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://c7nqu3wmjhdek"]
+[gd_scene load_steps=8 format=4 uid="uid://c7nqu3wmjhdek"]
 
 [ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://resources/level/tilesets/john_gutter_tileset.tres" id="1_ji54n"]
 [ext_resource type="PackedScene" uid="uid://c8aqg4asjyefk" path="res://assets/scenes/level objects/pillarjohn.tscn" id="2_8borr"]
@@ -6,11 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://cuoo8ojghsvmb" path="res://assets/scenes/level objects/ladder.tscn" id="4_6wxuq"]
 [ext_resource type="Script" uid="uid://bvp7b8nd25ruo" path="res://assets/script/important/load things/room.gd" id="5_dblrf"]
 [ext_resource type="PackedScene" uid="uid://d2q30hyq4cxd2" path="res://assets/scenes/level objects/door.tscn" id="5_j6e6m"]
+[ext_resource type="PackedScene" uid="uid://cwgntvkyl06cp" path="res://assets/scenes/level objects/collectible.tscn" id="7_5pf8q"]
 
 [node name="room" type="Node"]
 script = ExtResource("5_dblrf")
 room_name = &"john_gutter_7"
 room_id = 8
+left = -80
+top = -687
+right = 2160
+bottom = 255
 metadata/_custom_type_script = "uid://bvp7b8nd25ruo"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -37,6 +42,18 @@ load_room = "load_room_jg"
 next_room_id = 6
 X = -1330
 Y = 135
+
+[node name="collectible" parent="." instance=ExtResource("7_5pf8q")]
+position = Vector2(403, 8)
+
+[node name="collectible2" parent="." instance=ExtResource("7_5pf8q")]
+position = Vector2(522, 9)
+
+[node name="collectible3" parent="." instance=ExtResource("7_5pf8q")]
+position = Vector2(1440, -138)
+
+[node name="collectible4" parent="." instance=ExtResource("7_5pf8q")]
+position = Vector2(1498, -139)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

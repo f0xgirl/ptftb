@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://ceygj3iu68myf"]
+[gd_scene load_steps=9 format=4 uid="uid://ceygj3iu68myf"]
 
 [ext_resource type="Texture2D" uid="uid://bgt7yrvedossj" path="res://assets/sprites/normalT_room6branch.png" id="1_blkeb"]
 [ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://resources/level/tilesets/john_gutter_tileset.tres" id="2_0ilip"]
@@ -7,11 +7,16 @@
 [ext_resource type="Script" uid="uid://bvp7b8nd25ruo" path="res://assets/script/important/load things/room.gd" id="6_2lyci"]
 [ext_resource type="PackedScene" uid="uid://c20qitdqj1cc1" path="res://assets/scenes/levels/level decoration/parallax_background1_jg.tscn" id="6_tdslv"]
 [ext_resource type="TileSet" uid="uid://d4fo3wle3axih" path="res://resources/level/blocks.tres" id="7_0j8uy"]
+[ext_resource type="PackedScene" uid="uid://cwgntvkyl06cp" path="res://assets/scenes/level objects/collectible.tscn" id="8_0ke67"]
 
 [node name="room" type="Node"]
 script = ExtResource("6_2lyci")
 room_name = &"john_gutter_6_branch"
 room_id = 7
+left = -1952
+top = -63
+right = 3040
+bottom = 544
 metadata/_custom_type_script = "uid://bvp7b8nd25ruo"
 
 [node name="NormalTRoom6Branch" type="Sprite2D" parent="."]
@@ -25,19 +30,19 @@ tile_set = ExtResource("2_0ilip")
 script = ExtResource("4_iswug")
 
 [node name="to room 6 right" parent="." instance=ExtResource("3_iqb72")]
-position = Vector2(2816, -23)
+position = Vector2(2827, -88)
 scale = Vector2(19.6238, 1.25102)
 room_id = 7
-load_room = "load_room_jg"
+function_call = "load_room_jg"
 next_room_id = 6
 X = 2657
 Y = 357
 
 [node name="to room 6 left" parent="." instance=ExtResource("3_iqb72")]
-position = Vector2(-1350, -26)
+position = Vector2(-1344, -84)
 scale = Vector2(39.4181, 1)
 room_id = 7
-load_room = "load_room_jg"
+function_call = "load_room_jg"
 next_room_id = 6
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("6_tdslv")]
@@ -47,6 +52,24 @@ position = Vector2(9, -3)
 tile_map_data = PackedByteArray("AACS/wwAAAAAAAAAAQCU/wwAAAAAAAAAAQCW/wwAAAAAAAAAAQCY/wwAAAAAAAAAAQCS/w4AAAAAAAAAAQCU/w4AAAAAAAAAAQCW/w4AAAAAAAAAAQCY/w4AAAAAAAAAAQCS/xAAAAAAAAAAAQCU/xAAAAAAAAAAAQCW/xAAAAAAAAAAAQCY/xAAAAAAAAAAAQCS/xIAAAAAAAAAAQCU/xIAAAAAAAAAAQCW/xIAAAAAAAAAAQCY/xIAAAAAAAAAAQDC/xQAAAAAAAAAAQDE/xQAAAAAAAAAAQDG/xQAAAAAAAAAAQDI/xQAAAAAAAAAAQDK/xQAAAAAAAAAAQDM/xQAAAAAAAAAAQDC/xYAAAAAAAAAAQDE/xYAAAAAAAAAAQDG/xYAAAAAAAAAAQDI/xYAAAAAAAAAAQDK/xYAAAAAAAAAAQDM/xYAAAAAAAAAAQDi/xYAAAAAAAAAAQDk/xYAAAAAAAAAAQDm/xYAAAAAAAAAAQDo/xYAAAAAAAAAAQDq/xYAAAAAAAAAAQDs/xYAAAAAAAAAAQDu/xYAAAAAAAAAAQDw/xYAAAAAAAAAAQDy/xYAAAAAAAAAAQDi/xgAAAAAAAAAAQDk/xgAAAAAAAAAAQDm/xgAAAAAAAAAAQDo/xgAAAAAAAAAAQDq/xgAAAAAAAAAAQDs/xgAAAAAAAAAAQDu/xgAAAAAAAAAAQDw/xgAAAAAAAAAAQDy/xgAAAAAAAAAAQA=")
 enabled = false
 tile_set = ExtResource("7_0j8uy")
+
+[node name="collectible" parent="." instance=ExtResource("8_0ke67")]
+position = Vector2(352, 385)
+
+[node name="collectible2" parent="." instance=ExtResource("8_0ke67")]
+position = Vector2(416, 385)
+
+[node name="collectible3" parent="." instance=ExtResource("8_0ke67")]
+position = Vector2(1024, 385)
+
+[node name="collectible4" parent="." instance=ExtResource("8_0ke67")]
+position = Vector2(1088, 385)
+
+[node name="collectible5" parent="." instance=ExtResource("8_0ke67")]
+position = Vector2(1664, 385)
+
+[node name="collectible6" parent="." instance=ExtResource("8_0ke67")]
+position = Vector2(1760, 385)
 
 [connection signal="hidden" from="." to="TileMapLayer" method="_hidden"]
 [connection signal="hidden" from="." to="to room 6 right" method="_hidden"]

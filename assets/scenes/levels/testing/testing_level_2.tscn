@@ -16,16 +16,10 @@ tile_map_data = PackedByteArray("AAAAAAcAAQAAAAAAAAAAAAgAAQAAAAEAAAABAAcAAQABAAA
 tile_set = ExtResource("2_g3dyh")
 script = ExtResource("3_sh155")
 
-[node name="room" type="Node" parent="."]
-script = ExtResource("1_iyiyv")
-room_name = &"test_2"
-room_id = 1
-metadata/_custom_type_script = "uid://bvp7b8nd25ruo"
-
 [node name="Area2D" parent="." instance=ExtResource("3_qprvy")]
 position = Vector2(-44, 77)
 room_id = 1
-load_room = "load_room_test"
+function_call = "load_room_test"
 
 [connection signal="hidden" from="." to="TileMapLayer" method="_hidden"]
 [connection signal="hidden" from="." to="Area2D" method="_hidden"]

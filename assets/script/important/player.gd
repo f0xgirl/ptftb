@@ -6,8 +6,9 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var jump_velocity: int
 @onready var camera: Camera2D = $Camera2D
 @export var level_data: level_data
-@onready var score_text: Label = $score/Control/MarginContainer/HBoxContainer/VBoxContainer/Label
 @onready var sprite: AnimatedSprite2D = $sprite
+@onready var score_label: Label = %"score label"
+
 
 const TOPPIN_TEST = preload("res://assets/scenes/level objects/toppin_test.tscn")
 const LEVEL_SELECT = preload("res://assets/scenes/level_select.tscn")
@@ -23,10 +24,14 @@ var still_in_ladder: bool = false
 
 func _ready() -> void:
 	GlobalSignals.connect("move", set_pos)
-	var toppin = TOPPIN_TEST.instantiate()
+	GlobalSignals.connect("add_score", add_points)
+	get_parent().connect("player_limit_left", set_limit_left)
+	get_parent().connect("player_limit_top", set_limit_top)
+	get_parent().connect("player_limit_right", set_limit_right)
+	get_parent().connect("player_limit_bottom", set_limit_bottom)
+	#var toppin = TOPPIN_TEST.instantiate()
 	#add_child(toppin)
-	score_text.set_text(var_to_str(score))
-	setcamboundaries()
+	score_label.set_text(var_to_str(0))
 	if DataPassthrough.player_pos_x:
 		position.x = DataPassthrough.player_pos_x
 		position.y = DataPassthrough.player_pos_y
@@ -45,14 +50,18 @@ func _physics_process(delta: float) -> void:
 		DataPassthrough.player_pos_y = 0
 		get_parent().add_child(lvl)
 
-## sets camera boundaries TODO: fix them
-func setcamboundaries() -> void:
-	#camera.limit_left = level_data.get_limit(0)
-	#camera.limit_top = level_data.get_limit(1)
-	#camera.limit_right = level_data.get_limit(2)
-	#camera.limit_bottom = level_data.get_limit(3)
-	pass
-	
+func set_limit_left(val: int) -> void:
+	camera.limit_left = val
+
+func set_limit_top(val: int) -> void:
+	camera.limit_top = val
+
+func set_limit_right(val: int) -> void:
+	camera.limit_right = val
+
+func set_limit_bottom(val: int) -> void:
+	camera.limit_bottom = val
+
 func disable_gravity(grav: bool) -> void:
 	grav_disable = grav
 	
@@ -63,10 +72,13 @@ func set_pos(x: int, y: int) -> void:
 	global_position.x = x
 	global_position.y = y
 
-func _on_hot_sauce_body_entered(body: Node2D) -> void:
-	state_override = true
-	state_override_change = "player_fireass"
+func add_points(points):
+	print("added")
+	score += points
+	score_label.set_text(var_to_str(score))
 
+func points_clear():
+	score = 0
 
 func _change_dir(dir: int) -> void:
 	player_data.player_direction = dir

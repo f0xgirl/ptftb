@@ -10,7 +10,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func Enter():
 	sprite.play("up_jump")
 	DataPassthrough.player_state = "player_highjump"
-	player.velocity.y = 1.3 * player_data.jumpheight
+	player.velocity.y = 1.5 * player_data.jumpheight
 	Transitioned.emit(self,"player_idle")
 
 func Update(delta: float):

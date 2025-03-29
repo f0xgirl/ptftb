@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://cn37hkufe6ajv"]
+[gd_scene load_steps=12 format=4 uid="uid://cn37hkufe6ajv"]
 
 [ext_resource type="Texture2D" uid="uid://bq5evmtt1ubwx" path="res://assets/sprites/normalT_room6.png" id="1_swvpu"]
 [ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://resources/level/tilesets/john_gutter_tileset.tres" id="2_dl1dw"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d2q30hyq4cxd2" path="res://assets/scenes/level objects/door.tscn" id="7_4oqgm"]
 [ext_resource type="Script" uid="uid://bvp7b8nd25ruo" path="res://assets/script/important/load things/room.gd" id="7_qecc2"]
 [ext_resource type="PackedScene" uid="uid://c7ogx214cfhin" path="res://assets/scenes/level objects/block_test.tscn" id="8_4b3as"]
+[ext_resource type="PackedScene" uid="uid://cwgntvkyl06cp" path="res://assets/scenes/level objects/collectible.tscn" id="9_nluvn"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_8jxdq"]
 scenes/1/scene = ExtResource("8_4b3as")
@@ -20,6 +21,10 @@ sources/0 = SubResource("TileSetScenesCollectionSource_8jxdq")
 script = ExtResource("7_qecc2")
 room_name = &"john_gutter_6"
 room_id = 6
+left = -2112
+top = -336
+right = 2912
+bottom = 320
 metadata/_custom_type_script = "uid://bvp7b8nd25ruo"
 
 [node name="NormalTRoom6" type="Sprite2D" parent="."]
@@ -38,7 +43,7 @@ script = ExtResource("4_q8uem")
 position = Vector2(-2317, 133)
 scale = Vector2(1, -15.208)
 room_id = 6
-load_room = "load_room_jg"
+function_call = "load_room_jg"
 next_room_id = 5
 X = 1717
 Y = 113
@@ -47,7 +52,7 @@ Y = 113
 position = Vector2(-1156, 471)
 scale = Vector2(8.84, 1)
 room_id = 6
-load_room = "load_room_jg"
+function_call = "load_room_jg"
 next_room_id = 7
 X = -1340
 Y = 36
@@ -65,3 +70,21 @@ position = Vector2(9, -3)
 tile_map_data = PackedByteArray("AAAwAAgAAAAAAAAAAQAwAAoAAAAAAAAAAQBYAAgAAAAAAAAAAQBYAAoAAAAAAAAAAQBuAAgAAAAAAAAAAQBuAAoAAAAAAAAAAQCEAAgAAAAAAAAAAQCEAAoAAAAAAAAAAQA=")
 enabled = false
 tile_set = SubResource("TileSet_x2t3k")
+
+[node name="collectible" parent="." instance=ExtResource("9_nluvn")]
+position = Vector2(-1055, 129)
+
+[node name="collectible2" parent="." instance=ExtResource("9_nluvn")]
+position = Vector2(-991, 129)
+
+[node name="collectible3" parent="." instance=ExtResource("9_nluvn")]
+position = Vector2(257, 128)
+
+[node name="collectible4" parent="." instance=ExtResource("9_nluvn")]
+position = Vector2(320, 128)
+
+[node name="collectible5" parent="." instance=ExtResource("9_nluvn")]
+position = Vector2(1471, 129)
+
+[node name="collectible6" parent="." instance=ExtResource("9_nluvn")]
+position = Vector2(1536, 128)

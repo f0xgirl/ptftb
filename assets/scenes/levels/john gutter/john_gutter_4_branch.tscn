@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://bidyolavjny6l"]
+[gd_scene load_steps=10 format=4 uid="uid://bidyolavjny6l"]
 
 [ext_resource type="Texture2D" uid="uid://dhomeinom4syr" path="res://assets/sprites/normalT_room4branch.png" id="1_lwuy3"]
 [ext_resource type="Script" uid="uid://bvp7b8nd25ruo" path="res://assets/script/important/load things/room.gd" id="1_xd7xr"]
@@ -8,11 +8,16 @@
 [ext_resource type="PackedScene" uid="uid://c20qitdqj1cc1" path="res://assets/scenes/levels/level decoration/parallax_background1_jg.tscn" id="6_8lrlf"]
 [ext_resource type="PackedScene" uid="uid://cuoo8ojghsvmb" path="res://assets/scenes/level objects/ladder.tscn" id="7_w3bqf"]
 [ext_resource type="TileSet" uid="uid://d4fo3wle3axih" path="res://resources/level/blocks.tres" id="8_2qkxo"]
+[ext_resource type="PackedScene" uid="uid://cwgntvkyl06cp" path="res://assets/scenes/level objects/collectible.tscn" id="9_c3vd1"]
 
 [node name="room" type="Node"]
 script = ExtResource("1_xd7xr")
 room_name = &"john_gutter_4_branch"
 room_id = 4
+left = -416
+top = -528
+right = 1375
+bottom = 480
 metadata/_custom_type_script = "uid://bvp7b8nd25ruo"
 
 [node name="NormalTRoom4Branch" type="Sprite2D" parent="."]
@@ -29,14 +34,14 @@ script = ExtResource("4_y3icm")
 position = Vector2(-201, -565)
 scale = Vector2(6.08791, -2.71795)
 room_id = 4
-load_room = "load_room_jg"
+function_call = "load_room_jg"
 next_room_id = 3
 
 [node name="to room 4 right" parent="." instance=ExtResource("3_lud3g")]
 position = Vector2(59, -561)
 scale = Vector2(6.49314, 3.08032)
 room_id = 4
-load_room = "load_room_jg"
+function_call = "load_room_jg"
 next_room_id = 3
 X = 192
 Y = 612
@@ -53,6 +58,25 @@ position = Vector2(9, -3)
 tile_map_data = PackedByteArray("AAAcAA8AAAAAAAAAAQAcABEAAAAAAAAAAQAkAA8AAAAAAAAAAQAkABEAAAAAAAAAAQAsAA8AAAAAAAAAAQAsABEAAAAAAAAAAQAAAOf/AAAAAAAAAQA=")
 enabled = false
 tile_set = ExtResource("8_2qkxo")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 657.0
+offset_top = 70.0
+offset_right = 794.0
+offset_bottom = 93.0
+text = "SOFTLOCK SORRY"
+
+[node name="collectible" parent="." instance=ExtResource("9_c3vd1")]
+position = Vector2(97, 209)
+
+[node name="collectible2" parent="." instance=ExtResource("9_c3vd1")]
+position = Vector2(96, 241)
+
+[node name="collectible3" parent="." instance=ExtResource("9_c3vd1")]
+position = Vector2(288, 208)
+
+[node name="collectible4" parent="." instance=ExtResource("9_c3vd1")]
+position = Vector2(288, 240)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

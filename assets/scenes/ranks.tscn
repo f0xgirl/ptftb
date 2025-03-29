@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=3 uid="uid://ca173oig8gbf"]
+
+[ext_resource type="Script" uid="uid://d1ollvl7q23tu" path="res://assets/script/ranks.gd" id="1_rc23r"]
+[ext_resource type="Script" uid="uid://bbyvydjbxfpp2" path="res://assets/script/resources scripts/level_rank_req.gd" id="2_vj4vo"]
+
+[sub_resource type="Resource" id="Resource_c1bgc"]
+script = ExtResource("2_vj4vo")
+level_name = &"john gutter"
+rank_d = -1
+rank_c = -1
+rank_b = -1
+rank_a = -1
+rank_s = 0
+metadata/_custom_type_script = "uid://bbyvydjbxfpp2"
+
+[sub_resource type="Resource" id="Resource_vj4vo"]
+script = ExtResource("2_vj4vo")
+level_name = &"medievial "
+rank_d = -1
+rank_c = -1
+rank_b = -1
+rank_a = -1
+rank_s = 0
+metadata/_custom_type_script = "uid://bbyvydjbxfpp2"
+
+[sub_resource type="Resource" id="Resource_yyd7l"]
+script = ExtResource("2_vj4vo")
+level_name = &"ruin"
+rank_d = -1
+rank_c = -1
+rank_b = -1
+rank_a = -1
+rank_s = 0
+metadata/_custom_type_script = "uid://bbyvydjbxfpp2"
+
+[sub_resource type="Resource" id="Resource_f3oyg"]
+script = ExtResource("2_vj4vo")
+level_name = &"dungeon"
+rank_d = -1
+rank_c = -1
+rank_b = -1
+rank_a = -1
+rank_s = 0
+metadata/_custom_type_script = "uid://bbyvydjbxfpp2"
+
+[sub_resource type="Resource" id="Resource_pwhsk"]
+script = ExtResource("2_vj4vo")
+level_name = &"midescape"
+rank_d = -1
+rank_c = -1
+rank_b = -1
+rank_a = -1
+rank_s = 0
+metadata/_custom_type_script = "uid://bbyvydjbxfpp2"
+
+[sub_resource type="Resource" id="Resource_pwn21"]
+script = ExtResource("2_vj4vo")
+level_name = &"strongcold"
+rank_d = -1
+rank_c = -1
+rank_b = -1
+rank_a = -1
+rank_s = 0
+metadata/_custom_type_script = "uid://bbyvydjbxfpp2"
+
+[node name="room" type="Node"]
+script = ExtResource("1_rc23r")
+levels = Array[ExtResource("2_vj4vo")]([SubResource("Resource_c1bgc"), SubResource("Resource_vj4vo"), SubResource("Resource_yyd7l"), SubResource("Resource_f3oyg"), SubResource("Resource_pwhsk"), SubResource("Resource_pwn21"), null])
+room_name = &"rank_screen"
+metadata/_custom_type_script = "uid://bvp7b8nd25ruo"

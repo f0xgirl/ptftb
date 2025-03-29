@@ -5,5 +5,4 @@ class_name speed_pad
 signal changedir(dir: int)
 
 func _on_body_entered(body: Node2D) -> void:
-	_state_change(player)
-	emit_signal("changedir", direction)
+	pass

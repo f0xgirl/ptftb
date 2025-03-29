@@ -11,6 +11,10 @@
 script = ExtResource("1_jovqp")
 room_name = &"tutorial_2"
 room_id = 1
+left = -1136
+top = -384
+right = 1216
+bottom = 320
 metadata/_custom_type_script = "uid://bvp7b8nd25ruo"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -30,7 +34,7 @@ text = "john gutter here
 position = Vector2(-705, 364)
 scale = Vector2(15.2901, 1.93105)
 room_id = 1
-load_room = "load_room_tutorial"
+function_call = "load_room_tutorial"
 X = -727
 Y = -784
 
@@ -38,7 +42,7 @@ Y = -784
 position = Vector2(205, 506)
 scale = Vector2(22.9152, 1.65314)
 room_id = 1
-load_room = "load_room_tutorial"
+function_call = "load_room_tutorial"
 X = 44
 Y = -733
 
@@ -49,4 +53,4 @@ panic_time = 1000.0
 [node name="panicblock" parent="." instance=ExtResource("7_7kky0")]
 position = Vector2(-208, 128)
 scale = Vector2(1, 5.48)
-panic_active = true
+reversed = true

@@ -13,6 +13,10 @@
 [node name="room" type="Node"]
 script = ExtResource("8_oqcu4")
 room_name = &"tutorial_1"
+left = -1008
+top = -752
+right = 3024
+bottom = 1040
 metadata/_custom_type_script = "uid://bvp7b8nd25ruo"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -33,7 +37,7 @@ position = Vector2(-272, -431)
 [node name="to room_2" parent="." instance=ExtResource("7_su4aj")]
 position = Vector2(46, -802)
 scale = Vector2(6.97278, 2.49998)
-load_room = "load_room_tutorial"
+function_call = "load_room_tutorial"
 next_room_id = 1
 X = 191
 Y = 315
