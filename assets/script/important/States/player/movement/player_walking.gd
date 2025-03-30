@@ -9,7 +9,7 @@ var direction = Input.get_axis("left","right")
 func Enter():
 	DataPassthrough.player_state = "player_walking"
 	
-func Update(delta: float):
+func Update(_delta: float):
 	if player.is_on_floor() == false:
 		emit_signal("anim_change","fall",false)
 	else:
@@ -32,7 +32,7 @@ func Update(delta: float):
 		player.state_override = false
 		Transitioned.emit(self,player.state_override_change)
 
-func Pyhsics_Update(delta: float):
+func Pyhsics_Update(_delta: float):
 	if player:
 		player.velocity.x = direction * player_data.speed
 		

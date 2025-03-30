@@ -10,6 +10,6 @@ func Enter():
 	Transitioned.emit(self,"player_idle")
 	DataPassthrough.player_state = "player_jumping"
 
-func Update(delta: float):
+func Update(_delta: float):
 	if not player.is_on_floor():
 		Transitioned.emit(self,"player_idle")

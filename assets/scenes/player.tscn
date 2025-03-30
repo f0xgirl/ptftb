@@ -25,7 +25,7 @@
 [ext_resource type="Script" uid="uid://bqkkhv0q57ffc" path="res://assets/script/important/States/player/movement/player_roll.gd" id="28_biv4t"]
 [ext_resource type="Script" uid="uid://bdp33i4b3iv56" path="res://assets/script/important/States/player/movement/player_groundpound.gd" id="29_3eubh"]
 [ext_resource type="Script" uid="uid://c1weqyidrsyt2" path="res://assets/script/important/States/player/movement/player_highjump.gd" id="31_1b60l"]
-[ext_resource type="SpriteFrames" uid="uid://3c2cxiudl5pt" path="res://resources/player/bo_spriteframes.tres" id="36_to0eq"]
+[ext_resource type="Script" uid="uid://cdgg15d7b7m74" path="res://assets/script/destroyable.gd" id="31_1hryd"]
 [ext_resource type="Script" uid="uid://ndriol27dmh4" path="res://assets/script/important/States/player/movement/player_ladder.gd" id="39_jurdo"]
 [ext_resource type="Texture2D" uid="uid://bp661vfvgodqc" path="res://assets/sprites/players/peppino/player_chargeeffect.png" id="40_6pse8"]
 [ext_resource type="Script" uid="uid://dkegktkhxtift" path="res://assets/script/important/States/player/movement/fireass.gd" id="40_blbl4"]
@@ -418,10 +418,19 @@ transitions = ["Start", "End", SubResource("AnimationNodeStateMachineTransition_
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 floor_constant_speed = true
+floor_snap_length = 16.0
 script = ExtResource("1_aarfl")
 player_data = ExtResource("2_i6cxx")
 jump_velocity = -350
 metadata/disabled = false
+
+[node name="crouch raycast1" type="RayCast2D" parent="."]
+position = Vector2(9, 0)
+target_position = Vector2(0, -45)
+
+[node name="crouch raycast2" type="RayCast2D" parent="."]
+position = Vector2(-9, 0)
+target_position = Vector2(0, -45)
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 z_index = 1
@@ -748,8 +757,9 @@ script = ExtResource("48_878e8")
 player = NodePath("../..")
 player_data = ExtResource("2_i6cxx")
 
-[node name="destroyable" type="RayCast2D" parent="."]
-target_position = Vector2(24, 0)
+[node name="destroyable" type="RayCast2D" parent="." groups=["player"]]
+target_position = Vector2(40, 0)
+script = ExtResource("31_1hryd")
 
 [node name="mach smoke" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -787,15 +797,7 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_tgp25")
 anim_player = NodePath("../AnimationPlayer")
 
-[node name="bo" type="AnimatedSprite2D" parent="."]
-visible = false
-z_index = 1
-material = ExtResource("3_urkgk")
-position = Vector2(2, -21)
-sprite_frames = ExtResource("36_to0eq")
-animation = &"mach3"
-script = ExtResource("23_uq8vi")
-
+[connection signal="input_event" from="." to="destroyable" method="_on_player_input_event"]
 [connection signal="anim_change" from="State Machine/Player_Idle" to="sprite" method="_anim_change"]
 [connection signal="anim_loop" from="State Machine/Player_Idle" to="sprite" method="_anim_loop"]
 [connection signal="anim_offset" from="State Machine/Player_Idle" to="sprite" method="_anim_offset"]

@@ -16,7 +16,7 @@ func _ready() -> void:
 	get_parent().connect("hidden", _hidden)
 	get_parent().connect("visible", _visible)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("up") and enter == true:
 		Audioplayer._play_sfx_switchingrooms()
 		GlobalSignals.emit_signal("move", X, Y)

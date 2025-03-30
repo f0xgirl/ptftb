@@ -16,7 +16,7 @@ func Enter():
 	if check_disabled() == true:
 		print("disabled")
 
-func Update(delta: float):
+func Update(_delta: float):
 	if DataPassthrough.keep_state == true:
 		Transitioned.emit(self,DataPassthrough.player_state)
 		DataPassthrough.keep_state = false

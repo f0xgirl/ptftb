@@ -1,5 +1,6 @@
 extends TileMapLayer
 class_name tilemap
+
 func _ready() -> void:
 	get_parent().connect("hidden", _hidden)
 	get_parent().connect("visible", _visible)

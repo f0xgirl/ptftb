@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://drxbs283brap0"]
+[gd_scene load_steps=12 format=4 uid="uid://drxbs283brap0"]
 
 [ext_resource type="Script" uid="uid://bvp7b8nd25ruo" path="res://assets/script/important/load things/room.gd" id="1_w6ijp"]
 [ext_resource type="Texture2D" uid="uid://bcg06cjl8c5v2" path="res://assets/sprites/normalT_room5.png" id="1_xjwo7"]
@@ -6,7 +6,18 @@
 [ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://resources/level/tilesets/john_gutter_tileset.tres" id="4_rs3g3"]
 [ext_resource type="PackedScene" uid="uid://c20qitdqj1cc1" path="res://assets/scenes/levels/level decoration/parallax_background1_jg.tscn" id="5_4j3oo"]
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/level objects/room_changer.tscn" id="6_3qd37"]
-[ext_resource type="TileSet" uid="uid://d4fo3wle3axih" path="res://resources/level/blocks.tres" id="7_a8otv"]
+[ext_resource type="PackedScene" uid="uid://ceyc1vb3r2v0g" path="res://assets/scenes/level objects/block_small.tscn" id="7_cjvjv"]
+[ext_resource type="PackedScene" uid="uid://iesqe0ibgymu" path="res://assets/scenes/level objects/block_big.tscn" id="8_7fm8g"]
+[ext_resource type="PackedScene" uid="uid://7q52prdlvm3g" path="res://assets/scenes/level objects/metal_block.tscn" id="9_qaion"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_7ro5k"]
+scenes/1/scene = ExtResource("7_cjvjv")
+scenes/2/scene = ExtResource("8_7fm8g")
+scenes/3/scene = ExtResource("9_qaion")
+
+[sub_resource type="TileSet" id="TileSet_rnes6"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetScenesCollectionSource_7ro5k")
 
 [node name="room" type="Node"]
 script = ExtResource("1_w6ijp")
@@ -19,7 +30,6 @@ bottom = 272
 metadata/_custom_type_script = "uid://bvp7b8nd25ruo"
 
 [node name="NormalTRoom5" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(176, -2)
 texture = ExtResource("1_xjwo7")
 
@@ -49,7 +59,6 @@ X = 3176
 Y = 383
 
 [node name="blocks" type="TileMapLayer" parent="."]
-position = Vector2(9, -3)
-tile_map_data = PackedByteArray("AAD9//v/AAAAAAAAAQD9//3/AAAAAAAAAQD///v/AAAAAAAAAQD///3/AAAAAAAAAQAFAPv/AAAAAAAAAQAFAP3/AAAAAAAAAQAHAP3/AAAAAAAAAQAJAP3/AAAAAAAAAQALAP3/AAAAAAAAAQANAP3/AAAAAAAAAQAPAP3/AAAAAAAAAQAPAPv/AAAAAAAAAQANAPv/AAAAAAAAAQAJAP//AAAAAAAAAQALAP//AAAAAAAAAQAJAAEAAAAAAAAAAQALAAEAAAAAAAAAAQABAP//AAAAAAAAAQADAP//AAAAAAAAAQABAAEAAAAAAAAAAQADAAEAAAAAAAAAAQD9/wMAAAAAAAAAAQD//wMAAAAAAAAAAQD9/wUAAAAAAAAAAQD//wUAAAAAAAAAAQD7////AAAAAAAAAQD5////AAAAAAAAAQD5/wEAAAAAAAAAAQD7/wEAAAAAAAAAAQAFAAMAAAAAAAAAAQAGAAMAAAAAAAAAAQAFAAUAAAAAAAAAAQAHAAUAAAAAAAAAAQANAAMAAAAAAAAAAQAPAAMAAAAAAAAAAQANAAUAAAAAAAAAAQAPAAUAAAAAAAAAAQARAP//AAAAAAAAAQATAP//AAAAAAAAAQARAAEAAAAAAAAAAQATAAEAAAAAAAAAAQAVAPv/AAAAAAAAAQAXAPv/AAAAAAAAAQAVAP3/AAAAAAAAAQAXAP3/AAAAAAAAAQAZAP//AAAAAAAAAQAbAP//AAAAAAAAAQAZAAEAAAAAAAAAAQAbAAEAAAAAAAAAAQAVAAMAAAAAAAAAAQAXAAMAAAAAAAAAAQAVAAUAAAAAAAAAAQAXAAUAAAAAAAAAAQAHAAMAAAAAAAAAAQA=")
-enabled = false
-tile_set = ExtResource("7_a8otv")
+position = Vector2(16, 16)
+tile_map_data = PackedByteArray("AAD///3/AAAAAAAAAQD+//3/AAAAAAAAAQD+//7/AAAAAAAAAQD///7/AAAAAAAAAQACAP3/AAAAAAAAAQACAP7/AAAAAAAAAQADAP7/AAAAAAAAAQAEAP7/AAAAAAAAAQAFAP7/AAAAAAAAAQAGAP7/AAAAAAAAAQAHAP7/AAAAAAAAAQAHAP3/AAAAAAAAAQAGAP3/AAAAAAAAAQAKAP3/AAAAAAAAAQAKAP7/AAAAAAAAAQALAP7/AAAAAAAAAQALAP3/AAAAAAAAAQAMAP//AAAAAAAAAQAMAAAAAAAAAAAAAQANAAAAAAAAAAAAAQANAP//AAAAAAAAAQAIAP//AAAAAAAAAQAIAAAAAAAAAAAAAQAJAAAAAAAAAAAAAQAJAP//AAAAAAAAAQAEAP//AAAAAAAAAQAFAP//AAAAAAAAAQAFAAAAAAAAAAAAAQAEAAAAAAAAAAAAAQAAAP//AAAAAAAAAQAAAAAAAAAAAAAAAQABAAAAAAAAAAAAAQABAP//AAAAAAAAAQD8////AAAAAAAAAQD8/wAAAAAAAAAAAQD9/wAAAAAAAAAAAQD9////AAAAAAAAAQD+/wEAAAAAAAAAAQD+/wIAAAAAAAAAAQD//wIAAAAAAAAAAQD//wEAAAAAAAAAAQACAAEAAAAAAAAAAQADAAEAAAAAAAAAAQADAAIAAAAAAAAAAQACAAIAAAAAAAAAAQAGAAEAAAAAAAAAAQAGAAIAAAAAAAAAAQAHAAIAAAAAAAAAAQAHAAEAAAAAAAAAAQAKAAEAAAAAAAAAAQALAAEAAAAAAAAAAQALAAIAAAAAAAAAAQAKAAIAAAAAAAAAAQA=")
+tile_set = SubResource("TileSet_rnes6")

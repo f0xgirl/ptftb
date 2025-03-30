@@ -13,6 +13,6 @@ func Enter():
 	player.velocity.y = 1.5 * player_data.jumpheight
 	Transitioned.emit(self,"player_idle")
 
-func Update(delta: float):
+func Update(_delta: float):
 	if not player.is_on_floor():
 		Transitioned.emit(self,"player_idle")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://c46vd1cyavu3n"]
+[gd_scene load_steps=13 format=4 uid="uid://c46vd1cyavu3n"]
 
 [ext_resource type="Script" uid="uid://bvp7b8nd25ruo" path="res://assets/script/important/load things/room.gd" id="1_3tapv"]
 [ext_resource type="Texture2D" uid="uid://nnsqd2ge8w6k" path="res://assets/sprites/normalT_room4.png" id="1_hd3eu"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://gu657xt52lr7" path="res://assets/scenes/level objects/panic_block.tscn" id="9_pn3vn"]
 [ext_resource type="PackedScene" uid="uid://7q52prdlvm3g" path="res://assets/scenes/level objects/metal_block.tscn" id="10_uftcf"]
 [ext_resource type="PackedScene" uid="uid://cwgntvkyl06cp" path="res://assets/scenes/level objects/collectible.tscn" id="11_gxt15"]
+[ext_resource type="PackedScene" uid="uid://ceyc1vb3r2v0g" path="res://assets/scenes/level objects/block_small.tscn" id="12_08anc"]
 
 [node name="room" type="Node"]
 script = ExtResource("1_3tapv")
@@ -23,7 +24,6 @@ bottom = 608
 metadata/_custom_type_script = "uid://bvp7b8nd25ruo"
 
 [node name="NormalTRoom4" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(640, 84)
 texture = ExtResource("1_hd3eu")
 
@@ -86,3 +86,75 @@ position = Vector2(-832, 65)
 
 [node name="collectible2" parent="." instance=ExtResource("11_gxt15")]
 position = Vector2(-799, 65)
+
+[node name="small block" parent="." instance=ExtResource("12_08anc")]
+position = Vector2(304, 336)
+
+[node name="small block2" parent="." instance=ExtResource("12_08anc")]
+position = Vector2(336, 336)
+
+[node name="small block3" parent="." instance=ExtResource("12_08anc")]
+position = Vector2(304, 368)
+
+[node name="small block4" parent="." instance=ExtResource("12_08anc")]
+position = Vector2(336, 368)
+
+[node name="small block5" parent="." instance=ExtResource("12_08anc")]
+position = Vector2(432, 336)
+
+[node name="small block6" parent="." instance=ExtResource("12_08anc")]
+position = Vector2(464, 336)
+
+[node name="small block7" parent="." instance=ExtResource("12_08anc")]
+position = Vector2(432, 368)
+
+[node name="small block8" parent="." instance=ExtResource("12_08anc")]
+position = Vector2(464, 369)
+
+[node name="small block9" parent="." instance=ExtResource("12_08anc")]
+position = Vector2(560, 336)
+
+[node name="small block10" parent="." instance=ExtResource("12_08anc")]
+position = Vector2(592, 336)
+
+[node name="small block11" parent="." instance=ExtResource("12_08anc")]
+position = Vector2(560, 368)
+
+[node name="small block12" parent="." instance=ExtResource("12_08anc")]
+position = Vector2(592, 368)
+
+[node name="small block13" parent="." instance=ExtResource("12_08anc")]
+position = Vector2(688, 304)
+
+[node name="small block14" parent="." instance=ExtResource("12_08anc")]
+position = Vector2(720, 304)
+
+[node name="small block15" parent="." instance=ExtResource("12_08anc")]
+position = Vector2(688, 336)
+
+[node name="small block16" parent="." instance=ExtResource("12_08anc")]
+position = Vector2(720, 336)
+
+[node name="small block17" parent="." instance=ExtResource("12_08anc")]
+position = Vector2(784, 272)
+
+[node name="small block18" parent="." instance=ExtResource("12_08anc")]
+position = Vector2(816, 272)
+
+[node name="small block19" parent="." instance=ExtResource("12_08anc")]
+position = Vector2(784, 304)
+
+[node name="small block20" parent="." instance=ExtResource("12_08anc")]
+position = Vector2(816, 304)
+
+[node name="small block21" parent="." instance=ExtResource("12_08anc")]
+position = Vector2(880, 240)
+
+[node name="small block22" parent="." instance=ExtResource("12_08anc")]
+position = Vector2(912, 240)
+
+[node name="small block23" parent="." instance=ExtResource("12_08anc")]
+position = Vector2(880, 272)
+
+[node name="small block24" parent="." instance=ExtResource("12_08anc")]
+position = Vector2(912, 272)

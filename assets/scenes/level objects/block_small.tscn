@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://ceyc1vb3r2v0g"]
+
+[ext_resource type="Script" uid="uid://7o855aucdfjq" path="res://assets/script/small_block.gd" id="1_i1ts0"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0uwo5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2gys3"]
+size = Vector2(32, 32)
+
+[node name="small block" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_0uwo5")
+script = ExtResource("1_i1ts0")
+metadata/_custom_type_script = "uid://cmv8x1jvhvfde"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2gys3")
+
+[node name="left" type="RayCast2D" parent="."]
+target_position = Vector2(-45, 0)
+
+[node name="right" type="RayCast2D" parent="."]
+target_position = Vector2(32, 0)
+
+[node name="up" type="RayCast2D" parent="."]
+target_position = Vector2(0, -32)
+
+[node name="down" type="RayCast2D" parent="."]
+target_position = Vector2(0, 32)

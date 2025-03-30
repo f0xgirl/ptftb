@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://ct4c8bdwci21f"]
+[gd_scene load_steps=11 format=4 uid="uid://ct4c8bdwci21f"]
 
 [ext_resource type="Texture2D" uid="uid://2wt153ksg4v4" path="res://assets/sprites/normalT_room3.png" id="1_elpu0"]
 [ext_resource type="Script" uid="uid://bvp7b8nd25ruo" path="res://assets/script/important/load things/room.gd" id="1_xng1r"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://xes1t1iyh8hl" path="res://assets/scenes/level objects/cheeseslime.tscn" id="7_2yrn6"]
 [ext_resource type="PackedScene" uid="uid://7q52prdlvm3g" path="res://assets/scenes/level objects/metal_block.tscn" id="8_byieq"]
 [ext_resource type="PackedScene" uid="uid://cwgntvkyl06cp" path="res://assets/scenes/level objects/collectible.tscn" id="9_5o1sk"]
+[ext_resource type="PackedScene" uid="uid://iesqe0ibgymu" path="res://assets/scenes/level objects/block_big.tscn" id="10_m1fxp"]
 
 [node name="room" type="Node"]
 script = ExtResource("1_xng1r")
@@ -91,3 +92,78 @@ position = Vector2(2754, 176)
 
 [node name="collectible11" parent="." instance=ExtResource("9_5o1sk")]
 position = Vector2(2816, 178)
+
+[node name="block_base" parent="." instance=ExtResource("10_m1fxp")]
+position = Vector2(-704, 112)
+
+[node name="block_base2" parent="." instance=ExtResource("10_m1fxp")]
+position = Vector2(-640, 112)
+
+[node name="block_base3" parent="." instance=ExtResource("10_m1fxp")]
+position = Vector2(-576, 112)
+
+[node name="block_base4" parent="." instance=ExtResource("10_m1fxp")]
+position = Vector2(-512, 112)
+
+[node name="block_base5" parent="." instance=ExtResource("10_m1fxp")]
+position = Vector2(-448, 112)
+
+[node name="block_base6" parent="." instance=ExtResource("10_m1fxp")]
+position = Vector2(-384, 112)
+
+[node name="block_base7" parent="." instance=ExtResource("10_m1fxp")]
+position = Vector2(-704, 176)
+
+[node name="block_base8" parent="." instance=ExtResource("10_m1fxp")]
+position = Vector2(-640, 176)
+
+[node name="block_base9" parent="." instance=ExtResource("10_m1fxp")]
+position = Vector2(-576, 176)
+
+[node name="block_base10" parent="." instance=ExtResource("10_m1fxp")]
+position = Vector2(-512, 176)
+
+[node name="block_base11" parent="." instance=ExtResource("10_m1fxp")]
+position = Vector2(-448, 176)
+
+[node name="block_base12" parent="." instance=ExtResource("10_m1fxp")]
+position = Vector2(-384, 176)
+
+[node name="block_base13" parent="." instance=ExtResource("10_m1fxp")]
+position = Vector2(-704, -208)
+
+[node name="block_base14" parent="." instance=ExtResource("10_m1fxp")]
+position = Vector2(-640, -208)
+
+[node name="block_base15" parent="." instance=ExtResource("10_m1fxp")]
+position = Vector2(-512, -208)
+
+[node name="block_base16" parent="." instance=ExtResource("10_m1fxp")]
+position = Vector2(-448, -208)
+
+[node name="block_base17" parent="." instance=ExtResource("10_m1fxp")]
+position = Vector2(-384, -208)
+
+[node name="block_base18" parent="." instance=ExtResource("10_m1fxp")]
+position = Vector2(-384, -272)
+
+[node name="block_base19" parent="." instance=ExtResource("10_m1fxp")]
+position = Vector2(-448, -272)
+
+[node name="block_base20" parent="." instance=ExtResource("10_m1fxp")]
+position = Vector2(-512, -272)
+
+[node name="block_base21" parent="." instance=ExtResource("10_m1fxp")]
+position = Vector2(-575, -272)
+
+[node name="block_base22" parent="." instance=ExtResource("10_m1fxp")]
+position = Vector2(-640, -272)
+
+[node name="block_base23" parent="." instance=ExtResource("10_m1fxp")]
+position = Vector2(-704, -272)
+
+[node name="block_base24" parent="." instance=ExtResource("10_m1fxp")]
+position = Vector2(0, 177)
+
+[node name="block_base25" parent="." instance=ExtResource("10_m1fxp")]
+position = Vector2(32, 113)

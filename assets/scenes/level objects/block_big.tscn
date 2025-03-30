@@ -1,23 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://7q52prdlvm3g"]
+[gd_scene load_steps=4 format=3 uid="uid://iesqe0ibgymu"]
 
-[ext_resource type="Texture2D" uid="uid://dg2f35c8j5vw7" path="res://assets/sprites/levels/level visuals/spr_metalb_0.png" id="1_ep4kx"]
-[ext_resource type="Script" uid="uid://cjp7p64dxraof" path="res://assets/script/metal_block.gd" id="1_tyd4t"]
+[ext_resource type="Script" uid="uid://cbp3xa2da07ut" path="res://assets/script/block_big.gd" id="1_iy7fl"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_imdpw"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_j6rtu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_egrk3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ewgh6"]
 size = Vector2(64, 64)
 
-[node name="StaticBody2D" type="StaticBody2D"]
-physics_material_override = SubResource("PhysicsMaterial_imdpw")
-script = ExtResource("1_tyd4t")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ep4kx")
+[node name="block_big" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_j6rtu")
+script = ExtResource("1_iy7fl")
+metadata/_custom_type_script = "uid://cmv8x1jvhvfde"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_egrk3")
-debug_color = Color(0.881364, 0.000348082, 0.819274, 0.42)
+shape = SubResource("RectangleShape2D_ewgh6")
 
 [node name="left1" type="RayCast2D" parent="."]
 position = Vector2(0, 18)

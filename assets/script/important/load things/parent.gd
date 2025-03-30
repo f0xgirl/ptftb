@@ -3,11 +3,12 @@ class_name parent
 
 #signals
 signal remove
-#player camera limits
+#player singals
 signal player_limit_left(val: int)
 signal player_limit_top(val: int)
 signal player_limit_right(val: int)
 signal player_limit_bottom(val: int)
+signal player_clear_score
 #levels
 @export var level_test: Array [PackedScene] = []
 @export var level_jg: Array [PackedScene] = []
@@ -71,15 +72,17 @@ func room_called(selected_room: int) -> void:
 		
 	
 func load_jg() -> void:
-	GlobalSignals.emit_signal("move", -1605, 269)
+	GlobalSignals.emit_signal("move", -1605, 375)
 	var lvl = JG_1.instantiate()
 	add_child(lvl)
+	await lvl.ready
+	
 	
 func load_test() -> void:
 	print("load test")
 	var lvl = TEST_1.instantiate()
 	add_child(lvl)
-	emit_signal("player_enabled")
+	#emit_signal("player_enabled")
 
 func load_medevial() -> void:
 	var lvl = PIZZASCAPE_1.instantiate()

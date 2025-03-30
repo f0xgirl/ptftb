@@ -29,6 +29,7 @@ func _ready() -> void:
 	get_parent().connect("player_limit_top", set_limit_top)
 	get_parent().connect("player_limit_right", set_limit_right)
 	get_parent().connect("player_limit_bottom", set_limit_bottom)
+	get_parent().connect("player_clear_score", points_clear)
 	#var toppin = TOPPIN_TEST.instantiate()
 	#add_child(toppin)
 	score_label.set_text(var_to_str(0))
@@ -79,6 +80,7 @@ func add_points(points):
 
 func points_clear():
 	score = 0
+	score_label.set_text(var_to_str(score))
 
 func _change_dir(dir: int) -> void:
 	player_data.player_direction = dir

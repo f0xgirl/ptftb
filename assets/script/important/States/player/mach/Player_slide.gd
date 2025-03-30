@@ -9,7 +9,7 @@ func Enter():
 	DataPassthrough.player_state = "player_slide"
 	
 
-func Pyhsics_Update(delta: float):
+func Pyhsics_Update(_delta: float):
 	if sprite.animation == "slide_start":
 		if sprite.get_frame() == 6:
 			sprite.play("slide_loop")

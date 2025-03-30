@@ -7,14 +7,14 @@ class_name panic_block
 var obj_id: int
 
 func _ready() -> void:
-	get_parent().connect("send", _id)
-	get_parent().connect("hidden", _hidden)
-	get_parent().connect("visible", _visible)
-	get_parent().connect("panic", _panic)
-	if reversed == true:
-		_visible()
-	else:
-		_hidden()
+	_hidden()	#get_parent().connect("send", _id)
+	#get_parent().connect("hidden", _hidden)
+	#get_parent().connect("visible", _visible)
+	#get_parent().connect("panic", _panic)
+	#if reversed == true:
+	#	_visible()
+	#else:
+	#	_hidden()
 
 
 func _hidden() -> void:

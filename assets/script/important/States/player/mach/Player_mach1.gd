@@ -18,7 +18,7 @@ func Enter():
 
 	DataPassthrough.player_state = "player_mach1"
 
-func Update(delta: float):
+func Update(_delta: float):
 	sprite.play("mach1")
 	emit_signal("anim_offset",2,-5)
 	if Input.is_action_pressed("action2"):
@@ -35,9 +35,6 @@ func Update(delta: float):
 		player.state_override = false
 		Transitioned.emit(self,player.state_override_change)
 	
-
-func Physic_Update(delta: float):
-	pass
 
 func Exit():
 	mach_1.stop()

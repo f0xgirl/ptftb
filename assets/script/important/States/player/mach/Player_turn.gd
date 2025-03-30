@@ -12,7 +12,7 @@ func Enter():
 	DataPassthrough.player_state = "player_turn"
 
 
-func Update(delta: float):
+func Update(_delta: float):
 	player.velocity.x = move_toward(player.velocity.x, 0, 15)
 	if player.velocity.x == 0:
 		player_data.player_direction = direction

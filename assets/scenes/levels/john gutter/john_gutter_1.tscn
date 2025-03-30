@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://fioigyq7r4yd"]
+[gd_scene load_steps=10 format=4 uid="uid://fioigyq7r4yd"]
 
 [ext_resource type="Texture2D" uid="uid://c8xtty12f5v57" path="res://assets/sprites/normalT_room1.png" id="1_3debp"]
 [ext_resource type="Script" uid="uid://bc5aeje6a35hq" path="res://assets/script/level specific/john_gutter_1.gd" id="1_uyxqf"]
@@ -7,32 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://c20qitdqj1cc1" path="res://assets/scenes/levels/level decoration/parallax_background1_jg.tscn" id="5_4w433"]
 [ext_resource type="PackedScene" uid="uid://drg1wcxxcyjdm" path="res://assets/scenes/level objects/gate_portal.tscn" id="6_is8gr"]
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/level objects/room_changer.tscn" id="7_hepxs"]
-[ext_resource type="PackedScene" uid="uid://c7ogx214cfhin" path="res://assets/scenes/level objects/block_test.tscn" id="9_bknhk"]
-[ext_resource type="Script" uid="uid://bmnph3whhvl2h" path="res://assets/script/resources scripts/block_data.gd" id="10_wy7it"]
-
-[sub_resource type="Resource" id="Resource_3talw"]
-script = ExtResource("10_wy7it")
-
-[sub_resource type="Resource" id="Resource_7ekqf"]
-script = ExtResource("10_wy7it")
-
-[sub_resource type="Resource" id="Resource_x27hm"]
-script = ExtResource("10_wy7it")
-
-[sub_resource type="Resource" id="Resource_my5og"]
-script = ExtResource("10_wy7it")
-
-[sub_resource type="Resource" id="Resource_spsui"]
-script = ExtResource("10_wy7it")
-
-[sub_resource type="Resource" id="Resource_656dq"]
-script = ExtResource("10_wy7it")
-
-[sub_resource type="Resource" id="Resource_mu5r3"]
-script = ExtResource("10_wy7it")
-
-[sub_resource type="Resource" id="Resource_oy60u"]
-script = ExtResource("10_wy7it")
+[ext_resource type="PackedScene" uid="uid://ceyc1vb3r2v0g" path="res://assets/scenes/level objects/block_small.tscn" id="8_otgsb"]
+[ext_resource type="PackedScene" uid="uid://iesqe0ibgymu" path="res://assets/scenes/level objects/block_big.tscn" id="9_3hrl4"]
 
 [node name="room" type="Node"]
 script = ExtResource("1_uyxqf")
@@ -68,46 +44,67 @@ next_room_id = 1
 X = -1540
 Y = 308
 
-[node name="block" type="Node" parent="."]
-
-[node name="test block" parent="block" instance=ExtResource("9_bknhk")]
-visible = false
-position = Vector2(-400, 320)
-res = SubResource("Resource_3talw")
-
-[node name="test block2" parent="block" instance=ExtResource("9_bknhk")]
-visible = false
+[node name="small block" parent="." instance=ExtResource("8_otgsb")]
 position = Vector2(-400, 288)
-res = SubResource("Resource_7ekqf")
 
-[node name="test block3" parent="block" instance=ExtResource("9_bknhk")]
-visible = false
+[node name="small block2" parent="." instance=ExtResource("8_otgsb")]
+position = Vector2(-400, 320)
+
+[node name="small block3" parent="." instance=ExtResource("8_otgsb")]
 position = Vector2(-368, 288)
-res = SubResource("Resource_x27hm")
 
-[node name="test block4" parent="block" instance=ExtResource("9_bknhk")]
-visible = false
+[node name="small block4" parent="." instance=ExtResource("8_otgsb")]
 position = Vector2(-368, 320)
-res = SubResource("Resource_my5og")
 
-[node name="test block5" parent="block" instance=ExtResource("9_bknhk")]
-visible = false
+[node name="small block5" parent="." instance=ExtResource("8_otgsb")]
 position = Vector2(-336, 288)
-res = SubResource("Resource_spsui")
 
-[node name="test block6" parent="block" instance=ExtResource("9_bknhk")]
-visible = false
-position = Vector2(-336, 320)
-res = SubResource("Resource_656dq")
-
-[node name="test block7" parent="block" instance=ExtResource("9_bknhk")]
-visible = false
+[node name="small block6" parent="." instance=ExtResource("8_otgsb")]
 position = Vector2(-304, 288)
-res = SubResource("Resource_mu5r3")
 
-[node name="test block8" parent="block" instance=ExtResource("9_bknhk")]
-visible = false
+[node name="small block7" parent="." instance=ExtResource("8_otgsb")]
+position = Vector2(-272, 288)
+
+[node name="small block8" parent="." instance=ExtResource("8_otgsb")]
+position = Vector2(-240, 288)
+
+[node name="small block9" parent="." instance=ExtResource("8_otgsb")]
+position = Vector2(-336, 320)
+
+[node name="small block10" parent="." instance=ExtResource("8_otgsb")]
 position = Vector2(-304, 320)
-res = SubResource("Resource_oy60u")
+
+[node name="small block11" parent="." instance=ExtResource("8_otgsb")]
+position = Vector2(-272, 320)
+
+[node name="small block12" parent="." instance=ExtResource("8_otgsb")]
+position = Vector2(-240, 320)
+
+[node name="small block13" parent="." instance=ExtResource("8_otgsb")]
+position = Vector2(-272, 352)
+
+[node name="small block14" parent="." instance=ExtResource("8_otgsb")]
+position = Vector2(-240, 352)
+
+[node name="small block15" parent="." instance=ExtResource("8_otgsb")]
+position = Vector2(-208, 352)
+
+[node name="small block16" parent="." instance=ExtResource("8_otgsb")]
+position = Vector2(-176, 352)
+
+[node name="small block17" parent="." instance=ExtResource("8_otgsb")]
+position = Vector2(-272, 384)
+
+[node name="small block18" parent="." instance=ExtResource("8_otgsb")]
+position = Vector2(-240, 384)
+
+[node name="small block19" parent="." instance=ExtResource("8_otgsb")]
+position = Vector2(-208, 384)
+
+[node name="small block20" parent="." instance=ExtResource("8_otgsb")]
+position = Vector2(-176, 384)
+
+[node name="block_big" parent="." instance=ExtResource("9_3hrl4")]
+position = Vector2(-447, 304)
 
 [connection signal="tree_entered" from="." to="." method="_tree_entered"]

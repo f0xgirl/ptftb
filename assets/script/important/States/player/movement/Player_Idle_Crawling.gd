@@ -9,7 +9,7 @@ var direction = Input.get_axis("left","right")
 func Enter():
 	DataPassthrough.player_state = "Player_Crawling"
 
-func Update(delta: float):
+func Update(_delta: float):
 	if Input.is_action_just_pressed("action1") and player.is_on_floor():
 		sprite.play("crawling air")
 		player.velocity.y = player_data.jumpheight
@@ -29,7 +29,7 @@ func Update(delta: float):
 		Transitioned.emit(self,player.state_override_change)
 
 
-func Pyhsics_Update(delta: float):
+func Pyhsics_Update(_delta: float):
 	player.velocity.x = direction * player_data.crawling_speed
 		
 

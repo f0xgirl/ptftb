@@ -54,7 +54,6 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/MarginContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 text = "ASDFAS"
 label_settings = SubResource("LabelSettings_fhmxf")
@@ -70,3 +69,17 @@ offset_top = 463.0
 offset_right = 733.0
 offset_bottom = 486.0
 text = "PRESS Z TO START"
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(783, 526)
+scale = Vector2(0.0823781, 8.40968)
+shape = SubResource("RectangleShape2D_7y22d")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(557, 530)
+scale = Vector2(0.0823781, 8.40968)
+shape = SubResource("RectangleShape2D_7y22d")

@@ -19,7 +19,7 @@ func Enter():
 	DataPassthrough.player_state = "player_bumped"
 	
 
-func Update(delta: float):
+func Update(_delta: float):
 	sprite.play("bumped")
 	if player.is_on_floor():
 		Transitioned.emit(self,"player_idle")

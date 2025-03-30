@@ -6,15 +6,16 @@ signal visible
 signal hidden
 signal panic
 signal send(id: int)
+signal clear_score
 
 @export_group("room data")
 @export var room_name: StringName
 @export var room_id: int
 @export_group("camera limits")
-@export var left: int
-@export var top: int
-@export var right: int
-@export var bottom: int
+@export var left: int = -10000000
+@export var top: int = -10000000
+@export var right: int = 10000000
+@export var bottom: int = 10000000
 
 var already_loaded: bool = false
 
@@ -24,6 +25,8 @@ func _ready() -> void:
 	GlobalSignals.connect("show",show_room)
 	GlobalSignals.connect("remove",remove)
 	get_parent().call("_player_camera_limit", left, top, right, bottom)
+	#for child in get_children():
+	#	child.hidden.connect(_hidden)
 
 func remove(selected_id: StringName) -> void:
 	print("removed!")
@@ -47,3 +50,11 @@ func _tree_entered() -> void:
 
 func get_id() -> void:
 	emit_signal("send", room_id)
+
+#func _hidden(arg: Node):
+#	arg.hide()
+#	if arg.get_property_list().has("monitoring"):
+#		arg.set_deferred("monitoring", false)
+#	elif arg.get_property_list().has("enabled"):
+#		arg.enabled = false
+	

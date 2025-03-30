@@ -5,7 +5,7 @@ var time: float = 1
 func _ready() -> void:
 	timeout.connect(mainmenu)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	time = wait_time
 
 func mainmenu():

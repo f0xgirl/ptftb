@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://cw64fvrkw5ky1"]
+[gd_scene load_steps=12 format=4 uid="uid://cw64fvrkw5ky1"]
 
 [ext_resource type="Script" uid="uid://bvp7b8nd25ruo" path="res://assets/script/important/load things/room.gd" id="1_ceaim"]
 [ext_resource type="Texture2D" uid="uid://ba7hbr6e1m84h" path="res://assets/sprites/normalT_room2.png" id="1_xd5uq"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://7q52prdlvm3g" path="res://assets/scenes/level objects/metal_block.tscn" id="9_eg0ts"]
 [ext_resource type="PackedScene" uid="uid://cuoo8ojghsvmb" path="res://assets/scenes/level objects/ladder.tscn" id="9_jw4bg"]
 [ext_resource type="PackedScene" uid="uid://cwgntvkyl06cp" path="res://assets/scenes/level objects/collectible.tscn" id="9_q0fd1"]
+[ext_resource type="PackedScene" uid="uid://ceyc1vb3r2v0g" path="res://assets/scenes/level objects/block_small.tscn" id="10_mvomd"]
+[ext_resource type="PackedScene" uid="uid://iesqe0ibgymu" path="res://assets/scenes/level objects/block_big.tscn" id="11_gmygk"]
 
 [node name="room" type="Node"]
 script = ExtResource("1_ceaim")
@@ -22,7 +24,7 @@ metadata/_custom_type_script = "uid://bvp7b8nd25ruo"
 
 [node name="NormalTRoom2" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(943, 12)
+position = Vector2(944, 12)
 texture = ExtResource("1_xd5uq")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -102,6 +104,33 @@ position = Vector2(2415, 185)
 
 [node name="collectible14" parent="." instance=ExtResource("9_q0fd1")]
 position = Vector2(2447, 153)
+
+[node name="small block" parent="." instance=ExtResource("10_mvomd")]
+position = Vector2(1567, 360)
+
+[node name="small block2" parent="." instance=ExtResource("10_mvomd")]
+position = Vector2(1599, 360)
+
+[node name="small block3" parent="." instance=ExtResource("10_mvomd")]
+position = Vector2(1631, 360)
+
+[node name="small block4" parent="." instance=ExtResource("10_mvomd")]
+position = Vector2(1663, 360)
+
+[node name="small block5" parent="." instance=ExtResource("10_mvomd")]
+position = Vector2(1567, 392)
+
+[node name="small block6" parent="." instance=ExtResource("10_mvomd")]
+position = Vector2(1599, 392)
+
+[node name="small block7" parent="." instance=ExtResource("10_mvomd")]
+position = Vector2(1631, 392)
+
+[node name="small block8" parent="." instance=ExtResource("10_mvomd")]
+position = Vector2(1663, 392)
+
+[node name="block_base" parent="." instance=ExtResource("11_gmygk")]
+position = Vector2(1519, 376)
 
 [connection signal="body_entered" from="ladder" to="ladder" method="_on_body_entered"]
 [connection signal="body_exited" from="ladder" to="ladder" method="_on_body_exited"]

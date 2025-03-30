@@ -18,13 +18,15 @@ func _ready() -> void:
 	if DataPassthrough.panic == true:
 		enterexit = true
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("up") and enter == true and DataPassthrough.panic == true:
 		var lvl_select = LEVEL_SELECT.instantiate()
 		get_parent().get_parent().call("clear_rooms")
+		get_parent().get_parent().emit_signal("player_clear_score")
 		get_parent().get_parent().add_child(lvl_select) #adds level select to parent
 		get_parent().get_parent().call("disable_player", true) #disables player from moving
 		Globaltimer.stop()
+		await lvl_select.ready #for some reason this makes it so the player doesnt end up in the middle of nowhere
 		GlobalSignals.emit_signal("move", -1605, 269)
 		DataPassthrough.panic = false
 		
