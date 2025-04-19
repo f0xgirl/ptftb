@@ -9,3 +9,4 @@ signal room_id_send
 #for player only
 signal move(x: int, y: int)
 signal add_score (points: int)
+signal change_state(state: String, _extra: int)

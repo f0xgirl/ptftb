@@ -40,6 +40,7 @@ level_tutorial = Array[PackedScene]([ExtResource("24_geuiq"), ExtResource("25_1u
 metadata/_custom_type_script = "uid://3qhdcgr4b5td"
 
 [node name="player" parent="." instance=ExtResource("17_o564e")]
+z_index = 1
 position = Vector2(-599, 806)
 
 [connection signal="child_entered_tree" from="." to="." method="room_changed"]

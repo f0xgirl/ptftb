@@ -18,8 +18,12 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("up") and enter == true:
+		Transition.transition()
+		await Transition.on_transition_finished
+		GlobalSignals.emit_signal("change_state", "player_walkfront", NAN)
 		Audioplayer._play_sfx_switchingrooms()
 		GlobalSignals.emit_signal("move", X, Y)
+		
 		get_parent().get_parent().call(load_room, next_room_id, room_id)
 		
 

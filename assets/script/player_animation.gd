@@ -24,3 +24,14 @@ func _anim_offset(x: int, y: int) -> void:
 #
 func _anim_loop(loopable: bool) -> void:
 	loop = loopable
+
+
+func _animation_play_groundpound() -> void:
+	play("groundpound")
+
+func _animation_play_freefall() -> void:
+	play("freefall")
+
+func _animation_play_freefall_landed() -> void:
+	_anim_offset(2, -14)
+	play("land")

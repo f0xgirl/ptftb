@@ -10,6 +10,7 @@ class_name Player_Idle
 const PLAYER_STANDING = preload("res://resources/player/player_standing.tres")
 
 func Enter():
+	Transitioned.emit(self,"player_frontwalk")
 	charge_effect.visible = false
 	collision.shape = PLAYER_STANDING
 	player.velocity.x = 0
@@ -41,13 +42,17 @@ func Update(_delta: float):
 		Transitioned.emit(self,"player_jumping")
 	if Input.is_action_just_pressed("action2") and player.is_on_floor() and check_disabled() == false:
 		Transitioned.emit(self,"player_mach1")
+	if Input.is_action_just_pressed("down") and not player.is_on_floor() and check_disabled() == false:
+		Transitioned.emit(self,"player_groundpound")
 	if Input.is_action_just_pressed("down") and check_disabled() == false:
 		Transitioned.emit(self,"player_idle_crouched")
 	if Input.is_action_just_pressed("up") and player.grav_disable == true and check_disabled() == false:
 		Transitioned.emit(self,"player_on_ladder")
 	if player.state_override == true and check_disabled() == false:
 		player.state_override = false
+		print(player.state_override_change)
 		Transitioned.emit(self,player.state_override_change)
+	
 
 func check_disabled() -> bool:
 	if player.get_meta("disabled") == true:

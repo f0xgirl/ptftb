@@ -1,0 +1,2 @@
+extends State_player
+class_name player_crouchslide

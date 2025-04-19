@@ -1,6 +1,7 @@
 extends State_player
 class_name Player_mach2
 
+
 @export var player: CharacterBody2D
 @export var player_data: player_data
 @export var sprite: AnimatedSprite2D
@@ -8,13 +9,20 @@ class_name Player_mach2
 var tillmach3: float = 300
 @onready var mach_2: AudioStreamPlayer2D = $"../../mach2"
 var direction = Input.get_axis("left","right")
+var is_block: bool = false
+@onready var check_collisions: Area2D = $"../../check_collisions"
+const BLOCK_SMALL = preload("res://assets/scenes/level objects/block_small.tscn")
+@onready var is_grounded: RayCast2D = $"../../is_grounded"
+
+func _ready() -> void:
+	check_collisions.connect("is_block", check_for_block)
+	check_collisions.connect("block_gone", no_more_block)
 
 func Enter():
 	mach_2.play()
-	player.velocity.x = player_data.player_direction * player_data.mach2_speed
+	move_player()
 	tillmach3 = DataPassthrough.player_tillmach3
 	DataPassthrough.player_state = "player_mach2"
-	
 
 func Update(_delta: float):
 	direction = Input.get_axis("left","right")
@@ -27,7 +35,20 @@ func Update(_delta: float):
 	if Input.is_action_just_pressed("action1") and player.is_on_floor():
 		player.velocity.y = 1.1 * - 350
 	if player.is_on_wall():
-		Transitioned.emit(self,"player_bumped")
+		for index in player.get_slide_collision_count():
+			var collider = player.get_slide_collision(index).get_collider()
+			print(collider)
+			if collider.name.begins_with("block"):
+				collider.queue_free()
+				move_player()
+				break
+			else:
+				if is_block == false:
+					Transitioned.emit(self,"player_bumped")
+	if Input.is_action_just_pressed("down"):
+		Transitioned.emit(self,"player_roll")
+	
+	# checking if turning
 	if direction != player_data.player_direction and not direction == 0 and player.is_on_floor():
 		Transitioned.emit(self,"Player_turn")
 	if player.state_override == true:
@@ -44,8 +65,16 @@ func Pyhsics_Update(_delta: float):
 func Exit():
 	DataPassthrough.player_tillmach3 = 300
 	mach_2.stop()
+	is_block = false
 
+func check_for_block() -> void:
+	is_block = true
 
+func no_more_block() -> void:
+	is_block = false
 
 func _on_mach_2_finished() -> void:
 	mach_2.play()
+
+func move_player():
+	player.velocity.x = player_data.player_direction * player_data.mach2_speed

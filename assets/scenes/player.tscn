@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://d3amowmvkdyo"]
+[gd_scene load_steps=89 format=3 uid="uid://d3amowmvkdyo"]
 
 [ext_resource type="Script" uid="uid://c6edt4l8ehqu6" path="res://assets/script/important/player.gd" id="1_aarfl"]
 [ext_resource type="Resource" uid="uid://bvm4oc3oc6sjt" path="res://resources/player/player_data.tres" id="2_i6cxx"]
@@ -7,6 +7,7 @@
 [ext_resource type="SpriteFrames" uid="uid://f6b84djeaa3g" path="res://resources/player/peppino_spriteframes.tres" id="4_5308x"]
 [ext_resource type="Script" uid="uid://d0lyqus80vd8s" path="res://assets/script/important/States/State_Machine.gd" id="4_t3dhw"]
 [ext_resource type="Script" uid="uid://dvqxrnmjhyyf8" path="res://assets/script/important/States/player/movement/player_idle.gd" id="5_jt3m1"]
+[ext_resource type="Script" uid="uid://bo37x7c1mmki3" path="res://assets/script/check_collisions_player.gd" id="7_1hryd"]
 [ext_resource type="Script" uid="uid://dw4w0bqskuk20" path="res://assets/script/important/States/player/movement/player_walking.gd" id="7_y2hrn"]
 [ext_resource type="Script" uid="uid://gxtws4hnorgm" path="res://assets/script/important/States/player/mach/Player_mach1.gd" id="10_tsu6n"]
 [ext_resource type="Script" uid="uid://bwfalxukt48uj" path="res://assets/script/important/States/player/mach/Player_slide.gd" id="11_nrveg"]
@@ -25,8 +26,11 @@
 [ext_resource type="Script" uid="uid://bqkkhv0q57ffc" path="res://assets/script/important/States/player/movement/player_roll.gd" id="28_biv4t"]
 [ext_resource type="Script" uid="uid://bdp33i4b3iv56" path="res://assets/script/important/States/player/movement/player_groundpound.gd" id="29_3eubh"]
 [ext_resource type="Script" uid="uid://c1weqyidrsyt2" path="res://assets/script/important/States/player/movement/player_highjump.gd" id="31_1b60l"]
-[ext_resource type="Script" uid="uid://cdgg15d7b7m74" path="res://assets/script/destroyable.gd" id="31_1hryd"]
+[ext_resource type="Script" uid="uid://bparuw645hh5" path="res://assets/script/important/States/player/movement/player_stationary.gd" id="32_1hryd"]
+[ext_resource type="AudioStream" uid="uid://dxwvv41vvo28w" path="res://AUDIO/sfx_bump.ogg" id="38_anufl"]
 [ext_resource type="Script" uid="uid://ndriol27dmh4" path="res://assets/script/important/States/player/movement/player_ladder.gd" id="39_jurdo"]
+[ext_resource type="AudioStream" uid="uid://b80pjope6j1kr" path="res://AUDIO/sfx_supermove.ogg" id="39_wvkvj"]
+[ext_resource type="AudioStream" uid="uid://bi7yifeywx57d" path="res://AUDIO/sfx_plane.ogg" id="39_y16ip"]
 [ext_resource type="Texture2D" uid="uid://bp661vfvgodqc" path="res://assets/sprites/players/peppino/player_chargeeffect.png" id="40_6pse8"]
 [ext_resource type="Script" uid="uid://dkegktkhxtift" path="res://assets/script/important/States/player/movement/fireass.gd" id="40_blbl4"]
 [ext_resource type="AudioStream" uid="uid://wfo6xfv1vic3" path="res://AUDIO/sfx_mach1.wav" id="42_akwvy"]
@@ -36,6 +40,9 @@
 [ext_resource type="Script" uid="uid://gpxiovs473tq" path="res://assets/script/important/States/player/trans/rocketpep.gd" id="48_878e8"]
 [ext_resource type="Script" uid="uid://cglr0h24egmka" path="res://assets/script/panic_visual.gd" id="49_p65hc"]
 [ext_resource type="AudioStream" uid="uid://bdeo0di331rt7" path="res://AUDIO/sfx_mach4.wav" id="53_jjtpe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5308x"]
+size = Vector2(116, 57)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qy61n"]
 atlas = ExtResource("3_88jo2")
@@ -385,38 +392,8 @@ animations = [{
 "speed": 24.0
 }]
 
-[sub_resource type="Animation" id="Animation_110ey"]
-resource_name = "a"
-
-[sub_resource type="Animation" id="Animation_h5h30"]
-resource_name = "new_animation"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_c3x8j"]
-_data = {
-&"a": SubResource("Animation_110ey"),
-&"new_animation": SubResource("Animation_h5h30")
-}
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_n60j3"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_88rqw"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_f5e4q"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ax2ju"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_tgp25"]
-states/StateMachine/node = SubResource("AnimationNodeStateMachine_n60j3")
-states/StateMachine/position = Vector2(434, 67)
-transitions = ["Start", "End", SubResource("AnimationNodeStateMachineTransition_88rqw"), "Start", "StateMachine", SubResource("AnimationNodeStateMachineTransition_f5e4q"), "StateMachine", "End", SubResource("AnimationNodeStateMachineTransition_ax2ju")]
-
 [node name="player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 10
 floor_constant_speed = true
 floor_snap_length = 16.0
 script = ExtResource("1_aarfl")
@@ -435,15 +412,24 @@ target_position = Vector2(0, -45)
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 z_index = 1
 material = ExtResource("3_urkgk")
-position = Vector2(2, -21)
+position = Vector2(2, -22)
 sprite_frames = ExtResource("4_5308x")
-animation = &"idle"
+animation = &"frontwalk"
 autoplay = "idle"
 script = ExtResource("23_uq8vi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3.5)
 shape = ExtResource("18_0xntb")
+
+[node name="check_collisions" type="Area2D" parent="." groups=["block"]]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("7_1hryd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="check_collisions"]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_5308x")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.8, 1.8)
@@ -695,6 +681,7 @@ editor_description = "DO NOT USE FOR ENEMIES"
 script = ExtResource("24_1q1cm")
 sprite = NodePath("../../sprite")
 player = NodePath("../..")
+player_data = ExtResource("2_i6cxx")
 collision = NodePath("../../CollisionShape2D")
 
 [node name="Player_Crawling" type="Node" parent="State Machine" node_paths=PackedStringArray("player", "sprite")]
@@ -718,11 +705,12 @@ script = ExtResource("27_joj2a")
 sprite = NodePath("../../sprite")
 player = NodePath("../..")
 
-[node name="Player_roll" type="Node" parent="State Machine" node_paths=PackedStringArray("sprite", "player")]
+[node name="Player_roll" type="Node" parent="State Machine" node_paths=PackedStringArray("sprite", "player", "collision")]
 editor_description = "DO NOT USE FOR ENEMIES"
 script = ExtResource("28_biv4t")
 sprite = NodePath("../../sprite")
 player = NodePath("../..")
+collision = NodePath("../../CollisionShape2D")
 
 [node name="Player_groundpound" type="Node" parent="State Machine" node_paths=PackedStringArray("sprite", "player")]
 editor_description = "DO NOT USE FOR ENEMIES"
@@ -757,9 +745,11 @@ script = ExtResource("48_878e8")
 player = NodePath("../..")
 player_data = ExtResource("2_i6cxx")
 
-[node name="destroyable" type="RayCast2D" parent="." groups=["player"]]
-target_position = Vector2(40, 0)
-script = ExtResource("31_1hryd")
+[node name="player_walkfront" type="Node" parent="State Machine" node_paths=PackedStringArray("sprite", "player")]
+script = ExtResource("32_1hryd")
+sprite = NodePath("../../sprite")
+player = NodePath("../..")
+metadata/_custom_type_script = "uid://bparuw645hh5"
 
 [node name="mach smoke" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -786,18 +776,23 @@ unique_name_in_owner = true
 stream = ExtResource("53_jjtpe")
 volume_db = 5.0
 
+[node name="bump" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("38_anufl")
+
+[node name="supermove" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("39_wvkvj")
+
+[node name="plane" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("39_y16ip")
+
 [node name="Timer" type="Timer" parent="."]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_c3x8j")
-}
+[node name="is_grounded" type="RayCast2D" parent="."]
+target_position = Vector2(0, 26)
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_tgp25")
-anim_player = NodePath("../AnimationPlayer")
-
-[connection signal="input_event" from="." to="destroyable" method="_on_player_input_event"]
 [connection signal="anim_change" from="State Machine/Player_Idle" to="sprite" method="_anim_change"]
 [connection signal="anim_loop" from="State Machine/Player_Idle" to="sprite" method="_anim_loop"]
 [connection signal="anim_offset" from="State Machine/Player_Idle" to="sprite" method="_anim_offset"]
@@ -813,6 +808,7 @@ anim_player = NodePath("../AnimationPlayer")
 [connection signal="anim_change" from="State Machine/Player_mach3" to="sprite" method="_anim_change"]
 [connection signal="anim_offset" from="State Machine/Player_mach3" to="sprite" method="_anim_offset"]
 [connection signal="anim_override" from="State Machine/Player_mach3" to="sprite" method="_anim_override"]
+[connection signal="anim_offset" from="State Machine/Player_machroll" to="sprite" method="_anim_offset"]
 [connection signal="anim_change" from="State Machine/Player_Crawling" to="sprite" method="_anim_change"]
 [connection signal="anim_offset" from="State Machine/Player_Crawling" to="sprite" method="_anim_offset"]
 [connection signal="anim_override" from="State Machine/Player_Crawling" to="sprite" method="_anim_override"]

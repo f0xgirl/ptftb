@@ -10,14 +10,21 @@ func Enter():
 	DataPassthrough.player_state = "Player_Crawling"
 
 func Update(_delta: float):
+	if player.is_on_floor():
+		sprite.play("crawling")
 	if Input.is_action_just_pressed("action1") and player.is_on_floor():
-		sprite.play("crawling air")
+		sprite.play("crawling_jump")
 		player.velocity.y = player_data.jumpheight
 	if player.is_on_floor() == false:
-		sprite.play("crawling air")
+		if sprite.animation == "crawling_jump":
+			await sprite.animation_finished
+			sprite.play("crawling air")
 	else:
-		sprite.play("crawling")
-		emit_signal("anim_offset",2,-5)
+		if sprite.animation == "crawling_jump":
+			await sprite.animation_finished
+			sprite.play("crawling air")
+			sprite.play("crawling")
+			emit_signal("anim_offset",2,10)
 	direction = Input.get_axis("left","right")
 	sprite_flip()
 	if direction == 0:

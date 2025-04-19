@@ -20,11 +20,13 @@ var state_override: bool = false
 var state_override_change: String
 var grav_disable: bool = false
 var still_in_ladder: bool = false
+var has_key: bool = false
 
 
 func _ready() -> void:
 	GlobalSignals.connect("move", set_pos)
 	GlobalSignals.connect("add_score", add_points)
+	GlobalSignals.connect("change_state", change_state)
 	get_parent().connect("player_limit_left", set_limit_left)
 	get_parent().connect("player_limit_top", set_limit_top)
 	get_parent().connect("player_limit_right", set_limit_right)
@@ -41,10 +43,12 @@ func _physics_process(delta: float) -> void:
 	if grav_disable == false:
 		velocity.y += gravity * delta
 	move_and_slide()
+	
 	if Input.is_action_just_pressed("pause"):
 		var lvl = LEVEL_SELECT.instantiate()
 		get_parent().call("clear_rooms") #clears rooms
 		get_parent().call("disable_player", true) #disables player from moving
+		get_parent().emit_signal("player_clear_score")
 		DataPassthrough.panic = false
 		Globaltimer.stop()
 		DataPassthrough.player_pos_x = 0
@@ -99,3 +103,8 @@ func _get_pos_x() -> int:
 
 func _get_pos_y() -> int:
 	return position.y
+
+func change_state(change: String, _f_dir: int) -> void:
+	state_override_change = change
+	force_direction = _f_dir
+	state_override = true

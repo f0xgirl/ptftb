@@ -16,6 +16,15 @@ func Update(_delta: float):
 	player.velocity.x = move_toward(player.velocity.x, 0, 15)
 	if player.velocity.x == 0:
 		player_data.player_direction = direction
+		flip_sprite()
 		Transitioned.emit(self,"player_mach2")
 	if player.is_on_wall():
 		Transitioned.emit(self,"player_bumped")
+
+
+func flip_sprite() -> void: #equals 1: right equals -1: left
+	match player_data.player_direction:
+		1:
+			sprite.flip_h = false
+		-1:
+			sprite.flip_h = true

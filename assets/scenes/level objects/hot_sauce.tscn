@@ -5,9 +5,12 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_674gi"]
 
-[node name="hot sauce" type="Area2D" groups=["hotsauce"]]
+[node name="hot sauce" type="Area2D"]
 editor_description = "make sure to connect body_entered to the player"
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("1_rk5le")
+state = "player_fireass"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_674gi")
@@ -15,3 +18,5 @@ shape = SubResource("RectangleShape2D_674gi")
 [node name="SprTomatocollect0" type="Sprite2D" parent="."]
 scale = Vector2(0.76, 0.92)
 texture = ExtResource("1_wqjdo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

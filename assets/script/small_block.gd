@@ -1,22 +1,21 @@
+@icon("res://assets/sprites/spr_destroyable_0.png")
 extends block_base
 class_name block_small
 
-@onready var left: RayCast2D = $left
-@onready var right: RayCast2D = $right
-@onready var up: RayCast2D = $up
-@onready var down: RayCast2D = $down
+@onready var sprite: Sprite2D = $Sprite2D
+
+
+func _ready() -> void:
+	get_parent().get_parent().connect("hidden", _hidden)
+	get_parent().get_parent().connect("visible", _visible)
 
 
 
-func _physics_process(delta: float) -> void:
-	_check_collision()
+func _hidden() -> void:
+	set_collision_layer_value(1, false)
+	sprite.hide()
 
 
-
-func _check_collision():
-	if left.get_collider() == player:
-		if DataPassthrough.player_state == "player_mach2" or DataPassthrough.player_state == "player_mach3":
-			queue_free()
-	elif right.get_collider() == player:
-		if DataPassthrough.player_state == "player_mach2" or DataPassthrough.player_state == "player_mach3":
-			queue_free()
+func _visible() -> void:
+	set_collision_layer_value(1, true)
+	sprite.show()

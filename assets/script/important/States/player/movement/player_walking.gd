@@ -22,6 +22,8 @@ func Update(_delta: float):
 		Transitioned.emit(self,"player_idle")
 	if direction != 0:
 		player_data.player_direction = direction
+	if Input.is_action_just_pressed("down") and not player.is_on_floor():
+		Transitioned.emit(self,"player_groundpound")
 	if Input.is_action_just_pressed("action1") and player.is_on_floor():
 		Transitioned.emit(self,"player_jumping")
 	if Input.is_action_just_pressed("action2") and player.is_on_floor():

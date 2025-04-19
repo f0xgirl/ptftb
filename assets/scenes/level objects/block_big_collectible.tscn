@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://brmr1yrkxbwca"]
+
+[ext_resource type="Texture2D" uid="uid://b13d4n4boescg" path="res://assets/sprites/spr_bigbreakable_0.png" id="1_dl1po"]
+[ext_resource type="Script" uid="uid://dwyobwom026b6" path="res://assets/script/level objects/block_big_collectible.gd" id="1_sf104"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sf104"]
+size = Vector2(64, 64)
+
+[node name="block" type="StaticBody2D" groups=["block"]]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_sf104")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["block"]]
+shape = SubResource("RectangleShape2D_sf104")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_dl1po")

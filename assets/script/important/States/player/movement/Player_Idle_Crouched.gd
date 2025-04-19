@@ -21,11 +21,13 @@ func Update(_delta: float):
 	if player.is_on_floor():
 		sprite.play("crawling_idle")
 	if Input.is_action_just_pressed("action1") and player.is_on_floor():
-		sprite.play("crawling air")
+		sprite.play("crawling_jump")
 		player.velocity.y = player_data.jumpheight
 	if not player.is_on_floor():
-		sprite.play("crawling air")
-		emit_signal("anim_offset",2,-5)
+		if sprite.animation == "crawling_jump":
+			await sprite.animation_finished
+			sprite.play("crawling air")
+			emit_signal("anim_offset",2,-5)
 	if not Input.is_action_pressed("down"):
 		if above_head_empty():
 			Transitioned.emit(self,"player_idle")

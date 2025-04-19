@@ -7,5 +7,6 @@ class_name rocket
 @export_range(-1, 1) var forced_direction: int
 
 func _on_body_entered(body: Node2D) -> void:
-	pass
+	if body.is_in_group("player"):
+		GlobalSignals.emit_signal("change_state", state, forced_direction)
 	

@@ -12,7 +12,7 @@ class_name big_block
 
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	_check_collision()
 
 

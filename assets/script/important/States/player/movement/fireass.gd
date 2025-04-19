@@ -6,7 +6,8 @@ class_name fireass
 
 func Enter():
 	DataPassthrough.player_state = "player_fireass"
-	player.velocity.y = -1000
+	player.velocity.y = 0
+	player.velocity.y = -1500
 
 func Update(_delta: float):
 	Transitioned.emit(self,"player_idle")

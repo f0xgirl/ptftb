@@ -1,6 +1,7 @@
-extends AnimatedSprite2D
+extends Sprite2D
 
 const LEVEL_SELECT = preload("res://assets/scenes/level_select.tscn")
+@onready var animation_tree: AnimationTree = $AnimationTree
 
 @export var enterexit: bool
 @export_category("Player Postion")
@@ -11,15 +12,10 @@ var enter = false
 func _ready() -> void:
 	get_parent().connect("hidden", _hidden)
 	get_parent().connect("visible", _visible)
-	if enterexit == true or DataPassthrough.panic == true:
-		play("open")
-	else:
-		play("closed")
-	if DataPassthrough.panic == true:
-		enterexit = true
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("up") and enter == true and DataPassthrough.panic == true:
+		DataPassthrough.panic = false
 		var lvl_select = LEVEL_SELECT.instantiate()
 		get_parent().get_parent().call("clear_rooms")
 		get_parent().get_parent().emit_signal("player_clear_score")
@@ -28,11 +24,15 @@ func _process(_delta: float) -> void:
 		Globaltimer.stop()
 		await lvl_select.ready #for some reason this makes it so the player doesnt end up in the middle of nowhere
 		GlobalSignals.emit_signal("move", -1605, 269)
-		DataPassthrough.panic = false
 		
+	if DataPassthrough.panic == true:
+		animation_tree.set("parameters/blend_position", 1)
+	else:
+		animation_tree.set("parameters/blend_position", -1)
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	print("asdf")
 	if body.is_in_group("player"):
 		enter = true	
 

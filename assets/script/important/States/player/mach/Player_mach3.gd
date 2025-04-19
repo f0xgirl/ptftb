@@ -7,17 +7,22 @@ class_name Player_mach3
 @export var collision: CollisionShape2D
 @export var charge_effect: AnimatedSprite2D
 @onready var mach_3: AudioStreamPlayer2D = $"../../mach3"
+@onready var check_collisions: Area2D = $"../../check_collisions"
 var direction = Input.get_axis("left","right")
 const PLAYER_STANDING = preload("res://resources/player/player_standing.tres")
+var is_block: bool = false
 
+func _ready() -> void:
+	check_collisions.connect("is_block", check_for_block)
+	check_collisions.connect("block_gone", no_more_block)
 
 func Enter():
 	mach_3.play()
 	collision.shape = PLAYER_STANDING
-	player.velocity.x = player_data.player_direction * player_data.mach3_speed
+	move_player()
 	DataPassthrough.player_state = "player_mach3"
 	
-	
+
 func Update(_delta: float):
 	direction = Input.get_axis("left","right")
 	#charge_effect.visible = true
@@ -29,7 +34,18 @@ func Update(_delta: float):
 	if Input.is_action_just_pressed("action1") and player.is_on_floor():
 		player.velocity.y = 1.1 * - 350
 	if player.is_on_wall():
-		Transitioned.emit(self,"player_bumped")
+		for index in player.get_slide_collision_count():
+			var collider = player.get_slide_collision(index).get_collider()
+			print(collider)
+			if collider.name.begins_with("block") or collider.name.begins_with("metal"):
+				collider.queue_free()
+				move_player()
+				#check_collisions.emit_signal("block_gone")
+				break
+			elif collider.name.begins_with("tileset"):
+				
+				if is_block == false:
+					Transitioned.emit(self,"player_bumped")
 	if Input.is_action_just_pressed("down") and not player.is_on_floor():
 		Transitioned.emit(self,"Player_groundpound")
 	if Input.is_action_just_pressed("down"):
@@ -44,3 +60,13 @@ func Update(_delta: float):
 
 func Exit():
 	mach_3.stop()
+	is_block = false
+
+func move_player():
+	player.velocity.x = player_data.player_direction * player_data.mach3_speed
+
+func check_for_block() -> void:
+	is_block = true
+
+func no_more_block() -> void:
+	is_block = false

@@ -5,8 +5,8 @@ var player
 
 func _ready() -> void:
 	player = get_parent().get_parent().find_child("player")
-	get_parent().connect("hidden", _hidden)
-	get_parent().connect("visible", _visible)
+	get_parent().get_parent().connect("hidden", _hidden)
+	get_parent().get_parent().connect("visible", _visible)
 
 
 func _hidden() -> void:

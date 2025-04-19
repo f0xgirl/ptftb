@@ -5,6 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v5uxn"]
 
 [node name="rocket" type="Area2D"]
+collision_mask = 2
 script = ExtResource("1_gtyr8")
 state = "rocket_pep"
 

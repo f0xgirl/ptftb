@@ -1,4 +1,4 @@
-extends Node
+extends room
 
 func _ready() -> void:
 	if DataPassthrough.panic == false:

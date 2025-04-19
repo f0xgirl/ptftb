@@ -18,6 +18,7 @@ signal player_clear_score
 @export var level_strong: Array [PackedScene] = []
 @export var level_mid: Array [PackedScene] = []
 @export var level_tutorial: Array [PackedScene] = []
+@export var level_pinball: Array [PackedScene] = []
 #constants:
 #can be switched out for the hubs when i get to that
 const LEVEL_SELECT = preload("res://assets/scenes/level_select.tscn")
@@ -39,6 +40,9 @@ const MIDESCAPE_1 = preload("res://assets/scenes/levels/midescape/midescape_1.ts
 const SPACE_PINBALL = preload("res://assets/scenes/levels/space pinball/space_pinball.tscn")
 #tutorial:
 const TUTORIAL_1 = preload("res://assets/scenes/levels/tutorial/tutorial_1.tscn")
+#pinball:
+
+
 
 #variables:
 
@@ -69,6 +73,8 @@ func room_called(selected_room: int) -> void:
 			load_mid()
 		7:
 			load_tut()
+		8:
+			load_pinball()
 		
 	
 func load_jg() -> void:
@@ -102,12 +108,18 @@ func load_strong() -> void:
 	add_child(lvl)
 
 func load_mid() -> void:
+	GlobalSignals.emit_signal("move", 762, -208)
 	var lvl = MIDESCAPE_1.instantiate()
 	add_child(lvl)
 	
 func load_tut() -> void:
 	GlobalSignals.emit_signal("move", -275, -329)
 	var lvl = TUTORIAL_1.instantiate()
+	add_child(lvl)
+
+func load_pinball() -> void:
+	GlobalSignals.emit_signal("move", 385, 110) #temp
+	var lvl = SPACE_PINBALL.instantiate()
 	add_child(lvl)
 
 func load_room_test(id: int, prev_id: int) -> void:
@@ -173,6 +185,14 @@ func load_room_tutorial(id: int, prev_id: int) -> void:
 		GlobalSignals.emit_signal("show", id)
 	else:
 		var lvl = level_tutorial[id].instantiate()
+		add_child(lvl)
+
+func load_room_pinball(id: int, prev_id: int) -> void:
+	GlobalSignals.emit_signal("hide", prev_id)
+	if check_if_loaded(id) == true:
+		GlobalSignals.emit_signal("show", id)
+	else:
+		var lvl = level_pinball[id].instantiate()
 		add_child(lvl)
 
 func disable_player(x: bool) -> void:

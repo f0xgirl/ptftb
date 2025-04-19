@@ -17,6 +17,8 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	Audioplayer._play_sfx_switchingrooms()
+	Transition.transition()
+	await Transition.on_transition_finished
 	if body.is_in_group("player"):
 		GlobalSignals.emit_signal("move", X, Y)
 		get_parent().get_parent().call_deferred(function_call, next_room_id, room_id)

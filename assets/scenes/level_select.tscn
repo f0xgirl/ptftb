@@ -11,7 +11,7 @@ font_size = 64
 
 [node name="level_select" type="Node"]
 script = ExtResource("9_l0hxu")
-level_list = Array[String](["test", "john gutter", "pizzascape", "ruin", "dungeon", "strongcold", "mid escape", "tutorial"])
+level_list = Array[String](["test", "john gutter", "pizzascape", "ruin", "dungeon", "strongcold", "mid escape", "tutorial", "pinball"])
 room_name = &"level_select"
 metadata/_custom_type_script = "uid://bvp7b8nd25ruo"
 

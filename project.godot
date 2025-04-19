@@ -23,6 +23,7 @@ Audioplayer="*res://assets/script/autoloads/audioplayer.gd"
 DataPassthrough="*res://assets/script/autoloads/data_passthrough.gd"
 Globaltimer="*res://assets/script/autoloads/globaltimer.gd"
 GlobalSignals="*res://assets/script/autoloads/GlobalSignals.gd"
+Transition="*res://assets/scenes/transition.tscn"
 
 [editor_plugins]
 
@@ -86,7 +87,14 @@ pause={
 ]
 }
 
+[layer_names]
+
+2d_render/layer_1="Player"
+2d_render/layer_2="blocks"
+2d_render/layer_3="enemies"
+2d_render/layer_4="tileset"
+
 [rendering]
 
-textures/canvas_textures/default_texture_filter=0
+textures/canvas_textures/default_texture_filter=3
 textures/vram_compression/import_etc2_astc=true

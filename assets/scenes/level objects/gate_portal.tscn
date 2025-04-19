@@ -1,45 +1,94 @@
-[gd_scene load_steps=8 format=3 uid="uid://drg1wcxxcyjdm"]
+[gd_scene load_steps=12 format=3 uid="uid://drg1wcxxcyjdm"]
 
 [ext_resource type="Texture2D" uid="uid://cvit2bpm6ye7n" path="res://assets/sprites/spr_exitgate_0.png" id="1_heehu"]
 [ext_resource type="Texture2D" uid="uid://bfnmbanrjp13h" path="res://assets/sprites/spr_exitgate_1.png" id="2_1ps06"]
 [ext_resource type="Script" uid="uid://dtxkfn3oat0fs" path="res://assets/script/level objects/entryexitgate.gd" id="3_5fyey"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a7vkq"]
-atlas = ExtResource("1_heehu")
-region = Rect2(0, 0, 149, 255)
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_16kx5"]
+animation = &"closed"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_x53y2"]
-atlas = ExtResource("2_1ps06")
-region = Rect2(0, 0, 149, 255)
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_amsqk"]
+animation = &"open"
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_sl8i0"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a7vkq")
-}],
-"loop": true,
-"name": &"closed",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x53y2")
-}],
-"loop": true,
-"name": &"open",
-"speed": 5.0
-}]
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_mx1ih"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_16kx5")
+blend_point_0/pos = -0.1
+blend_point_1/node = SubResource("AnimationNodeAnimation_amsqk")
+blend_point_1/pos = 0.1
+
+[sub_resource type="Animation" id="Animation_6j7h0"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_1ps06")]
+}
+
+[sub_resource type="Animation" id="Animation_vquon"]
+resource_name = "closed"
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [ExtResource("1_heehu")]
+}
+
+[sub_resource type="Animation" id="Animation_16kx5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0rr8n"]
+_data = {
+&"RESET": SubResource("Animation_16kx5"),
+&"closed": SubResource("Animation_vquon"),
+&"open": SubResource("Animation_6j7h0")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sjjwu"]
 size = Vector2(114, 78)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
-sprite_frames = SubResource("SpriteFrames_sl8i0")
-animation = &"open"
+[node name="Sprite2D" type="Sprite2D"]
 script = ExtResource("3_5fyey")
 
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeBlendSpace1D_mx1ih")
+anim_player = NodePath("../AnimationPlayer")
+parameters/blend_position = -0.171452
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0rr8n")
+}
+
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-2, 88)
