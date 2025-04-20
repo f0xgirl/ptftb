@@ -108,3 +108,4 @@ func change_state(change: String, _f_dir: int) -> void:
 	state_override_change = change
 	force_direction = _f_dir
 	state_override = true
+	

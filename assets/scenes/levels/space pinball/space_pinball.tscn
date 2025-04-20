@@ -31,6 +31,7 @@ function_call = "load_room_pinball"
 next_room_id = 1
 
 [node name="to escape route" parent="." instance=ExtResource("6_reswh")]
+editor_description = "it goes to room 70 because im too lazy to figure out which room id would make sense"
 position = Vector2(-55, 111)
 scale = Vector2(1, 9.37321)
 function_call = "load_room_pinball"

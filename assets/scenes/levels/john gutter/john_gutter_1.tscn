@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://fioigyq7r4yd"]
+[gd_scene load_steps=12 format=4 uid="uid://fioigyq7r4yd"]
 
 [ext_resource type="Texture2D" uid="uid://c8xtty12f5v57" path="res://assets/sprites/normalT_room1.png" id="1_3debp"]
 [ext_resource type="Script" uid="uid://bc5aeje6a35hq" path="res://assets/script/level specific/john_gutter_1.gd" id="1_uyxqf"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://iesqe0ibgymu" path="res://assets/scenes/level objects/block_big.tscn" id="9_3hrl4"]
 [ext_resource type="PackedScene" uid="uid://brmr1yrkxbwca" path="res://assets/scenes/level objects/block_big_collectible.tscn" id="10_sc2gl"]
 [ext_resource type="PackedScene" uid="uid://bgmoh1mbgjq0g" path="res://assets/scenes/level objects/block_small_collectible.tscn" id="11_ftpy1"]
-[ext_resource type="PackedScene" uid="uid://d2q30hyq4cxd2" path="res://assets/scenes/level objects/door.tscn" id="12_htb0r"]
 
 [node name="room" type="Node"]
 script = ExtResource("1_uyxqf")
@@ -45,13 +44,6 @@ function_call = "load_room_jg"
 next_room_id = 1
 X = -1540
 Y = 308
-
-[node name="Area2D" parent="." instance=ExtResource("12_htb0r")]
-position = Vector2(-1417, 357)
-load_room = "load_room_jg"
-next_room_id = 6
-X = -1395
-Y = 92
 
 [node name="blocks" type="Node2D" parent="."]
 

@@ -1,6 +1,8 @@
 extends State_player
 class_name Player_mach3
 
+signal metal_block_destroy(destroy: bool)
+
 @export var player: CharacterBody2D
 @export var player_data: player_data
 @export var sprite: AnimatedSprite2D
@@ -25,7 +27,6 @@ func Enter():
 
 func Update(_delta: float):
 	direction = Input.get_axis("left","right")
-	#charge_effect.visible = true
 	emit_signal("anim_change","mach3",false)
 	emit_signal("anim_offset",2,-5)
 	if player.is_on_floor():
@@ -40,14 +41,13 @@ func Update(_delta: float):
 			if collider.name.begins_with("block") or collider.name.begins_with("metal"):
 				collider.queue_free()
 				move_player()
-				#check_collisions.emit_signal("block_gone")
 				break
 			elif collider.name.begins_with("tileset"):
-				
 				if is_block == false:
 					Transitioned.emit(self,"player_bumped")
 	if Input.is_action_just_pressed("down") and not player.is_on_floor():
 		Transitioned.emit(self,"Player_groundpound")
+		emit_signal("metal_block_destroy", true)
 	if Input.is_action_just_pressed("down"):
 		Transitioned.emit(self,"player_machroll")
 	if Input.is_action_just_pressed("up"):

@@ -53,8 +53,8 @@ Y = 612
 visible = false
 
 [node name="Area2D" parent="." instance=ExtResource("7_w3bqf")]
-position = Vector2(882, 11)
-scale = Vector2(1, 12.693)
+position = Vector2(880, 7)
+scale = Vector2(1, 7.693)
 
 [node name="Label" type="Label" parent="."]
 offset_left = 657.0
@@ -118,6 +118,3 @@ position = Vector2(784, 272)
 
 [node name="block13" parent="Node2D" instance=ExtResource("11_ljuv6")]
 position = Vector2(784, 304)
-
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

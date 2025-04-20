@@ -394,6 +394,7 @@ animations = [{
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 10
+collision_mask = 17
 floor_constant_speed = true
 floor_snap_length = 16.0
 script = ExtResource("1_aarfl")
@@ -414,8 +415,9 @@ z_index = 1
 material = ExtResource("3_urkgk")
 position = Vector2(2, -22)
 sprite_frames = ExtResource("4_5308x")
-animation = &"frontwalk"
+animation = &"ladder down"
 autoplay = "idle"
+frame_progress = 0.32943
 script = ExtResource("23_uq8vi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -808,6 +810,7 @@ target_position = Vector2(0, 26)
 [connection signal="anim_change" from="State Machine/Player_mach3" to="sprite" method="_anim_change"]
 [connection signal="anim_offset" from="State Machine/Player_mach3" to="sprite" method="_anim_offset"]
 [connection signal="anim_override" from="State Machine/Player_mach3" to="sprite" method="_anim_override"]
+[connection signal="metal_block_destroy" from="State Machine/Player_mach3" to="State Machine/Player_groundpound" method="_metal_block_destroy_insta"]
 [connection signal="anim_offset" from="State Machine/Player_machroll" to="sprite" method="_anim_offset"]
 [connection signal="anim_change" from="State Machine/Player_Crawling" to="sprite" method="_anim_change"]
 [connection signal="anim_offset" from="State Machine/Player_Crawling" to="sprite" method="_anim_offset"]

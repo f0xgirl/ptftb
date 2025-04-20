@@ -2461,7 +2461,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"ladder down",
-"speed": 21.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2490,7 +2490,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"ladder up",
-"speed": 21.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,

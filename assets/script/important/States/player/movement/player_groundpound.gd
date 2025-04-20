@@ -7,6 +7,8 @@ class_name Player_groundpound
 @onready var supermove: AudioStreamPlayer2D = %supermove
 signal velocitynone
 var called: bool
+var destroy_metal: bool = false
+var landed: bool = false
 
 func Enter():
 	player.velocity.x = 0
@@ -18,20 +20,28 @@ func Enter():
 	sprite.call("_animation_play_groundpound")
 
 func Update(_delta: float):
-	if player.velocity.y > 0:
+	if player.velocity.y > 0 and landed == false:
 		emit_signal("velocitynone")
 		sprite.call("_animation_play_freefall")
 	if player.is_on_floor():
-		alreadycalled() #used to play _animation_freefall_landed
-		plane.stop()
-		await sprite.animation_finished
-		var stun = Timer.new()
-		get_parent().get_parent().add_child(stun)
-		stun.start(0.1)
-		await stun.timeout
-		Transitioned.emit(self,"Player_idle")
-		stun.queue_free()
-		
+		for index in player.get_slide_collision_count():
+			var collider = player.get_slide_collision(index).get_collider()
+			print(collider)
+			if collider.name.begins_with("block"):
+				collider.queue_free()
+				break
+			else:
+				landed = true
+				if collider.name.begins_with("metal") and destroy_metal == true:
+					player.grav_disable = true
+					collider.queue_free()
+				alreadycalled() #used to play _animation_freefall_landed
+				plane.stop()
+				await sprite.animation_finished
+				player.grav_disable = false
+				Transitioned.emit(self,"Player_idle")
+	if player.velocity.y > 1000:
+		destroy_metal = true
 
 func godown():
 	print("go down")
@@ -48,3 +58,9 @@ func alreadycalled():
 	
 func Exit():
 	called = false
+	destroy_metal = false
+	landed = false
+
+
+func _metal_block_destroy_insta(destroy: bool) -> void:
+	destroy_metal = destroy

@@ -93,6 +93,7 @@ pause={
 2d_render/layer_2="blocks"
 2d_render/layer_3="enemies"
 2d_render/layer_4="tileset"
+2d_physics/layer_5="platform"
 
 [rendering]
 

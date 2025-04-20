@@ -1,4 +1,5 @@
-extends StaticBody2D
+@icon("res://assets/sprites/smallveggie.png")
+extends block_base
 
 @export var panic_time: float = 1000
 
@@ -10,3 +11,11 @@ func _process(delta: float) -> void:
 		Audioplayer._play_sfx_pillar_impact()
 		get_parent().emit_signal("panic")
 		Globaltimer.start(panic_time)
+
+func _hidden():
+	set_collision_layer_value(1, false)
+	hide()
+
+func _visible():
+	set_collision_layer_value(1, true)
+	show()

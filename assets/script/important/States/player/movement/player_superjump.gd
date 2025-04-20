@@ -23,8 +23,15 @@ func Update(_delta: float):
 	if stopforasec == false:
 		player.velocity.y += -100
 	if player.is_on_ceiling():
-		Transitioned.emit(self,"Player_idle")
-		plane.stop()
+		for index in player.get_slide_collision_count():
+			var collider = player.get_slide_collision(index).get_collider()
+			print(collider)
+			if collider.name.begins_with("block") or collider.name.begins_with("metal"):
+				collider.queue_free()
+				break
+			else:
+				Transitioned.emit(self,"Player_idle")
+				plane.stop()
 	if player.state_override == true and check_disabled() == false:
 		player.state_override = false
 		print(player.state_override_change)

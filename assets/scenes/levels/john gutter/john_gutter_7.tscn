@@ -27,14 +27,6 @@ script = ExtResource("3_aqlt5")
 position = Vector2(1990, -424)
 panic_time = 240.0
 
-[node name="Area2D" parent="." instance=ExtResource("4_6wxuq")]
-position = Vector2(2047, 50)
-scale = Vector2(1, 8.84)
-
-[node name="Area2D2" parent="." instance=ExtResource("4_6wxuq")]
-position = Vector2(1183, -211)
-scale = Vector2(1, 14.6)
-
 [node name="door to room 6" parent="." instance=ExtResource("5_j6e6m")]
 position = Vector2(132, 104)
 room_id = 8
@@ -57,7 +49,15 @@ position = Vector2(1498, -139)
 
 [node name="blocks" type="Node2D" parent="."]
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D2" to="Area2D2" method="_on_body_exited"]
+[node name="ladder" parent="." instance=ExtResource("4_6wxuq")]
+position = Vector2(2048, 52)
+scale = Vector2(1, 5.52)
+
+[node name="ladder2" parent="." instance=ExtResource("4_6wxuq")]
+position = Vector2(1186, -206)
+scale = Vector2(1, 9)
+
+[connection signal="body_entered" from="ladder" to="ladder" method="_on_body_entered"]
+[connection signal="body_exited" from="ladder" to="ladder" method="_on_body_exited"]
+[connection signal="body_entered" from="ladder2" to="ladder2" method="_on_body_entered"]
+[connection signal="body_exited" from="ladder2" to="ladder2" method="_on_body_exited"]

@@ -43,7 +43,7 @@ func Update(_delta: float):
 				move_player()
 				break
 			else:
-				if is_block == false:
+				if is_block == false or collider.name.begins_with("metal"):
 					Transitioned.emit(self,"player_bumped")
 	if Input.is_action_just_pressed("down"):
 		Transitioned.emit(self,"player_roll")

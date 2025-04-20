@@ -55,9 +55,9 @@ X = -1808
 Y = 182
 
 [node name="ladder" parent="." instance=ExtResource("9_jw4bg")]
-position = Vector2(-511, 296)
+position = Vector2(-513, 307)
 rotation = -3.14159
-scale = Vector2(0.882497, -9.65872)
+scale = Vector2(1, 5.92)
 
 [node name="blocks" type="Node2D" parent="."]
 
@@ -141,6 +141,3 @@ position = Vector2(2415, 185)
 
 [node name="collectible14" parent="." instance=ExtResource("9_q0fd1")]
 position = Vector2(2447, 153)
-
-[connection signal="body_entered" from="ladder" to="ladder" method="_on_body_entered"]
-[connection signal="body_exited" from="ladder" to="ladder" method="_on_body_exited"]
