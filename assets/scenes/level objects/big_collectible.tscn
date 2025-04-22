@@ -1,13 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6370n1pcjqjb"]
+[gd_scene load_steps=4 format=3 uid="uid://b6370n1pcjqjb"]
 
 [ext_resource type="Script" uid="uid://bcmfbkdidyxja" path="res://assets/script/big_collectible.gd" id="1_du80p"]
+[ext_resource type="Texture2D" uid="uid://ht4637fv5u1x" path="res://assets/sprites/spr_pizzacollect_0.png" id="2_q06cs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_du80p"]
+size = Vector2(54, 54)
 
 [node name="big_collectible" type="Area2D"]
+collision_mask = 2
 script = ExtResource("1_du80p")
 worth = 100
 metadata/_custom_type_script = "uid://bcmfbkdidyxja"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_du80p")
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_q06cs")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+
+[connection signal="body_entered" from="." to="." method="_on_area_2d_body_entered"]

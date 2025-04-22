@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cuoo8ojghsvmb" path="res://assets/scenes/level objects/ladder.tscn" id="4_6wxuq"]
 [ext_resource type="Script" uid="uid://bvp7b8nd25ruo" path="res://assets/script/important/load things/room.gd" id="5_dblrf"]
 [ext_resource type="PackedScene" uid="uid://d2q30hyq4cxd2" path="res://assets/scenes/level objects/door.tscn" id="5_j6e6m"]
-[ext_resource type="PackedScene" uid="uid://cwgntvkyl06cp" path="res://assets/scenes/level objects/collectible.tscn" id="7_5pf8q"]
+[ext_resource type="PackedScene" uid="uid://cwgntvkyl06cp" path="res://assets/scenes/level objects/small_collectible.tscn" id="7_5pf8q"]
 
 [node name="room" type="Node"]
 script = ExtResource("5_dblrf")
@@ -56,8 +56,3 @@ scale = Vector2(1, 5.52)
 [node name="ladder2" parent="." instance=ExtResource("4_6wxuq")]
 position = Vector2(1186, -206)
 scale = Vector2(1, 9)
-
-[connection signal="body_entered" from="ladder" to="ladder" method="_on_body_entered"]
-[connection signal="body_exited" from="ladder" to="ladder" method="_on_body_exited"]
-[connection signal="body_entered" from="ladder2" to="ladder2" method="_on_body_entered"]
-[connection signal="body_exited" from="ladder2" to="ladder2" method="_on_body_exited"]

@@ -1,3 +1,4 @@
+@icon("res://assets/sprites/spr_enemyblockdead_0.png")
 extends Sprite2D
 class_name panic_block
 

@@ -40,7 +40,7 @@ func Update(_delta: float):
 		player.velocity.x += player_data.player_direction * player_data.mach1_speed
 	if till_mach2 == 0:
 		Transitioned.emit(self,"player_mach2")
-	if Input.is_action_just_released("action2") and weirdmachjump == false:
+	if Input.is_action_just_released("action2"):
 		Transitioned.emit(self,"player_slide")
 	if Input.is_action_just_pressed("action1") and player.is_on_floor():
 		weirdmachjump = true

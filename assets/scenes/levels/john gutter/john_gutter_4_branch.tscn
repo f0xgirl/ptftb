@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://bidyolavjny6l"]
+[gd_scene load_steps=13 format=4 uid="uid://bidyolavjny6l"]
 
 [ext_resource type="Texture2D" uid="uid://dhomeinom4syr" path="res://assets/sprites/normalT_room4branch.png" id="1_lwuy3"]
 [ext_resource type="Script" uid="uid://bvp7b8nd25ruo" path="res://assets/script/important/load things/room.gd" id="1_xd7xr"]
@@ -7,10 +7,11 @@
 [ext_resource type="Script" uid="uid://q3ywevjscjee" path="res://assets/script/tilemap.gd" id="4_y3icm"]
 [ext_resource type="PackedScene" uid="uid://c20qitdqj1cc1" path="res://assets/scenes/levels/level decoration/parallax_background1_jg.tscn" id="6_8lrlf"]
 [ext_resource type="PackedScene" uid="uid://cuoo8ojghsvmb" path="res://assets/scenes/level objects/ladder.tscn" id="7_w3bqf"]
-[ext_resource type="PackedScene" uid="uid://cwgntvkyl06cp" path="res://assets/scenes/level objects/collectible.tscn" id="9_c3vd1"]
+[ext_resource type="PackedScene" uid="uid://cwgntvkyl06cp" path="res://assets/scenes/level objects/small_collectible.tscn" id="9_c3vd1"]
 [ext_resource type="PackedScene" uid="uid://ceyc1vb3r2v0g" path="res://assets/scenes/level objects/block_small.tscn" id="10_36v51"]
 [ext_resource type="PackedScene" uid="uid://7q52prdlvm3g" path="res://assets/scenes/level objects/metal_block.tscn" id="10_ljuv6"]
 [ext_resource type="PackedScene" uid="uid://bgmoh1mbgjq0g" path="res://assets/scenes/level objects/block_small_collectible.tscn" id="11_ljuv6"]
+[ext_resource type="PackedScene" uid="uid://b6370n1pcjqjb" path="res://assets/scenes/level objects/big_collectible.tscn" id="12_k8v66"]
 
 [node name="room" type="Node"]
 script = ExtResource("1_xd7xr")
@@ -118,3 +119,6 @@ position = Vector2(784, 272)
 
 [node name="block13" parent="Node2D" instance=ExtResource("11_ljuv6")]
 position = Vector2(784, 304)
+
+[node name="big_collectible" parent="." instance=ExtResource("12_k8v66")]
+position = Vector2(-97, -160)

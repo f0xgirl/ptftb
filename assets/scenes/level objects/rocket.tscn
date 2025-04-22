@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwttvu5y2syim"]
+[gd_scene load_steps=4 format=3 uid="uid://bwttvu5y2syim"]
 
 [ext_resource type="Script" uid="uid://dxm55q2ltopp7" path="res://assets/script/level objects/rocket.gd" id="1_gtyr8"]
+[ext_resource type="Resource" uid="uid://bvm4oc3oc6sjt" path="res://resources/player/player_data.tres" id="2_tsrx6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v5uxn"]
 
 [node name="rocket" type="Area2D"]
 collision_mask = 2
 script = ExtResource("1_gtyr8")
+player_data = ExtResource("2_tsrx6")
 state = "rocket_pep"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -7,11 +7,7 @@ var selected_room: int = 0
 @onready var label: Label = %Label
 
 func _ready() -> void:
-	GlobalSignals.emit_signal("move", 653, 450)
-	Audioplayer._play_music_hub()
-	get_parent().call("_player_camera_limit", left, top, right, bottom)
-	_refresh_label(selected_room) #temporary, put selected_room after
-	
+	_goto_hub()
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("up"):
@@ -27,3 +23,24 @@ func _process(_delta: float) -> void:
 
 func _refresh_label(index: int) -> void:
 	label.text =  level_list[index]
+
+func _goto_level_select():
+	GlobalSignals.emit_signal("move", 653, 450)
+	Audioplayer._play_music_hub()
+	get_parent().call("_player_camera_limit", left, top, right, bottom)
+	_refresh_label(selected_room) #temporary, put selected_room after
+
+func _goto_hub():
+	match DataPassthrough.which_hub:
+		1:
+			get_parent().call("room_called", 9)
+			queue_free()
+		2:
+			pass
+		3:
+			pass
+		4:
+			pass
+		5:
+			pass
+	

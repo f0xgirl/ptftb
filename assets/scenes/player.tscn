@@ -434,7 +434,7 @@ position = Vector2(0, -3.5)
 shape = SubResource("RectangleShape2D_5308x")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.8, 1.8)
+zoom = Vector2(2, 2)
 
 [node name="peppino_head" type="CanvasLayer" parent="."]
 
@@ -742,9 +742,10 @@ sprite = NodePath("../../sprite")
 player_data = ExtResource("2_i6cxx")
 player = NodePath("../..")
 
-[node name="rocket_pep" type="Node" parent="State Machine" node_paths=PackedStringArray("player")]
+[node name="rocket_pep" type="Node" parent="State Machine" node_paths=PackedStringArray("player", "sprite")]
 script = ExtResource("48_878e8")
 player = NodePath("../..")
+sprite = NodePath("../../sprite")
 player_data = ExtResource("2_i6cxx")
 
 [node name="player_walkfront" type="Node" parent="State Machine" node_paths=PackedStringArray("sprite", "player")]

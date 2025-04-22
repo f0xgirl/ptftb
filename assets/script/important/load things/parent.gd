@@ -3,6 +3,7 @@ class_name parent
 
 #signals
 signal remove
+signal wait_hub_loaded
 #player singals
 signal player_limit_left(val: int)
 signal player_limit_top(val: int)
@@ -20,8 +21,11 @@ signal player_clear_score
 @export var level_tutorial: Array [PackedScene] = []
 @export var level_pinball: Array [PackedScene] = []
 #constants:
+
 #can be switched out for the hubs when i get to that
 const LEVEL_SELECT = preload("res://assets/scenes/level_select.tscn")
+#hub1:
+const HUB_1 = preload("res://assets/scenes/levels/hubs/hub_1.tscn")
 #test level:
 const TEST_1 = preload("res://assets/scenes/levels/testing/testing_level.tscn")
 #john gutter:
@@ -43,15 +47,21 @@ const TUTORIAL_1 = preload("res://assets/scenes/levels/tutorial/tutorial_1.tscn"
 #pinball:
 
 
-
 #variables:
+var score: int
+@onready var json_save_loader: json_save_loader = $json_save_loader
+
 
 func _ready() -> void:
-	var lvl_select = LEVEL_SELECT.instantiate()
-	add_child(lvl_select)
-	GlobalSignals.emit_signal("move", 653, 450)
-	get_child(0).set_meta("disabled", true)
-	
+	#var lvl_select = HUB_1.instantiate()
+	#add_child(lvl_select)
+	load_hub1(145, 228)
+	#GlobalSignals.emit_signal("move", 145, 228) #145 228: hub1 | 653 450 levelselect
+	#get_child(0).set_meta("disabled", true)
+
+func save_data(level: String) -> void:
+	json_save_loader.call("save_level_data", level, score)
+
 
 func room_called(selected_room: int) -> void:
 	match selected_room:
@@ -75,9 +85,12 @@ func room_called(selected_room: int) -> void:
 			load_tut()
 		8:
 			load_pinball()
+		9:
+			load_levelselect()
 		
 	
 func load_jg() -> void:
+	GlobalSignals.emit_signal("change_state", "player_walkfront", NAN)
 	GlobalSignals.emit_signal("move", -1605, 375)
 	var lvl = JG_1.instantiate()
 	add_child(lvl)
@@ -103,6 +116,7 @@ func load_dungeon() -> void:
 	add_child(lvl)
 
 func load_strong() -> void:
+	GlobalSignals.emit_signal("change_state", "player_walkfront", NAN)
 	GlobalSignals.emit_signal("move", 506, 320)
 	var lvl = STRONGCOLD_1.instantiate()
 	add_child(lvl)
@@ -113,6 +127,7 @@ func load_mid() -> void:
 	add_child(lvl)
 	
 func load_tut() -> void:
+	GlobalSignals.emit_signal("change_state", "player_walkfront", NAN)
 	GlobalSignals.emit_signal("move", -275, -329)
 	var lvl = TUTORIAL_1.instantiate()
 	add_child(lvl)
@@ -121,6 +136,20 @@ func load_pinball() -> void:
 	GlobalSignals.emit_signal("move", 385, 110) #temp
 	var lvl = SPACE_PINBALL.instantiate()
 	add_child(lvl)
+
+func load_hub1(X: int, Y: int) -> void:
+	print(HUB_1.can_instantiate())
+	print("is loading")
+	var lvl = HUB_1.instantiate()
+	add_child(lvl)
+	print("loaded")
+	GlobalSignals.emit_signal("move", X, Y)
+
+func load_levelselect() -> void:
+	var lvl = LEVEL_SELECT.instantiate()
+	add_child(lvl)
+	await lvl.ready
+	GlobalSignals.emit_signal("move", 653, 450)
 
 func load_room_test(id: int, prev_id: int) -> void:
 	GlobalSignals.emit_signal("hide", prev_id)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ca8k22ad5vs46"]
+[gd_scene load_steps=28 format=3 uid="uid://ca8k22ad5vs46"]
 
 [ext_resource type="Script" uid="uid://3qhdcgr4b5td" path="res://assets/script/important/load things/parent.gd" id="1_s3uml"]
 [ext_resource type="PackedScene" uid="uid://bgxat64gb71od" path="res://assets/scenes/levels/testing/testing_level_2.tscn" id="2_6m0av"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://b8ag3vnk6kv0c" path="res://assets/scenes/levels/midescape/midescape_4.tscn" id="23_1ufq4"]
 [ext_resource type="PackedScene" uid="uid://dimis0ypgatg1" path="res://assets/scenes/levels/tutorial/tutorial_1.tscn" id="24_geuiq"]
 [ext_resource type="PackedScene" uid="uid://chbjabm2xyls0" path="res://assets/scenes/levels/tutorial/tutorial_2.tscn" id="25_1ufq4"]
+[ext_resource type="Script" uid="uid://dbghk0sloru5d" path="res://assets/script/important/load things/jsonsaveloading.gd" id="27_1ufq4"]
 
 [node name="Parent" type="Node"]
 script = ExtResource("1_s3uml")
@@ -42,5 +43,9 @@ metadata/_custom_type_script = "uid://3qhdcgr4b5td"
 [node name="player" parent="." instance=ExtResource("17_o564e")]
 z_index = 1
 position = Vector2(-599, 806)
+
+[node name="json_save_loader" type="Node" parent="."]
+script = ExtResource("27_1ufq4")
+metadata/_custom_type_script = "uid://dbghk0sloru5d"
 
 [connection signal="child_entered_tree" from="." to="." method="room_changed"]

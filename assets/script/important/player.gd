@@ -12,6 +12,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 const TOPPIN_TEST = preload("res://assets/scenes/level objects/toppin_test.tscn")
 const LEVEL_SELECT = preload("res://assets/scenes/level_select.tscn")
+const HUB_1 = preload("res://assets/scenes/levels/hubs/hub_1.tscn")
 
 var score: int = 0
 var force_direction: int
@@ -45,9 +46,10 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if Input.is_action_just_pressed("pause"):
-		var lvl = LEVEL_SELECT.instantiate()
+		var lvl = HUB_1.instantiate()
 		get_parent().call("clear_rooms") #clears rooms
-		get_parent().call("disable_player", true) #disables player from moving
+		#get_parent().call("disable_player", true) #disables player from moving
+		GlobalSignals.emit_signal("move",145, 228)
 		get_parent().emit_signal("player_clear_score")
 		DataPassthrough.panic = false
 		Globaltimer.stop()

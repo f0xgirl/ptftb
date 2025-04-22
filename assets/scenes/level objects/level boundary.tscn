@@ -4,7 +4,9 @@
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bfqy1"]
 
-[node name="Area2D" type="Area2D"]
+[node name="level_boundary" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("1_aegd5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

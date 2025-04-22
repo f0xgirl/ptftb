@@ -1,3 +1,4 @@
+@icon("res://assets/sprites/levels/level visuals/roomchangevisual.png")
 extends Area2D
 @export_category("Location")
 ##id of current room

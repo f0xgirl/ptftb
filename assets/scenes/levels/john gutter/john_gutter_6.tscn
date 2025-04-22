@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://cn37hkufe6ajv"]
+[gd_scene load_steps=14 format=4 uid="uid://cn37hkufe6ajv"]
 
 [ext_resource type="Texture2D" uid="uid://bq5evmtt1ubwx" path="res://assets/sprites/normalT_room6.png" id="1_swvpu"]
 [ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://resources/level/tilesets/john_gutter_tileset.tres" id="2_dl1dw"]
@@ -8,7 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://d2q30hyq4cxd2" path="res://assets/scenes/level objects/door.tscn" id="7_4oqgm"]
 [ext_resource type="Script" uid="uid://bvp7b8nd25ruo" path="res://assets/script/important/load things/room.gd" id="7_qecc2"]
 [ext_resource type="PackedScene" uid="uid://c7ogx214cfhin" path="res://assets/scenes/level objects/block_test.tscn" id="8_4b3as"]
-[ext_resource type="PackedScene" uid="uid://cwgntvkyl06cp" path="res://assets/scenes/level objects/collectible.tscn" id="9_nluvn"]
+[ext_resource type="PackedScene" uid="uid://cwgntvkyl06cp" path="res://assets/scenes/level objects/small_collectible.tscn" id="9_nluvn"]
+[ext_resource type="PackedScene" uid="uid://b6370n1pcjqjb" path="res://assets/scenes/level objects/big_collectible.tscn" id="10_7cua1"]
 [ext_resource type="PackedScene" uid="uid://ceyc1vb3r2v0g" path="res://assets/scenes/level objects/block_small.tscn" id="10_cjljx"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_8jxdq"]
@@ -89,6 +90,9 @@ position = Vector2(1471, 129)
 
 [node name="collectible6" parent="." instance=ExtResource("9_nluvn")]
 position = Vector2(1536, 128)
+
+[node name="big_collectible" parent="." instance=ExtResource("10_7cua1")]
+position = Vector2(358, -61)
 
 [node name="blocks" type="Node2D" parent="."]
 

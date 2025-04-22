@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://bvp7b8nd25ruo" path="res://assets/script/important/load things/room.gd" id="8_oqcu4"]
 [ext_resource type="PackedScene" uid="uid://7q52prdlvm3g" path="res://assets/scenes/level objects/metal_block.tscn" id="9_87ccq"]
 [ext_resource type="PackedScene" uid="uid://gu657xt52lr7" path="res://assets/scenes/level objects/panic_block.tscn" id="9_ua5nr"]
-[ext_resource type="PackedScene" uid="uid://cwgntvkyl06cp" path="res://assets/scenes/level objects/collectible.tscn" id="10_6f28j"]
+[ext_resource type="PackedScene" uid="uid://cwgntvkyl06cp" path="res://assets/scenes/level objects/small_collectible.tscn" id="10_6f28j"]
 
 [node name="room" type="Node"]
 script = ExtResource("8_oqcu4")
@@ -56,6 +56,9 @@ position = Vector2(2640, 16)
 
 [node name="gate" parent="." instance=ExtResource("6_527j7")]
 position = Vector2(-272, -431)
+level_name = "tutorial"
+X = 344
+Y = 236
 
 [node name="to room_2" parent="." instance=ExtResource("7_su4aj")]
 position = Vector2(46, -802)

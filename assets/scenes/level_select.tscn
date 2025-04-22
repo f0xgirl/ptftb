@@ -11,7 +11,7 @@ font_size = 64
 
 [node name="level_select" type="Node"]
 script = ExtResource("9_l0hxu")
-level_list = Array[String](["test", "john gutter", "pizzascape", "ruin", "dungeon", "strongcold", "mid escape", "tutorial", "pinball"])
+level_list = Array[String](["test", "john gutter", "pizzascape", "ruin", "dungeon", "strongcold", "mid escape", "tutorial", "pinball", "hub1"])
 room_name = &"level_select"
 metadata/_custom_type_script = "uid://bvp7b8nd25ruo"
 
@@ -39,6 +39,15 @@ grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control"]
 layout_mode = 0
 offset_right = 40.0
@@ -59,11 +68,13 @@ text = "ASDFAS"
 label_settings = SubResource("LabelSettings_fhmxf")
 
 [node name="Logo" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(695, 669)
 scale = Vector2(0.238411, 0.238411)
 texture = ExtResource("2_j81lp")
 
 [node name="temp" type="Label" parent="."]
+visible = false
 offset_left = 595.0
 offset_top = 463.0
 offset_right = 733.0

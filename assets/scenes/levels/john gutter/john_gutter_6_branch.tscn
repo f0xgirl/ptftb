@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://bvp7b8nd25ruo" path="res://assets/script/important/load things/room.gd" id="6_2lyci"]
 [ext_resource type="PackedScene" uid="uid://c20qitdqj1cc1" path="res://assets/scenes/levels/level decoration/parallax_background1_jg.tscn" id="6_tdslv"]
 [ext_resource type="TileSet" uid="uid://d4fo3wle3axih" path="res://resources/level/blocks.tres" id="7_0j8uy"]
-[ext_resource type="PackedScene" uid="uid://cwgntvkyl06cp" path="res://assets/scenes/level objects/collectible.tscn" id="8_0ke67"]
+[ext_resource type="PackedScene" uid="uid://cwgntvkyl06cp" path="res://assets/scenes/level objects/small_collectible.tscn" id="8_0ke67"]
 [ext_resource type="PackedScene" uid="uid://iesqe0ibgymu" path="res://assets/scenes/level objects/block_big.tscn" id="9_esxh6"]
 [ext_resource type="PackedScene" uid="uid://ceyc1vb3r2v0g" path="res://assets/scenes/level objects/block_small.tscn" id="10_oi0d8"]
 

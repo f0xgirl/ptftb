@@ -1,7 +1,6 @@
-extends Node
+extends room
 
-@export var level_data: level_data
 
 func _ready() -> void:
 	Audioplayer._play_music_hub()
-	
+	emit_signal("ready")

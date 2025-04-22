@@ -72,3 +72,6 @@ func _play_sfx_switchingrooms():
 
 func _play_sfx_toppinget_small():
 	_play_sfx(SFX_ESCAPESPAWN) #temp
+
+func _play_sfx_toppinget_big():
+	_play_sfx(SFX_ESCAPESPAWN)
