@@ -14,10 +14,10 @@ func save_level_data(level_name: String, score: int) -> void:
 	saved_data = JSON.parse_string(temp_json)
 	
 	
-	if not saved_data["level"] == level_name:
-		pass
-	saved_data["score"] = score
-	saved_data["level"] = level_name
+	#if not saved_data["level"] == level_name:
+	#	pass
+	#saved_data["score"] = score
+	#saved_data["level"] = level_name
 	
 	var json = JSON.stringify(saved_data)
 	

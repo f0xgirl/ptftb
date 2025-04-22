@@ -47,11 +47,15 @@ X = 44
 Y = -733
 
 [node name="panicblock" parent="." instance=ExtResource("7_7kky0")]
-position = Vector2(-208, 128)
-scale = Vector2(1, 5.48)
+position = Vector2(-208, 127)
+scale = Vector2(1, 3.31579)
 reversed = true
 
 [node name="blocks" type="Node2D" parent="."]
 
 [node name="block" parent="blocks" instance=ExtResource("6_spaaf")]
 position = Vector2(854, 142)
+
+[node name="panicblock2" parent="." instance=ExtResource("7_7kky0")]
+position = Vector2(193.5, 211)
+scale = Vector2(3.54348, 1)

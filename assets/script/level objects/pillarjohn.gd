@@ -9,7 +9,7 @@ func _process(delta: float) -> void:
 		DataPassthrough.panic = true
 		Audioplayer._play_music_pizzatime()
 		Audioplayer._play_sfx_pillar_impact()
-		get_parent().emit_signal("panic")
+		get_parent().get_parent().emit_signal("panic")
 		Globaltimer.start(panic_time)
 
 func _hidden():

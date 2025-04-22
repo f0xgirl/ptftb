@@ -69,8 +69,8 @@ X = 191
 Y = 315
 
 [node name="panicblock" parent="." instance=ExtResource("9_ua5nr")]
-position = Vector2(-49, -397)
-scale = Vector2(1, 5.56)
+position = Vector2(-49, -401)
+scale = Vector2(1, 3.31579)
 
 [node name="collectible" parent="." instance=ExtResource("10_6f28j")]
 position = Vector2(1201, -335)

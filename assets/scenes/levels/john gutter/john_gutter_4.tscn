@@ -72,13 +72,9 @@ tile_map_data = PackedByteArray("AAC5/xYAAAAAAAAAAQC7/xYAAAAAAAAAAQC9/xYAAAAAAAA
 enabled = false
 tile_set = ExtResource("8_g33dj")
 
-[node name="panicblock" parent="." instance=ExtResource("9_pn3vn")]
-position = Vector2(-94, 404)
-scale = Vector2(5.21739, 1)
-
 [node name="panicblock2" parent="." instance=ExtResource("9_pn3vn")]
-position = Vector2(-94, 404)
-scale = Vector2(5.21739, 1)
+position = Vector2(-80, 404)
+scale = Vector2(3.47826, 1)
 
 [node name="collectible" parent="." instance=ExtResource("11_gxt15")]
 position = Vector2(-832, 65)

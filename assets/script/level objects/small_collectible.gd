@@ -14,7 +14,6 @@ const SHROOMCOLLECT = preload("res://assets/sprites/spr_shroomcollect_0.png")
 func _process(delta: float) -> void:
 	sprite.offset.y = 1
 	await timer.timeout
-	print("i work")
 	sprite.offset.y = -1
 	await timer.timeout
 
