@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://57g3rranl1yh"]
+[gd_scene load_steps=9 format=4 uid="uid://57g3rranl1yh"]
 
 [ext_resource type="Script" uid="uid://cevmxegd0htdb" path="res://assets/script/level specific/hub_1.gd" id="1_ilkdo"]
 [ext_resource type="TileSet" uid="uid://t56k02vh81ye" path="res://resources/level/tilesets/placeholder_tileset.tres" id="3_conok"]
@@ -6,16 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://drg1wcxxcyjdm" path="res://assets/scenes/level objects/gate_portal.tscn" id="4_2qa0c"]
 [ext_resource type="Texture2D" uid="uid://cmnqe80xe54d0" path="res://assets/sprites/spr_enemyblockdead_0.png" id="5_1diuj"]
 [ext_resource type="PackedScene" uid="uid://c20qitdqj1cc1" path="res://assets/scenes/levels/level decoration/parallax_background1_jg.tscn" id="5_t36nq"]
-[ext_resource type="Script" uid="uid://dq7pcmne45ap8" path="res://assets/script/level objects/hub_level_progress_temp.gd" id="7_nm77o"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kqsn1"]
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vy8jn"]
 size = Vector2(38, 276)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5dhdk"]
-size = Vector2(46, 37)
 
 [node name="hub1" type="Node"]
 script = ExtResource("1_ilkdo")
@@ -31,7 +27,6 @@ script = ExtResource("3_vy8jn")
 position = Vector2(345, 145)
 enterexit = true
 selected_room = 7
-level_name = "tutorial"
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("5_t36nq")]
 
@@ -39,7 +34,6 @@ level_name = "tutorial"
 position = Vector2(726, 145)
 enterexit = true
 selected_room = 1
-level_name = "john gutter"
 
 [node name="strongcold placeholder" parent="." instance=ExtResource("4_2qa0c")]
 position = Vector2(603, -336)
@@ -75,23 +69,4 @@ shape = SubResource("RectangleShape2D_vy8jn")
 [node name="SprEnemyblockdead0" type="Sprite2D" parent="temp/CollisionShape2D"]
 position = Vector2(-2, -0.999996)
 scale = Vector2(1, 7.57895)
-texture = ExtResource("5_1diuj")
-
-[node name="Label" type="Label" parent="temp/CollisionShape2D"]
-offset_left = -345.0
-offset_top = 433.0
-offset_right = -23.0
-offset_bottom = 456.0
-text = "get max score in all levels to destroy me!!!"
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(1182, 63)
-scale = Vector2(1, 8.03017)
-script = ExtResource("7_nm77o")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-13, 8.5)
-shape = SubResource("RectangleShape2D_5dhdk")
-
-[node name="SprEnemyblockdead0" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
 texture = ExtResource("5_1diuj")

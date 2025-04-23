@@ -57,6 +57,7 @@ position = Vector2(2640, 16)
 
 [node name="gate" parent="." instance=ExtResource("6_527j7")]
 position = Vector2(-272, -431)
+level_name = "tutorial"
 X = 344
 Y = 236
 

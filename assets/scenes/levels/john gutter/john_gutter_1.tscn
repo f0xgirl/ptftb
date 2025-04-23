@@ -20,7 +20,7 @@ level_name = "john gutter"
 left = -2208
 top = -528
 right = 2880
-bottom = 560
+bottom = 525
 metadata/_custom_type_script = "uid://bvp7b8nd25ruo"
 
 [node name="NormalTRoom1" type="Sprite2D" parent="."]
@@ -38,6 +38,7 @@ script = ExtResource("4_ftpy1")
 
 [node name="gate portal" parent="." instance=ExtResource("6_is8gr")]
 position = Vector2(-1600, 272)
+level_name = "john_gutter"
 X = 724
 Y = 226
 

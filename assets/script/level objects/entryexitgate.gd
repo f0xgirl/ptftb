@@ -11,6 +11,7 @@ const HUB_1 = preload("res://assets/scenes/levels/hubs/hub_1.tscn")
 @export_category("hub")
 @export var enterexit: bool
 @export var selected_room: int
+@export var level_name: String
 @export_range(1, 6) var selected_hub: int = 1
 @export_category("Player Postion")
 @export var X: int
@@ -25,6 +26,9 @@ func _ready() -> void:
 	get_parent().connect("visible", _visible)
 	get_parent().get_parent().connect("wait_hub_loaded", _is_loaded)
 	GlobalSignals.connect("send_score", _get_score)
+	score_text.text = "score: " + var_to_str(Jsonsaveloading.load_level_data(level_name))
+	if enterexit == false:
+		score_text.hide()
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("up") and enter == true and DataPassthrough.panic == true:
@@ -67,7 +71,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		enter = true	
 	if enterexit == true:
 		pass
-		#score.text = "score: " + var_to_str(get_parent().get_parent().find_child("json_save_loader"))
+		
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
