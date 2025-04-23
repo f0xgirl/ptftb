@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://vjx6pxpgme0p"
+path="res://.godot/imported/sfx_collecttoppin.wav-d8bedefa63557a88050c320a345602e3.sample"
+
+[deps]
+
+source_file="res://AUDIO/sound effects/sfx_collecttoppin.wav"
+dest_files=["res://.godot/imported/sfx_collecttoppin.wav-d8bedefa63557a88050c320a345602e3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

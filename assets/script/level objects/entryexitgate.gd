@@ -1,21 +1,22 @@
 @icon("res://assets/sprites/spr_exitgate_0.png")
 extends Sprite2D
+class_name gate_portal
 
 const LEVEL_SELECT = preload("res://assets/scenes/level_select.tscn")
 const HUB_1 = preload("res://assets/scenes/levels/hubs/hub_1.tscn")
 
 @onready var animation_tree: AnimationTree = $AnimationTree
-@onready var score: Label = $score
+@onready var score_text: Label = $score
 
 @export_category("hub")
 @export var enterexit: bool
-@export var level_name: String
 @export var selected_room: int
 @export_range(1, 6) var selected_hub: int = 1
 @export_category("Player Postion")
 @export var X: int
 @export var Y: int
 
+var score: int
 var enter = false
 var hub_is_loaded: bool = false
 
@@ -23,10 +24,11 @@ func _ready() -> void:
 	get_parent().connect("hidden", _hidden)
 	get_parent().connect("visible", _visible)
 	get_parent().get_parent().connect("wait_hub_loaded", _is_loaded)
+	GlobalSignals.connect("send_score", _get_score)
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("up") and enter == true and DataPassthrough.panic == true:
-		get_parent().get_parent().call("save_data", level_name)
+		get_parent().get_parent().find_child("player").call("save_data")
 		get_parent().get_parent().call("clear_rooms")
 		get_parent().get_parent().emit_signal("player_clear_score")
 		DataPassthrough.panic = false
@@ -43,7 +45,6 @@ func _process(_delta: float) -> void:
 				pass
 			6:
 				get_parent().get_parent().call("load_levelselect")
-		
 		#get_parent().get_parent().add_child(lvl_select) #adds level select to parent
 		#get_parent().get_parent().call("disable_player", true) #disables player from moving
 		Globaltimer.stop()
@@ -62,7 +63,6 @@ func _process(_delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print("asdf")
 	if body.is_in_group("player"):
 		enter = true	
 	if enterexit == true:
@@ -84,3 +84,9 @@ func _visible() -> void:
 
 func _is_loaded() -> void:
 	hub_is_loaded = true
+
+func _get_score(send: int) -> void:
+	score = send
+
+func _set_score_test(score): 
+	score_text = score

@@ -5,6 +5,7 @@ signal hide(room_id: int)
 signal show(room_id: int)
 signal remove(room_id: int)
 signal room_id_send
+signal send_score(score: int)
 
 #for player only
 signal move(x: int, y: int)

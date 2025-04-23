@@ -4,6 +4,7 @@ class_name parent
 #signals
 signal remove
 signal wait_hub_loaded
+signal send_level_name(name: String)
 #player singals
 signal player_limit_left(val: int)
 signal player_limit_top(val: int)
@@ -49,7 +50,6 @@ const TUTORIAL_1 = preload("res://assets/scenes/levels/tutorial/tutorial_1.tscn"
 
 #variables:
 var score: int
-@onready var json_save_loader: json_save_loader = $json_save_loader
 
 
 func _ready() -> void:
@@ -59,8 +59,8 @@ func _ready() -> void:
 	#GlobalSignals.emit_signal("move", 145, 228) #145 228: hub1 | 653 450 levelselect
 	#get_child(0).set_meta("disabled", true)
 
-func save_data(level: String) -> void:
-	json_save_loader.call("save_level_data", level, score)
+func save_score(change: int) -> void:
+	score = change
 
 
 func room_called(selected_room: int) -> void:
@@ -236,6 +236,7 @@ func check_if_loaded(id: int) -> bool:
 	return thingy
 
 func clear_rooms() -> void:
+	GlobalSignals.emit_signal("send_score", score)
 	for child in get_children():
 		if child is room:
 			child.queue_free()

@@ -13,6 +13,10 @@ const SFX_MACH_2 = preload("res://AUDIO/sfx_mach2.wav")
 const SFX_MACH_3 = preload("res://AUDIO/sfx_mach3.wav")
 const SFX_MACH_4 = preload("res://AUDIO/sfx_mach4.wav")
 const SFX_DOOR = preload("res://AUDIO/sfx_door.wav")
+const SFX_COLLECT = preload("res://AUDIO/sound effects/sfx_collect.wav")
+const SFX_COLLECTGIANTPIZZA = preload("res://AUDIO/sound effects/sfx_collectgiantpizza.wav")
+const SFX_COLLECTPIZZA = preload("res://AUDIO/sound effects/sfx_collectpizza.wav")
+const SFX_COLLECTTOPPIN = preload("res://AUDIO/sound effects/sfx_collecttoppin.wav")
 const SFX_ESCAPESPAWN = preload("res://AUDIO/sfx_escapespawn.wav")
 
 func _play_music(music: AudioStream, volume = 0.0):
@@ -71,7 +75,7 @@ func _play_sfx_switchingrooms():
 	_play_sfx(SFX_DOOR)
 
 func _play_sfx_toppinget_small():
-	_play_sfx(SFX_ESCAPESPAWN) #temp
+	_play_sfx(SFX_COLLECT) #temp
 
 func _play_sfx_toppinget_big():
-	_play_sfx(SFX_ESCAPESPAWN)
+	_play_sfx(SFX_COLLECTPIZZA)

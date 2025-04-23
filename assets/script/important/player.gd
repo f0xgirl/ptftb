@@ -15,6 +15,7 @@ const LEVEL_SELECT = preload("res://assets/scenes/level_select.tscn")
 const HUB_1 = preload("res://assets/scenes/levels/hubs/hub_1.tscn")
 
 var score: int = 0
+var level_name: String
 var force_direction: int
 var state: State
 var state_override: bool = false
@@ -28,6 +29,7 @@ func _ready() -> void:
 	GlobalSignals.connect("move", set_pos)
 	GlobalSignals.connect("add_score", add_points)
 	GlobalSignals.connect("change_state", change_state)
+	get_parent().connect("send_level_name", get_level_name)
 	get_parent().connect("player_limit_left", set_limit_left)
 	get_parent().connect("player_limit_top", set_limit_top)
 	get_parent().connect("player_limit_right", set_limit_right)
@@ -110,4 +112,9 @@ func change_state(change: String, _f_dir: int) -> void:
 	state_override_change = change
 	force_direction = _f_dir
 	state_override = true
-	
+
+func save_data():
+	Jsonsaveloading.save_level_data(level_name, score)
+
+func get_level_name(name: String) -> void:
+	level_name = name

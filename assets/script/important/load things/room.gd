@@ -11,6 +11,8 @@ signal clear_score
 @export_group("room data")
 @export var room_name: StringName
 @export var room_id: int
+## only needs to be in first room
+@export var level_name: String
 @export_group("camera limits")
 @export var left: int = -10000000
 @export var top: int = -10000000

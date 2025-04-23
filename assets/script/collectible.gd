@@ -14,7 +14,7 @@ func _ready() -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		GlobalSignals.emit_signal("add_score", worth)
-		Audioplayer._play_sfx_toppinget_small()
+		_play_sfx_local()
 		queue_free()
 
 func _hidden() -> void:
@@ -25,4 +25,7 @@ func _visible() -> void:
 	pass
 
 func randselect() -> void:
+	pass
+
+func _play_sfx_local() -> void:
 	pass

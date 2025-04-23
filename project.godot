@@ -22,6 +22,7 @@ DataPassthrough="*res://assets/script/autoloads/data_passthrough.gd"
 Globaltimer="*res://assets/script/autoloads/globaltimer.gd"
 GlobalSignals="*res://assets/script/autoloads/GlobalSignals.gd"
 Transition="*res://assets/scenes/transition.tscn"
+Jsonsaveloading="*res://assets/script/autoloads/jsonsaveloading.gd"
 
 [editor_plugins]
 

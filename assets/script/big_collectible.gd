@@ -18,3 +18,6 @@ func _process(delta: float) -> void:
 func _visible() -> void:
 	set_deferred("monitoring", true)
 	show()
+
+func _play_sfx_local() -> void:
+	Audioplayer._play_sfx_toppinget_big()

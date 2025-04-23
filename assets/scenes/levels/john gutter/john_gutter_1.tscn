@@ -16,6 +16,7 @@
 [node name="room" type="Node"]
 script = ExtResource("1_uyxqf")
 room_name = &"john_gutter_1"
+level_name = "john gutter"
 left = -2208
 top = -528
 right = 2880
@@ -37,7 +38,6 @@ script = ExtResource("4_ftpy1")
 
 [node name="gate portal" parent="." instance=ExtResource("6_is8gr")]
 position = Vector2(-1600, 272)
-level_name = "john gutter"
 X = 724
 Y = 226
 
