@@ -23,6 +23,10 @@ func _process(delta: float) -> void:
 		GlobalSignals.emit_signal("move", position.x, plr.position.y )
 		GlobalSignals.emit_signal("change_state","player_on_ladder", NAN)
 		print(var_to_str(entered) + " " + var_to_str(name))
+	elif Input.is_action_just_pressed("down") and entered == true:
+		GlobalSignals.emit_signal("move", position.x, plr.position.y )
+		GlobalSignals.emit_signal("change_state","player_on_ladder", NAN)
+		print(var_to_str(entered) + " " + var_to_str(name))
 	if entered == false and DataPassthrough.player_state == "player_on_ladder":
 		for index in get_overlapping_bodies():
 			if index == plr:

@@ -73,8 +73,8 @@ enabled = false
 tile_set = ExtResource("8_g33dj")
 
 [node name="panicblock2" parent="." instance=ExtResource("9_pn3vn")]
-position = Vector2(-80, 404)
-scale = Vector2(3.47826, 1)
+position = Vector2(-96, 403.5)
+scale = Vector2(2.78261, 1.02632)
 
 [node name="collectible" parent="." instance=ExtResource("11_gxt15")]
 position = Vector2(-832, 65)
@@ -160,5 +160,5 @@ position = Vector2(304, 336)
 position = Vector2(304, 368)
 
 [node name="ladder" parent="." instance=ExtResource("13_ms0jf")]
-position = Vector2(1014, 196)
-scale = Vector2(1, 3.60467)
+position = Vector2(1014, 188)
+scale = Vector2(1, 4.33665)

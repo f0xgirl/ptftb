@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://chbjabm2xyls0"]
+[gd_scene load_steps=9 format=4 uid="uid://chbjabm2xyls0"]
 
 [ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://resources/level/tilesets/john_gutter_tileset.tres" id="1_i00w0"]
 [ext_resource type="Script" uid="uid://bvp7b8nd25ruo" path="res://assets/script/important/load things/room.gd" id="1_jovqp"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://q3ywevjscjee" path="res://assets/script/tilemap.gd" id="3_5cklo"]
 [ext_resource type="PackedScene" uid="uid://c8aqg4asjyefk" path="res://assets/scenes/level objects/pillarjohn.tscn" id="6_spaaf"]
 [ext_resource type="PackedScene" uid="uid://gu657xt52lr7" path="res://assets/scenes/level objects/panic_block.tscn" id="7_7kky0"]
+[ext_resource type="PackedScene" uid="uid://b6370n1pcjqjb" path="res://assets/scenes/level objects/big_collectible.tscn" id="7_48rd8"]
+[ext_resource type="PackedScene" uid="uid://cwgntvkyl06cp" path="res://assets/scenes/level objects/small_collectible.tscn" id="8_ce0oa"]
 
 [node name="room" type="Node"]
 script = ExtResource("1_jovqp")
@@ -55,7 +57,26 @@ reversed = true
 
 [node name="block" parent="blocks" instance=ExtResource("6_spaaf")]
 position = Vector2(854, 142)
+panic_time = 1.0
 
 [node name="panicblock2" parent="." instance=ExtResource("7_7kky0")]
 position = Vector2(193.5, 211)
 scale = Vector2(3.54348, 1)
+
+[node name="big_collectible" parent="." instance=ExtResource("7_48rd8")]
+position = Vector2(-282, 139)
+
+[node name="small_collectible" parent="." instance=ExtResource("8_ce0oa")]
+position = Vector2(451, 149)
+
+[node name="small_collectible2" parent="." instance=ExtResource("8_ce0oa")]
+position = Vector2(521, 149)
+
+[node name="small_collectible3" parent="." instance=ExtResource("8_ce0oa")]
+position = Vector2(585, 150)
+
+[node name="small_collectible4" parent="." instance=ExtResource("8_ce0oa")]
+position = Vector2(647, 150)
+
+[node name="small_collectible5" parent="." instance=ExtResource("8_ce0oa")]
+position = Vector2(715, 149)

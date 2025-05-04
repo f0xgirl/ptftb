@@ -22,8 +22,6 @@ func Pyhsics_Update(_delta: float):
 			Transitioned.emit(self,"player_idle")
 		else:
 			Transitioned.emit(self,"player_idle_crouched")
-	if player.is_on_wall():
-		Transitioned.emit(self,"player_bumped")
 
 func above_head_empty() -> bool:
 	var result = !crouch_raycast_1.is_colliding() && !crouch_raycast_2.is_colliding()

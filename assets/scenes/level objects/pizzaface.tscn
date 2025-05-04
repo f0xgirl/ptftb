@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://ih7p54k81wwu"]
+
+[ext_resource type="Script" uid="uid://bk4tgux06g1hv" path="res://assets/script/pizzaface.gd" id="1_okssr"]
+[ext_resource type="Texture2D" uid="uid://dili8jvl7hs5g" path="res://icon.svg" id="2_1q6x7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_okssr"]
+
+[node name="pizzaface" type="Node2D"]
+script = ExtResource("1_okssr")
+speed = 250
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_1q6x7")
+
+[node name="spawn" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 2.0
+one_shot = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_okssr")
+
+[connection signal="timeout" from="spawn" to="." method="_on_spawn_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

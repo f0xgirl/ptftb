@@ -30,6 +30,7 @@ func Update(_delta: float):
 			emit_signal("anim_offset",2,-5)
 	if not Input.is_action_pressed("down"):
 		if above_head_empty():
+			player.position.y -= 15
 			Transitioned.emit(self,"player_idle")
 	if Input.is_action_pressed("left"):
 		Transitioned.emit(self,"player_crawling")

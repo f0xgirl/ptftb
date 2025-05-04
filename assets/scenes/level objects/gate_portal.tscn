@@ -99,6 +99,7 @@ position = Vector2(-2, 88)
 shape = SubResource("RectangleShape2D_sjjwu")
 
 [node name="score" type="Label" parent="."]
+visible = false
 offset_left = -24.0
 offset_top = -85.0
 offset_right = 23.0

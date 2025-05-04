@@ -6,6 +6,7 @@ signal show(room_id: int)
 signal remove(room_id: int)
 signal room_id_send
 signal send_score(score: int)
+signal timesup
 
 #for player only
 signal move(x: int, y: int)

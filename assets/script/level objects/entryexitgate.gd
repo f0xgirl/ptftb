@@ -25,8 +25,8 @@ func _ready() -> void:
 	get_parent().connect("hidden", _hidden)
 	get_parent().connect("visible", _visible)
 	get_parent().get_parent().connect("wait_hub_loaded", _is_loaded)
-	GlobalSignals.connect("send_score", _get_score)
-	score_text.text = "score: " + var_to_str(Jsonsaveloading.load_level_data(level_name))
+	GlobalSignals.connect("send_score", _get_score) 
+	score_text.text = "score:\n " + var_to_str(Jsonsaveloading.load_level_data(level_name))
 	if enterexit == false:
 		score_text.hide()
 
@@ -49,6 +49,7 @@ func _process(_delta: float) -> void:
 				pass
 			6:
 				get_parent().get_parent().call("load_levelselect")
+		get_parent().get_parent().emit_signal("kill_pizzaface")
 		#get_parent().get_parent().add_child(lvl_select) #adds level select to parent
 		#get_parent().get_parent().call("disable_player", true) #disables player from moving
 		Globaltimer.stop()
@@ -70,12 +71,14 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		enter = true	
 	if enterexit == true:
-		pass
+		score_text.show()
 		
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		enter = false
+	if enterexit == true:
+		score_text.hide()
 
 func _hidden() -> void:
 	hide()

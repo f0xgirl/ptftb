@@ -2,7 +2,7 @@
 extends Sprite2D
 class_name panic_block
 
-## reverses the wether it should show or not
+##reverses the wether it should show or not
 @export var reversed: bool = false
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var staticbod: StaticBody2D = $StaticBody2D

@@ -18,12 +18,10 @@ func Enter():
 	mach_1.play()
 	#Audioplayer._play_sfx_mach1()
 	player.velocity.x = 0
-
 	DataPassthrough.player_state = "player_mach1"
 
 func Update(_delta: float):
 	direction = Input.get_axis("left","right")
-	
 	emit_signal("anim_offset",2,-5)
 	if weirdmachjump == true:
 		if player.velocity.y < 0 and not player.is_on_floor():
@@ -34,14 +32,18 @@ func Update(_delta: float):
 		weirdmachjump = false
 		sprite.play("mach1")
 		mach_1.play()
+		if not Input.is_action_pressed("action2"):
+			await player.is_on_floor()
+			Transitioned.emit(self,"player_idle")
 		player.velocity.x = 0
 		
 	if Input.is_action_pressed("action2") and weirdmachjump == false:
 		player.velocity.x += player_data.player_direction * player_data.mach1_speed
 	if till_mach2 == 0:
 		Transitioned.emit(self,"player_mach2")
+	
 	if Input.is_action_just_released("action2"):
-		Transitioned.emit(self,"player_slide")
+		Transitioned.emit(self,"player_idle")
 	if Input.is_action_just_pressed("action1") and player.is_on_floor():
 		weirdmachjump = true
 		player.velocity.x = 200 * player_data.player_direction

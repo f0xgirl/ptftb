@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://t67bm8s8a2eq"]
+[gd_scene load_steps=7 format=4 uid="uid://t67bm8s8a2eq"]
 
 [ext_resource type="Script" uid="uid://bvp7b8nd25ruo" path="res://assets/script/important/load things/room.gd" id="1_v50ih"]
 [ext_resource type="Script" uid="uid://q3ywevjscjee" path="res://assets/script/tilemap.gd" id="3_18i3a"]
 [ext_resource type="TileSet" uid="uid://t56k02vh81ye" path="res://resources/level/tilesets/placeholder_tileset.tres" id="3_vko48"]
 [ext_resource type="PackedScene" uid="uid://bplsasd8hafjp" path="res://assets/scenes/level objects/olive_grav.tscn" id="4_1bog7"]
+[ext_resource type="PackedScene" uid="uid://drg1wcxxcyjdm" path="res://assets/scenes/level objects/gate_portal.tscn" id="6_v50ih"]
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/level objects/room_changer.tscn" id="6_wqrj4"]
 
 [node name="room" type="Node"]
@@ -28,3 +29,9 @@ position = Vector2(-783, -103)
 room_id = 2
 function_call = "load_room_mid"
 next_room_id = 1
+
+[node name="gate" parent="." instance=ExtResource("6_v50ih")]
+position = Vector2(1039, -192)
+level_name = "mid"
+X = 234
+Y = 34

@@ -48,20 +48,20 @@ position = Vector2(1498, -139)
 
 [node name="block" parent="blocks" instance=ExtResource("2_8borr")]
 position = Vector2(1990, -424)
-panic_time = 240.0
+panic_time = 90.0
 
 [node name="ladder" parent="." instance=ExtResource("4_6wxuq")]
-position = Vector2(2048, 52)
-scale = Vector2(1, 5.52)
+position = Vector2(2049, 46)
+scale = Vector2(1, 5.8)
 
 [node name="ladder2" parent="." instance=ExtResource("4_6wxuq")]
 position = Vector2(1186, -206)
-scale = Vector2(1, 9)
+scale = Vector2(1, 10)
 
 [node name="panicblock" parent="." instance=ExtResource("8_3jh2g")]
-position = Vector2(1552.5, -348)
+position = Vector2(1552, -349)
 scale = Vector2(2.80435, 1)
 
 [node name="panicblock2" parent="." instance=ExtResource("8_3jh2g")]
-position = Vector2(1472, -30)
-scale = Vector2(3.47826, 1)
+position = Vector2(1472, -32.5)
+scale = Vector2(3.47826, 0.815789)

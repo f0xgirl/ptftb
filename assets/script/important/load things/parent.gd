@@ -5,6 +5,7 @@ class_name parent
 signal remove
 signal wait_hub_loaded
 signal send_level_name(name: String)
+signal kill_pizzaface
 #player singals
 signal player_limit_left(val: int)
 signal player_limit_top(val: int)
@@ -22,6 +23,7 @@ signal player_clear_score
 @export var level_tutorial: Array [PackedScene] = []
 @export var level_pinball: Array [PackedScene] = []
 #constants:
+const PIZZAFACE = preload("res://assets/scenes/level objects/pizzaface.tscn")
 
 #can be switched out for the hubs when i get to that
 const LEVEL_SELECT = preload("res://assets/scenes/level_select.tscn")
@@ -53,6 +55,8 @@ var score: int
 
 
 func _ready() -> void:
+	GlobalSignals.connect("timesup",pizzaface_spawn)
+	kill_pizzaface.connect(pizzaface_despawn)
 	#var lvl_select = HUB_1.instantiate()
 	#add_child(lvl_select)
 	load_hub1(145, 228)
@@ -116,16 +120,17 @@ func load_dungeon() -> void:
 	add_child(lvl)
 
 func load_strong() -> void:
-	GlobalSignals.emit_signal("change_state", "player_walkfront", NAN)
+	GlobalSignals.emit_signal("change_state", "player_walkfront", 0)
 	GlobalSignals.emit_signal("move", 506, 320)
 	var lvl = STRONGCOLD_1.instantiate()
 	add_child(lvl)
 
 func load_mid() -> void:
-	GlobalSignals.emit_signal("move", 762, -208)
 	var lvl = MIDESCAPE_1.instantiate()
 	add_child(lvl)
-	
+	await  lvl.ready
+	GlobalSignals.emit_signal("move", 762, -208)
+
 func load_tut() -> void:
 	GlobalSignals.emit_signal("change_state", "player_walkfront", NAN)
 	GlobalSignals.emit_signal("move", -275, -329)
@@ -247,3 +252,12 @@ func _player_camera_limit(left: int, top: int, right: int, bottom: int) -> void:
 	player_limit_top.emit(top)
 	player_limit_right.emit(right)
 	player_limit_bottom.emit(bottom)
+
+func pizzaface_spawn() -> void:
+	var pizza = PIZZAFACE.instantiate()
+	add_child(pizza)
+
+func pizzaface_despawn() -> void:
+	for child in get_children():
+		if child.name.begins_with("pizzaface"):
+			child.queue_free()

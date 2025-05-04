@@ -58,6 +58,8 @@ func _physics_process(delta: float) -> void:
 		DataPassthrough.player_pos_x = 0
 		DataPassthrough.player_pos_y = 0
 		get_parent().add_child(lvl)
+		#await lvl.ready
+		#get_parent().call()
 
 func set_limit_left(val: int) -> void:
 	camera.limit_left = val
@@ -99,9 +101,6 @@ func player_enabled() -> void:
 func player_disabled() -> void:
 	hide()
 
-func fuck() -> void:
-	print("fuck")
-
 func _get_pos_x() -> int:
 	return position.x
 
@@ -114,7 +113,10 @@ func change_state(change: String, _f_dir: int) -> void:
 	state_override = true
 
 func save_data():
-	Jsonsaveloading.save_level_data(level_name, score)
+	var saved_score = Jsonsaveloading.load_level_data(level_name)
+	if score > saved_score:
+		Jsonsaveloading.save_level_data(level_name, score)
+	
 
 func get_level_name(name: String) -> void:
 	level_name = name

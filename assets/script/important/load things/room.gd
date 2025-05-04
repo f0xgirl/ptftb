@@ -11,7 +11,7 @@ signal clear_score
 @export_group("room data")
 @export var room_name: StringName
 @export var room_id: int
-## only needs to be in first room
+##only needs to be in first room
 @export var level_name: String
 @export_group("camera limits")
 @export var left: int = -10000000
@@ -46,17 +46,5 @@ func show_room(selected_id: int) -> void:
 		get_parent().call("_player_camera_limit", left, top, right, bottom)
 		emit_signal("visible")
 
-
-func _tree_entered() -> void:
-	print("what the?")
-
 func get_id() -> void:
 	emit_signal("send", room_id)
-
-#func _hidden(arg: Node):
-#	arg.hide()
-#	if arg.get_property_list().has("monitoring"):
-#		arg.set_deferred("monitoring", false)
-#	elif arg.get_property_list().has("enabled"):
-#		arg.enabled = false
-	

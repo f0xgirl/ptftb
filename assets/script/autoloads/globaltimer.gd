@@ -1,16 +1,13 @@
 extends Timer
 
-var time: float = 1
+var time: float = 100
 
 func _ready() -> void:
-	timeout.connect(mainmenu)
+	timeout.connect(pizzaface_spawn)
 
 func _process(_delta: float) -> void:
 	time = wait_time
 
-func mainmenu():
-	get_tree().change_scene_to_file("res://assets/scenes/level_select.tscn")
-	DataPassthrough.player_pos_x = 0
-	DataPassthrough.player_pos_y = 0
-	DataPassthrough.panic = false
+func pizzaface_spawn() -> void:
 	stop()
+	GlobalSignals.emit_signal("timesup")

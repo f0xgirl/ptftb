@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://d3amowmvkdyo"]
+[gd_scene load_steps=91 format=3 uid="uid://d3amowmvkdyo"]
 
 [ext_resource type="Script" uid="uid://c6edt4l8ehqu6" path="res://assets/script/important/player.gd" id="1_aarfl"]
 [ext_resource type="Resource" uid="uid://bvm4oc3oc6sjt" path="res://resources/player/player_data.tres" id="2_i6cxx"]
@@ -7,6 +7,7 @@
 [ext_resource type="SpriteFrames" uid="uid://f6b84djeaa3g" path="res://resources/player/peppino_spriteframes.tres" id="4_5308x"]
 [ext_resource type="Script" uid="uid://d0lyqus80vd8s" path="res://assets/script/important/States/State_Machine.gd" id="4_t3dhw"]
 [ext_resource type="Script" uid="uid://dvqxrnmjhyyf8" path="res://assets/script/important/States/player/movement/player_idle.gd" id="5_jt3m1"]
+[ext_resource type="Shape2D" uid="uid://bvihisq1uqysb" path="res://resources/player/player_crouching.tres" id="6_y16ip"]
 [ext_resource type="Script" uid="uid://bo37x7c1mmki3" path="res://assets/script/check_collisions_player.gd" id="7_1hryd"]
 [ext_resource type="Script" uid="uid://dw4w0bqskuk20" path="res://assets/script/important/States/player/movement/player_walking.gd" id="7_y2hrn"]
 [ext_resource type="Script" uid="uid://gxtws4hnorgm" path="res://assets/script/important/States/player/mach/Player_mach1.gd" id="10_tsu6n"]
@@ -15,7 +16,6 @@
 [ext_resource type="Script" uid="uid://cs4hrysclf5qj" path="res://assets/script/important/States/player/mach/Player_turn.gd" id="12_dj2cs"]
 [ext_resource type="Script" uid="uid://dss0gyn4xwj88" path="res://assets/script/important/States/player/movement/Player_jumping.gd" id="14_plf4t"]
 [ext_resource type="Script" uid="uid://byjfwh3f27bdr" path="res://assets/script/important/States/player/movement/Player_bumped.gd" id="15_xd2d2"]
-[ext_resource type="Shape2D" uid="uid://5sqff0ua8l6f" path="res://resources/player/player_standing.tres" id="18_0xntb"]
 [ext_resource type="Script" uid="uid://duc12h3q4p5j1" path="res://assets/script/important/States/player/mach/Player_mach3.gd" id="22_rsiba"]
 [ext_resource type="Script" uid="uid://b1aqxr8gqbui6" path="res://assets/script/player_animation.gd" id="23_uq8vi"]
 [ext_resource type="Script" uid="uid://cp6vawmqlvsbi" path="res://assets/script/important/States/player/mach/player_machroll.gd" id="24_1q1cm"]
@@ -331,6 +331,39 @@ font = SubResource("FontFile_pwvte")
 font_size = 24
 font_color = Color(0.753487, 0, 0.00438567, 1)
 
+[sub_resource type="Shader" id="Shader_y16ip"]
+code = "shader_type canvas_item;
+
+uniform vec2 blur_amount = vec2(0.01, 0.01);
+uniform vec2 focus_point = vec2(0.5, 0.5);
+uniform float focus_radius = 0.1;
+
+
+void fragment() {
+	vec4 color = texture(TEXTURE, UV);
+	vec4 color_up = texture(TEXTURE, UV + vec2(0.0, blur_amount.y));
+	vec4 color_down = texture(TEXTURE, UV + vec2(0.0, -blur_amount.y));
+	vec4 color_left = texture(TEXTURE, UV + vec2(-blur_amount.x, 0.0));
+	vec4 color_right = texture(TEXTURE, UV + vec2(blur_amount.x, 0.0));
+	
+	if(distance(focus_point + vec2(sin(TIME) /5.0 ), UV) < focus_radius) {
+		COLOR = color;
+	} 
+	else {
+		COLOR = (color_up + color_down + color_left + color_right) / 4.0;
+	}
+	
+}
+
+// i stole this lol
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_na57t"]
+shader = SubResource("Shader_y16ip")
+shader_parameter/blur_amount = Vector2(0.01, 0.01)
+shader_parameter/focus_point = Vector2(0.5, 0.5)
+shader_parameter/focus_radius = 0.1
+
 [sub_resource type="LabelSettings" id="LabelSettings_nxtsv"]
 font_size = 32
 
@@ -415,14 +448,13 @@ z_index = 1
 material = ExtResource("3_urkgk")
 position = Vector2(2, -22)
 sprite_frames = ExtResource("4_5308x")
-animation = &"ladder down"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.32943
 script = ExtResource("23_uq8vi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3.5)
-shape = ExtResource("18_0xntb")
+shape = ExtResource("6_y16ip")
 
 [node name="check_collisions" type="Area2D" parent="." groups=["block"]]
 collision_layer = 0
@@ -435,6 +467,7 @@ shape = SubResource("RectangleShape2D_5308x")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
+position_smoothing_speed = 50.0
 
 [node name="peppino_head" type="CanvasLayer" parent="."]
 
@@ -576,6 +609,27 @@ layout_mode = 2
 layout_mode = 2
 text = "left
 "
+
+[node name="pause" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Control" type="Control" parent="pause"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="pause/Control"]
+material = SubResource("ShaderMaterial_na57t")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.834614, 0.834614, 0.834614, 0.388235)
 
 [node name="pizza_time" type="CanvasLayer" parent="."]
 

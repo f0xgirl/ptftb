@@ -40,7 +40,7 @@ func Update(_delta: float):
 				index = 0
 			elif collider.name.begins_with("tileset"):
 				if is_block == false:
-					Transitioned.emit(self,"player_bumped")
+					Transitioned.emit(self,"player_idle_crouched")
 	
 func above_head_empty() -> bool:
 	var result = !crouch_raycast_1.is_colliding() && !crouch_raycast_2.is_colliding()
