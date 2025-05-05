@@ -5,6 +5,7 @@ extends block_base
 
 func _process(delta: float) -> void:
 	if is_queued_for_deletion():
+		Transition.whiteout()
 		print("works")
 		DataPassthrough.panic = true
 		Audioplayer._play_music_pizzatime()
