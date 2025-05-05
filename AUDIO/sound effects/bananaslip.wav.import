@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://djpg0mbuhrms5"
-path="res://.godot/imported/bananaslip.wav-15f28273ba68f621defe248c8240c9c4.sample"
+path="res://.godot/imported/bananaslip.wav-227b3edbcd9b6149cad96cd195802a9d.sample"
 
 [deps]
 
-source_file="res://AUDIO/bananaslip.wav"
-dest_files=["res://.godot/imported/bananaslip.wav-15f28273ba68f621defe248c8240c9c4.sample"]
+source_file="res://AUDIO/sound effects/bananaslip.wav"
+dest_files=["res://.godot/imported/bananaslip.wav-227b3edbcd9b6149cad96cd195802a9d.sample"]
 
 [params]
 

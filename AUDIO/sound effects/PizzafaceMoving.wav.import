@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bci5jnmbls3a1"
+path="res://.godot/imported/PizzafaceMoving.wav-c726db01787cbcadb093a4e7ed0006a2.sample"
+
+[deps]
+
+source_file="res://AUDIO/sound effects/PizzafaceMoving.wav"
+dest_files=["res://.godot/imported/PizzafaceMoving.wav-c726db01787cbcadb093a4e7ed0006a2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,13 +1,15 @@
 extends AudioStreamPlayer
 
 const music_placeholder = preload("res://AUDIO/placeholder2.mp3")
-const pillar_impact = preload("res://AUDIO/JOHN_PILLAR_IMPACT.wav")
+const PIZZAFACE_LAUGH = preload("res://AUDIO/sound effects/PizzafaceLaugh2.wav")
+const pillar_impact = preload("res://AUDIO/sound effects/JOHN_PILLAR_IMPACT.wav")
 const hub = preload("res://AUDIO/mu_hub.wav")
 const pizzatime = preload("res://AUDIO/mu_pizzatime.wav")
 const pinball = preload("res://AUDIO/pinball.mp3")
 const john = preload("res://AUDIO/unearthly.mp3")
 const SUGAR = preload("res://AUDIO/sugar.mp3")
 const VIR = preload("res://AUDIO/vir.mp3")
+const SCARY = preload("res://AUDIO/music_scary.ogg")
 const SFX_MACH_1 = preload("res://AUDIO/sfx_mach1.wav")
 const SFX_MACH_2 = preload("res://AUDIO/sfx_mach2.wav")
 const SFX_MACH_3 = preload("res://AUDIO/sfx_mach3.wav")
@@ -47,6 +49,9 @@ func _play_music_sugar():
 func _play_music_vir():
 	_play_music(VIR)
 
+func _play_music_scary():
+	_play_music(SCARY)
+
 func _play_sfx(stream: AudioStream, volume = 0.0):
 	var fx_player = AudioStreamPlayer.new()
 	fx_player.stream = stream
@@ -75,7 +80,10 @@ func _play_sfx_switchingrooms():
 	_play_sfx(SFX_DOOR)
 
 func _play_sfx_toppinget_small():
-	_play_sfx(SFX_COLLECT) #temp
+	_play_sfx(SFX_COLLECT)
 
 func _play_sfx_toppinget_big():
 	_play_sfx(SFX_COLLECTPIZZA)
+
+func _play_sfx_pizzalaugh():
+	_play_sfx(PIZZAFACE_LAUGH)

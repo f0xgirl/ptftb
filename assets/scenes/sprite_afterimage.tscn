@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4vtmt3b7dg27"]
+
+[ext_resource type="SpriteFrames" uid="uid://f6b84djeaa3g" path="res://resources/player/peppino_spriteframes.tres" id="1_6e3aw"]
+[ext_resource type="Shader" uid="uid://bni2ldfqhexe4" path="res://assets/script/palette/player_palette1.gdshader" id="1_58xmx"]
+[ext_resource type="Script" uid="uid://cavv1kgm8ei4n" path="res://assets/script/sprite_afterimage.gd" id="2_58xmx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4lmd2"]
+shader = ExtResource("1_58xmx")
+shader_parameter/find_colour = Color(1, 1, 0.25098, 1)
+shader_parameter/target_colour = Color(1, 1, 1, 0.27451)
+
+[node name="player_afterimage" type="AnimatedSprite2D"]
+self_modulate = Color(1, 1, 1, 0.27451)
+show_behind_parent = true
+z_index = 1
+material = SubResource("ShaderMaterial_4lmd2")
+sprite_frames = ExtResource("1_6e3aw")
+animation = &"idle"
+script = ExtResource("2_58xmx")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

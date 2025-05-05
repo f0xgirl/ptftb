@@ -1,5 +1,6 @@
 @icon("res://assets/sprites/levels/level visuals/roomchangevisual.png")
 extends Area2D
+class_name room_changer
 @export_category("Location")
 ##id of current room
 @export var room_id: int
@@ -24,7 +25,7 @@ func _on_body_entered(body: Node2D) -> void:
 		GlobalSignals.emit_signal("move", X, Y)
 		get_parent().get_parent().call_deferred(function_call, next_room_id, room_id)
 		
-		
+
 
 
 func _hidden() -> void:

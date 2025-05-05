@@ -1,16 +1,52 @@
-[gd_scene load_steps=4 format=3 uid="uid://ih7p54k81wwu"]
+[gd_scene load_steps=8 format=3 uid="uid://ih7p54k81wwu"]
 
 [ext_resource type="Script" uid="uid://bk4tgux06g1hv" path="res://assets/script/pizzaface.gd" id="1_okssr"]
-[ext_resource type="Texture2D" uid="uid://dili8jvl7hs5g" path="res://icon.svg" id="2_1q6x7"]
+[ext_resource type="AudioStream" uid="uid://bci5jnmbls3a1" path="res://AUDIO/sound effects/PizzafaceMoving.wav" id="3_1q6x7"]
+[ext_resource type="SpriteFrames" uid="uid://bxboeo0kpvg12" path="res://resources/pizzaface.tres" id="3_u64u1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_okssr"]
 
-[node name="pizzaface" type="Node2D"]
-script = ExtResource("1_okssr")
-speed = 250
+[sub_resource type="Animation" id="Animation_u64u1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.690045, 0.296389, 0.0662705, 0.380392)]
+}
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_1q6x7")
+[sub_resource type="Animation" id="Animation_1q6x7"]
+resource_name = "spawn_in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.690045, 0.296389, 0.0662705, 0.380392), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_no77m"]
+_data = {
+&"RESET": SubResource("Animation_u64u1"),
+&"spawn_in": SubResource("Animation_1q6x7")
+}
+
+[node name="pizzaface" type="Node2D"]
+z_index = 3
+script = ExtResource("1_okssr")
+speed = 350
 
 [node name="spawn" type="Timer" parent="."]
 unique_name_in_owner = true
@@ -18,11 +54,33 @@ wait_time = 2.0
 one_shot = true
 
 [node name="Area2D" type="Area2D" parent="."]
+z_index = 2
 collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_okssr")
+disabled = true
+
+[node name="moving" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_1q6x7")
+volume_db = 10.0
+max_distance = 750.0
+
+[node name="sprite" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(0.690045, 0.296389, 0.0662705, 0.380392)
+sprite_frames = ExtResource("3_u64u1")
+animation = &"spawn"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_no77m")
+}
+
+[node name="afterimagetimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
 
 [connection signal="timeout" from="spawn" to="." method="_on_spawn_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="afterimagetimer" to="." method="_on_afterimagetimer_timeout"]

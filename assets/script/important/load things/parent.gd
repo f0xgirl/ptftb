@@ -27,6 +27,8 @@ const PIZZAFACE = preload("res://assets/scenes/level objects/pizzaface.tscn")
 
 #can be switched out for the hubs when i get to that
 const LEVEL_SELECT = preload("res://assets/scenes/level_select.tscn")
+#room shown when caught by pizza face
+const CAUGHT = preload("res://assets/scenes/caught.tscn")
 #hub1:
 const HUB_1 = preload("res://assets/scenes/levels/hubs/hub_1.tscn")
 #test level:
@@ -93,6 +95,13 @@ func room_called(selected_room: int) -> void:
 			load_levelselect()
 		
 	
+func load_caught() -> void:
+	GlobalSignals.emit_signal("change_state", "player_walkfront", NAN)
+	GlobalSignals.emit_signal("move", 0, 0)
+	var lvl = CAUGHT.instantiate()
+	add_child(lvl)
+	await lvl.ready
+
 func load_jg() -> void:
 	GlobalSignals.emit_signal("change_state", "player_walkfront", NAN)
 	GlobalSignals.emit_signal("move", -1605, 375)
@@ -229,8 +238,11 @@ func load_room_pinball(id: int, prev_id: int) -> void:
 		var lvl = level_pinball[id].instantiate()
 		add_child(lvl)
 
-func disable_player(x: bool) -> void:
-	get_child(0).set_meta("disabled", x)
+func disable_player() -> void:
+	get_child(0).set_meta("disabled", true)
+
+func enable_player() -> void:
+	get_child(0).set_meta("disabled", false)
 
 func check_if_loaded(id: int) -> bool:
 	var thingy: bool = false

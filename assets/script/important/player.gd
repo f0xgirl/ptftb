@@ -8,8 +8,9 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var level_data: level_data
 @onready var sprite: AnimatedSprite2D = $sprite
 @onready var score_label: Label = %"score label"
+@onready var afterimagetimer: Timer = $afterimagetimer
 
-
+const SPRITE_AFTERIMAGE = preload("res://assets/scenes/sprite_afterimage.tscn")
 const TOPPIN_TEST = preload("res://assets/scenes/level objects/toppin_test.tscn")
 const LEVEL_SELECT = preload("res://assets/scenes/level_select.tscn")
 const HUB_1 = preload("res://assets/scenes/levels/hubs/hub_1.tscn")
@@ -47,7 +48,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y += gravity * delta
 	move_and_slide()
 	
-	if Input.is_action_just_pressed("pause"):
+	if Input.is_action_just_pressed("pause") and get_meta("disabled") == false:
 		var lvl = HUB_1.instantiate()
 		get_parent().call("clear_rooms") #clears rooms
 		#get_parent().call("disable_player", true) #disables player from moving
@@ -60,6 +61,20 @@ func _physics_process(delta: float) -> void:
 		get_parent().add_child(lvl)
 		#await lvl.ready
 		#get_parent().call()
+
+func afterimage_stop():
+	#afterimagetimer.stop()
+	pass
+
+func afterimage_add():
+	afterimagetimer.start()
+	var afterimage = SPRITE_AFTERIMAGE.instantiate()
+	afterimage.set_spriteframes(sprite.sprite_frames)
+	afterimage.set_sprite_offset(sprite.offset.x, sprite.offset.y)
+	afterimage.set_sprite_flip(sprite.flip_h)
+	afterimage.set_animation_and_frames(sprite.animation, sprite.frame)
+	afterimage.set_sprite_gpos(position)
+	get_parent().add_child(afterimage)
 
 func set_limit_left(val: int) -> void:
 	camera.limit_left = val
@@ -120,3 +135,7 @@ func save_data():
 
 func get_level_name(name: String) -> void:
 	level_name = name
+
+
+func _on_afterimagetimer_timeout() -> void:
+	afterimage_add()

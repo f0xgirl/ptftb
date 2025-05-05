@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://xbra74n04wey"
+path="res://.godot/imported/firesound.wav-052923436c88bef365dba29b3a0439d4.sample"
+
+[deps]
+
+source_file="res://AUDIO/sound effects/firesound.wav"
+dest_files=["res://.godot/imported/firesound.wav-052923436c88bef365dba29b3a0439d4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

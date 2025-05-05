@@ -12,19 +12,20 @@ var direction = Input.get_axis("left","right")
 var is_block: bool = false
 @onready var check_collisions: Area2D = $"../../check_collisions"
 const BLOCK_SMALL = preload("res://assets/scenes/level objects/block_small.tscn")
-@onready var is_grounded: RayCast2D = $"../../is_grounded"
 
 func _ready() -> void:
 	check_collisions.connect("is_block", check_for_block)
 	check_collisions.connect("block_gone", no_more_block)
 
 func Enter():
+	player.afterimage_add()
 	mach_2.play()
 	move_player()
 	tillmach3 = DataPassthrough.player_tillmach3
 	DataPassthrough.player_state = "player_mach2"
 
 func Update(_delta: float):
+	player.afterimage_add()
 	direction = Input.get_axis("left","right")
 	emit_signal("anim_change","mach2", false)
 	emit_signal("anim_offset",2,-5)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://ginethe02gsu"]
+[gd_scene load_steps=12 format=4 uid="uid://ginethe02gsu"]
 
 [ext_resource type="Script" uid="uid://bci8hvvge8vxx" path="res://assets/script/level specific/midescape_1.gd" id="1_557p3"]
 [ext_resource type="TileSet" uid="uid://t56k02vh81ye" path="res://resources/level/tilesets/placeholder_tileset.tres" id="1_f0krl"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://fdbj1p7xsrv" path="res://assets/scenes/level objects/level boundary.tscn" id="8_3sokl"]
 [ext_resource type="PackedScene" uid="uid://cuoo8ojghsvmb" path="res://assets/scenes/level objects/ladder.tscn" id="9_bugwi"]
 [ext_resource type="PackedScene" uid="uid://cwgntvkyl06cp" path="res://assets/scenes/level objects/small_collectible.tscn" id="10_i1pfs"]
-[ext_resource type="PackedScene" uid="uid://drg1wcxxcyjdm" path="res://assets/scenes/level objects/gate_portal.tscn" id="12_evxnt"]
 
 [node name="room" type="Node"]
 script = ExtResource("1_557p3")
@@ -106,10 +105,6 @@ position = Vector2(1928, -712)
 
 [node name="small_collectible11" parent="." instance=ExtResource("10_i1pfs")]
 position = Vector2(1994, -711)
-
-[node name="gate" parent="." instance=ExtResource("12_evxnt")]
-position = Vector2(668, 24)
-level_name = "mid"
 
 [node name="state_changer" parent="." instance=ExtResource("6_ko5f7")]
 position = Vector2(2655, -12)

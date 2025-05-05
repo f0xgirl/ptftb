@@ -1,0 +1,46 @@
+[gd_scene load_steps=27 format=3 uid="uid://ca8k22ad5vs46"]
+
+[ext_resource type="Script" uid="uid://3qhdcgr4b5td" path="res://assets/script/important/load things/parent.gd" id="1_3ukjf"]
+[ext_resource type="PackedScene" uid="uid://bsr70jx6bauni" path="res://assets/scenes/levels/testing/testing_level.tscn" id="2_bxkav"]
+[ext_resource type="PackedScene" uid="uid://bgxat64gb71od" path="res://assets/scenes/levels/testing/testing_level_2.tscn" id="3_qybss"]
+[ext_resource type="PackedScene" uid="uid://fioigyq7r4yd" path="res://assets/scenes/levels/john gutter/john_gutter_1.tscn" id="4_q7ipi"]
+[ext_resource type="PackedScene" uid="uid://cw64fvrkw5ky1" path="res://assets/scenes/levels/john gutter/john_gutter_2.tscn" id="5_6osxw"]
+[ext_resource type="PackedScene" uid="uid://ct4c8bdwci21f" path="res://assets/scenes/levels/john gutter/john_gutter_3.tscn" id="6_0jlpe"]
+[ext_resource type="PackedScene" uid="uid://c46vd1cyavu3n" path="res://assets/scenes/levels/john gutter/john_gutter_4.tscn" id="7_j3y6j"]
+[ext_resource type="PackedScene" uid="uid://bidyolavjny6l" path="res://assets/scenes/levels/john gutter/john_gutter_4_branch.tscn" id="8_utoi2"]
+[ext_resource type="PackedScene" uid="uid://drxbs283brap0" path="res://assets/scenes/levels/john gutter/john_gutter_5.tscn" id="9_khr2l"]
+[ext_resource type="PackedScene" uid="uid://cn37hkufe6ajv" path="res://assets/scenes/levels/john gutter/john_gutter_6.tscn" id="10_yxd7k"]
+[ext_resource type="PackedScene" uid="uid://ceygj3iu68myf" path="res://assets/scenes/levels/john gutter/john_gutter_6_branch.tscn" id="11_h33ne"]
+[ext_resource type="PackedScene" uid="uid://c7nqu3wmjhdek" path="res://assets/scenes/levels/john gutter/john_gutter_7.tscn" id="12_14fho"]
+[ext_resource type="PackedScene" uid="uid://07metx7sh1p4" path="res://assets/scenes/levels/pizzascape/pizzascape_1.tscn" id="13_f3u0f"]
+[ext_resource type="PackedScene" uid="uid://d0vfr36smd4f0" path="res://assets/scenes/levels/ancientcheese/ancient_1.tscn" id="14_1q30u"]
+[ext_resource type="PackedScene" uid="uid://d5bcovooj67t" path="res://assets/scenes/levels/dungeon/bloodsauce_1.tscn" id="15_1b6ss"]
+[ext_resource type="PackedScene" uid="uid://ddfs4ffikkjoq" path="res://assets/scenes/levels/strongcold/strongcold_1.tscn" id="16_n4h18"]
+[ext_resource type="PackedScene" uid="uid://bwoslujnb3qto" path="res://assets/scenes/levels/strongcold/strongcold_2.tscn" id="17_4bsva"]
+[ext_resource type="PackedScene" uid="uid://drmuwlookavsm" path="res://assets/scenes/levels/strongcold/strongcold_3.tscn" id="18_tt1le"]
+[ext_resource type="PackedScene" uid="uid://b50jyotggu2x" path="res://assets/scenes/levels/strongcold/strongcold_4.tscn" id="19_eax4l"]
+[ext_resource type="PackedScene" uid="uid://ginethe02gsu" path="res://assets/scenes/levels/midescape/midescape_1.tscn" id="20_ju2np"]
+[ext_resource type="PackedScene" uid="uid://bwxdpq30b1sid" path="res://assets/scenes/levels/midescape/midescape_2.tscn" id="21_4jwg5"]
+[ext_resource type="PackedScene" uid="uid://t67bm8s8a2eq" path="res://assets/scenes/levels/midescape/midescape_3.tscn" id="22_qoldd"]
+[ext_resource type="PackedScene" uid="uid://b8ag3vnk6kv0c" path="res://assets/scenes/levels/midescape/midescape_4.tscn" id="23_7qy0f"]
+[ext_resource type="PackedScene" uid="uid://dimis0ypgatg1" path="res://assets/scenes/levels/tutorial/tutorial_1.tscn" id="24_8vx71"]
+[ext_resource type="PackedScene" uid="uid://chbjabm2xyls0" path="res://assets/scenes/levels/tutorial/tutorial_2.tscn" id="25_3j16m"]
+[ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="26_l3juw"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_3ukjf")
+level_test = Array[PackedScene]([ExtResource("2_bxkav"), ExtResource("3_qybss")])
+level_jg = Array[PackedScene]([ExtResource("4_q7ipi"), ExtResource("5_6osxw"), ExtResource("6_0jlpe"), ExtResource("7_j3y6j"), ExtResource("8_utoi2"), ExtResource("9_khr2l"), ExtResource("10_yxd7k"), ExtResource("11_h33ne"), ExtResource("12_14fho")])
+level_medevial = Array[PackedScene]([ExtResource("13_f3u0f")])
+level_ruin = Array[PackedScene]([ExtResource("14_1q30u")])
+level_dungeon = Array[PackedScene]([ExtResource("15_1b6ss")])
+level_strong = Array[PackedScene]([ExtResource("16_n4h18"), ExtResource("17_4bsva"), ExtResource("18_tt1le"), ExtResource("19_eax4l")])
+level_mid = Array[PackedScene]([ExtResource("20_ju2np"), ExtResource("21_4jwg5"), ExtResource("22_qoldd"), ExtResource("23_7qy0f")])
+level_tutorial = Array[PackedScene]([ExtResource("24_8vx71"), ExtResource("25_3j16m")])
+metadata/_custom_type_script = "uid://3qhdcgr4b5td"
+
+[node name="player" parent="." instance=ExtResource("26_l3juw")]
+z_index = 1
+position = Vector2(-599, 806)
+
+[connection signal="child_entered_tree" from="." to="." method="room_changed"]

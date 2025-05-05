@@ -28,11 +28,13 @@
 [ext_resource type="Script" uid="uid://c1weqyidrsyt2" path="res://assets/script/important/States/player/movement/player_highjump.gd" id="31_1b60l"]
 [ext_resource type="Script" uid="uid://bparuw645hh5" path="res://assets/script/important/States/player/movement/player_stationary.gd" id="32_1hryd"]
 [ext_resource type="AudioStream" uid="uid://dxwvv41vvo28w" path="res://AUDIO/sfx_bump.ogg" id="38_anufl"]
+[ext_resource type="AudioStream" uid="uid://xmj2n7fu4mqi" path="res://AUDIO/sound effects/machroll.wav" id="38_wvkvj"]
 [ext_resource type="Script" uid="uid://ndriol27dmh4" path="res://assets/script/important/States/player/movement/player_ladder.gd" id="39_jurdo"]
 [ext_resource type="AudioStream" uid="uid://b80pjope6j1kr" path="res://AUDIO/sfx_supermove.ogg" id="39_wvkvj"]
 [ext_resource type="AudioStream" uid="uid://bi7yifeywx57d" path="res://AUDIO/sfx_plane.ogg" id="39_y16ip"]
 [ext_resource type="Texture2D" uid="uid://bp661vfvgodqc" path="res://assets/sprites/players/peppino/player_chargeeffect.png" id="40_6pse8"]
 [ext_resource type="Script" uid="uid://dkegktkhxtift" path="res://assets/script/important/States/player/movement/fireass.gd" id="40_blbl4"]
+[ext_resource type="AudioStream" uid="uid://ber6jw5vh8ee4" path="res://AUDIO/sound effects/sfx_machslideboost.wav" id="41_na57t"]
 [ext_resource type="AudioStream" uid="uid://wfo6xfv1vic3" path="res://AUDIO/sfx_mach1.wav" id="42_akwvy"]
 [ext_resource type="AudioStream" uid="uid://dhwhbmrtdefj5" path="res://AUDIO/sfx_mach2.wav" id="43_0x4uv"]
 [ext_resource type="AudioStream" uid="uid://dncrp4quy5s68" path="res://AUDIO/sfx_mach3.wav" id="44_2brbj"]
@@ -331,39 +333,6 @@ font = SubResource("FontFile_pwvte")
 font_size = 24
 font_color = Color(0.753487, 0, 0.00438567, 1)
 
-[sub_resource type="Shader" id="Shader_y16ip"]
-code = "shader_type canvas_item;
-
-uniform vec2 blur_amount = vec2(0.01, 0.01);
-uniform vec2 focus_point = vec2(0.5, 0.5);
-uniform float focus_radius = 0.1;
-
-
-void fragment() {
-	vec4 color = texture(TEXTURE, UV);
-	vec4 color_up = texture(TEXTURE, UV + vec2(0.0, blur_amount.y));
-	vec4 color_down = texture(TEXTURE, UV + vec2(0.0, -blur_amount.y));
-	vec4 color_left = texture(TEXTURE, UV + vec2(-blur_amount.x, 0.0));
-	vec4 color_right = texture(TEXTURE, UV + vec2(blur_amount.x, 0.0));
-	
-	if(distance(focus_point + vec2(sin(TIME) /5.0 ), UV) < focus_radius) {
-		COLOR = color;
-	} 
-	else {
-		COLOR = (color_up + color_down + color_left + color_right) / 4.0;
-	}
-	
-}
-
-// i stole this lol
-"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_na57t"]
-shader = SubResource("Shader_y16ip")
-shader_parameter/blur_amount = Vector2(0.01, 0.01)
-shader_parameter/focus_point = Vector2(0.5, 0.5)
-shader_parameter/focus_radius = 0.1
-
 [sub_resource type="LabelSettings" id="LabelSettings_nxtsv"]
 font_size = 32
 
@@ -426,6 +395,7 @@ animations = [{
 }]
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
+z_index = 4
 collision_layer = 10
 collision_mask = 17
 floor_constant_speed = true
@@ -622,14 +592,13 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="pause/Control"]
-material = SubResource("ShaderMaterial_na57t")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.834614, 0.834614, 0.834614, 0.388235)
+color = Color(0, 0, 0, 1)
 
 [node name="pizza_time" type="CanvasLayer" parent="."]
 
@@ -833,6 +802,11 @@ unique_name_in_owner = true
 stream = ExtResource("53_jjtpe")
 volume_db = 5.0
 
+[node name="machroll" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("38_wvkvj")
+volume_db = -10.0
+
 [node name="bump" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("38_anufl")
@@ -841,14 +815,17 @@ stream = ExtResource("38_anufl")
 unique_name_in_owner = true
 stream = ExtResource("39_wvkvj")
 
+[node name="turn" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("41_na57t")
+volume_db = -10.0
+
 [node name="plane" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("39_y16ip")
 
-[node name="Timer" type="Timer" parent="."]
-
-[node name="is_grounded" type="RayCast2D" parent="."]
-target_position = Vector2(0, 26)
+[node name="afterimagetimer" type="Timer" parent="."]
+wait_time = 0.15
 
 [connection signal="anim_change" from="State Machine/Player_Idle" to="sprite" method="_anim_change"]
 [connection signal="anim_loop" from="State Machine/Player_Idle" to="sprite" method="_anim_loop"]
@@ -874,3 +851,4 @@ target_position = Vector2(0, 26)
 [connection signal="anim_offset" from="State Machine/Player_Idle_Crouched" to="sprite" method="_anim_offset"]
 [connection signal="anim_override" from="State Machine/Player_Idle_Crouched" to="sprite" method="_anim_override"]
 [connection signal="finished" from="mach2" to="State Machine/Player_mach2" method="_on_mach_2_finished"]
+[connection signal="timeout" from="afterimagetimer" to="." method="_on_afterimagetimer_timeout"]

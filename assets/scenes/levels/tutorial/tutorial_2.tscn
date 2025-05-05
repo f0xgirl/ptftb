@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=4 uid="uid://chbjabm2xyls0"]
 
+[ext_resource type="Script" uid="uid://dupqbuhb0trg6" path="res://assets/script/level specific/tutorial_2.gd" id="1_48rd8"]
 [ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://resources/level/tilesets/john_gutter_tileset.tres" id="1_i00w0"]
-[ext_resource type="Script" uid="uid://bvp7b8nd25ruo" path="res://assets/script/important/load things/room.gd" id="1_jovqp"]
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/level objects/room_changer.tscn" id="2_675mq"]
 [ext_resource type="Script" uid="uid://q3ywevjscjee" path="res://assets/script/tilemap.gd" id="3_5cklo"]
 [ext_resource type="PackedScene" uid="uid://c8aqg4asjyefk" path="res://assets/scenes/level objects/pillarjohn.tscn" id="6_spaaf"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cwgntvkyl06cp" path="res://assets/scenes/level objects/small_collectible.tscn" id="8_ce0oa"]
 
 [node name="room" type="Node"]
-script = ExtResource("1_jovqp")
+script = ExtResource("1_48rd8")
 room_name = &"tutorial_2"
 room_id = 1
 left = -1136
@@ -80,3 +80,5 @@ position = Vector2(647, 150)
 
 [node name="small_collectible5" parent="." instance=ExtResource("8_ce0oa")]
 position = Vector2(715, 149)
+
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]

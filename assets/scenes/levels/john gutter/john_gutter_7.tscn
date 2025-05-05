@@ -1,16 +1,16 @@
 [gd_scene load_steps=9 format=4 uid="uid://c7nqu3wmjhdek"]
 
+[ext_resource type="Script" uid="uid://db3id1xge0xfe" path="res://assets/script/level specific/john_gutter_7.gd" id="1_3jh2g"]
 [ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://resources/level/tilesets/john_gutter_tileset.tres" id="1_ji54n"]
 [ext_resource type="PackedScene" uid="uid://c8aqg4asjyefk" path="res://assets/scenes/level objects/pillarjohn.tscn" id="2_8borr"]
 [ext_resource type="Script" uid="uid://q3ywevjscjee" path="res://assets/script/tilemap.gd" id="3_aqlt5"]
 [ext_resource type="PackedScene" uid="uid://cuoo8ojghsvmb" path="res://assets/scenes/level objects/ladder.tscn" id="4_6wxuq"]
-[ext_resource type="Script" uid="uid://bvp7b8nd25ruo" path="res://assets/script/important/load things/room.gd" id="5_dblrf"]
 [ext_resource type="PackedScene" uid="uid://d2q30hyq4cxd2" path="res://assets/scenes/level objects/door.tscn" id="5_j6e6m"]
 [ext_resource type="PackedScene" uid="uid://cwgntvkyl06cp" path="res://assets/scenes/level objects/small_collectible.tscn" id="7_5pf8q"]
 [ext_resource type="PackedScene" uid="uid://gu657xt52lr7" path="res://assets/scenes/level objects/panic_block.tscn" id="8_3jh2g"]
 
 [node name="room" type="Node"]
-script = ExtResource("5_dblrf")
+script = ExtResource("1_3jh2g")
 room_name = &"john_gutter_7"
 room_id = 8
 left = -80
@@ -47,8 +47,10 @@ position = Vector2(1498, -139)
 [node name="blocks" type="Node2D" parent="."]
 
 [node name="block" parent="blocks" instance=ExtResource("2_8borr")]
+editor_description = "90 seconds
+"
 position = Vector2(1990, -424)
-panic_time = 90.0
+panic_time = 20.0
 
 [node name="ladder" parent="." instance=ExtResource("4_6wxuq")]
 position = Vector2(2049, 46)
@@ -65,3 +67,5 @@ scale = Vector2(2.80435, 1)
 [node name="panicblock2" parent="." instance=ExtResource("8_3jh2g")]
 position = Vector2(1472, -32.5)
 scale = Vector2(3.47826, 0.815789)
+
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://beb4rj7h572ij"
-path="res://.godot/imported/JOHN_PILLAR_IMPACT.wav-1714fbd7849b0036c1b4ac2413f5d8ce.sample"
+path="res://.godot/imported/JOHN_PILLAR_IMPACT.wav-44eabc749420220a7209d6b49131c8bf.sample"
 
 [deps]
 
-source_file="res://AUDIO/JOHN_PILLAR_IMPACT.wav"
-dest_files=["res://.godot/imported/JOHN_PILLAR_IMPACT.wav-1714fbd7849b0036c1b4ac2413f5d8ce.sample"]
+source_file="res://AUDIO/sound effects/JOHN_PILLAR_IMPACT.wav"
+dest_files=["res://.godot/imported/JOHN_PILLAR_IMPACT.wav-44eabc749420220a7209d6b49131c8bf.sample"]
 
 [params]
 

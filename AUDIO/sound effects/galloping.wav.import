@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://csu371p61aj5u"
+path="res://.godot/imported/galloping.wav-dc6c19f0a8b5cf3c29f80080980525dc.sample"
+
+[deps]
+
+source_file="res://AUDIO/sound effects/galloping.wav"
+dest_files=["res://.godot/imported/galloping.wav-dc6c19f0a8b5cf3c29f80080980525dc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

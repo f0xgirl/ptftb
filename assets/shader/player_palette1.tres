@@ -4,6 +4,5 @@
 
 [resource]
 shader = ExtResource("1_4lj1s")
-shader_parameter/index_array = 0
-shader_parameter/find_color = Color(1, 1, 0.25098, 1)
-shader_parameter/target_color = Color(1, 1, 1, 1)
+shader_parameter/find_colour = Color(1, 1, 0.25098, 1)
+shader_parameter/target_colour = Color(1, 1, 1, 1)

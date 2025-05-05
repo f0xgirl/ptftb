@@ -1,11 +1,15 @@
 extends state_changer
 class_name speed_pad
+
+@onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
 ##1 is right -1 is left
 @export_range(-1, 1) var direction: int
 signal changedir(dir: int)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
+		audio.play()
 		GlobalSignals.emit_signal("change_state", state, direction)
 
 func _hidden() -> void:

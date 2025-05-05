@@ -75,13 +75,6 @@ visible = false
 position = Vector2(907, 14)
 scale = Vector2(1, 8.333)
 
-[node name="Label" type="Label" parent="."]
-offset_left = 657.0
-offset_top = 70.0
-offset_right = 794.0
-offset_bottom = 93.0
-text = "SOFTLOCK SORRY"
-
 [node name="collectible" parent="." instance=ExtResource("9_c3vd1")]
 position = Vector2(97, 225)
 

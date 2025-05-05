@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdyje1glvppun"]
+
+[ext_resource type="SpriteFrames" uid="uid://bxboeo0kpvg12" path="res://resources/pizzaface.tres" id="1_o7db5"]
+[ext_resource type="Script" uid="uid://cavv1kgm8ei4n" path="res://assets/script/sprite_afterimage.gd" id="2_e4y0d"]
+
+[node name="afterimage" type="AnimatedSprite2D"]
+self_modulate = Color(0.690196, 0.298039, 0.0666667, 0.380392)
+sprite_frames = ExtResource("1_o7db5")
+animation = &"spawn"
+script = ExtResource("2_e4y0d")
+metadata/_custom_type_script = "uid://cavv1kgm8ei4n"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

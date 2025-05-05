@@ -4,9 +4,11 @@ class_name Player_turn
 @export var sprite: AnimatedSprite2D 
 @export var player_data: player_data
 @export var player: CharacterBody2D
+@onready var turn: AudioStreamPlayer2D = $"../../turn"
 var direction: int
 
 func Enter():
+	turn.play()
 	if player_data.player_direction == 1:
 		direction = -1
 	elif player_data.player_direction == -1:

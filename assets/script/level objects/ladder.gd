@@ -4,6 +4,7 @@ extends Area2D
 var entered: bool = false
 var plr: peppino
 @onready var sprite: Sprite2D = $SprLadder0
+@onready var collision: CollisionShape2D = $CollisionShape2D
 signal check_if_outside
 
 func _ready() -> void:
@@ -41,14 +42,12 @@ func _on_body_exited(body: Node2D) -> void:
 
 func _hidden():
 	sprite.hide()
-	monitoring = false
-	monitorable = false
+	collision.set_deferred("disabled", true)
 	set_collision_mask_value(3, false)
 
 func _visible():
 	sprite.show()
-	monitoring = true
-	monitorable = true
+	collision.set_deferred("disabled", false)
 	set_collision_mask_value(3, true)
 
 func checking_if_outside() -> void:

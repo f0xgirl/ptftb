@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://vrojkql60fs6"
+path="res://.godot/imported/dashpad.wav-1c8434730f229bad76c913d02d0af2cc.sample"
+
+[deps]
+
+source_file="res://AUDIO/sound effects/dashpad.wav"
+dest_files=["res://.godot/imported/dashpad.wav-1c8434730f229bad76c913d02d0af2cc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -10,6 +10,7 @@ class_name Player_Idle
 const PLAYER_STANDING = preload("res://resources/player/player_standing.tres")
 
 func Enter():
+	player.afterimage_stop()
 	Transitioned.emit(self,"player_frontwalk")
 	charge_effect.visible = false
 	collision.shape = PLAYER_STANDING

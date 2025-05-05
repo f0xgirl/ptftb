@@ -9,6 +9,8 @@ const PLAYER_CROUCHING = preload("res://resources/player/player_crouching.tres")
 @onready var crouch_raycast_1: RayCast2D = $"../../crouch raycast1"
 @onready var crouch_raycast_2: RayCast2D = $"../../crouch raycast2"
 @onready var check_collisions: Area2D = $"../../check_collisions"
+@onready var machroll: AudioStreamPlayer2D = %machroll
+
 
 var is_block: bool = false
 
@@ -17,6 +19,7 @@ func _ready() -> void:
 	check_collisions.connect("block_gone", no_more_block)
 
 func Enter():
+	machroll.play()
 	collision.shape = PLAYER_CROUCHING
 	DataPassthrough.player_state = "Player_machroll"
 	
@@ -54,3 +57,6 @@ func no_more_block() -> void:
 
 func move_player():
 	player.velocity.x = player_data.player_direction * player_data.mach3_speed
+
+func Exit():
+	machroll.stop()
