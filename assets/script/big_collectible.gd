@@ -9,7 +9,7 @@ func _hidden() -> void:
 	hide()
 	set_deferred("monitoring", false)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	sprite.offset.y = 1
 	await timer.timeout
 	sprite.offset.y = -1
