@@ -26,6 +26,10 @@ GlobalSignals="*res://assets/script/autoloads/GlobalSignals.gd"
 Transition="*res://assets/scenes/transition.tscn"
 Jsonsaveloading="*res://assets/script/autoloads/jsonsaveloading.gd"
 
+[dotnet]
+
+project/assembly_name="PTftb"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/GDScript.h8.Palette/plugin.cfg")
