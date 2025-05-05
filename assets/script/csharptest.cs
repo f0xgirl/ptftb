@@ -1,9 +1,7 @@
 using Godot;
 using System;
-//okay this thing works thats good!
 
-Dictionary saved_data = null
-public partial class csharptest : Node
+public partial class Csharptest : Node
 {
-	
+	private int asd = 0
 }
