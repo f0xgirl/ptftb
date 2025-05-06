@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.IO;
 
-public partial class CSjsonloadertest : Resource
+public partial class CSjsonloadertest : Node
 {
 	//this literally only exists so i can solve an issue in editor, this does not exist when you export the game
 	public Godot.Collections.Dictionary saved_data = new Godot.Collections.Dictionary();
@@ -12,7 +12,7 @@ public partial class CSjsonloadertest : Resource
 		//TODO: add shit
 	}
 
-	public int load_level_data(string level_name)
+	public void load_level_data(string level_name)
 	{
 		//TODO: watch that video and figure out how tf to write and load json files
 	}
