@@ -63,8 +63,7 @@ func _physics_process(delta: float) -> void:
 		#get_parent().call()
 
 func afterimage_stop():
-	#afterimagetimer.stop()
-	pass
+	afterimagetimer.stop()
 
 func afterimage_add():
 	afterimagetimer.start()
