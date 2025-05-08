@@ -60,3 +60,7 @@ func check_disabled() -> bool:
 		return true
 	else:
 		return false
+
+func change_sprite_offset(x: int, y: int) -> void:
+	sprite.offset.x = x
+	sprite.offset.y = y

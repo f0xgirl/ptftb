@@ -23,6 +23,7 @@ func Enter():
 	move_player()
 	tillmach3 = DataPassthrough.player_tillmach3
 	DataPassthrough.player_state = "player_mach2"
+	
 
 func Update(_delta: float):
 	player.afterimage_add()
@@ -79,3 +80,7 @@ func _on_mach_2_finished() -> void:
 
 func move_player():
 	player.velocity.x = player_data.player_direction * player_data.mach2_speed
+
+func change_sprite_offset(x: int, y: int) -> void:
+	sprite.offset.x = x
+	sprite.offset.y = y

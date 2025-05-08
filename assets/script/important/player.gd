@@ -36,8 +36,6 @@ func _ready() -> void:
 	get_parent().connect("player_limit_right", set_limit_right)
 	get_parent().connect("player_limit_bottom", set_limit_bottom)
 	get_parent().connect("player_clear_score", points_clear)
-	#var toppin = TOPPIN_TEST.instantiate()
-	#add_child(toppin)
 	score_label.set_text(var_to_str(0))
 	if DataPassthrough.player_pos_x:
 		position.x = DataPassthrough.player_pos_x
@@ -67,13 +65,13 @@ func afterimage_stop():
 
 func afterimage_add():
 	afterimagetimer.start()
-	var afterimage = SPRITE_AFTERIMAGE.instantiate()
-	afterimage.set_spriteframes(sprite.sprite_frames)
-	afterimage.set_sprite_offset(sprite.offset.x, sprite.offset.y)
-	afterimage.set_sprite_flip(sprite.flip_h)
-	afterimage.set_animation_and_frames(sprite.animation, sprite.frame)
-	afterimage.set_sprite_gpos(position)
-	get_parent().add_child(afterimage)
+	var afterimagemach2 = SPRITE_AFTERIMAGE.instantiate()
+	afterimagemach2.set_spriteframes(sprite.sprite_frames)
+	afterimagemach2.set_sprite_flip(sprite.flip_h)
+	afterimagemach2.set_animation_and_frames(sprite.animation, sprite.frame)
+	afterimagemach2.set_sprite_gpos(position)
+	afterimagemach2.set_sprite_offset(sprite.offset.x, sprite.offset.y)
+	get_parent().add_child(afterimagemach2)
 
 func set_limit_left(val: int) -> void:
 	camera.limit_left = val

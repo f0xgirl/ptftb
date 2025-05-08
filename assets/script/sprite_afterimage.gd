@@ -4,12 +4,11 @@ class_name afterimage
 func set_spriteframes(sprite):
 	sprite_frames = sprite
 	
-func set_sprite_offset(x: int, y:int ) ->void:
-	offset.x = x
-	offset.y = y
+func set_sprite_offset(x: int, y: int ) -> void:
+	position.x = x
+	position.y = y
 
 func afterimage() -> void:
-	var disappear = get_tree().create_timer(0.15)
 	queue_free()
 	print("gone")
 
