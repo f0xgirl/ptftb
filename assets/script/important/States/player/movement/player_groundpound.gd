@@ -11,6 +11,7 @@ var destroy_metal: bool = false
 var landed: bool = false
 
 func Enter():
+	player.afterimage_add()
 	player.velocity.x = 0
 	player.velocity.y = 0
 	DataPassthrough.player_state = "player_groundpound"

@@ -10,7 +10,6 @@ func set_sprite_offset(x: int, y: int ) -> void:
 
 func afterimage() -> void:
 	queue_free()
-	print("gone")
 
 func set_animation_and_frames(anim: String, frame_value: int) -> void:
 	animation = anim

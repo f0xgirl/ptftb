@@ -28,7 +28,7 @@ func Update(_delta: float):
 			await sprite.animation_finished
 			sprite.play("crawling air")
 			emit_signal("anim_offset",2,-5)
-	if not Input.is_action_pressed("down"):
+	if not Input.is_action_pressed("down") and player.is_on_floor():
 		if above_head_empty():
 			player.position.y -= 15
 			Transitioned.emit(self,"player_idle")
