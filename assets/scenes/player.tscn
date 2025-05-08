@@ -1,6 +1,6 @@
 [gd_scene load_steps=91 format=3 uid="uid://d3amowmvkdyo"]
 
-[ext_resource type="Script" uid="uid://c6edt4l8ehqu6" path="res://assets/script/important/player.gd" id="1_aarfl"]
+[ext_resource type="Script" uid="uid://c6edt4l8ehqu6" path="res://assets/script/important/player scripts/player.gd" id="1_aarfl"]
 [ext_resource type="Resource" uid="uid://bvm4oc3oc6sjt" path="res://resources/player/player_data.tres" id="2_i6cxx"]
 [ext_resource type="Texture2D" uid="uid://dhieee07ccjyd" path="res://assets/sprites/players/peppino/player_hud_idle.png" id="3_88jo2"]
 [ext_resource type="Material" uid="uid://gyvbxj5uv20u" path="res://assets/shader/player_palette1.tres" id="3_urkgk"]
@@ -17,7 +17,7 @@
 [ext_resource type="Script" uid="uid://dss0gyn4xwj88" path="res://assets/script/important/States/player/movement/Player_jumping.gd" id="14_plf4t"]
 [ext_resource type="Script" uid="uid://byjfwh3f27bdr" path="res://assets/script/important/States/player/movement/Player_bumped.gd" id="15_xd2d2"]
 [ext_resource type="Script" uid="uid://duc12h3q4p5j1" path="res://assets/script/important/States/player/mach/Player_mach3.gd" id="22_rsiba"]
-[ext_resource type="Script" uid="uid://b1aqxr8gqbui6" path="res://assets/script/player_animation.gd" id="23_uq8vi"]
+[ext_resource type="Script" uid="uid://b1aqxr8gqbui6" path="res://assets/script/important/player scripts/player_animation.gd" id="23_uq8vi"]
 [ext_resource type="Script" uid="uid://cp6vawmqlvsbi" path="res://assets/script/important/States/player/mach/player_machroll.gd" id="24_1q1cm"]
 [ext_resource type="Script" uid="uid://b6i47douy1dko" path="res://assets/script/important/States/player/movement/Player_Idle_Crawling.gd" id="25_4wbsh"]
 [ext_resource type="Texture2D" uid="uid://3gd7heuantgg" path="res://assets/sprites/players/choise.png" id="25_yae7m"]
@@ -396,6 +396,7 @@ animations = [{
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 z_index = 4
+position = Vector2(1, 0)
 collision_layer = 10
 collision_mask = 17
 floor_constant_speed = true

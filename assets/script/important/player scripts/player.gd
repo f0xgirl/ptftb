@@ -10,7 +10,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var score_label: Label = %"score label"
 @onready var afterimagetimer: Timer = $afterimagetimer
 
-const SPRITE_AFTERIMAGE = preload("res://assets/scenes/sprite_afterimage.tscn")
+const SPRITE_AFTERIMAGE = preload("res://assets/scenes/playermach2_afterimage.tscn")
 const TOPPIN_TEST = preload("res://assets/scenes/level objects/toppin_test.tscn")
 const LEVEL_SELECT = preload("res://assets/scenes/level_select.tscn")
 const HUB_1 = preload("res://assets/scenes/levels/hubs/hub_1.tscn")

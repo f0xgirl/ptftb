@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnh72m5ao5k3w"]
+
+[ext_resource type="Shader" uid="uid://bni2ldfqhexe4" path="res://assets/script/palette/player_palette1.gdshader" id="1_hyapa"]
+[ext_resource type="SpriteFrames" uid="uid://f6b84djeaa3g" path="res://resources/player/peppino_spriteframes.tres" id="2_vwuov"]
+[ext_resource type="Script" uid="uid://dc2v3cv5txywc" path="res://assets/script/important/player scripts/playermach3_afterimage.gd" id="3_vwuov"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cb2g7"]
+shader = ExtResource("1_hyapa")
+shader_parameter/find_colour = Color(1, 1, 0.25098, 1)
+shader_parameter/target_colour = Color(1, 1, 1, 1)
+
+[node name="afterimage" type="AnimatedSprite2D"]
+material = SubResource("ShaderMaterial_cb2g7")
+sprite_frames = ExtResource("2_vwuov")
+animation = &"mach3"
+script = ExtResource("3_vwuov")
+metadata/_custom_type_script = "uid://cavv1kgm8ei4n"
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.90802, 0.302487, 0.509745, 0.705882)
