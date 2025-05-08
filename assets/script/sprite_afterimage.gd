@@ -5,8 +5,8 @@ func set_spriteframes(sprite):
 	sprite_frames = sprite
 	
 func set_sprite_offset(x: int, y: int ) -> void:
-	position.x = x
-	position.y = y
+	offset.x = x
+	offset.y = y
 
 func afterimage() -> void:
 	queue_free()

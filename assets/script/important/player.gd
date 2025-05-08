@@ -70,7 +70,7 @@ func afterimage_add():
 	afterimagemach2.set_sprite_flip(sprite.flip_h)
 	afterimagemach2.set_animation_and_frames(sprite.animation, sprite.frame)
 	afterimagemach2.set_sprite_gpos(position)
-	afterimagemach2.set_sprite_offset(sprite.offset.x, sprite.offset.y)
+	afterimagemach2.set_sprite_offset(sprite.position.x, sprite.position.y)
 	get_parent().add_child(afterimagemach2)
 
 func set_limit_left(val: int) -> void:
