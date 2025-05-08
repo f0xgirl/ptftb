@@ -18,3 +18,6 @@ metadata/_custom_type_script = "uid://cavv1kgm8ei4n"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.90802, 0.302487, 0.509745, 0.705882)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.75

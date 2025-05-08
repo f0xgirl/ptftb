@@ -18,7 +18,7 @@ func _ready() -> void:
 	check_collisions.connect("block_gone", no_more_block)
 
 func Enter():
-	player.afterimage_add()
+	#player.afterimage_add()
 	mach_2.play()
 	move_player()
 	tillmach3 = DataPassthrough.player_tillmach3

@@ -19,3 +19,7 @@ debug_color = Color(0.904427, 0.00166937, 0.749385, 0.42)
 position = Vector2(4, -38)
 scale = Vector2(2.28937, 3.25744)
 texture = ExtResource("3_k6dqu")
+
+[node name="near" type="AudioStreamPlayer2D" parent="."]
+autoplay = true
+max_distance = 500.0

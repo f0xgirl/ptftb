@@ -1,6 +1,7 @@
 @icon("res://assets/sprites/smallveggie.png")
 extends block_base
 
+@onready var near: AudioStreamPlayer2D = $near
 @export var panic_time: float = 1000
 
 func _process(delta: float) -> void:
