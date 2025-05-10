@@ -7,9 +7,8 @@ class_name metal_block
 @onready var broken: AudioStreamPlayer2D = %break
 
 func _process(_delta: float) -> void:
-	if is_queued_for_deletion() == true:
-		broken.play()
-		await broken.finished
+	if is_queued_for_deletion():
+		Audioplayer._play_sfx_breakmetal()
 
 
 func _hidden() -> void:

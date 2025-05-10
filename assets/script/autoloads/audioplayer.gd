@@ -20,6 +20,7 @@ const SFX_COLLECTGIANTPIZZA = preload("res://AUDIO/sound effects/sfx_collectgian
 const SFX_COLLECTPIZZA = preload("res://AUDIO/sound effects/sfx_collectpizza.wav")
 const SFX_COLLECTTOPPIN = preload("res://AUDIO/sound effects/sfx_collecttoppin.wav")
 const SFX_ESCAPESPAWN = preload("res://AUDIO/sfx_escapespawn.wav")
+const SFX_BREAKMETAL = preload("res://AUDIO/sound effects/sfx_breakmetal.wav")
 
 func _play_music(music: AudioStream, volume = 0.0):
 	if stream == music:
@@ -89,3 +90,6 @@ func _play_sfx_toppinget_big():
 
 func _play_sfx_pizzalaugh():
 	_play_sfx(PIZZAFACE_LAUGH)
+	
+func _play_sfx_breakmetal():
+	_play_sfx(SFX_BREAKMETAL)

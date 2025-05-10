@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dimis0ypgatg1"]
+[gd_scene load_steps=11 format=4 uid="uid://dimis0ypgatg1"]
 
 [ext_resource type="Texture2D" uid="uid://bgx37ta3og1sa" path="res://assets/sprites/tutorial_room1.png" id="1_87gqg"]
 [ext_resource type="Script" uid="uid://cp0dte5oq5yuc" path="res://assets/script/level specific/tutorial_1.gd" id="1_e3xvm"]
@@ -10,24 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://7q52prdlvm3g" path="res://assets/scenes/level objects/metal_block.tscn" id="9_87ccq"]
 [ext_resource type="PackedScene" uid="uid://gu657xt52lr7" path="res://assets/scenes/level objects/panic_block.tscn" id="9_ua5nr"]
 [ext_resource type="PackedScene" uid="uid://cwgntvkyl06cp" path="res://assets/scenes/level objects/small_collectible.tscn" id="10_6f28j"]
-
-[sub_resource type="GDScript" id="GDScript_qustu"]
-script/source = "@icon(\"res://assets/sprites/levels/level visuals/spr_metalb_0.png\")
-extends block_base
-class_name metal_bloc
-
-@onready var sprite: Sprite2D = $Sprite2D
-
-
-func _hidden() -> void:
-	set_collision_layer_value(1, false)
-	sprite.hide()
-
-
-func _visible() -> void:
-	set_collision_layer_value(1, true)
-	sprite.show()
-"
 
 [node name="room" type="Node"]
 script = ExtResource("1_e3xvm")
@@ -57,23 +39,18 @@ scale = Vector2(1, 7.36)
 
 [node name="metal" parent="blocks" instance=ExtResource("9_87ccq")]
 position = Vector2(1936, -336)
-script = SubResource("GDScript_qustu")
 
 [node name="metal2" parent="blocks" instance=ExtResource("9_87ccq")]
-position = Vector2(16, -304)
-script = SubResource("GDScript_qustu")
+position = Vector2(2576, 16)
 
 [node name="metal3" parent="blocks" instance=ExtResource("9_87ccq")]
-position = Vector2(80, -304)
-script = SubResource("GDScript_qustu")
+position = Vector2(2640, 16)
 
 [node name="metal4" parent="blocks" instance=ExtResource("9_87ccq")]
-position = Vector2(2576, 16)
-script = SubResource("GDScript_qustu")
+position = Vector2(80, -304)
 
 [node name="metal5" parent="blocks" instance=ExtResource("9_87ccq")]
-position = Vector2(2640, 16)
-script = SubResource("GDScript_qustu")
+position = Vector2(16, -304)
 
 [node name="gate" parent="." instance=ExtResource("6_527j7")]
 position = Vector2(-272, -431)
