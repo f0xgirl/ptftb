@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://7q52prdlvm3g"]
+[gd_scene load_steps=5 format=3 uid="uid://7q52prdlvm3g"]
 
 [ext_resource type="Texture2D" uid="uid://dg2f35c8j5vw7" path="res://assets/sprites/levels/level visuals/spr_metalb_0.png" id="1_ep4kx"]
 [ext_resource type="Script" uid="uid://2ogkbi45085g" path="res://assets/script/level objects/metalblock.gd" id="1_tyd4t"]
+[ext_resource type="AudioStream" uid="uid://dxnb7yqb253kq" path="res://AUDIO/sound effects/sfx_breakmetal.wav" id="3_x0jf3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_egrk3"]
 size = Vector2(64, 64)
@@ -17,3 +18,7 @@ texture = ExtResource("1_ep4kx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_egrk3")
 debug_color = Color(0.881364, 0.000348082, 0.819274, 0.42)
+
+[node name="break" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_x0jf3")

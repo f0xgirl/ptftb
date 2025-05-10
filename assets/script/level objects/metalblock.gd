@@ -4,6 +4,12 @@ extends block_base
 class_name metal_block
 
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var broken: AudioStreamPlayer2D = %break
+
+func _process(_delta: float) -> void:
+	if is_queued_for_deletion() == true:
+		broken.play()
+		await broken.finished
 
 
 func _hidden() -> void:

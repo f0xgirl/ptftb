@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=4 uid="uid://ddfs4ffikkjoq"]
 
-[ext_resource type="Script" uid="uid://bvp7b8nd25ruo" path="res://assets/script/important/load things/room.gd" id="1_cq8xs"]
+[ext_resource type="Script" uid="uid://du0rvnk6e38em" path="res://assets/script/level specific/strongcold_1.gd" id="1_dwndv"]
 [ext_resource type="Texture2D" uid="uid://difag0780ni4x" path="res://assets/sprites/levels/level visuals/strongcoldconcept1.png" id="1_lnf4h"]
 [ext_resource type="TileSet" uid="uid://t56k02vh81ye" path="res://resources/level/tilesets/placeholder_tileset.tres" id="2_dd6af"]
 [ext_resource type="Script" uid="uid://q3ywevjscjee" path="res://assets/script/tilemap.gd" id="4_dwndv"]
@@ -9,8 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/level objects/room_changer.tscn" id="8_8dor1"]
 
 [node name="room" type="Node"]
-script = ExtResource("1_cq8xs")
-room_name = &"strongcold_1"
+script = ExtResource("1_dwndv")
 metadata/_custom_type_script = "uid://bvp7b8nd25ruo"
 
 [node name="ref" type="Sprite2D" parent="."]
@@ -74,3 +73,5 @@ function_call = "load_room_strong"
 next_room_id = 1
 X = 181
 Y = 425
+
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]

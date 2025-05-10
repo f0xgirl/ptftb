@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cgvqoosmodlnx"
-path="res://.godot/imported/mu_ruin.wav-7b680d2e2c965b6fd441ef05b259b252.sample"
+path="res://.godot/imported/mu_ruin.wav-15386e6f3c365ae6a3e13725770d8e5c.sample"
 
 [deps]
 
-source_file="res://AUDIO/mu_ruin.wav"
-dest_files=["res://.godot/imported/mu_ruin.wav-7b680d2e2c965b6fd441ef05b259b252.sample"]
+source_file="res://AUDIO/music/mu_ruin.wav"
+dest_files=["res://.godot/imported/mu_ruin.wav-15386e6f3c365ae6a3e13725770d8e5c.sample"]
 
 [params]
 

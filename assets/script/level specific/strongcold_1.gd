@@ -2,5 +2,5 @@ extends Node
 
 #placeholder
 
-func _ready() -> void:
+func _on_tree_entered() -> void:
 	Audioplayer.stop()

@@ -2,10 +2,12 @@ extends State_player
 class_name Player_slide
 
 var slide_progress: bool = false
+@onready var stop: AudioStreamPlayer2D = %stop
 @export var player: CharacterBody2D
 @export var sprite: AnimatedSprite2D
 
 func Enter():
+	stop.play()
 	sprite.play("slide_start")
 	await sprite.animation_finished
 	sprite.play("slide_loop")

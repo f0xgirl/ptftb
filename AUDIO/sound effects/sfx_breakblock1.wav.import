@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://csf476dtl83qh"
+path="res://.godot/imported/sfx_breakblock1.wav-088aae95249f9c93c0e6c9af8e2feada.sample"
+
+[deps]
+
+source_file="res://AUDIO/sound effects/sfx_breakblock1.wav"
+dest_files=["res://.godot/imported/sfx_breakblock1.wav-088aae95249f9c93c0e6c9af8e2feada.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

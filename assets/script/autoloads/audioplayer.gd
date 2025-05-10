@@ -5,7 +5,7 @@ const PIZZAFACE_LAUGH = preload("res://AUDIO/sound effects/PizzafaceLaugh2.wav")
 const pillar_impact = preload("res://AUDIO/sound effects/JOHN_PILLAR_IMPACT.wav")
 const hub = preload("res://AUDIO/mu_hub.wav")
 const pizzatime = preload("res://AUDIO/mu_pizzatime.wav")
-const pinball = preload("res://AUDIO/pinball.mp3")
+const pinball = preload("res://AUDIO/music/pinball.mp3")
 const john = preload("res://AUDIO/unearthly.mp3")
 const SUGAR = preload("res://AUDIO/sugar.mp3")
 const VIR = preload("res://AUDIO/vir.mp3")
@@ -14,7 +14,7 @@ const SFX_MACH_1 = preload("res://AUDIO/sfx_mach1.wav")
 const SFX_MACH_2 = preload("res://AUDIO/sfx_mach2.wav")
 const SFX_MACH_3 = preload("res://AUDIO/sfx_mach3.wav")
 const SFX_MACH_4 = preload("res://AUDIO/sfx_mach4.wav")
-const SFX_DOOR = preload("res://AUDIO/sfx_door.wav")
+const SFX_DOOR = preload("res://AUDIO/sound effects/sfx_door.wav")
 const SFX_COLLECT = preload("res://AUDIO/sound effects/sfx_collect.wav")
 const SFX_COLLECTGIANTPIZZA = preload("res://AUDIO/sound effects/sfx_collectgiantpizza.wav")
 const SFX_COLLECTPIZZA = preload("res://AUDIO/sound effects/sfx_collectpizza.wav")
@@ -28,6 +28,8 @@ func _play_music(music: AudioStream, volume = 0.0):
 	stream = music
 	volume_db = volume
 	play()
+
+
 func _play_music_placeholder():
 	_play_music(music_placeholder)
 
@@ -46,8 +48,8 @@ func _play_music_jg():
 func _play_music_sugar():
 	_play_music(SUGAR)
 
-func _play_music_vir():
-	_play_music(VIR)
+func _play_music_vir(volume: float):
+	_play_music(VIR, volume)
 
 func _play_music_scary():
 	_play_music(SCARY)
