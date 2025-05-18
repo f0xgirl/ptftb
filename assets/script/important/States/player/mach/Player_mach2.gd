@@ -29,7 +29,7 @@ func Update(_delta: float):
 	player.afterimage_add()
 	direction = Input.get_axis("left","right")
 	emit_signal("anim_change","mach2", false)
-	emit_signal("anim_offset",2,-5)
+	emit_signal("anim_offset",2, -5)
 	DataPassthrough.player_tillmach3 = tillmach3
 	if player.is_on_floor():
 		if not Input.is_action_pressed("action2"):

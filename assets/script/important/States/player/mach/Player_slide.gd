@@ -15,6 +15,7 @@ func Enter():
 	
 
 func Pyhsics_Update(_delta: float):
+	emit_signal("anim_offset",2,-7)
 	player.velocity.x = move_toward(player.velocity.x, 0, 10)
 	if player.velocity.x == 0:
 		Transitioned.emit(self,"player_idle")

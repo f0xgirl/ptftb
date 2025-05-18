@@ -19,10 +19,11 @@ func Enter():
 	#Audioplayer._play_sfx_mach1()
 	player.velocity.x = 0
 	DataPassthrough.player_state = "player_mach1"
+	emit_signal("anim_offset",2,-7)
 
 func Update(_delta: float):
 	direction = Input.get_axis("left","right")
-	emit_signal("anim_offset",2,-5)
+	
 	if weirdmachjump == true:
 		if player.velocity.y < 0 and not player.is_on_floor():
 			if sprite.animation == "jump2":

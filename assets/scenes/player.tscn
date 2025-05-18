@@ -418,10 +418,11 @@ target_position = Vector2(0, -45)
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 z_index = 1
 material = ExtResource("3_urkgk")
-position = Vector2(2, -22)
+position = Vector2(3, -22)
 sprite_frames = ExtResource("4_5308x")
-animation = &"idle"
+animation = &"mach1"
 autoplay = "idle"
+frame_progress = 0.374296
 script = ExtResource("23_uq8vi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -429,6 +430,7 @@ position = Vector2(0, -3.5)
 shape = ExtResource("6_y16ip")
 
 [node name="check_collisions" type="Area2D" parent="." groups=["block"]]
+visible = false
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("7_1hryd")
@@ -843,6 +845,7 @@ wait_time = 0.15
 [connection signal="anim_offset" from="State Machine/Player_walking" to="sprite" method="_anim_offset"]
 [connection signal="anim_override" from="State Machine/Player_walking" to="sprite" method="_anim_override"]
 [connection signal="anim_change" from="State Machine/Player_mach1" to="sprite" method="_anim_change"]
+[connection signal="anim_offset" from="State Machine/Player_mach1" to="sprite" method="_anim_offset"]
 [connection signal="anim_override" from="State Machine/Player_mach1" to="sprite" method="_anim_override"]
 [connection signal="anim_change" from="State Machine/Player_mach2" to="sprite" method="_anim_change"]
 [connection signal="anim_offset" from="State Machine/Player_mach2" to="sprite" method="_anim_offset"]
@@ -851,6 +854,8 @@ wait_time = 0.15
 [connection signal="anim_offset" from="State Machine/Player_mach3" to="sprite" method="_anim_offset"]
 [connection signal="anim_override" from="State Machine/Player_mach3" to="sprite" method="_anim_override"]
 [connection signal="metal_block_destroy" from="State Machine/Player_mach3" to="State Machine/Player_groundpound" method="_metal_block_destroy_insta"]
+[connection signal="anim_offset" from="State Machine/Player_slide" to="sprite" method="_anim_offset"]
+[connection signal="anim_offset" from="State Machine/Player_turn" to="sprite" method="_anim_offset"]
 [connection signal="anim_offset" from="State Machine/Player_machroll" to="sprite" method="_anim_offset"]
 [connection signal="anim_change" from="State Machine/Player_Crawling" to="sprite" method="_anim_change"]
 [connection signal="anim_offset" from="State Machine/Player_Crawling" to="sprite" method="_anim_offset"]

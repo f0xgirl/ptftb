@@ -20,6 +20,7 @@ func Enter():
 
 
 func Update(_delta: float):
+	emit_signal("anim_offset",2,-7)
 	player.velocity.x = move_toward(player.velocity.x, 0, 15)
 	if player.velocity.x == 0:
 		player_data.player_direction = direction
