@@ -5,7 +5,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qmeay"]
 
-[node name="Area2D" type="Area2D" groups=["room changer"]]
+[node name="room_changer" type="Area2D" groups=["room changer"]]
 collision_mask = 2
 script = ExtResource("1_lbtus")
 

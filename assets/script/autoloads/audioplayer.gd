@@ -21,6 +21,9 @@ const SFX_COLLECTPIZZA = preload("res://AUDIO/sound effects/sfx_collectpizza.wav
 const SFX_COLLECTTOPPIN = preload("res://AUDIO/sound effects/sfx_collecttoppin.wav")
 const SFX_ESCAPESPAWN = preload("res://AUDIO/sfx_escapespawn.wav")
 const SFX_BREAKMETAL = preload("res://AUDIO/sound effects/sfx_breakmetal.wav")
+const SFX_DETRANSFO = preload("res://AUDIO/sound effects/Detransfo.wav")
+const SFX_BREAKBLOCK1 = preload("res://AUDIO/sound effects/sfx_breakblock1.wav")
+const SFX_BREAKBLOCK2 = preload("res://AUDIO/sound effects/sfx_breakblock2.wav")
 
 func _play_music(music: AudioStream, volume = 0.0):
 	if stream == music:
@@ -93,3 +96,12 @@ func _play_sfx_pizzalaugh():
 	
 func _play_sfx_breakmetal():
 	_play_sfx(SFX_BREAKMETAL)
+
+func _play_sfx_detransfo():
+	_play_sfx(SFX_DETRANSFO)
+
+func _play_sfx_breaksmall():
+	_play_sfx(SFX_BREAKBLOCK1)
+
+func _play_sfx_breakbig():
+	_play_sfx(SFX_BREAKBLOCK2)

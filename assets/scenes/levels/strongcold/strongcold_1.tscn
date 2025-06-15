@@ -10,6 +10,8 @@
 
 [node name="room" type="Node"]
 script = ExtResource("1_dwndv")
+room_name = &"strongcold_1"
+level_name = "strongcold"
 metadata/_custom_type_script = "uid://bvp7b8nd25ruo"
 
 [node name="ref" type="Sprite2D" parent="."]
@@ -56,7 +58,7 @@ offset_bottom = -109.0
 text = "hot sauce here too maybe?"
 
 [node name="to hub" parent="." instance=ExtResource("5_t45di")]
-position = Vector2(514, 239)
+position = Vector2(514, 240)
 
 [node name="hot sauce" parent="." instance=ExtResource("6_qaey5")]
 position = Vector2(-1423, 445)
@@ -73,5 +75,7 @@ function_call = "load_room_strong"
 next_room_id = 1
 X = 181
 Y = 425
+
+[node name="blocks" type="Node2D" parent="."]
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]

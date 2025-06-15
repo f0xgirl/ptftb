@@ -18,7 +18,7 @@ func _process(_delta: float) -> void:
 		_refresh_label(selected_room)
 	if Input.is_action_just_pressed("action1"):
 		get_parent().call("room_called", selected_room) #put selected room in second argument after
-		get_parent().call("disable_player", false)
+		get_parent().call("enable_player")
 		queue_free()
 
 func _refresh_label(index: int) -> void:
@@ -44,3 +44,9 @@ func _goto_hub():
 		5:
 			pass
 	
+
+
+func _on_tree_entered() -> void:
+	get_parent().call("disable_player")
+	Audioplayer.stop()
+	pass #TODO add graphics and state for player

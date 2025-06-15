@@ -1,4 +1,4 @@
-extends Node
+extends room
 
 #placeholder <- no shit dumbass
 

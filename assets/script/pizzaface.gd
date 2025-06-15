@@ -13,7 +13,8 @@ const PIZZAFACE_AFTERIMAGE = preload("res://assets/scenes/pizzaface_afterimage.t
 
 var can_move: bool = false
 var player_pos
-var target_pos 
+var target_pos
+var level_exitinfo: level_info
 @export var speed: int
 
 func _ready() -> void:

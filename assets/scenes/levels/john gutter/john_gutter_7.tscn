@@ -50,7 +50,7 @@ position = Vector2(1498, -139)
 editor_description = "90 seconds
 "
 position = Vector2(1990, -424)
-panic_time = 20.0
+panic_time = 70.0
 
 [node name="ladder" parent="." instance=ExtResource("4_6wxuq")]
 position = Vector2(2049, 46)

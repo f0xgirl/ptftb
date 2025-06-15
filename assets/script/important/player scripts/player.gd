@@ -4,7 +4,7 @@ class_name peppino
 @export var player_data: player_data
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var jump_velocity: int
-@onready var camera: Camera2D = $Camera2D
+@onready var camera: Camera2D = $Camera
 @export var level_data: level_data
 @onready var sprite: AnimatedSprite2D = $sprite
 @onready var score_label: Label = %"score label"

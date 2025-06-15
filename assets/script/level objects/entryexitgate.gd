@@ -8,11 +8,34 @@ const HUB_1 = preload("res://assets/scenes/levels/hubs/hub_1.tscn")
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var score_text: Label = $score
 
+enum levels {
+	TEST = 0,
+	JOHNGUTTER = 1,
+	PIZZASCAPE = 2,
+	RUIN = 3,
+	DUNGEON = 4,
+	STRONGCOLD = 5,
+	MID = 6,
+	TUTORIAL = 7,
+	PINBALL = 8,
+	LEVELSELECT = 9
+
+}
+enum hubs {
+	LEVELSELECT = 0,
+	HUB1 = 1,
+	HUB2 = 2,
+	HUB3 = 3,
+	HUB4 = 4,
+	HUB5 = 5
+}
+
 @export_category("hub")
 @export var enterexit: bool
 @export var selected_room: int
 @export var level_name: String
-@export_range(1, 6) var selected_hub: int = 1
+@export var enumtest: levels
+@export var selected_hub: hubs
 @export_category("Player Postion")
 @export var X: int
 @export var Y: int
@@ -37,6 +60,8 @@ func _process(_delta: float) -> void:
 		get_parent().get_parent().emit_signal("player_clear_score")
 		DataPassthrough.panic = false
 		match selected_hub:
+			0:
+				get_parent().get_parent().call("load_levelselect")
 			1:
 				get_parent().get_parent().call("load_hub1", X, Y)
 			2:
@@ -47,8 +72,7 @@ func _process(_delta: float) -> void:
 				pass
 			5:
 				pass
-			6:
-				get_parent().get_parent().call("load_levelselect")
+			
 		get_parent().get_parent().emit_signal("kill_pizzaface")
 		#get_parent().get_parent().add_child(lvl_select) #adds level select to parent
 		#get_parent().get_parent().call("disable_player", true) #disables player from moving
@@ -59,7 +83,7 @@ func _process(_delta: float) -> void:
 	
 	
 	if Input.is_action_just_pressed("up") and enter == true and enterexit == true:
-		get_parent().get_parent().call("room_called", selected_room)
+		get_parent().get_parent().call("room_called", enumtest)
 		get_parent().queue_free()
 	if DataPassthrough.panic == true or enterexit == true:
 		animation_tree.set("parameters/blend_position", 1)

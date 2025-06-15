@@ -39,6 +39,7 @@ script = ExtResource("4_ftpy1")
 [node name="gate portal" parent="." instance=ExtResource("6_is8gr")]
 position = Vector2(-1600, 272)
 level_name = "john_gutter"
+selected_hub = 1
 X = 724
 Y = 226
 

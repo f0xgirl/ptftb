@@ -8,6 +8,7 @@ class_name Player_Idle_Crouched
 const PLAYER_CROUCHING = preload("res://resources/player/player_crouching.tres")
 @onready var crouch_raycast_1: RayCast2D = $"../../crouch raycast1"
 @onready var crouch_raycast_2: RayCast2D = $"../../crouch raycast2"
+@onready var camera: Camera2D = $"../../Camera"
 
 
 func Enter():

@@ -30,5 +30,6 @@ func Update(_delta: float):
 		Transitioned.emit(self,"Player_bumped")
 
 func Exit():
+	Audioplayer._play_sfx_detransfo()
 	player.force_direction = 0
 	mach_4.stop()

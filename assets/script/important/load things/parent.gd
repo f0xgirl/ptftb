@@ -1,5 +1,4 @@
 extends Node
-class_name parent
 
 #signals
 signal remove
@@ -24,6 +23,8 @@ signal player_clear_score
 @export var level_pinball: Array [PackedScene] = []
 #constants:
 const PIZZAFACE = preload("res://assets/scenes/level objects/pizzaface.tscn")
+# variables
+var level_exitinfo: level_info
 
 #can be switched out for the hubs when i get to that
 const LEVEL_SELECT = preload("res://assets/scenes/level_select.tscn")
