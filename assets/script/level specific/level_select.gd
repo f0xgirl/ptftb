@@ -7,6 +7,7 @@ var selected_room: int = 0
 @onready var label: Label = %Label
 
 func _ready() -> void:
+	_refresh_label(0)
 	_goto_hub()
 
 func _process(_delta: float) -> void:

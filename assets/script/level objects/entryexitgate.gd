@@ -3,7 +3,7 @@ extends Sprite2D
 class_name gate_portal
 
 const LEVEL_SELECT = preload("res://assets/scenes/level_select.tscn")
-const HUB_1 = preload("res://assets/scenes/levels/hubs/hub_1.tscn")
+const HUB_1 = preload("res://assets/scenes/levels/hubs/hub1_1.tscn")
 
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var score_text: Label = $score
@@ -32,9 +32,8 @@ enum hubs {
 
 @export_category("hub")
 @export var enterexit: bool
-@export var selected_room: int
 @export var level_name: String
-@export var enumtest: levels
+@export var level: levels
 @export var selected_hub: hubs
 @export_category("Player Postion")
 @export var X: int
@@ -83,8 +82,9 @@ func _process(_delta: float) -> void:
 	
 	
 	if Input.is_action_just_pressed("up") and enter == true and enterexit == true:
-		get_parent().get_parent().call("room_called", enumtest)
-		get_parent().queue_free()
+		get_parent().get_parent().call("clear_rooms")
+		get_parent().get_parent().call("room_called", level)
+		#get_parent().queue_free()
 	if DataPassthrough.panic == true or enterexit == true:
 		animation_tree.set("parameters/blend_position", 1)
 	else:

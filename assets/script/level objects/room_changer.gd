@@ -1,11 +1,26 @@
 @icon("res://assets/sprites/levels/level visuals/roomchangevisual.png")
 extends Area2D
 class_name room_changer
-@export_category("Location")
+
+enum room_call {
+	test,
+	johngutter,
+	pizzascape,
+	ruin,
+	dungeon,
+	strongcold,
+	mid,
+	tutorial,
+	pinball,
+	hub1
+}
+
+@export_category("Locsation")
 ##id of current room
 @export var room_id: int
 ##put method name in parent script to load said room
 @export var function_call: String
+@export var dunction_call_test: room_call
 ##id of room to change to
 @export var next_room_id: int
 @export_category("Player Postion")

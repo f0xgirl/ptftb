@@ -70,7 +70,6 @@ unique_name_in_owner = true
 z_index = 2
 layout_mode = 2
 size_flags_horizontal = 4
-text = "ASDFAS"
 label_settings = SubResource("LabelSettings_fhmxf")
 
 [node name="Logo" type="Sprite2D" parent="."]

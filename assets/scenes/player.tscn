@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://d3amowmvkdyo"]
+[gd_scene load_steps=93 format=3 uid="uid://d3amowmvkdyo"]
 
 [ext_resource type="Script" uid="uid://c6edt4l8ehqu6" path="res://assets/script/important/player scripts/player.gd" id="1_aarfl"]
 [ext_resource type="Resource" uid="uid://bvm4oc3oc6sjt" path="res://resources/player/player_data.tres" id="2_i6cxx"]
@@ -27,6 +27,7 @@
 [ext_resource type="Script" uid="uid://bdp33i4b3iv56" path="res://assets/script/important/States/player/movement/player_groundpound.gd" id="29_3eubh"]
 [ext_resource type="Script" uid="uid://c1weqyidrsyt2" path="res://assets/script/important/States/player/movement/player_highjump.gd" id="31_1b60l"]
 [ext_resource type="Script" uid="uid://bparuw645hh5" path="res://assets/script/important/States/player/movement/player_stationary.gd" id="32_1hryd"]
+[ext_resource type="Script" uid="uid://d4gfluydusvx7" path="res://assets/script/important/States/player/mach/player_machdash.gd" id="33_yitjv"]
 [ext_resource type="AudioStream" uid="uid://dxwvv41vvo28w" path="res://AUDIO/sfx_bump.ogg" id="38_anufl"]
 [ext_resource type="AudioStream" uid="uid://xmj2n7fu4mqi" path="res://AUDIO/sound effects/machroll.wav" id="38_wvkvj"]
 [ext_resource type="Script" uid="uid://ndriol27dmh4" path="res://assets/script/important/States/player/movement/player_ladder.gd" id="39_jurdo"]
@@ -781,6 +782,13 @@ script = ExtResource("32_1hryd")
 sprite = NodePath("../../sprite")
 player = NodePath("../..")
 metadata/_custom_type_script = "uid://bparuw645hh5"
+
+[node name="player_machdash" type="Node" parent="State Machine" node_paths=PackedStringArray("player", "sprite")]
+script = ExtResource("33_yitjv")
+player = NodePath("../..")
+sprite = NodePath("../../sprite")
+player_data = ExtResource("2_i6cxx")
+metadata/_custom_type_script = "uid://d4gfluydusvx7"
 
 [node name="mach smoke" type="AnimatedSprite2D" parent="."]
 visible = false

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ca173oig8gbf"]
+
+[ext_resource type="Script" uid="uid://d1ollvl7q23tu" path="res://assets/script/ranks.gd" id="1_rc23r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g16rm"]
+
+[node name="room" type="Node"]
+script = ExtResource("1_rc23r")
+room_name = &"rank_screen"
+metadata/_custom_type_script = "uid://bvp7b8nd25ruo"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_g16rm")
+
+[node name="rankmusic" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]

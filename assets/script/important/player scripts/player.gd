@@ -13,7 +13,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 const SPRITE_AFTERIMAGE = preload("res://assets/scenes/playermach2_afterimage.tscn")
 const TOPPIN_TEST = preload("res://assets/scenes/level objects/toppin_test.tscn")
 const LEVEL_SELECT = preload("res://assets/scenes/level_select.tscn")
-const HUB_1 = preload("res://assets/scenes/levels/hubs/hub_1.tscn")
+const HUB_1 = preload("res://assets/scenes/levels/hubs/hub1_1.tscn")
 
 var score: int = 0
 var level_name: String

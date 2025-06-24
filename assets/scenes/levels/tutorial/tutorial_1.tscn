@@ -56,8 +56,8 @@ position = Vector2(16, -304)
 position = Vector2(-272, -431)
 level_name = "tutorial"
 selected_hub = 1
-X = 344
-Y = 236
+X = 695
+Y = 510
 
 [node name="to room_2" parent="." instance=ExtResource("7_su4aj")]
 position = Vector2(46, -802)

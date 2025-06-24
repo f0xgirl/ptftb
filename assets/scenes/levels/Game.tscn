@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ca8k22ad5vs46"]
+[gd_scene load_steps=32 format=3 uid="uid://ca8k22ad5vs46"]
 
 [ext_resource type="Script" uid="uid://3qhdcgr4b5td" path="res://assets/script/important/load things/parent.gd" id="1_3ukjf"]
 [ext_resource type="PackedScene" uid="uid://bsr70jx6bauni" path="res://assets/scenes/levels/testing/testing_level.tscn" id="2_bxkav"]
@@ -25,7 +25,12 @@
 [ext_resource type="PackedScene" uid="uid://b8ag3vnk6kv0c" path="res://assets/scenes/levels/midescape/midescape_4.tscn" id="23_7qy0f"]
 [ext_resource type="PackedScene" uid="uid://dimis0ypgatg1" path="res://assets/scenes/levels/tutorial/tutorial_1.tscn" id="24_8vx71"]
 [ext_resource type="PackedScene" uid="uid://chbjabm2xyls0" path="res://assets/scenes/levels/tutorial/tutorial_2.tscn" id="25_3j16m"]
+[ext_resource type="PackedScene" uid="uid://2xmy5sbsv6sn" path="res://assets/scenes/levels/space pinball/space_pinball.tscn" id="26_0jlpe"]
+[ext_resource type="PackedScene" uid="uid://b01bhfo0fpxmq" path="res://assets/scenes/levels/hubs/hub1_1.tscn" id="26_6osxw"]
 [ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="26_l3juw"]
+[ext_resource type="PackedScene" uid="uid://c6un7aw1m3h4" path="res://assets/scenes/levels/hubs/hub1_2.tscn" id="27_0jlpe"]
+[ext_resource type="Script" uid="uid://dfmlhdg765wfw" path="res://assets/script/important/errorhandler.cs" id="27_bxkav"]
+[ext_resource type="PackedScene" uid="uid://57g3rranl1yh" path="res://assets/scenes/levels/hubs/hub1_3.tscn" id="28_j3y6j"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_3ukjf")
@@ -37,10 +42,16 @@ level_dungeon = Array[PackedScene]([ExtResource("15_1b6ss")])
 level_strong = Array[PackedScene]([ExtResource("16_n4h18"), ExtResource("17_4bsva"), ExtResource("18_tt1le"), ExtResource("19_eax4l")])
 level_mid = Array[PackedScene]([ExtResource("20_ju2np"), ExtResource("21_4jwg5"), ExtResource("22_qoldd"), ExtResource("23_7qy0f")])
 level_tutorial = Array[PackedScene]([ExtResource("24_8vx71"), ExtResource("25_3j16m")])
+level_pinball = Array[PackedScene]([ExtResource("26_0jlpe")])
+hub_1 = Array[PackedScene]([ExtResource("26_6osxw"), ExtResource("27_0jlpe"), ExtResource("28_j3y6j")])
 metadata/_custom_type_script = "uid://3qhdcgr4b5td"
 
 [node name="player" parent="." instance=ExtResource("26_l3juw")]
 z_index = 1
 position = Vector2(-599, 806)
+
+[node name="errorhandler" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("27_bxkav")
 
 [connection signal="child_entered_tree" from="." to="." method="room_changed"]

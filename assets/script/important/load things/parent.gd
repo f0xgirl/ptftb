@@ -21,6 +21,7 @@ signal player_clear_score
 @export var level_mid: Array [PackedScene] = []
 @export var level_tutorial: Array [PackedScene] = []
 @export var level_pinball: Array [PackedScene] = []
+@export var hub_1: Array [PackedScene] = []
 #constants:
 const PIZZAFACE = preload("res://assets/scenes/level objects/pizzaface.tscn")
 # variables
@@ -31,7 +32,7 @@ const LEVEL_SELECT = preload("res://assets/scenes/level_select.tscn")
 #room shown when caught by pizza face
 const CAUGHT = preload("res://assets/scenes/caught.tscn")
 #hub1:
-const HUB_1 = preload("res://assets/scenes/levels/hubs/hub_1.tscn")
+const HUB_1 = preload("res://assets/scenes/levels/hubs/hub1_1.tscn")
 #test level:
 const TEST_1 = preload("res://assets/scenes/levels/testing/testing_level.tscn")
 #john gutter:
@@ -55,14 +56,14 @@ const TUTORIAL_1 = preload("res://assets/scenes/levels/tutorial/tutorial_1.tscn"
 
 #variables:
 var score: int
-
+@onready var errorhandler: Node = %errorhandler
 
 func _ready() -> void:
 	GlobalSignals.connect("timesup",pizzaface_spawn)
 	kill_pizzaface.connect(pizzaface_despawn)
 	#var lvl_select = HUB_1.instantiate()
 	#add_child(lvl_select)
-	load_hub1(145, 228)
+	load_hub1(-578, 465)
 	#GlobalSignals.emit_signal("move", 145, 228) #145 228: hub1 | 653 450 levelselect
 	#get_child(0).set_meta("disabled", true)
 
@@ -94,6 +95,7 @@ func room_called(selected_room: int) -> void:
 			load_pinball()
 		9:
 			load_levelselect()
+		
 		
 	
 func load_caught() -> void:
@@ -238,6 +240,15 @@ func load_room_pinball(id: int, prev_id: int) -> void:
 	else:
 		var lvl = level_pinball[id].instantiate()
 		add_child(lvl)
+func load_room_hub1(id: int, prev_id: int) -> void:
+	GlobalSignals.emit_signal("hide", prev_id)
+	if check_if_loaded(id) == true:
+		GlobalSignals.emit_signal("show", id)
+	else:
+		var lvl = hub_1[id].instantiate()
+		add_child(lvl)
+
+
 
 func disable_player() -> void:
 	get_child(0).set_meta("disabled", true)
@@ -274,3 +285,4 @@ func pizzaface_despawn() -> void:
 	for child in get_children():
 		if child.name.begins_with("pizzaface"):
 			child.queue_free()
+	

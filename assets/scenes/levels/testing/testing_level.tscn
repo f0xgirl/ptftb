@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://bsr70jx6bauni"]
+[gd_scene load_steps=8 format=4 uid="uid://bsr70jx6bauni"]
 
 [ext_resource type="TileSet" uid="uid://t56k02vh81ye" path="res://resources/level/tilesets/placeholder_tileset.tres" id="1_2pi2y"]
 [ext_resource type="Script" uid="uid://c0nyutces85ii" path="res://assets/script/level specific/testing_level_1.gd" id="1_3dkav"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/level objects/room_changer.tscn" id="3_w3l46"]
 [ext_resource type="PackedScene" uid="uid://7q52prdlvm3g" path="res://assets/scenes/level objects/metal_block.tscn" id="5_cng5a"]
 [ext_resource type="PackedScene" uid="uid://c20qitdqj1cc1" path="res://assets/scenes/levels/level decoration/parallax_background1_jg.tscn" id="6_52x6o"]
+[ext_resource type="PackedScene" uid="uid://0vqb05x2gqyd" path="res://assets/scenes/level objects/speed_pad.tscn" id="8_vffql"]
 
 [node name="room" type="Node"]
 script = ExtResource("1_3dkav")
@@ -33,5 +34,12 @@ position = Vector2(1157, 707)
 position = Vector2(1610, 695)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("6_52x6o")]
+
+[node name="state_changer" parent="." instance=ExtResource("8_vffql")]
+position = Vector2(-207, 721)
+
+[node name="state_changer2" parent="." instance=ExtResource("8_vffql")]
+position = Vector2(-68, 722)
+direction = -1
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]

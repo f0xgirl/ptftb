@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bplsasd8hafjp"]
+[gd_scene load_steps=4 format=3 uid="uid://bplsasd8hafjp"]
 
 [ext_resource type="Script" uid="uid://byo2pmctrsrod" path="res://assets/script/level objects/grav_olive.gd" id="1_g1w7v"]
+[ext_resource type="Texture2D" uid="uid://bpfajjg08o5tb" path="res://assets/sprites/levels/level visuals/statechangedebug.png" id="2_meawd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clcud"]
 
@@ -8,6 +9,11 @@
 collision_mask = 2
 script = ExtResource("1_g1w7v")
 state = "player_olive"
+
+[node name="Statechangedebug" type="Sprite2D" parent="."]
+editor_description = "remove when actual visual is put on"
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_meawd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_clcud")

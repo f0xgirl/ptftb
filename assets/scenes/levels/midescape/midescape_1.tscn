@@ -36,11 +36,9 @@ collision_layer = 0
 
 [node name="speed_pad" parent="." instance=ExtResource("6_ko5f7")]
 position = Vector2(1444, -138)
-direction = 1
 
 [node name="speed_pad2" parent="." instance=ExtResource("6_ko5f7")]
 position = Vector2(2491, 122)
-direction = 1
 
 [node name="olive_grav2" parent="." instance=ExtResource("6_t258u")]
 position = Vector2(2795, 123)
