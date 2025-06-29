@@ -56,7 +56,10 @@ const TUTORIAL_1 = preload("res://assets/scenes/levels/tutorial/tutorial_1.tscn"
 
 #variables:
 var score: int
+@onready var player: peppino = %player
 @onready var errorhandler: Node = %errorhandler
+#data for when a player exits a level through the pause menu
+var player_exit_data: room_data
 
 func _ready() -> void:
 	GlobalSignals.connect("timesup",pizzaface_spawn)
@@ -286,3 +289,9 @@ func pizzaface_despawn() -> void:
 		if child.name.begins_with("pizzaface"):
 			child.queue_free()
 	
+func set_player_exit_data(new_data: room_data) -> void:
+	print("i work")
+	player.exit_data = new_data
+
+func set_player_hub_destination(dest: int) -> void:
+	player.hubs = dest

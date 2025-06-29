@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://fioigyq7r4yd"]
+[gd_scene load_steps=14 format=4 uid="uid://fioigyq7r4yd"]
 
 [ext_resource type="Texture2D" uid="uid://c8xtty12f5v57" path="res://assets/sprites/normalT_room1.png" id="1_3debp"]
 [ext_resource type="Script" uid="uid://bc5aeje6a35hq" path="res://assets/script/level specific/john_gutter_1.gd" id="1_uyxqf"]
@@ -7,20 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://c20qitdqj1cc1" path="res://assets/scenes/levels/level decoration/parallax_background1_jg.tscn" id="5_4w433"]
 [ext_resource type="PackedScene" uid="uid://drg1wcxxcyjdm" path="res://assets/scenes/level objects/gate_portal.tscn" id="6_is8gr"]
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/level objects/room_changer.tscn" id="7_hepxs"]
-[ext_resource type="Script" uid="uid://bssgopmgshmnb" path="res://assets/script/important/room_data.gd" id="7_mo1xf"]
+[ext_resource type="Resource" uid="uid://cmvxfd31mk4et" path="res://resources/level/room_data/hub1/john_gutter.tres" id="7_mo1xf"]
 [ext_resource type="PackedScene" uid="uid://ceyc1vb3r2v0g" path="res://assets/scenes/level objects/block_small.tscn" id="8_otgsb"]
 [ext_resource type="PackedScene" uid="uid://iesqe0ibgymu" path="res://assets/scenes/level objects/block_big.tscn" id="9_3hrl4"]
 [ext_resource type="PackedScene" uid="uid://brmr1yrkxbwca" path="res://assets/scenes/level objects/block_big_collectible.tscn" id="10_sc2gl"]
 [ext_resource type="PackedScene" uid="uid://bgmoh1mbgjq0g" path="res://assets/scenes/level objects/block_small_collectible.tscn" id="11_ftpy1"]
 [ext_resource type="PackedScene" uid="uid://b6370n1pcjqjb" path="res://assets/scenes/level objects/big_collectible.tscn" id="12_htb0r"]
-
-[sub_resource type="Resource" id="Resource_vq8wj"]
-script = ExtResource("7_mo1xf")
-room_id = 1
-X = 16
-Y = 494
-function_call = ""
-metadata/_custom_type_script = "uid://bssgopmgshmnb"
 
 [node name="room" type="Node"]
 script = ExtResource("1_uyxqf")
@@ -49,7 +41,7 @@ script = ExtResource("4_ftpy1")
 position = Vector2(-1600, 272)
 level_name = "john_gutter"
 selected_hub = 1
-leaving = SubResource("Resource_vq8wj")
+leaving = ExtResource("7_mo1xf")
 
 [node name="to room 2" parent="." instance=ExtResource("7_hepxs")]
 position = Vector2(2909, 268)

@@ -47,6 +47,7 @@ hub_1 = Array[PackedScene]([ExtResource("26_6osxw"), ExtResource("27_0jlpe"), Ex
 metadata/_custom_type_script = "uid://3qhdcgr4b5td"
 
 [node name="player" parent="." instance=ExtResource("26_l3juw")]
+unique_name_in_owner = true
 z_index = 1
 position = Vector2(-599, 806)
 

@@ -9,7 +9,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var level_data: level_data
 @onready var sprite: AnimatedSprite2D = $sprite
 @onready var score_label: Label = %"score label"
-@onready var afterimagetimer: Timer = $afterimage #THIS FUCKING VARIABLE SAYS ITS NULL EVEN THOUGH ITS NOT WHAT THE FUCK
+@onready var afterimagetimer: Timer = %afterimage #THIS FUCKING VARIABLE SAYS ITS NULL EVEN THOUGH ITS NOT WHAT THE FUCK
 
 const SPRITE_AFTERIMAGE = preload("res://assets/scenes/playermach2_afterimage.tscn")
 const TOPPIN_TEST = preload("res://assets/scenes/level objects/toppin_test.tscn")
@@ -25,6 +25,8 @@ var state_override_change: String
 var grav_disable: bool = false
 var still_in_ladder: bool = false
 var has_key: bool = false
+var exit_data: room_data
+var hubs: int
 
 
 func _ready() -> void:
@@ -48,18 +50,16 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if Input.is_action_just_pressed("pause") and get_meta("disabled") == false:
-		var lvl = HUB_1.instantiate()
-		get_parent().call("clear_rooms") #clears rooms
-		#get_parent().call("disable_player", true) #disables player from moving
-		GlobalSignals.emit_signal("move",145, 228)
-		get_parent().emit_signal("player_clear_score")
-		DataPassthrough.panic = false
-		Globaltimer.stop()
-		DataPassthrough.player_pos_x = 0
-		DataPassthrough.player_pos_y = 0
-		get_parent().add_child(lvl)
-		#await lvl.ready
-		#get_parent().call()
+		get_parent().call("clear_rooms")
+		points_clear()
+		match hubs:
+			0:
+				get_parent().call("load_levelselect")
+			1:
+				
+				get_parent().call("load_hub1", exit_data.X, exit_data.Y, exit_data.room_id)
+			3:
+				pass
 
 func afterimage_stop():
 	afterimagetimer.stop() #IGNORE ERROR RESUME EXECUTION
@@ -97,7 +97,6 @@ func set_pos(x: int, y: int) -> void:
 	global_position.y = y
 
 func add_points(points):
-	print("added")
 	score += points
 	score_label.set_text(var_to_str(score))
 

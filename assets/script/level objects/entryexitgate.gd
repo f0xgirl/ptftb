@@ -44,6 +44,8 @@ var enter = false
 var hub_is_loaded: bool = false
 
 func _ready() -> void:
+	get_parent().get_parent().call("set_player_hub_destination", selected_hub)
+	get_parent().get_parent().call("set_player_exit_data", leaving)
 	get_parent().connect("hidden", _hidden)
 	get_parent().connect("visible", _visible)
 	get_parent().get_parent().connect("wait_hub_loaded", _is_loaded)
