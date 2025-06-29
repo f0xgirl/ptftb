@@ -14,15 +14,11 @@ func save_level_data(level_name: String, score: int) -> void:
 	file.close()
 
 func load_level_data(level_name: String) -> int:
-	print(level_name)
 	var file = FileAccess.open("user://pftb.json", FileAccess.READ)
 	var json = file.get_as_text()
 	#print(json)
 	saved_data = JSON.parse_string(json)
 	
-	#this can and will throw errors at you every chance it gets figure it out
-	#i dont know what to tell you
-	#(what its accessing probably doesnt exist check AppData)
 	var value: int
 	match level_name:
 		"tutorial":
@@ -32,3 +28,28 @@ func load_level_data(level_name: String) -> int:
 		"mid":
 			value = saved_data["mid"]
 	return value
+
+func tutorial_complete() -> void:
+	var file = FileAccess.open("user://pftb.json", FileAccess.WRITE)
+
+	saved_data["tutorial_completed"] = true
+
+	var json = JSON.stringify(saved_data)
+
+	file.store_string(json)
+	file.close()
+
+func check_if_tutorial_completed() -> bool:
+	var file = FileAccess.open("user://ptftb.json", FileAccess.READ)
+	var json = file.get_as_text()
+
+	saved_data = JSON.parse_string(json)
+
+	print("hi")
+	if saved_data["tutorial_completed"] == true:
+		print("thing 1")
+		return true
+	else:
+		print("thing 2")
+		return false
+	
