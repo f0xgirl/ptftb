@@ -1,5 +1,5 @@
-extends room
+extends room	
 
-func _ready() -> void:
+func _on_tree_entered() -> void:
 	if DataPassthrough.panic == false:
 		Audioplayer._play_music_pinball()

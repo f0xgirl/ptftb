@@ -1,5 +1,6 @@
-extends StaticBody2D
+extends StaticBody2D	
 
-func _ready() -> void:
-	if Jsonsaveloading.load_level_data("tutorial") >= 200 and Jsonsaveloading.load_level_data("john gutter") >= 1000:
+func _on_tree_entered() -> void:
+	await Jsonsaveloading.ready
+	if Jsonsaveloading.check_if_tutorial_completed() == true:
 		queue_free()

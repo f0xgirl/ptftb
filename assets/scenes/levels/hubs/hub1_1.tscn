@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=4 uid="uid://b01bhfo0fpxmq"]
+[gd_scene load_steps=9 format=4 uid="uid://b01bhfo0fpxmq"]
 
 [ext_resource type="Script" uid="uid://cevmxegd0htdb" path="res://assets/script/level specific/hub_1.gd" id="1_6vd3m"]
 [ext_resource type="TileSet" uid="uid://t56k02vh81ye" path="res://resources/level/tilesets/placeholder_tileset.tres" id="2_s2jbd"]
 [ext_resource type="Script" uid="uid://q3ywevjscjee" path="res://assets/script/tilemap.gd" id="3_eatyb"]
 [ext_resource type="PackedScene" uid="uid://drg1wcxxcyjdm" path="res://assets/scenes/level objects/gate_portal.tscn" id="4_eatyb"]
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/level objects/room_changer.tscn" id="5_6vd3m"]
+[ext_resource type="Script" uid="uid://dq7pcmne45ap8" path="res://assets/script/level objects/hub_level_progress_temp.gd" id="6_arv25"]
+[ext_resource type="Texture2D" uid="uid://cmnqe80xe54d0" path="res://assets/sprites/spr_enemyblockdead_0.png" id="7_vxttp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcaf5"]
+size = Vector2(46, 37)
 
 [node name="Hub11" type="Node"]
 script = ExtResource("1_6vd3m")
@@ -36,4 +41,17 @@ next_room_id = 1
 X = -865
 Y = 503
 
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(900, 450)
+scale = Vector2(1, 3.51468)
+script = ExtResource("6_arv25")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-13, 8.5)
+shape = SubResource("RectangleShape2D_jcaf5")
+
+[node name="SprEnemyblockdead0" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
+texture = ExtResource("7_vxttp")
+
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
+[connection signal="tree_entered" from="StaticBody2D" to="StaticBody2D" method="_on_tree_entered"]

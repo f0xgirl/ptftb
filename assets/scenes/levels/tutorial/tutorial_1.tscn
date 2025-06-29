@@ -149,3 +149,4 @@ offset_bottom = 599.896
 text = "press up + jump to jump higher"
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]

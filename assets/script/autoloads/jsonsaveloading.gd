@@ -47,9 +47,7 @@ func check_if_tutorial_completed() -> bool:
 
 	print("hi")
 	if saved_data["tutorial_completed"] == true:
-		print("thing 1")
 		return true
 	else:
-		print("thing 2")
 		return false
 	

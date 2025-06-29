@@ -78,3 +78,5 @@ position = Vector2(2848, -321)
 
 [node name="block9" parent="blocks" instance=ExtResource("8_eyf2g")]
 position = Vector2(2880, -321)
+
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
