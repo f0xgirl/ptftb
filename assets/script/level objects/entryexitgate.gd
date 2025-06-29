@@ -35,9 +35,9 @@ enum hubs {
 @export var level_name: String
 @export var level: levels
 @export var selected_hub: hubs
-@export_category("Player Postion")
-@export var X: int
-@export var Y: int
+@export_category("Player Exit Position")
+##ignore if "level_select" is selected, as the node doesnt read the data from this variable
+@export var leaving: room_data
 
 var score: int
 var enter = false
@@ -62,7 +62,7 @@ func _process(_delta: float) -> void:
 			0:
 				get_parent().get_parent().call("load_levelselect")
 			1:
-				get_parent().get_parent().call("load_hub1", X, Y)
+				get_parent().get_parent().call("load_hub1", leaving.X, leaving.Y, leaving.room_id)
 			2:
 				pass
 			3:

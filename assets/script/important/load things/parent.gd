@@ -48,7 +48,7 @@ const STRONGCOLD_1 = preload("res://assets/scenes/levels/strongcold/strongcold_1
 #midescape:
 const MIDESCAPE_1 = preload("res://assets/scenes/levels/midescape/midescape_1.tscn")
 #pinball:
-const SPACE_PINBALL = preload("res://assets/scenes/levels/space pinball/space_pinball.tscn")
+const SPACE_PINBALL = preload("res://assets/scenes/levels/space pinball/space_pinball_1.tscn")
 #tutorial:
 const TUTORIAL_1 = preload("res://assets/scenes/levels/tutorial/tutorial_1.tscn")
 #pinball:
@@ -63,7 +63,7 @@ func _ready() -> void:
 	kill_pizzaface.connect(pizzaface_despawn)
 	#var lvl_select = HUB_1.instantiate()
 	#add_child(lvl_select)
-	load_hub1(-578, 465)
+	load_hub1(-578, 465, 0)
 	#GlobalSignals.emit_signal("move", 145, 228) #145 228: hub1 | 653 450 levelselect
 	#get_child(0).set_meta("disabled", true)
 
@@ -80,10 +80,10 @@ func room_called(selected_room: int) -> void:
 		2:
 			load_medevial()
 		3:
-			pass
+			load_ruin()
 			
 		4:
-			pass
+			load_dungeon()
 			
 		5:
 			load_strong()
@@ -154,13 +154,12 @@ func load_pinball() -> void:
 	var lvl = SPACE_PINBALL.instantiate()
 	add_child(lvl)
 
-func load_hub1(X: int, Y: int) -> void:
-	print(HUB_1.can_instantiate())
-	print("is loading")
-	var lvl = HUB_1.instantiate()
-	add_child(lvl)
-	print("loaded")
+# this is a little different from the rest,
+# because you might have to go to different rooms when you complete a level
+func load_hub1(X: int, Y: int, id: int) -> void:
 	GlobalSignals.emit_signal("move", X, Y)
+	var lvl = hub_1[id].instantiate()
+	add_child(lvl)
 
 func load_levelselect() -> void:
 	var lvl = LEVEL_SELECT.instantiate()
@@ -240,6 +239,8 @@ func load_room_pinball(id: int, prev_id: int) -> void:
 	else:
 		var lvl = level_pinball[id].instantiate()
 		add_child(lvl)
+		
+
 func load_room_hub1(id: int, prev_id: int) -> void:
 	GlobalSignals.emit_signal("hide", prev_id)
 	if check_if_loaded(id) == true:
@@ -271,7 +272,6 @@ func clear_rooms() -> void:
 			child.queue_free()
 
 func _player_camera_limit(left: int, top: int, right: int, bottom: int) -> void:
-	#print(left,top,right,bottom)
 	player_limit_left.emit(left)
 	player_limit_top.emit(top)
 	player_limit_right.emit(right)

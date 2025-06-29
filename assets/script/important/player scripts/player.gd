@@ -1,6 +1,7 @@
 extends CharacterBody2D
 class_name peppino
 
+
 @export var player_data: player_data
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var jump_velocity: int
@@ -8,7 +9,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var level_data: level_data
 @onready var sprite: AnimatedSprite2D = $sprite
 @onready var score_label: Label = %"score label"
-@onready var afterimagetimer: Timer = $afterimagetimer
+@onready var afterimagetimer: Timer = $afterimage #THIS FUCKING VARIABLE SAYS ITS NULL EVEN THOUGH ITS NOT WHAT THE FUCK
 
 const SPRITE_AFTERIMAGE = preload("res://assets/scenes/playermach2_afterimage.tscn")
 const TOPPIN_TEST = preload("res://assets/scenes/level objects/toppin_test.tscn")
@@ -61,7 +62,7 @@ func _physics_process(delta: float) -> void:
 		#get_parent().call()
 
 func afterimage_stop():
-	afterimagetimer.stop()
+	afterimagetimer.stop() #IGNORE ERROR RESUME EXECUTION
 
 func afterimage_add():
 	afterimagetimer.start()

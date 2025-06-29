@@ -1,9 +1,9 @@
 using Godot;
 using System;
 
-public partial class Errorhandler : Node
+public partial class errorhandler : Node
 {
-   public static bool CheckIfExists(int id, PackedScene[] thing)
+   public bool CheckIfExists(int id, PackedScene[] thing)
    {
       try
       {

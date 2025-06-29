@@ -7,7 +7,7 @@ uniform vec4 colour4 : source_color;
 
 void fragment() {
 	vec4 input_color = texture(TEXTURE, UV);
-	
+
 }
 
 //void light() {

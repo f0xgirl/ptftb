@@ -2,6 +2,6 @@
 extends block_base
 class_name block_big_collectible
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if is_queued_for_deletion():
 		GlobalSignals.emit_signal("add_score", 100)

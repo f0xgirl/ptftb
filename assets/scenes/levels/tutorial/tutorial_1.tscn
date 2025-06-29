@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://dimis0ypgatg1"]
+[gd_scene load_steps=13 format=4 uid="uid://dimis0ypgatg1"]
 
 [ext_resource type="Texture2D" uid="uid://bgx37ta3og1sa" path="res://assets/sprites/tutorial_room1.png" id="1_87gqg"]
 [ext_resource type="Script" uid="uid://cp0dte5oq5yuc" path="res://assets/script/level specific/tutorial_1.gd" id="1_e3xvm"]
@@ -7,9 +7,18 @@
 [ext_resource type="PackedScene" uid="uid://drg1wcxxcyjdm" path="res://assets/scenes/level objects/gate_portal.tscn" id="6_527j7"]
 [ext_resource type="PackedScene" uid="uid://cuoo8ojghsvmb" path="res://assets/scenes/level objects/ladder.tscn" id="7_e3xvm"]
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/level objects/room_changer.tscn" id="7_su4aj"]
+[ext_resource type="Script" uid="uid://bssgopmgshmnb" path="res://assets/script/important/room_data.gd" id="8_e3xvm"]
 [ext_resource type="PackedScene" uid="uid://7q52prdlvm3g" path="res://assets/scenes/level objects/metal_block.tscn" id="9_87ccq"]
 [ext_resource type="PackedScene" uid="uid://gu657xt52lr7" path="res://assets/scenes/level objects/panic_block.tscn" id="9_ua5nr"]
 [ext_resource type="PackedScene" uid="uid://cwgntvkyl06cp" path="res://assets/scenes/level objects/small_collectible.tscn" id="10_6f28j"]
+
+[sub_resource type="Resource" id="Resource_6ncu4"]
+script = ExtResource("8_e3xvm")
+room_id = 0
+X = 701
+Y = 504
+function_call = ""
+metadata/_custom_type_script = "uid://bssgopmgshmnb"
 
 [node name="room" type="Node"]
 script = ExtResource("1_e3xvm")
@@ -56,8 +65,7 @@ position = Vector2(16, -304)
 position = Vector2(-272, -431)
 level_name = "tutorial"
 selected_hub = 1
-X = 695
-Y = 510
+leaving = SubResource("Resource_6ncu4")
 
 [node name="to room_2" parent="." instance=ExtResource("7_su4aj")]
 position = Vector2(46, -802)

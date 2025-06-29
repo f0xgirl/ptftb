@@ -19,7 +19,7 @@ func _on_body_entered(body: Node2D) -> void:
 		print("enter " + var_to_str(name))
 		entered = true
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("up") and entered == true:
 		GlobalSignals.emit_signal("move", position.x, plr.position.y )
 		GlobalSignals.emit_signal("change_state","player_on_ladder", NAN)

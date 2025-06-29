@@ -11,7 +11,7 @@ const SHROOMCOLLECT = preload("res://assets/sprites/spr_shroomcollect_0.png")
 @onready var sprite: Sprite2D = $sprite
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	sprite.offset.y = 1
 	await timer.timeout
 	sprite.offset.y = -1

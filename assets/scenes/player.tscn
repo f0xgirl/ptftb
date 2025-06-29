@@ -398,7 +398,6 @@ animations = [{
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 z_index = 4
-position = Vector2(1, 0)
 collision_layer = 10
 collision_mask = 17
 floor_constant_speed = true
@@ -843,7 +842,8 @@ position = Vector2(2, 0)
 stream = ExtResource("43_jd8hh")
 volume_db = -12.54
 
-[node name="afterimagetimer" type="Timer" parent="."]
+[node name="afterimage" type="Timer" parent="."]
+unique_name_in_owner = true
 wait_time = 0.15
 
 [connection signal="anim_change" from="State Machine/Player_Idle" to="sprite" method="_anim_change"]
@@ -873,4 +873,4 @@ wait_time = 0.15
 [connection signal="anim_offset" from="State Machine/Player_Idle_Crouched" to="sprite" method="_anim_offset"]
 [connection signal="anim_override" from="State Machine/Player_Idle_Crouched" to="sprite" method="_anim_override"]
 [connection signal="finished" from="mach2" to="State Machine/Player_mach2" method="_on_mach_2_finished"]
-[connection signal="timeout" from="afterimagetimer" to="." method="_on_afterimagetimer_timeout"]
+[connection signal="timeout" from="afterimage" to="." method="_on_afterimagetimer_timeout"]

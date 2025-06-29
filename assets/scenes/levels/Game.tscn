@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://b8ag3vnk6kv0c" path="res://assets/scenes/levels/midescape/midescape_4.tscn" id="23_7qy0f"]
 [ext_resource type="PackedScene" uid="uid://dimis0ypgatg1" path="res://assets/scenes/levels/tutorial/tutorial_1.tscn" id="24_8vx71"]
 [ext_resource type="PackedScene" uid="uid://chbjabm2xyls0" path="res://assets/scenes/levels/tutorial/tutorial_2.tscn" id="25_3j16m"]
-[ext_resource type="PackedScene" uid="uid://2xmy5sbsv6sn" path="res://assets/scenes/levels/space pinball/space_pinball.tscn" id="26_0jlpe"]
+[ext_resource type="PackedScene" uid="uid://2xmy5sbsv6sn" path="res://assets/scenes/levels/space pinball/space_pinball_1.tscn" id="26_0jlpe"]
 [ext_resource type="PackedScene" uid="uid://b01bhfo0fpxmq" path="res://assets/scenes/levels/hubs/hub1_1.tscn" id="26_6osxw"]
 [ext_resource type="PackedScene" uid="uid://d3amowmvkdyo" path="res://assets/scenes/player.tscn" id="26_l3juw"]
 [ext_resource type="PackedScene" uid="uid://c6un7aw1m3h4" path="res://assets/scenes/levels/hubs/hub1_2.tscn" id="27_0jlpe"]
