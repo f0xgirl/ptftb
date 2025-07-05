@@ -16,7 +16,6 @@ func save_level_data(level_name: String, score: int) -> void:
 func load_level_data(level_name: String) -> int:
 	var file = FileAccess.open("user://pftb.json", FileAccess.READ)
 	var json = file.get_as_text()
-	#print(json)
 	saved_data = JSON.parse_string(json)
 	
 	var value: int
@@ -28,7 +27,7 @@ func load_level_data(level_name: String) -> int:
 		"mid":
 			value = saved_data["mid"]
 	return value
-
+#THESE TWO FUNCTIONS DONT WORK AND I DONT KNOW WHY
 func tutorial_complete() -> void:
 	var file = FileAccess.open("user://pftb.json", FileAccess.WRITE)
 
@@ -45,9 +44,7 @@ func check_if_tutorial_completed() -> bool:
 
 	saved_data = JSON.parse_string(json)
 
-	print("hi")
+	var value: bool
 	if saved_data["tutorial_completed"] == true:
-		return true
-	else:
-		return false
-	
+		value = true
+	return value

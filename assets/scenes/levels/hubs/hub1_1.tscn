@@ -54,4 +54,3 @@ shape = SubResource("RectangleShape2D_jcaf5")
 texture = ExtResource("7_vxttp")
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
-[connection signal="tree_entered" from="StaticBody2D" to="StaticBody2D" method="_on_tree_entered"]

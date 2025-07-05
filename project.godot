@@ -12,7 +12,7 @@ config_version=5
 
 config/name="PTftb"
 run/main_scene="uid://ca8k22ad5vs46"
-config/features=PackedStringArray("4.4", "C#", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="uid://dili8jvl7hs5g"
 config/macos_native_icon="res://iconMAC.icns"
 config/windows_native_icon="res://icon.ico"

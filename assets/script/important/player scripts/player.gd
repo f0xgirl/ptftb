@@ -43,6 +43,8 @@ func _ready() -> void:
 	if DataPassthrough.player_pos_x:
 		position.x = DataPassthrough.player_pos_x
 		position.y = DataPassthrough.player_pos_y
+	await Jsonsaveloading.ready
+	print(Jsonsaveloading.check_if_tutorial_completed())
 
 func _physics_process(delta: float) -> void:
 	if grav_disable == false:

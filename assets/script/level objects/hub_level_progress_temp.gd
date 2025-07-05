@@ -1,6 +1,8 @@
 extends StaticBody2D	
 
 func _on_tree_entered() -> void:
-	await Jsonsaveloading.ready
-	if Jsonsaveloading.check_if_tutorial_completed() == true:
+	pass
+
+func _process(delta: float) -> void:
+	if Jsonsaveloading.load_level_data("tutorial") > 1:
 		queue_free()
