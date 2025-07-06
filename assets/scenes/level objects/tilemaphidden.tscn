@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://wgijjc1ntv2h"]
+
+[ext_resource type="Script" uid="uid://drisexd2pwqvs" path="res://assets/script/tilemaphidden.gd" id="1_oq56p"]
+
+[node name="tilemap" type="TileMapLayer"]
+script = ExtResource("1_oq56p")
+metadata/_custom_type_script = "uid://q3ywevjscjee"

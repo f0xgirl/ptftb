@@ -46,7 +46,7 @@ leaving = ExtResource("7_mo1xf")
 [node name="to room 2" parent="." instance=ExtResource("7_hepxs")]
 position = Vector2(2909, 268)
 scale = Vector2(1.44243, 7.50917)
-function_call = "load_room_jg"
+dunction_call = 1
 next_room_id = 1
 X = -1540
 Y = 308

@@ -1,0 +1,24 @@
+extends block_small
+class_name block_small_hidden
+
+enum block {
+    placeholder,
+    johngutter
+}
+
+@export var tile: block
+
+func _ready() -> void:
+	get_parent().get_parent().connect("hidden", _hidden)
+	get_parent().get_parent().connect("visible", _visible)
+
+
+
+
+
+
+
+func place_tile():
+	match tile:
+		block.placeholder:
+			sprite.set_region_rect(Rect2i(96,80,32,32))

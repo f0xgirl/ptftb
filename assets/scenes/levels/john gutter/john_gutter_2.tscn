@@ -41,7 +41,7 @@ visible = false
 position = Vector2(-1609, 320)
 scale = Vector2(1, 11)
 room_id = 1
-function_call = "load_room_jg"
+dunction_call = 1
 X = 2860
 Y = 282
 
@@ -49,7 +49,7 @@ Y = 282
 position = Vector2(3594, 266)
 scale = Vector2(1, 10.44)
 room_id = 1
-function_call = "load_room_jg"
+dunction_call = 1
 next_room_id = 2
 X = -1808
 Y = 182

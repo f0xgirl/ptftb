@@ -43,14 +43,14 @@ position = Vector2(1227, 118)
 [node name="to room 2" parent="." instance=ExtResource("6_reswh")]
 position = Vector2(3394, 43)
 scale = Vector2(0.815879, 9.94791)
-function_call = "load_room_pinball"
+dunction_call = 8
 next_room_id = 1
 
 [node name="to escape route" parent="." instance=ExtResource("6_reswh")]
 editor_description = "it goes to room 70 because im too lazy to figure out which room id would make sense"
 position = Vector2(-55, 111)
 scale = Vector2(1, 9.37321)
-function_call = "load_room_pinball"
+dunction_call = 8
 next_room_id = 70
 
 [node name="blocks" type="Node2D" parent="."]

@@ -56,14 +56,14 @@ script = ExtResource("4_y3icm")
 position = Vector2(-201, -565)
 scale = Vector2(6.08791, -2.71795)
 room_id = 4
-function_call = "load_room_jg"
+dunction_call = 1
 next_room_id = 3
 
 [node name="to room 4 right" parent="." instance=ExtResource("3_lud3g")]
 position = Vector2(59, -561)
 scale = Vector2(6.49314, 3.08032)
 room_id = 4
-function_call = "load_room_jg"
+dunction_call = 1
 next_room_id = 3
 X = 192
 Y = 612

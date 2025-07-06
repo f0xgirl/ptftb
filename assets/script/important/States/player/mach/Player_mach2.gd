@@ -36,6 +36,7 @@ func Update(_delta: float):
 			Transitioned.emit(self,"Player_slide")
 	if Input.is_action_just_pressed("action1") and player.is_on_floor():
 		player.velocity.y = 1.1 * - 350
+	#wall collision
 	if player.is_on_wall():
 		for index in player.get_slide_collision_count():
 			var collider = player.get_slide_collision(index).get_collider()
@@ -47,6 +48,7 @@ func Update(_delta: float):
 			else:
 				if is_block == false or collider.name.begins_with("metal"):
 					Transitioned.emit(self,"player_bumped")
+	
 	if Input.is_action_just_pressed("down"):
 		Transitioned.emit(self,"player_roll")
 	

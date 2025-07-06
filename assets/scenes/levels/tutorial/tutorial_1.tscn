@@ -62,7 +62,7 @@ leaving = ExtResource("8_e3xvm")
 [node name="to room_2" parent="." instance=ExtResource("7_su4aj")]
 position = Vector2(46, -802)
 scale = Vector2(6.97278, 2.49998)
-function_call = "load_room_tutorial"
+dunction_call = 7
 next_room_id = 1
 X = 191
 Y = 315

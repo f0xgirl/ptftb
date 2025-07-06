@@ -27,11 +27,9 @@ position = Vector2(-387, -245)
 [node name="to room 2" parent="." instance=ExtResource("6_wqrj4")]
 position = Vector2(-783, -103)
 room_id = 2
-function_call = "load_room_mid"
+dunction_call = 6
 next_room_id = 1
 
 [node name="gate" parent="." instance=ExtResource("6_v50ih")]
 position = Vector2(1039, -192)
 level_name = "mid"
-X = 234
-Y = 34

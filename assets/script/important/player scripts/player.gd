@@ -15,6 +15,9 @@ const SPRITE_AFTERIMAGE = preload("res://assets/scenes/playermach2_afterimage.ts
 const TOPPIN_TEST = preload("res://assets/scenes/level objects/toppin_test.tscn")
 const LEVEL_SELECT = preload("res://assets/scenes/level_select.tscn")
 const HUB_1 = preload("res://assets/scenes/levels/hubs/hub1_1.tscn")
+const EXIT_X_DFEAULT = -578 #these are to spawn back at the start
+const EXIT_Y_DFEAULT = 400
+const EXIT_ID_DEFAULT = 0
 
 var score: int = 0
 var level_name: String
@@ -54,14 +57,20 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause") and get_meta("disabled") == false:
 		get_parent().call("clear_rooms")
 		points_clear()
-		match hubs:
-			0:
-				get_parent().call("load_levelselect")
-			1:
+		if exit_data_exists(exit_data):
+			match hubs:
+				0:
+					get_parent().call("load_levelselect")
+				1:
 				
-				get_parent().call("load_hub1", exit_data.X, exit_data.Y, exit_data.room_id)
-			3:
-				pass
+					get_parent().call("load_hub1", exit_data.X, exit_data.Y, exit_data.room_id)
+				3:
+					pass
+				_:
+					get_parent().call("load_levelselect")
+					print("default")
+		else: #if theres no exit data
+			get_parent().call("load_hub1",EXIT_X_DFEAULT, EXIT_Y_DFEAULT, EXIT_ID_DEFAULT)
 
 func afterimage_stop():
 	afterimagetimer.stop() #IGNORE ERROR RESUME EXECUTION
@@ -138,3 +147,13 @@ func get_level_name(name: String) -> void:
 
 func _on_afterimagetimer_timeout() -> void:
 	afterimage_add()
+
+func exit_data_exists(data: room_data,) -> bool:
+	if data.X == null:
+		return false
+	elif data.Y == null:
+		return false
+	elif data.room_id == null:
+		return false
+	else:
+		return true #quick and dirty who gaf

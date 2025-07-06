@@ -3,24 +3,22 @@ extends Area2D
 class_name room_changer
 
 enum room_call {
-	test,
-	johngutter,
-	pizzascape,
-	ruin,
-	dungeon,
-	strongcold,
-	mid,
-	tutorial,
-	pinball,
-	hub1
+	test = 0,
+	johngutter = 1,
+	pizzascape = 2,
+	ruin = 3,
+	dungeon = 4,
+	strongcold = 5,
+	mid = 6,
+	tutorial = 7,
+	pinball = 8,
+	hub1 = 9
 }
 
 @export_category("Locsation")
 ##id of current room
 @export var room_id: int
-##put method name in parent script to load said room
-@export var function_call: String
-@export var dunction_call_test: room_call
+@export var dunction_call: room_call
 ##id of room to change to
 @export var next_room_id: int
 @export_category("Player Postion")
@@ -33,12 +31,35 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
+	var room_goto: String
+	match dunction_call:
+		0:
+			room_goto = "load_room_test"
+		1:
+			room_goto = "load_room_jg"
+		2:
+			room_goto = "load_room_midevial"
+		3:
+			room_goto = "load_room_ruin"
+		4:
+			room_goto = "load_room_dungeon"
+		5:
+			room_goto = "load_room_stong"
+		6:
+			room_goto = "load_room_mid"
+		7:
+			room_goto = "load_room_tutorial"
+		8:
+			room_goto = "load_room_pinball"
+		9:
+			room_goto = "load_room_hub1"
+
 	Audioplayer._play_sfx_switchingrooms()
 	Transition.transition()
 	await Transition.on_transition_finished
 	if body.is_in_group("player"):
 		GlobalSignals.emit_signal("move", X, Y)
-		get_parent().get_parent().call_deferred(function_call, next_room_id, room_id)
+		get_parent().get_parent().call_deferred(room_goto, next_room_id, room_id)
 		
 
 

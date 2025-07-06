@@ -1,11 +1,10 @@
-[gd_scene load_steps=14 format=4 uid="uid://c46vd1cyavu3n"]
+[gd_scene load_steps=13 format=4 uid="uid://c46vd1cyavu3n"]
 
 [ext_resource type="Script" uid="uid://bvp7b8nd25ruo" path="res://assets/script/important/load things/room.gd" id="1_3tapv"]
 [ext_resource type="Texture2D" uid="uid://nnsqd2ge8w6k" path="res://assets/sprites/normalT_room4.png" id="1_hd3eu"]
 [ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://resources/level/tilesets/john_gutter_tileset.tres" id="2_dthah"]
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/level objects/room_changer.tscn" id="3_j3jvx"]
 [ext_resource type="Script" uid="uid://q3ywevjscjee" path="res://assets/script/tilemap.gd" id="4_clpv2"]
-[ext_resource type="PackedScene" uid="uid://c20qitdqj1cc1" path="res://assets/scenes/levels/level decoration/parallax_background1_jg.tscn" id="4_kv6om"]
 [ext_resource type="PackedScene" uid="uid://xes1t1iyh8hl" path="res://assets/scenes/level objects/cheeseslime.tscn" id="5_oh8nq"]
 [ext_resource type="TileSet" uid="uid://d4fo3wle3axih" path="res://resources/level/blocks.tres" id="8_g33dj"]
 [ext_resource type="PackedScene" uid="uid://gu657xt52lr7" path="res://assets/scenes/level objects/panic_block.tscn" id="9_pn3vn"]
@@ -38,7 +37,7 @@ script = ExtResource("4_clpv2")
 position = Vector2(3288, 357)
 scale = Vector2(1, 11.52)
 room_id = 3
-function_call = "load_room_jg"
+dunction_call = 1
 next_room_id = 5
 X = -1107
 Y = 99
@@ -47,12 +46,10 @@ Y = 99
 position = Vector2(-2078, 388)
 scale = Vector2(1, 17.16)
 room_id = 3
-function_call = "load_room_jg"
+dunction_call = 1
 next_room_id = 2
 X = 3258
 Y = 159
-
-[node name="ParallaxBackground" parent="." instance=ExtResource("4_kv6om")]
 
 [node name="AnimatedSprite2D" parent="." instance=ExtResource("5_oh8nq")]
 position = Vector2(-1494, 417)
@@ -61,7 +58,6 @@ position = Vector2(-1494, 417)
 position = Vector2(-91, 624)
 scale = Vector2(8.84, 1)
 room_id = 3
-function_call = "load_room_jg"
 next_room_id = 4
 X = -194
 Y = -488

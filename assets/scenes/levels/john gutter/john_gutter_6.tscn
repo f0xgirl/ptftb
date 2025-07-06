@@ -1,8 +1,7 @@
-[gd_scene load_steps=14 format=4 uid="uid://cn37hkufe6ajv"]
+[gd_scene load_steps=13 format=4 uid="uid://cn37hkufe6ajv"]
 
 [ext_resource type="Texture2D" uid="uid://bq5evmtt1ubwx" path="res://assets/sprites/normalT_room6.png" id="1_swvpu"]
 [ext_resource type="TileSet" uid="uid://71yckoly6egs" path="res://resources/level/tilesets/john_gutter_tileset.tres" id="2_dl1dw"]
-[ext_resource type="PackedScene" uid="uid://c20qitdqj1cc1" path="res://assets/scenes/levels/level decoration/parallax_background1_jg.tscn" id="3_frvkv"]
 [ext_resource type="Script" uid="uid://q3ywevjscjee" path="res://assets/script/tilemap.gd" id="4_q8uem"]
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/level objects/room_changer.tscn" id="4_qu12t"]
 [ext_resource type="PackedScene" uid="uid://d2q30hyq4cxd2" path="res://assets/scenes/level objects/door.tscn" id="7_4oqgm"]
@@ -39,13 +38,11 @@ tile_map_data = PackedByteArray("AAB8/wwAAAAKAAgAAAB8/w0AAAAKAAkAAAB9/wwAAAALAAg
 tile_set = ExtResource("2_dl1dw")
 script = ExtResource("4_q8uem")
 
-[node name="ParallaxBackground" parent="." instance=ExtResource("3_frvkv")]
-
 [node name="to room 5" parent="." instance=ExtResource("4_qu12t")]
 position = Vector2(-2317, 133)
 scale = Vector2(1, -15.208)
 room_id = 6
-function_call = "load_room_jg"
+dunction_call = 1
 next_room_id = 5
 X = 1717
 Y = 113
@@ -54,7 +51,7 @@ Y = 113
 position = Vector2(-1156, 471)
 scale = Vector2(8.84, 1)
 room_id = 6
-function_call = "load_room_jg"
+dunction_call = 1
 next_room_id = 7
 X = -1340
 Y = 36

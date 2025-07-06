@@ -36,7 +36,7 @@ text = "john gutter here
 position = Vector2(-705, 364)
 scale = Vector2(15.2901, 1.93105)
 room_id = 1
-function_call = "load_room_tutorial"
+dunction_call = 7
 X = -727
 Y = -784
 
@@ -44,7 +44,7 @@ Y = -784
 position = Vector2(205, 506)
 scale = Vector2(22.9152, 1.65314)
 room_id = 1
-function_call = "load_room_tutorial"
+dunction_call = 7
 X = 44
 Y = -733
 
@@ -57,7 +57,6 @@ reversed = true
 
 [node name="block" parent="blocks" instance=ExtResource("6_spaaf")]
 position = Vector2(854, 142)
-panic_time = 1.0
 
 [node name="panicblock2" parent="." instance=ExtResource("7_7kky0")]
 position = Vector2(193.5, 211)

@@ -35,7 +35,7 @@ script = ExtResource("4_iswug")
 position = Vector2(2827, -88)
 scale = Vector2(19.6238, 1.25102)
 room_id = 7
-function_call = "load_room_jg"
+dunction_call = 1
 next_room_id = 6
 X = 2657
 Y = 357
@@ -44,7 +44,7 @@ Y = 357
 position = Vector2(-1344, -84)
 scale = Vector2(39.4181, 1)
 room_id = 7
-function_call = "load_room_jg"
+dunction_call = 1
 next_room_id = 6
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("6_tdslv")]
