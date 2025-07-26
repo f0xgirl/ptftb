@@ -8,6 +8,7 @@ class_name Player_turn
 var direction: int
 
 func Enter():
+	#player.afterimage_add()
 	turn.play()
 	if player_data.player_direction == 1:
 		direction = -1

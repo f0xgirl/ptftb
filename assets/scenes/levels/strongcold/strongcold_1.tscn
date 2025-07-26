@@ -54,18 +54,18 @@ scale = Vector2(15.3951, 1.70265)
 position = Vector2(721, -64)
 scale = Vector2(12.4996, 1.45177)
 
-[node name="Area2D" parent="." instance=ExtResource("8_8dor1")]
-position = Vector2(706, -423)
-scale = Vector2(20.44, 1)
-dunction_call = 5
-next_room_id = 1
-X = 181
-Y = 425
-
 [node name="blocks" type="Node2D" parent="."]
 
 [node name="Area2D2" parent="." instance=ExtResource("8_wcgy0")]
 position = Vector2(-1189, -33)
 scale = Vector2(1, 1.44)
+
+[node name="room_changer" parent="." instance=ExtResource("8_8dor1")]
+position = Vector2(689, -425)
+scale = Vector2(21.0296, 1.39912)
+dunction_call = 5
+next_room_id = 1
+X = 163
+Y = 438
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]

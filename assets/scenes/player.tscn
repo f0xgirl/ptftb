@@ -1,8 +1,10 @@
-[gd_scene load_steps=93 format=3 uid="uid://d3amowmvkdyo"]
+[gd_scene load_steps=95 format=3 uid="uid://d3amowmvkdyo"]
 
 [ext_resource type="Script" uid="uid://c6edt4l8ehqu6" path="res://assets/script/important/player scripts/player.gd" id="1_aarfl"]
 [ext_resource type="Resource" uid="uid://bvm4oc3oc6sjt" path="res://resources/player/player_data.tres" id="2_i6cxx"]
 [ext_resource type="Texture2D" uid="uid://dhieee07ccjyd" path="res://assets/sprites/players/peppino/player_hud_idle.png" id="3_88jo2"]
+[ext_resource type="Texture2D" uid="uid://cffsw37gwcyv4" path="res://assets/sprites/players/what-is-your-headcanon-about-this-day-106-ran-yakumo-v0-hlyaufnb7zcd1.webp" id="3_ike5y"]
+[ext_resource type="Texture2D" uid="uid://cg7r6k8spjn6w" path="res://assets/sprites/players/Th06Sakuya.png" id="3_qnek2"]
 [ext_resource type="Material" uid="uid://gyvbxj5uv20u" path="res://assets/shader/player_palette1.tres" id="3_urkgk"]
 [ext_resource type="SpriteFrames" uid="uid://f6b84djeaa3g" path="res://resources/player/peppino_spriteframes.tres" id="4_5308x"]
 [ext_resource type="Script" uid="uid://d0lyqus80vd8s" path="res://assets/script/important/States/State_Machine.gd" id="4_t3dhw"]
@@ -414,6 +416,18 @@ target_position = Vector2(0, -45)
 [node name="crouch raycast2" type="RayCast2D" parent="."]
 position = Vector2(-9, 0)
 target_position = Vector2(0, -45)
+
+[node name="What-is-your-headcanon-about-this-day-106-ran-yakumo-v0-hlyaufnb7Zcd1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-4.76837e-07, -14.5)
+scale = Vector2(0.0474576, 0.0878754)
+texture = ExtResource("3_ike5y")
+
+[node name="Th06Sakuya" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-5.36442e-07, -14)
+scale = Vector2(0.21875, 0.309524)
+texture = ExtResource("3_qnek2")
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 z_index = 1

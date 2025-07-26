@@ -58,6 +58,7 @@ position = Vector2(-1494, 417)
 position = Vector2(-91, 624)
 scale = Vector2(8.84, 1)
 room_id = 3
+dunction_call = 1
 next_room_id = 4
 X = -194
 Y = -488

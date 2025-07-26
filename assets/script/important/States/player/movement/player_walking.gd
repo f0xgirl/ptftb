@@ -44,5 +44,5 @@ func sprite_flip():
 		sprite.offset.x = 0
 		sprite.flip_h = false
 	else:
-		sprite.offset.x = -8
+		#sprite.offset.x = -8
 		sprite.flip_h = true

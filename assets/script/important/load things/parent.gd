@@ -261,7 +261,7 @@ func enable_player() -> void:
 	get_child(0).set_meta("disabled", false)
 
 func check_if_loaded(id: int) -> bool:
-	var thingy: bool = false
+	var thingy := false 
 	for child in get_children():
 		if child is room: #the player is a child of the parent so this is necessary unfortunately :middle_finger:
 			if child.room_id == id:

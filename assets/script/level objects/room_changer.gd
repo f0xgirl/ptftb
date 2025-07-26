@@ -44,7 +44,7 @@ func _on_body_entered(body: Node2D) -> void:
 		4:
 			room_goto = "load_room_dungeon"
 		5:
-			room_goto = "load_room_stong"
+			room_goto = "load_room_strong"
 		6:
 			room_goto = "load_room_mid"
 		7:

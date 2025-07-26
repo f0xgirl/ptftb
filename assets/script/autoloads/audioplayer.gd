@@ -1,6 +1,6 @@
 extends AudioStreamPlayer
 
-const music_placeholder = preload("res://AUDIO/placeholder2.mp3")
+const music_placeholder = preload("res://AUDIO/placeholder.mp3")
 const PIZZAFACE_LAUGH = preload("res://AUDIO/sound effects/PizzafaceLaugh2.wav")
 const pillar_impact = preload("res://AUDIO/sound effects/JOHN_PILLAR_IMPACT.wav")
 const hub = preload("res://AUDIO/mu_hub.wav")

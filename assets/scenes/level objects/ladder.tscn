@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_loawn"]
 size = Vector2(32, 32)
 
-[node name="Area2D" type="Area2D" groups=["ladder"]]
+[node name="ladder" type="Area2D" groups=["ladder"]]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_v1c3f")

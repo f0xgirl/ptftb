@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://b01bhfo0fpxmq"]
+[gd_scene load_steps=9 format=4 uid="uid://b01bhfo0fpxmq"]
 
 [ext_resource type="Script" uid="uid://cevmxegd0htdb" path="res://assets/script/level specific/hub_1.gd" id="1_6vd3m"]
 [ext_resource type="TileSet" uid="uid://t56k02vh81ye" path="res://resources/level/tilesets/placeholder_tileset.tres" id="2_s2jbd"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/level objects/room_changer.tscn" id="5_6vd3m"]
 [ext_resource type="Script" uid="uid://dq7pcmne45ap8" path="res://assets/script/level objects/hub_level_progress_temp.gd" id="6_arv25"]
 [ext_resource type="Texture2D" uid="uid://cmnqe80xe54d0" path="res://assets/sprites/spr_enemyblockdead_0.png" id="7_vxttp"]
-[ext_resource type="PackedScene" uid="uid://bapj3gw65p3qm" path="res://assets/scenes/level objects/block_small_hidden.tscn" id="8_vxttp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jcaf5"]
 size = Vector2(46, 37)
@@ -55,7 +54,10 @@ texture = ExtResource("7_vxttp")
 
 [node name="blocks" type="Node2D" parent="."]
 
-[node name="block_small_hidden" parent="blocks" instance=ExtResource("8_vxttp")]
-position = Vector2(-506, 496)
+[node name="exit" parent="." instance=ExtResource("4_eatyb")]
+editor_description = "add ending w"
+position = Vector2(-624, 416)
+level_name = "level_select"
+level = 9
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
