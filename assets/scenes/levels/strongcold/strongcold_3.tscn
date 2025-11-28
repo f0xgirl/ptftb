@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://drmuwlookavsm"]
+[gd_scene load_steps=12 format=4 uid="uid://drmuwlookavsm"]
 
 [ext_resource type="Script" uid="uid://bvp7b8nd25ruo" path="res://assets/script/important/load things/room.gd" id="1_peo48"]
 [ext_resource type="Script" uid="uid://q3ywevjscjee" path="res://assets/script/tilemap.gd" id="2_pptkl"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://mor1xtohk0ul" path="res://assets/scenes/level objects/hot_sauce.tscn" id="6_ey0g6"]
 [ext_resource type="PackedScene" uid="uid://gu657xt52lr7" path="res://assets/scenes/level objects/panic_block.tscn" id="7_7y831"]
 [ext_resource type="PackedScene" uid="uid://0vqb05x2gqyd" path="res://assets/scenes/level objects/speed_pad.tscn" id="8_whf8u"]
+[ext_resource type="PackedScene" uid="uid://cwgntvkyl06cp" path="res://assets/scenes/level objects/small_collectible.tscn" id="9_01ad0"]
+[ext_resource type="PackedScene" uid="uid://iesqe0ibgymu" path="res://assets/scenes/level objects/block_big.tscn" id="10_ntk7w"]
+[ext_resource type="PackedScene" uid="uid://ceyc1vb3r2v0g" path="res://assets/scenes/level objects/block_small.tscn" id="11_bdrdt"]
 
 [node name="room" type="Node"]
 script = ExtResource("1_peo48")
@@ -63,3 +66,53 @@ offset_top = -612.0
 offset_right = 423.0
 offset_bottom = -589.0
 text = "ice here maybe"
+
+[node name="small_collectible" parent="." instance=ExtResource("9_01ad0")]
+position = Vector2(-32, -608)
+
+[node name="small_collectible2" parent="." instance=ExtResource("9_01ad0")]
+position = Vector2(16, -608)
+
+[node name="small_collectible3" parent="." instance=ExtResource("9_01ad0")]
+position = Vector2(64, -608)
+
+[node name="small_collectible4" parent="." instance=ExtResource("9_01ad0")]
+position = Vector2(112, -608)
+
+[node name="small_collectible5" parent="." instance=ExtResource("9_01ad0")]
+position = Vector2(160, -608)
+
+[node name="small_collectible6" parent="." instance=ExtResource("9_01ad0")]
+position = Vector2(-80, -608)
+
+[node name="small_collectible7" parent="." instance=ExtResource("9_01ad0")]
+position = Vector2(-128, -608)
+
+[node name="small_collectible8" parent="." instance=ExtResource("9_01ad0")]
+position = Vector2(-176, -608)
+
+[node name="small_collectible9" parent="." instance=ExtResource("9_01ad0")]
+position = Vector2(-224, -608)
+
+[node name="blocks" type="Node2D" parent="."]
+
+[node name="block" parent="blocks" instance=ExtResource("10_ntk7w")]
+position = Vector2(-432, -96)
+
+[node name="block2" parent="blocks" instance=ExtResource("11_bdrdt")]
+position = Vector2(80, 176)
+
+[node name="block3" parent="blocks" instance=ExtResource("11_bdrdt")]
+position = Vector2(80, 144)
+
+[node name="block4" parent="blocks" instance=ExtResource("11_bdrdt")]
+position = Vector2(16, 176)
+
+[node name="block5" parent="blocks" instance=ExtResource("11_bdrdt")]
+position = Vector2(16, 144)
+
+[node name="block6" parent="blocks" instance=ExtResource("11_bdrdt")]
+position = Vector2(144, 176)
+
+[node name="block7" parent="blocks" instance=ExtResource("11_bdrdt")]
+position = Vector2(144, 144)

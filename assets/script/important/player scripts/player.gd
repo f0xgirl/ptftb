@@ -72,6 +72,7 @@ func _physics_process(delta: float) -> void:
 		else: #if theres no exit data
 			get_parent().call("load_hub1",EXIT_X_DFEAULT, EXIT_Y_DFEAULT, EXIT_ID_DEFAULT)
 
+@warning_ignore("unsafe_method_access")
 func afterimage_stop():
 	afterimagetimer.stop() #IGNORE ERROR RESUME EXECUTION
 

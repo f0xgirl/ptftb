@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://ddfs4ffikkjoq"]
+[gd_scene load_steps=13 format=4 uid="uid://ddfs4ffikkjoq"]
 
 [ext_resource type="Script" uid="uid://du0rvnk6e38em" path="res://assets/script/level specific/strongcold_1.gd" id="1_dwndv"]
 [ext_resource type="Texture2D" uid="uid://difag0780ni4x" path="res://assets/sprites/levels/level visuals/strongcoldconcept1.png" id="1_lnf4h"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://mor1xtohk0ul" path="res://assets/scenes/level objects/hot_sauce.tscn" id="6_qaey5"]
 [ext_resource type="PackedScene" uid="uid://b5dyq2pyrrxfp" path="res://assets/scenes/level objects/room_changer.tscn" id="8_8dor1"]
 [ext_resource type="PackedScene" uid="uid://cuoo8ojghsvmb" path="res://assets/scenes/level objects/ladder.tscn" id="8_wcgy0"]
+[ext_resource type="PackedScene" uid="uid://xes1t1iyh8hl" path="res://assets/scenes/level objects/cheeseslime.tscn" id="10_5p3e8"]
+[ext_resource type="PackedScene" uid="uid://cwgntvkyl06cp" path="res://assets/scenes/level objects/small_collectible.tscn" id="11_7amrd"]
 
 [sub_resource type="Resource" id="Resource_e5w76"]
 script = ExtResource("6_q4keg")
@@ -67,5 +69,26 @@ dunction_call = 5
 next_room_id = 1
 X = 163
 Y = 438
+
+[node name="cheeseslime" parent="." instance=ExtResource("10_5p3e8")]
+position = Vector2(-144, 144)
+
+[node name="small_collectible" parent="." instance=ExtResource("11_7amrd")]
+position = Vector2(176, 336)
+
+[node name="small_collectible2" parent="." instance=ExtResource("11_7amrd")]
+position = Vector2(144, 304)
+
+[node name="small_collectible3" parent="." instance=ExtResource("11_7amrd")]
+position = Vector2(112, 272)
+
+[node name="small_collectible4" parent="." instance=ExtResource("11_7amrd")]
+position = Vector2(80, 240)
+
+[node name="small_collectible5" parent="." instance=ExtResource("11_7amrd")]
+position = Vector2(48, 208)
+
+[node name="small_collectible6" parent="." instance=ExtResource("11_7amrd")]
+position = Vector2(16, 176)
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
