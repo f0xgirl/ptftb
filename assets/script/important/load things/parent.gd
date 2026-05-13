@@ -22,6 +22,10 @@ signal player_clear_score
 @export var level_tutorial: Array [PackedScene] = []
 @export var level_pinball: Array [PackedScene] = []
 @export var hub_1: Array [PackedScene] = []
+@export var hub_2: Array [PackedScene] = []
+@export var hub_3: Array [PackedScene] = []
+@export var hub_4: Array [PackedScene] = []
+@export var hub_5: Array [PackedScene] = []
 #constants:
 const PIZZAFACE = preload("res://assets/scenes/level objects/pizzaface.tscn")
 # variables
@@ -51,7 +55,7 @@ const MIDESCAPE_1 = preload("res://assets/scenes/levels/midescape/midescape_1.ts
 const SPACE_PINBALL = preload("res://assets/scenes/levels/space pinball/space_pinball_1.tscn")
 #tutorial:
 const TUTORIAL_1 = preload("res://assets/scenes/levels/tutorial/tutorial_1.tscn")
-#pinball:
+
 
 
 #variables:
